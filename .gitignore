@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# root extraction and scratch files
+pptx_unzipped/
+extracted_images/
+*.pptx
+extract_*.py
+pptx_content.md
+Air Cooled Section/
+Liquid Cooled Section/
+Engineer Pictures/
+Founder and CEO photos/
+BusBar/
+*.png
+*.jpg
+*.jpeg
+*.webp
+!public/**/*
+
