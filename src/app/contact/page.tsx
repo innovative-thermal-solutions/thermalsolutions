@@ -1,368 +1,270 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Phone, MapPin, ShieldCheck, CheckCircle2, Send, Clock, Building2 } from "lucide-react";
-import { COMPANY_INFO, TEAM_MEMBERS } from "@/data/companyContent";
+import { ArrowRight, CheckCircle2, Phone, Mail, MapPin, Upload, ShieldCheck, Clock } from "lucide-react";
+import { COMPANY_INFO } from "@/data/companyContent";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    email: "",
-    phone: "",
-    stage: "Active Engineering Design",
-    industry: "EV & Battery Systems",
-    technology: "Friction Stir Welded Cold Plates",
-    message: ""
-  });
+  const [loading, setLoading] = useState(false);
+  const [selectedFile, setSelectedFile] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+      setSubmitted(true);
+    }, 800);
   };
 
   return (
-    <main className="relative w-full min-h-screen bg-black overflow-hidden pt-32 pb-28">
-      {/* Background glow */}
-      <div className="absolute top-20 right-10 w-[700px] h-[500px] bg-teal-500/10 rounded-full blur-[160px] pointer-events-none" />
-
-      {/* Header */}
-      <section className="px-6 lg:px-12 mb-16 max-w-7xl mx-auto relative z-10">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-          <span className="text-teal-400 font-mono text-xs tracking-[0.25em] uppercase">
-            Direct Engineering Inquiry & RFQ
-          </span>
+    <main id="main-content" className="w-full min-h-screen bg-slate-50 pt-28 pb-20">
+      {/* Detail Hero */}
+      <section className="relative w-full bg-gradient-to-br from-white via-slate-50 to-sky-50 border-b border-slate-200 py-16 lg:py-24 px-6 lg:px-12 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
+        <div className="max-w-[1440px] mx-auto relative z-10">
+          <div className="max-w-3xl">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="font-mono text-xs font-bold text-sky-600 px-2 py-0.5 bg-white border border-slate-200 rounded-sm">
+                ITS
+              </span>
+              <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
+                Talk to a Thermal Engineer
+              </span>
+            </div>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
+              Bring us the thermal challenge.
+            </h1>
+            <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
+              Share your application, operating conditions and project stage. The ITS team will help frame the next engineering step.
+            </p>
+          </div>
         </div>
-
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-white mb-8 max-w-4xl">
-          CONNECT WITH OUR <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-white to-gray-400">
-            ENGINEERING TEAM.
-          </span>
-        </h1>
-
-        <p className="text-lg md:text-xl text-gray-300 font-light max-w-3xl border-l-2 border-teal-400/50 pl-6 py-2">
-          Discuss your thermal dissipation targets, submit 3D CAD step files, or request prototype manufacturing quotes. Our North American engineering center provides preliminary reviews within 24–48 hours.
-        </p>
       </section>
 
-      {/* Main Grid: Form + Detailed Contact Directory */}
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
-        {/* Form Column */}
-        <div className="lg:col-span-7">
-          <div className="bg-[#020617] border border-white/10 p-8 lg:p-12 relative shadow-2xl">
-            <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/10">
-              <div>
-                <h2 className="text-2xl font-bold text-white tracking-tight">Request Feasibility / RFQ</h2>
-                <span className="text-xs font-mono text-gray-400">All submissions handled under strict NDA standards</span>
-              </div>
-              <div className="hidden sm:flex items-center gap-2 text-xs font-mono text-teal-400 bg-teal-500/10 px-3 py-1.5 border border-teal-500/20">
-                <Clock className="w-3.5 h-3.5" />
-                <span>24–48hr Response</span>
-              </div>
-            </div>
-
+      {/* Contact Section Form & Aside */}
+      <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left Form (1.5fr) */}
+          <div className="lg:col-span-8 bg-white rounded-2xl border border-slate-200 p-8 sm:p-12 shadow-sm">
             {submitted ? (
-              <div className="py-16 text-center flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-teal-500/20 border border-teal-400 flex items-center justify-center text-teal-400 mb-6">
+              <div className="py-16 text-center">
+                <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center mb-6 border border-emerald-200">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-3">Inquiry Received</h3>
-                <p className="text-gray-300 font-light max-w-md mx-auto mb-6">
-                  Thank you, {formData.name || "Customer"}. Our technical sales and thermal engineering leads have received your details and will follow up promptly.
+                <h3 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-3">
+                  Engineering Request Received
+                </h3>
+                <p className="text-slate-600 text-base max-w-md mx-auto mb-6 leading-relaxed">
+                  Thank you for submitting your project specifications. A thermal engineering specialist from our Guelph, Ontario office will review your requirements and respond within 1 business day.
                 </p>
-                <div className="text-xs font-mono text-gray-400 p-4 bg-black/60 border border-white/10 max-w-md">
-                  For urgent requirements, call directly: <span className="text-teal-400">{COMPANY_INFO.phone}</span> or email <span className="text-teal-400">{COMPANY_INFO.salesEmail}</span>.
-                </div>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="px-6 py-3 bg-slate-950 text-white font-mono text-xs uppercase tracking-wider rounded-sm hover:bg-sky-600 transition-colors"
+                >
+                  Submit Another Project
+                </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              <form onSubmit={handleSubmit} className="space-y-8">
+                {/* Name & Company */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-mono text-gray-400 uppercase tracking-widest">
-                      Full Name *
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-2 font-semibold">
+                      Name <span className="text-red-500">*</span>
                     </label>
                     <input
-                      required
                       type="text"
-                      placeholder="e.g. John Doe"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="bg-black border border-white/20 p-4 text-white placeholder-gray-600 focus:border-teal-400 outline-none transition-colors text-sm"
+                      required
+                      placeholder="Your full name"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-md text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white transition-all font-sans"
                     />
                   </div>
-
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-mono text-gray-400 uppercase tracking-widest">
-                      Company / Organization *
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-2 font-semibold">
+                      Company <span className="text-red-500">*</span>
                     </label>
                     <input
-                      required
                       type="text"
-                      placeholder="e.g. CleanTech Systems"
-                      value={formData.company}
-                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="bg-black border border-white/20 p-4 text-white placeholder-gray-600 focus:border-teal-400 outline-none transition-colors text-sm"
+                      required
+                      placeholder="Organization or institution"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-md text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white transition-all font-sans"
                     />
                   </div>
                 </div>
 
+                {/* Email & Phone */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-mono text-gray-400 uppercase tracking-widest">
-                      Business Email *
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-2 font-semibold">
+                      Work Email <span className="text-red-500">*</span>
                     </label>
                     <input
-                      required
                       type="email"
+                      required
                       placeholder="name@company.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="bg-black border border-white/20 p-4 text-white placeholder-gray-600 focus:border-teal-400 outline-none transition-colors text-sm"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-md text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white transition-all font-sans"
                     />
                   </div>
-
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-mono text-gray-400 uppercase tracking-widest">
-                      Phone Number
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-2 font-semibold flex justify-between">
+                      <span>Phone Number</span>
+                      <span className="text-slate-400 font-normal">Optional</span>
                     </label>
                     <input
                       type="tel"
                       placeholder="+1 (555) 000-0000"
-                      value={formData.phone}
-                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="bg-black border border-white/20 p-4 text-white placeholder-gray-600 focus:border-teal-400 outline-none transition-colors text-sm"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-md text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white transition-all font-sans"
                     />
                   </div>
                 </div>
 
+                {/* Application & Stage */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-mono text-gray-400 uppercase tracking-widest">
-                      Industry Vertical
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-2 font-semibold">
+                      Application
                     </label>
                     <select
-                      value={formData.industry}
-                      onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
-                      className="bg-black border border-white/20 p-4 text-white focus:border-teal-400 outline-none transition-colors text-sm appearance-none"
+                      defaultValue=""
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-md text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white transition-all font-sans"
                     >
-                      <option>EV & Battery Systems</option>
-                      <option>Power Converters & Automation</option>
-                      <option>Aerospace & Defense</option>
-                      <option>Clean Energy & Inverters</option>
-                      <option>Satellites & Telecommunications</option>
-                      <option>Other High-Power Electronics</option>
+                      <option value="" disabled>Select application</option>
+                      <option value="power">Power electronics</option>
+                      <option value="ev">EV &amp; battery systems</option>
+                      <option value="clean">Clean energy</option>
+                      <option value="aerospace">Aerospace &amp; defence</option>
+                      <option value="satellite">Satellite communications</option>
+                      <option value="automation">Industrial automation</option>
+                      <option value="other">Other specialized application</option>
                     </select>
                   </div>
-
-                  <div className="flex flex-col gap-2">
-                    <label className="text-xs font-mono text-gray-400 uppercase tracking-widest">
-                      Technology Focus
+                  <div>
+                    <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-2 font-semibold">
+                      Project Stage
                     </label>
                     <select
-                      value={formData.technology}
-                      onChange={(e) => setFormData({ ...formData, technology: e.target.value })}
-                      className="bg-black border border-white/20 p-4 text-white focus:border-teal-400 outline-none transition-colors text-sm appearance-none"
+                      defaultValue=""
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-md text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white transition-all font-sans"
                     >
-                      <option>Friction Stir Welded (FSW) Cold Plates</option>
-                      <option>HyperCool Liquid Cold Plates</option>
-                      <option>Copper Vacuum Brazed Cold Plates</option>
-                      <option>Extruded Air-Cooled Heat Sinks</option>
-                      <option>Skived Fin Heat Sinks</option>
-                      <option>Embedded Heat Pipe Solutions</option>
-                      <option>Custom BusBars & Structural Cooling</option>
-                      <option>CFD Thermal Simulation & Design</option>
+                      <option value="" disabled>Select stage</option>
+                      <option value="concept">Concept / feasibility</option>
+                      <option value="design">Design development</option>
+                      <option value="prototype">Prototype build</option>
+                      <option value="production">Volume production</option>
                     </select>
                   </div>
                 </div>
 
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs font-mono text-gray-400 uppercase tracking-widest">
-                    Project Stage
-                  </label>
-                  <select
-                    value={formData.stage}
-                    onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
-                    className="bg-black border border-white/20 p-4 text-white focus:border-teal-400 outline-none transition-colors text-sm appearance-none"
-                  >
-                    <option>Initial Conceptual / Feasibility</option>
-                    <option>Active Engineering Design (CFD / CAD)</option>
-                    <option>Prototyping & Experimental Validation</option>
-                    <option>High-Volume Production Ramp</option>
-                  </select>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <label className="text-xs font-mono text-gray-400 uppercase tracking-widest">
-                    Thermal Challenge Details / Boundary Conditions *
+                {/* Thermal Challenge */}
+                <div>
+                  <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-2 font-semibold">
+                    Thermal Challenge &amp; Operating Conditions
                   </label>
                   <textarea
+                    rows={4}
                     required
-                    rows={5}
-                    placeholder="Provide details on: heat load (W), maximum junction temperature (°C), packaging dimensions, coolant type (water-glycol, etc.), flow rate (LPM), and target delivery timeframe..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-black border border-white/20 p-4 text-white placeholder-gray-600 focus:border-teal-400 outline-none transition-colors text-sm resize-none"
+                    placeholder="Describe heat dissipation (Watts), coolant type, flow constraints, space envelope, or target maximum junction temperature..."
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-md text-sm text-slate-900 focus:outline-none focus:border-sky-600 focus:bg-white transition-all font-sans resize-y"
                   />
                 </div>
 
-                <div className="p-4 bg-black/40 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <div>
-                    <span className="text-xs font-mono text-white block mb-0.5">Attach Technical Drawings</span>
-                    <span className="text-[11px] text-gray-400 font-mono">Upload STEP, IGES, PDF drawings (or send directly via email)</span>
+                {/* File Upload Dropzone */}
+                <div>
+                  <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 mb-2 font-semibold flex justify-between">
+                    <span>Supporting File</span>
+                    <span className="text-slate-400 font-normal">Optional · PDF, STEP, drawing · 10 MB max</span>
+                  </label>
+                  <div className="border-2 border-dashed border-slate-300 rounded-xl p-6 text-center hover:border-sky-500 transition-colors bg-slate-50/50">
+                    <input
+                      type="file"
+                      id="file-upload"
+                      className="hidden"
+                      onChange={(e) => {
+                        if (e.target.files && e.target.files[0]) {
+                          setSelectedFile(e.target.files[0].name);
+                        }
+                      }}
+                    />
+                    <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center">
+                      <Upload className="w-8 h-8 text-sky-600 mb-2" />
+                      <span className="text-sm font-medium text-slate-800">
+                        {selectedFile ? `Selected: ${selectedFile}` : "Click to attach CAD or drawing specifications"}
+                      </span>
+                      <span className="text-xs text-slate-500 mt-1">
+                        STEP, IGES, SLDPRT, DWG, PDF
+                      </span>
+                    </label>
                   </div>
-                  <input
-                    type="file"
-                    className="text-xs text-gray-400 file:mr-3 file:py-2 file:px-3 file:border file:border-white/20 file:bg-white/10 file:text-white file:text-xs file:font-mono file:cursor-pointer hover:file:bg-teal-400 hover:file:text-black transition-colors"
-                  />
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-full sm:w-auto px-8 py-4 bg-teal-400 text-black font-mono font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors inline-flex items-center justify-center gap-3 shadow-lg shadow-teal-500/20"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Transmit Engineering Request</span>
-                </button>
+                <div className="pt-4 flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
+                    <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                    <span>NDAs respected. Confidential engineering review.</span>
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="inline-flex items-center gap-2 px-8 py-3.5 bg-slate-950 text-white hover:bg-sky-600 font-bold text-xs uppercase tracking-wider rounded-sm transition-all shadow-md cursor-pointer disabled:opacity-60"
+                  >
+                    <span>{loading ? "Transmitting..." : "Send Engineering Request"}</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
               </form>
             )}
           </div>
-        </div>
 
-        {/* Directory & Headquarters Info Column */}
-        <div className="lg:col-span-5 flex flex-col gap-8">
-          {/* Facility Card */}
-          <div className="bg-[#020617] border border-white/10 p-8 shadow-xl">
-            <div className="flex items-center gap-3 text-teal-400 mb-4">
-              <Building2 className="w-5 h-5" />
-              <span className="text-xs font-mono uppercase tracking-widest">Headquarters & Manufacturing</span>
-            </div>
-
-            <h3 className="text-2xl font-bold text-white mb-4">Innovative Thermal Solutions Inc.</h3>
-            
-            <div className="space-y-2 text-sm text-gray-300 font-light mb-6">
-              <p className="font-mono text-white">{COMPANY_INFO.address}</p>
-              <p className="text-xs font-mono text-gray-400">6,000 sq ft Precision Manufacturing & Thermal Lab</p>
-            </div>
-
-            <div className="pt-6 border-t border-white/10 space-y-3 text-xs font-mono">
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-teal-400 shrink-0" />
-                <div>
-                  <span className="text-gray-500 block">Main Office:</span>
-                  <a href={`tel:${COMPANY_INFO.phone}`} className="text-white hover:text-teal-400 transition-colors">
-                    {COMPANY_INFO.phone}
-                  </a>
+          {/* Right Aside (0.5fr) */}
+          <div className="lg:col-span-4 space-y-6">
+            <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-xs">
+              <span className="text-xs uppercase font-mono tracking-widest text-slate-400 block mb-2 font-semibold">
+                Prefer to speak directly?
+              </span>
+              <a
+                href={`tel:${COMPANY_INFO.phone}`}
+                className="text-2xl sm:text-3xl font-bold font-mono text-slate-950 hover:text-sky-600 transition-colors block mb-4"
+              >
+                +1 (519) 763-4454
+              </a>
+              <div className="space-y-4 text-sm text-slate-600 pt-4 border-t border-slate-100">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 text-sky-600 shrink-0 mt-1" />
+                  <address className="not-italic leading-relaxed">
+                    290 Southgate Drive, Unit #2,<br />
+                    Guelph, ON N1G 4P5, Canada
+                  </address>
                 </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-teal-400 shrink-0" />
-                <div>
-                  <span className="text-gray-500 block">Mobile Hotline:</span>
-                  <a href={`tel:${COMPANY_INFO.mobile}`} className="text-white hover:text-teal-400 transition-colors">
-                    {COMPANY_INFO.mobile}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-teal-400 shrink-0" />
-                <div>
-                  <span className="text-gray-500 block">General Mailbox:</span>
-                  <a href={`mailto:${COMPANY_INFO.email}`} className="text-white hover:text-teal-400 transition-colors">
-                    {COMPANY_INFO.email}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Department Direct Contacts */}
-          <div className="bg-[#020617] border border-white/10 p-8 shadow-xl">
-            <span className="text-xs font-mono text-teal-400 uppercase tracking-widest block mb-4">
-              Slide 46 & 47 • Direct Department Directory
-            </span>
-
-            <div className="space-y-6">
-              {/* Sales Lead */}
-              <div className="pb-4 border-b border-white/10">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-teal-400 block mb-1">
-                  Technical & Sales Inquiries — North America
-                </span>
-                <h4 className="text-white font-bold text-base mb-1">Abdu Zaghlol</h4>
-                <p className="text-xs text-gray-400 font-mono mb-2">Sales Manager</p>
-                <div className="flex flex-col gap-1 text-xs font-mono">
-                  <a href={`mailto:${COMPANY_INFO.salesEmail}`} className="text-gray-300 hover:text-teal-400 transition-colors">
+                <div className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 text-sky-600 shrink-0" />
+                  <a href={`mailto:${COMPANY_INFO.salesEmail}`} className="hover:text-sky-600 font-mono text-xs">
                     {COMPANY_INFO.salesEmail}
                   </a>
-                  <a href={`tel:${COMPANY_INFO.salesPhone}`} className="text-gray-300 hover:text-teal-400 transition-colors">
-                    Cell: {COMPANY_INFO.salesPhone}
-                  </a>
                 </div>
-              </div>
-
-              {/* Engineering Direct */}
-              <div className="pb-4 border-b border-white/10">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-teal-400 block mb-1">
-                  Thermal & Mechanical Engineering
-                </span>
-                <h4 className="text-white font-bold text-base mb-1">Engineering Division</h4>
-                <p className="text-xs text-gray-400 font-mono mb-2">CFD Analysis • SolidWorks CAD • Tooling</p>
-                <div className="flex flex-col gap-1 text-xs font-mono">
-                  <a href={`mailto:${COMPANY_INFO.engineeringEmail}`} className="text-gray-300 hover:text-teal-400 transition-colors">
-                    {COMPANY_INFO.engineeringEmail}
-                  </a>
-                </div>
-              </div>
-
-              {/* Founder Direct */}
-              <div className="pb-4 border-b border-white/10">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-teal-400 block mb-1">
-                  Executive Office
-                </span>
-                <h4 className="text-white font-bold text-base mb-1">Ahmed Zaghlol, Ph.D., P.Eng.</h4>
-                <p className="text-xs text-gray-400 font-mono mb-2">Founder & CEO</p>
-                <div className="flex flex-col gap-1 text-xs font-mono">
-                  <a href={`mailto:${COMPANY_INFO.ceoEmail}`} className="text-gray-300 hover:text-teal-400 transition-colors">
-                    {COMPANY_INFO.ceoEmail}
-                  </a>
-                  <a href={`tel:${COMPANY_INFO.mobile}`} className="text-gray-300 hover:text-teal-400 transition-colors">
-                    Mobile: {COMPANY_INFO.mobile}
-                  </a>
-                </div>
-              </div>
-
-              {/* Supply Chain */}
-              <div>
-                <span className="text-[10px] font-mono uppercase tracking-widest text-teal-400 block mb-1">
-                  Global Supply Chain & Procurement
-                </span>
-                <h4 className="text-white font-bold text-base mb-1">Nada Zaghlol</h4>
-                <p className="text-xs text-gray-400 font-mono mb-2">Supply Chain Manager</p>
-                <div className="flex flex-col gap-1 text-xs font-mono">
-                  <a href={`mailto:${COMPANY_INFO.supplyChainEmail}`} className="text-gray-300 hover:text-teal-400 transition-colors">
-                    {COMPANY_INFO.supplyChainEmail}
-                  </a>
-                  <a href={`tel:${COMPANY_INFO.supplyChainPhone}`} className="text-gray-300 hover:text-teal-400 transition-colors">
-                    Cell: {COMPANY_INFO.supplyChainPhone}
-                  </a>
+                <div className="flex items-center gap-3">
+                  <Clock className="w-4 h-4 text-sky-600 shrink-0" />
+                  <span className="text-xs font-mono text-slate-500">
+                    Mon - Fri: 8:00 AM - 5:00 PM EST
+                  </span>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Quality Assurance Card */}
-          <div className="p-6 bg-teal-950/30 border border-teal-500/30 rounded-sm">
-            <div className="flex items-center gap-3 text-teal-400 font-mono text-xs uppercase tracking-widest mb-2">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Certified Quality System</span>
+            <div className="bg-sky-50 rounded-2xl border border-sky-100 p-8">
+              <h4 className="text-sm font-bold uppercase font-mono tracking-wider text-sky-950 mb-2">
+                Engineering Proximity
+              </h4>
+              <p className="text-xs leading-relaxed text-slate-600 mb-4 font-mono">
+                Located within Ontario&#39;s technological and manufacturing hub, providing rapid design turns, domestic prototyping, and secure North American supply chain confidence.
+              </p>
+              <div className="text-xs font-mono font-semibold text-sky-800 flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-sky-600" />
+                <span>ISO 9001:2015 Registered Facility</span>
+              </div>
             </div>
-            <p className="text-sm text-gray-300 leading-relaxed font-light">
-              Registered ISO 9001:2015 since January 17, 2021. Canadian Controlled Goods Program (CGP) & ITAR equivalent compliance active.
-            </p>
           </div>
         </div>
       </section>

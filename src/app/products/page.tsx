@@ -1,125 +1,189 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, CheckCircle2 } from "lucide-react";
-import { PRODUCT_CATEGORIES } from "@/data/companyContent";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Check, Droplets, Wind, Layers } from "lucide-react";
+import { SubpageCta } from "@/components/common/SubpageCta";
 
 export const metadata = {
-  title: "Thermal Hardware & Products | ITS Cooling",
-  description: "Explore our precision engineered thermal hardware: Friction Stir Welded cold plates, HyperCool aluminum plates, skived heatsinks, embedded heat pipes, and busbars.",
+  title: "Cooling hardware built around the heat source. | ITS Cooling",
+  description:
+    "Liquid cold plates, air-cooled heat sinks and integrated thermal assemblies engineered for demanding power electronics and harsh environments.",
 };
 
 export default function ProductsPage() {
   return (
-    <main className="relative w-full min-h-screen bg-black overflow-hidden pt-32 pb-28">
-      {/* Background glow */}
-      <div className="absolute top-20 right-10 w-[800px] h-[500px] bg-teal-500/10 rounded-full blur-[160px] pointer-events-none" />
+    <main id="main-content" className="w-full min-h-screen bg-slate-50 pt-28 pb-20">
+      {/* Detail Hero */}
+      <section className="relative w-full bg-gradient-to-br from-white via-slate-50 to-sky-50 border-b border-slate-200 py-16 lg:py-24 px-6 lg:px-12 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="font-mono text-xs font-bold text-sky-600 px-2 py-0.5 bg-white border border-slate-200 rounded-sm">
+                ITS
+              </span>
+              <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
+                Thermal Products
+              </span>
+            </div>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
+              Cooling hardware built around the heat source.
+            </h1>
+            <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
+              Liquid cold plates, air-cooled heat sinks and integrated thermal assemblies engineered for demanding power electronics and harsh environments.
+            </p>
+          </div>
 
-      {/* Header */}
-      <section className="px-6 lg:px-12 mb-20 max-w-7xl mx-auto relative z-10">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-          <span className="text-teal-400 font-mono text-xs tracking-[0.25em] uppercase">
-            Slide 9–14, 22–25 • Product Catalog
-          </span>
+          <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white flex items-center justify-center p-6">
+            <Image
+              src="/images/products/pressed-tube-cold-plate.png"
+              alt="Thermal hardware by Innovative Thermal Solutions"
+              width={480}
+              height={360}
+              priority
+              className="object-contain max-h-[300px] drop-shadow-md"
+            />
+          </div>
         </div>
-
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-white mb-8 max-w-5xl">
-          PRECISION ENGINEERED <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-white to-gray-400">
-            THERMAL HARDWARE.
-          </span>
-        </h1>
-
-        <p className="text-lg md:text-xl text-gray-300 font-light max-w-3xl border-l-2 border-teal-400/50 pl-6 py-2 mb-10">
-          From large-format 57-inch EV bus liquid cold plates to high-flux sintered copper heat pipes and custom busbars. Engineered to zero-failure tolerances and manufactured in our ISO 9001:2015 certified facility.
-        </p>
       </section>
 
-      {/* Product Categories Sections */}
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto space-y-20 relative z-10">
-        {PRODUCT_CATEGORIES.map((cat, idx) => (
-          <div
-            key={cat.slug}
-            className="bg-[#020617] border border-white/10 p-8 lg:p-14 relative group hover:border-teal-500/40 transition-all shadow-2xl"
-          >
-            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-12 pb-8 border-b border-white/10">
-              <div className="max-w-2xl">
-                <span className="text-teal-400 font-mono text-xs uppercase tracking-widest block mb-2">
-                  Category 0{idx + 1} • {cat.subtitle}
-                </span>
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
-                  {cat.title}
+      {/* Detail Content Articles */}
+      <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20">
+        <div className="divide-y divide-slate-200">
+          {/* 01 Liquid cold plates */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">01</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Category
+              </span>
+            </div>
+            <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 uppercase tracking-tight mb-4 flex items-center gap-3">
+                  <Droplets className="w-6 h-6 text-sky-600" />
+                  Liquid cold plates
                 </h2>
-                <p className="text-gray-300 font-light text-base leading-relaxed">
-                  {cat.heroDescription}
+                <p className="text-slate-600 text-base leading-relaxed mb-6 font-normal">
+                  Pressed-in tube and machined-channel architectures for high thermal loads and application-specific packaging.
                 </p>
+                <Link
+                  href="/products/cold-plates"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-950 text-white hover:bg-sky-600 font-semibold text-xs uppercase tracking-wider rounded-sm transition-colors"
+                >
+                  <span>Explore Liquid Cold Plates</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
 
-              <Link
-                href={`/products/${cat.slug}`}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white font-mono text-xs uppercase tracking-widest hover:bg-teal-400 hover:text-black transition-colors shrink-0"
-              >
-                <span>View Full Specifications</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="relative aspect-[4/3] bg-white rounded-xl border border-slate-200 p-6 flex items-center justify-center shadow-xs">
+                <Image
+                  src="/images/products/hypercool-cold-plate.png"
+                  alt="Liquid cold plates"
+                  width={380}
+                  height={280}
+                  className="object-contain max-h-[220px]"
+                />
+              </div>
             </div>
+          </article>
 
-            {/* Product Items Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {cat.products.map((item) => (
-                <div
-                  key={item.name}
-                  className="bg-black/60 border border-white/10 p-6 flex flex-col justify-between group/item hover:border-teal-500/50 hover:bg-[#070D18] transition-all"
+          {/* 02 Air-cooled heat sinks */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">02</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Category
+              </span>
+            </div>
+            <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 uppercase tracking-tight mb-4 flex items-center gap-3">
+                  <Wind className="w-6 h-6 text-sky-600" />
+                  Air-cooled heat sinks
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed mb-6 font-normal">
+                  Extruded, bonded-fin, copper, skived-fin and heat-pipe solutions for passive and forced-air systems.
+                </p>
+                <Link
+                  href="/products/heat-sinks"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-950 text-white hover:bg-sky-600 font-semibold text-xs uppercase tracking-wider rounded-sm transition-colors"
                 >
-                  <div>
-                    <div className="relative aspect-video w-full bg-[#0F172A] border border-white/10 mb-5 overflow-hidden">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 25vw"
-                        className="object-cover opacity-80 group-hover/item:opacity-100 group-hover/item:scale-105 transition-all duration-500"
-                      />
-                    </div>
+                  <span>Explore Air-Cooled Heat Sinks</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
 
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover/item:text-teal-400 transition-colors">
-                      {item.name}
-                    </h3>
-
-                    <p className="text-xs text-gray-300 font-light leading-relaxed mb-4">
-                      {item.desc}
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-white/10 text-[11px] font-mono text-teal-400/90">
-                    <span className="text-gray-500 block text-[9px] uppercase">Highlights:</span>
-                    {item.specs}
-                  </div>
-                </div>
-              ))}
+              <div className="relative aspect-[4/3] bg-white rounded-xl border border-slate-200 p-6 flex items-center justify-center shadow-xs">
+                <Image
+                  src="/images/manufacturing/thermal-engineering.png"
+                  alt="Air-cooled heat sinks"
+                  width={380}
+                  height={280}
+                  className="object-contain max-h-[220px]"
+                />
+              </div>
             </div>
-          </div>
-        ))}
-      </section>
+          </article>
 
-      {/* CTA */}
-      <section className="px-6 lg:px-12 mt-28 max-w-7xl mx-auto relative z-10 text-center">
-        <div className="bg-gradient-to-r from-[#0F172A] via-[#091E2B] to-[#0F172A] border border-teal-500/30 p-10 lg:p-14">
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Custom Hardware Geometries Engineered on Demand
-          </h3>
-          <p className="text-gray-300 font-light max-w-2xl mx-auto text-sm leading-relaxed mb-8">
-            Do your electronic packages have unique space, flow, or pressure requirements? Our engineering team designs custom liquid cold plates, heatsinks, and busbars tailored directly to your system envelopes.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-teal-400 text-black font-mono font-bold text-xs uppercase tracking-widest hover:bg-white transition-colors"
-          >
-            <span>Talk to a Thermal Specialist</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+          {/* 03 Thermal assemblies */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">03</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Category
+              </span>
+            </div>
+            <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-slate-950 uppercase tracking-tight mb-4 flex items-center gap-3">
+                  <Layers className="w-6 h-6 text-sky-600" />
+                  Thermal assemblies
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed mb-6 font-normal">
+                  Integrated assemblies that connect engineering, machining, joining, interfaces and verification into a single turnkey solution.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    href="/products/busbar"
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 hover:border-slate-400 text-slate-800 text-xs font-mono uppercase tracking-wider rounded-sm transition-colors bg-white"
+                  >
+                    <span>Laminated Busbars</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                  <Link
+                    href="/products/heat-pipes"
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 hover:border-slate-400 text-slate-800 text-xs font-mono uppercase tracking-wider rounded-sm transition-colors bg-white"
+                  >
+                    <span>Embedded Heat Pipes</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="relative aspect-[4/3] bg-white rounded-xl border border-slate-200 p-6 flex items-center justify-center shadow-xs">
+                <Image
+                  src="/images/manufacturing/precision-manufacturing.png"
+                  alt="Thermal assemblies"
+                  width={380}
+                  height={280}
+                  className="object-contain max-h-[220px]"
+                />
+              </div>
+            </div>
+          </article>
         </div>
       </section>
+
+      {/* Inline CTA */}
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-12">
+        <SubpageCta
+          eyebrow="Have an application to discuss?"
+          title="Let's engineer the solution."
+          description="Connect directly with our thermal and mechanical engineering team in Guelph, Ontario to model your CAD envelope and optimize your cooling performance."
+          primaryCtaText="Talk to a thermal engineer"
+          primaryCtaHref="/contact"
+        />
+      </div>
     </main>
   );
 }

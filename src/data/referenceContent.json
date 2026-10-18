@@ -1,0 +1,981 @@
+{
+  "/": {
+    "url": "/",
+    "title": "Innovative Thermal Solutions | Advanced Thermal Management",
+    "description": "Advanced liquid cold plates, heat sinks, friction stir welding and precision manufacturing for demanding power electronics in Guelph, Ontario.",
+    "sections": [
+      {
+        "class": [
+          "cinematic-story"
+        ],
+        "articles": [],
+        "eyebrow": "01 Innovative Thermal Solutions",
+        "heading": "Keeping power cool.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "product-family"
+        ],
+        "articles": [],
+        "eyebrow": "07 Product family",
+        "heading": "Cooling hardware, engineered as a system.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "industries-story"
+        ],
+        "articles": [
+          {
+            "number": "Managing concentrated heat loads in compact power-conversion architectures.",
+            "title": "Power Electronics",
+            "paragraphs": [
+              "01 / 06"
+            ],
+            "lists": []
+          },
+          {
+            "number": "Thermal control for power conversion, charging and energy-storage hardware.",
+            "title": "EV & Battery Systems",
+            "paragraphs": [
+              "02 / 06"
+            ],
+            "lists": []
+          },
+          {
+            "number": "Cooling hardware for renewable-energy conversion and storage systems.",
+            "title": "Clean Energy",
+            "paragraphs": [
+              "03 / 06"
+            ],
+            "lists": []
+          },
+          {
+            "number": "Engineered thermal hardware for space-constrained, demanding environments.",
+            "title": "Aerospace & Defence",
+            "paragraphs": [
+              "04 / 06"
+            ],
+            "lists": []
+          },
+          {
+            "number": "Heat spreading and rejection for RF and communications electronics.",
+            "title": "Satellite Communications",
+            "paragraphs": [
+              "05 / 06"
+            ],
+            "lists": []
+          },
+          {
+            "number": "Reliable thermal management for drives, controls and factory power systems.",
+            "title": "Industrial Automation",
+            "paragraphs": [
+              "06 / 06"
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": "08 Applications",
+        "heading": "Where heat becomes critical.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "engineering-proof"
+        ],
+        "articles": [],
+        "eyebrow": "09 Engineering proof",
+        "heading": "From thermal model to finished hardware.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "metrics-band"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": null,
+        "paragraphs": [
+          "Technical parameters are confirmed for each application. No assumptions. No catalogue constraints."
+        ]
+      },
+      {
+        "class": [
+          "manufacturing-story"
+        ],
+        "articles": [],
+        "eyebrow": "10 Real manufacturing",
+        "heading": "Designed. Built. Tested. Here.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "final-cta"
+        ],
+        "articles": [],
+        "eyebrow": "11 Start a conversation",
+        "heading": "Have a thermal challenge?",
+        "paragraphs": [
+          "11 Start a conversation",
+          "Let's engineer the solution."
+        ]
+      }
+    ]
+  },
+  "/technologies": {
+    "url": "/technologies",
+    "title": "Thermal architecture starts with the application. | ITS Cooling",
+    "description": "ITS develops air-cooled and liquid-cooled solutions around heat load, geometry, operating environment and manufacturing requirements.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Cooling technologies",
+        "heading": "Thermal architecture starts with the application.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "Liquid cooling",
+            "paragraphs": [
+              "Custom cold plates bring coolant close to concentrated heat sources. Flow paths, interfaces, fittings and joining strategy are considered together."
+            ],
+            "lists": [
+              [
+                "Pressed-in tube cold plates",
+                "Machined-channel cold plates",
+                "Application-specific flow routing"
+              ]
+            ]
+          },
+          {
+            "number": "02",
+            "title": "Air cooling",
+            "paragraphs": [
+              "Passive and forced-air solutions balance surface area, pressure drop, thermal spreading, size and manufacturability."
+            ],
+            "lists": [
+              [
+                "Extruded and bonded-fin heat sinks",
+                "Skived-fin and copper heat sinks",
+                "Embedded heat-pipe solutions"
+              ]
+            ]
+          },
+          {
+            "number": "03",
+            "title": "Engineering collaboration",
+            "paragraphs": [
+              "The process begins with the thermal challenge\u2014not a preselected product. Requirements are translated into a manufacturable architecture and verified against the agreed project plan."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "Liquid cooling",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/technologies/liquid-cooling": {
+    "url": "/technologies/liquid-cooling",
+    "title": "Liquid cooling for high-power electronics. | ITS Cooling",
+    "description": "Precision-engineered cold plates for power conversion, battery systems, RF generators and other demanding electronic applications.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Liquid cooling",
+        "heading": "Liquid cooling for high-power electronics.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "The cooling challenge",
+            "paragraphs": [
+              "Liquid cooling moves heat from a component into a controlled fluid circuit when air cooling alone cannot meet the thermal requirement."
+            ],
+            "lists": []
+          },
+          {
+            "number": "02",
+            "title": "Cold plate architecture",
+            "paragraphs": [
+              "ITS develops pressed-in tube and machined-channel cold plates. The selection depends on performance, cost, size, flow routing and manufacturing needs."
+            ],
+            "lists": [
+              [
+                "Pressed-in tube architecture",
+                "Hypercool machined flow paths",
+                "Custom overall geometry and mounting features"
+              ]
+            ]
+          },
+          {
+            "number": "03",
+            "title": "Performance considerations",
+            "paragraphs": [
+              "Design inputs commonly include heat load, component map, allowable temperatures, coolant, flow rate, pressure-drop target, inlet temperature and space constraints."
+            ],
+            "lists": []
+          },
+          {
+            "number": "04",
+            "title": "Materials and interfaces",
+            "paragraphs": [
+              "Common materials listed by ITS include Al-6061, Al-6063, Al-6360 and Cu-110. Connector type, tube diameter, surface requirements and joining method are confirmed for the application."
+            ],
+            "lists": []
+          },
+          {
+            "number": "05",
+            "title": "Manufactured around the thermal design",
+            "paragraphs": [
+              "CNC machining, friction stir welding, assembly and verification are integrated so the finished hardware reflects the intended thermal architecture."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "The cooling challenge",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/technologies/air-cooling": {
+    "url": "/technologies/air-cooling",
+    "title": "Purpose-built heat sinks for reliable heat rejection. | ITS Cooling",
+    "description": "Passive and forced-air heat sinks engineered for power electronics, industrial equipment and advanced electronic systems.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Air cooling",
+        "heading": "Purpose-built heat sinks for reliable heat rejection.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "Air cooling architecture",
+            "paragraphs": [
+              "Fin geometry, base thickness, airflow, spreading resistance and mechanical integration are balanced around the operating envelope."
+            ],
+            "lists": []
+          },
+          {
+            "number": "02",
+            "title": "Available approaches",
+            "paragraphs": [
+              "ITS lists several air-cooled solution families for different thermal, size and production needs."
+            ],
+            "lists": [
+              [
+                "Extruded heat sinks",
+                "Bonded-fin heat sinks",
+                "Copper heat sinks",
+                "Skived-fin heat sinks",
+                "Embedded heat-pipe solutions"
+              ]
+            ]
+          },
+          {
+            "number": "03",
+            "title": "Common material references",
+            "paragraphs": [
+              "Material data sheets referenced by ITS include Al-1100, Al-6061, Al-6063, Al-6360 and Cu-110. Final selection is application-specific."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "Air cooling architecture",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/products": {
+    "url": "/products",
+    "title": "Cooling hardware built around the heat source. | ITS Cooling",
+    "description": "ITS designs and manufactures liquid cold plates, air-cooled heat sinks and integrated thermal assemblies.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Thermal products",
+        "heading": "Cooling hardware built around the heat source.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "Liquid cold plates",
+            "paragraphs": [
+              "Pressed-in tube and machined-channel architectures for high thermal loads and application-specific packaging."
+            ],
+            "lists": []
+          },
+          {
+            "number": "02",
+            "title": "Air-cooled heat sinks",
+            "paragraphs": [
+              "Extruded, bonded-fin, copper, skived-fin and heat-pipe solutions for passive and forced-air systems."
+            ],
+            "lists": []
+          },
+          {
+            "number": "03",
+            "title": "Thermal assemblies",
+            "paragraphs": [
+              "Integrated assemblies that connect engineering, machining, joining, interfaces and verification."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "Liquid cold plates",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/products/cold-plates": {
+    "url": "/products/cold-plates",
+    "title": "Custom liquid cold plates. | ITS Cooling",
+    "description": "Cold plates engineered for power electronics, power conversion, batteries and other concentrated thermal loads.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Product family",
+        "heading": "Custom liquid cold plates.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "Design options",
+            "paragraphs": [
+              "The appropriate architecture is selected from the application inputs rather than a fixed catalogue."
+            ],
+            "lists": [
+              [
+                "Pressed-in tube channels",
+                "Machined internal channels",
+                "Custom fitting and mounting geometry",
+                "Aluminium and copper material options"
+              ]
+            ]
+          },
+          {
+            "number": "02",
+            "title": "Engineering inputs",
+            "paragraphs": [
+              "Useful project inputs include heat-source locations, power dissipation, temperature limits, available envelope, coolant conditions, flow limits, pressure limits and expected production volume."
+            ],
+            "lists": []
+          },
+          {
+            "number": "03",
+            "title": "Manufacturing methods",
+            "paragraphs": [
+              "Depending on the selected architecture, routes can include CNC machining, tube integration, friction stir welding, assembly, inspection and leak verification."
+            ],
+            "lists": []
+          },
+          {
+            "number": "04",
+            "title": "Technical documents",
+            "paragraphs": [
+              "Application-specific drawings, models and verification documents are supplied through the project process. Public ratings are intentionally not invented."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "Design options",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/products/heat-sinks": {
+    "url": "/products/heat-sinks",
+    "title": "Custom air-cooled heat sinks. | ITS Cooling",
+    "description": "Engineered passive and forced-air solutions for electronics that demand effective, reliable heat rejection.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Product family",
+        "heading": "Custom air-cooled heat sinks.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "Product approaches",
+            "paragraphs": [
+              "ITS supports multiple construction methods to balance thermal performance, size, weight and cost."
+            ],
+            "lists": [
+              [
+                "Extruded",
+                "Bonded fin",
+                "Copper",
+                "Skived fin",
+                "Embedded heat pipe"
+              ]
+            ]
+          },
+          {
+            "number": "02",
+            "title": "Design considerations",
+            "paragraphs": [
+              "Airflow, fin spacing, orientation, available pressure, base spreading, mounting and interface requirements are evaluated together."
+            ],
+            "lists": []
+          },
+          {
+            "number": "03",
+            "title": "Materials",
+            "paragraphs": [
+              "Common references include aluminium grades and Cu-110. Material selection is confirmed from thermal, structural and manufacturing requirements."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "Product approaches",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/capabilities/friction-stir-welding": {
+    "url": "/capabilities/friction-stir-welding",
+    "title": "Friction stir welding for demanding cold plates. | ITS Cooling",
+    "description": "A solid-state joining process used to seal complex aluminium thermal assemblies without melting the base material.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Manufacturing capability",
+        "heading": "Friction stir welding for demanding cold plates.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "How the process works",
+            "paragraphs": [
+              "A rotating non-consumable tool engages the joint, generates frictional heat and moves plasticized material along the seam while the material remains below its melting point."
+            ],
+            "lists": []
+          },
+          {
+            "number": "02",
+            "title": "Why it matters for cold plates",
+            "paragraphs": [
+              "Machined internal channels must be closed with a controlled, repeatable joint. FSW supports high-integrity seams while limiting the distortion associated with fusion welding."
+            ],
+            "lists": []
+          },
+          {
+            "number": "03",
+            "title": "Integrated manufacturing",
+            "paragraphs": [
+              "Channel machining, weld planning, tooling, finishing and verification are coordinated as one manufacturing route."
+            ],
+            "lists": []
+          },
+          {
+            "number": "04",
+            "title": "Quality",
+            "paragraphs": [
+              "Joint and leak-verification requirements are established from the drawing, application and project quality plan. Ratings are not assumed or published without project data."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "How the process works",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/capabilities/cnc-machining": {
+    "url": "/capabilities/cnc-machining",
+    "title": "Precision machining that enables thermal performance. | ITS Cooling",
+    "description": "CNC machining supports complex flow paths, thermal interfaces, fittings, mounting features and repeatable cold-plate production.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Manufacturing capability",
+        "heading": "Precision machining that enables thermal performance.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "Geometry with a purpose",
+            "paragraphs": [
+              "Machining is used to create the internal and external geometry required by the thermal design\u2014not as a standalone capability story."
+            ],
+            "lists": []
+          },
+          {
+            "number": "02",
+            "title": "Integrated route",
+            "paragraphs": [
+              "Machining strategy is coordinated with friction stir welding, assembly, inspection and downstream finishing so critical features remain controlled."
+            ],
+            "lists": []
+          },
+          {
+            "number": "03",
+            "title": "Production confidence",
+            "paragraphs": [
+              "Workholding, in-process controls and documented inspection support repeatable hardware from prototype through managed production."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "Geometry with a purpose",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/industries": {
+    "url": "/industries",
+    "title": "Thermal solutions for systems where heat is critical. | ITS Cooling",
+    "description": "ITS serves power electronics, EV and battery systems, clean energy, aerospace and defence, satellite communications and industrial automation.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Industries",
+        "heading": "Thermal solutions for systems where heat is critical.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "Power electronics",
+            "paragraphs": [
+              "Cooling for compact power-conversion architectures and concentrated semiconductor heat loads."
+            ],
+            "lists": []
+          },
+          {
+            "number": "02",
+            "title": "EV, battery and clean energy",
+            "paragraphs": [
+              "Thermal hardware for charging, energy storage, inverters and renewable-energy conversion systems."
+            ],
+            "lists": []
+          },
+          {
+            "number": "03",
+            "title": "Aerospace, defence and communications",
+            "paragraphs": [
+              "Application-specific cooling where packaging, reliability and engineering collaboration are central."
+            ],
+            "lists": []
+          },
+          {
+            "number": "04",
+            "title": "Industrial automation",
+            "paragraphs": [
+              "Heat sinks and cold plates for drives, controls, RF hardware and industrial power equipment."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "Power electronics",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/quality": {
+    "url": "/quality",
+    "title": "Controlled improvement. Customer focus. Engineering discipline. | ITS Cooling",
+    "description": "ITS operates under an ISO 9001:2015 certified Quality Management System.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Quality commitment",
+        "heading": "Controlled improvement. Customer focus. Engineering discipline.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "Customer focus",
+            "paragraphs": [
+              "Understand customer needs and design thermal-management products to meet or exceed agreed requirements."
+            ],
+            "lists": []
+          },
+          {
+            "number": "02",
+            "title": "Continuous improvement",
+            "paragraphs": [
+              "Seek opportunities to improve products, manufacturing methods, resources and operational effectiveness."
+            ],
+            "lists": []
+          },
+          {
+            "number": "03",
+            "title": "Controlled manufacturing",
+            "paragraphs": [
+              "Use defined processes, inspection and project-specific verification to support consistent, reliable thermal hardware."
+            ],
+            "lists": []
+          },
+          {
+            "number": "04",
+            "title": "Quality system",
+            "paragraphs": [
+              "The current ITS website identifies the company as ISO 9001:2015 certified and notes internal auditor training in ISO 9001:2015 and ISO 19011:2018."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "Customer focus",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/resources": {
+    "url": "/resources",
+    "title": "Technical thinking for real thermal challenges. | ITS Cooling",
+    "description": "Explore application examples and engineering perspectives from Innovative Thermal Solutions.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Resources",
+        "heading": "Technical thinking for real thermal challenges.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "300 kW IGBT inverter thermal management",
+            "paragraphs": [
+              "A technical paper highlighted by ITS examines holistic thermal system design, testing and modelling for a 300 kW IGBT-based inverter."
+            ],
+            "lists": []
+          },
+          {
+            "number": "02",
+            "title": "Power conversion system cold plate",
+            "paragraphs": [
+              "A case study addresses a liquid cold plate for a power conversion system used in energy storage."
+            ],
+            "lists": []
+          },
+          {
+            "number": "03",
+            "title": "High-power RF amplifier",
+            "paragraphs": [
+              "An air-cooled heat-sink case study explores the thermal requirements of high-power RF hardware."
+            ],
+            "lists": []
+          },
+          {
+            "number": "04",
+            "title": "Power quality equipment",
+            "paragraphs": [
+              "An application story covers an air-cooled solution developed for power-quality equipment."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "300 kW IGBT inverter thermal management",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/about": {
+    "url": "/about",
+    "title": "Thermal engineering backed by in-house manufacturing. | ITS Cooling",
+    "description": "Innovative Thermal Solutions is a turnkey engineering and manufacturing firm serving North America from Guelph, Ontario, Canada.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS About ITS",
+        "heading": "Thermal engineering backed by in-house manufacturing.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "detail-content"
+        ],
+        "articles": [
+          {
+            "number": "01",
+            "title": "A collaborative engineering company",
+            "paragraphs": [
+              "ITS works with customers to understand the thermal challenge, develop the right architecture and carry the design into controlled manufacturing."
+            ],
+            "lists": []
+          },
+          {
+            "number": "02",
+            "title": "Experience",
+            "paragraphs": [
+              "The current ITS website states that its engineering team brings more than 75 years of combined thermal-management experience."
+            ],
+            "lists": []
+          },
+          {
+            "number": "03",
+            "title": "Manufacturing in Ontario",
+            "paragraphs": [
+              "CNC machining and friction stir welding are operated from the ITS manufacturing facility in Guelph. For high-volume, cost-effective production, ITS also works with trusted manufacturing partners in Asia."
+            ],
+            "lists": []
+          }
+        ],
+        "eyebrow": null,
+        "heading": "A collaborative engineering company",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "inline-cta"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": "Let's engineer the solution.",
+        "paragraphs": [
+          "Have an application to discuss?"
+        ]
+      }
+    ]
+  },
+  "/contact": {
+    "url": "/contact",
+    "title": "Bring us the thermal challenge. | ITS Cooling",
+    "description": "Share your application, operating conditions and project stage. The ITS team will help frame the next engineering step.",
+    "sections": [
+      {
+        "class": [
+          "detail-hero"
+        ],
+        "articles": [],
+        "eyebrow": "ITS Talk to a thermal engineer",
+        "heading": "Bring us the thermal challenge.",
+        "paragraphs": []
+      },
+      {
+        "class": [
+          "contact-section"
+        ],
+        "articles": [],
+        "eyebrow": null,
+        "heading": null,
+        "paragraphs": [],
+        "contact_info": "Name\nCompany\nEmail\nPhone\nOptional\nApplication\nSelect application\nPower electronics\nEV & battery systems\nClean energy\nAerospace & defence\nSatellite communications\nIndustrial automation\nOther\nProject stage\nSelect stage\nConcept / feasibility\nDesign development\nPrototype\nProduction\nThermal challenge\nSupporting file\nOptional \u00b7 PDF, STEP, drawing or specification \u00b7 5 MB max\nWebsite\nSend engineering request\n\u2192\nPrefer to speak directly?\n+1 (519) 763-4454\n290 Southgate Drive, Unit #2, Guelph, ON N1G 4P5, Canada\nEngineering and manufacturing in Guelph, Ontario."
+      }
+    ]
+  }
+}

@@ -1,300 +1,182 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ShieldCheck, CheckCircle2, Award, Globe, Users, Sparkles, Building } from "lucide-react";
-import { COMPANY_INFO, MILESTONES } from "@/data/companyContent";
+import Link from "next/link";
+import { ArrowRight, Check, ShieldCheck, Users, MapPin, Award, Building2 } from "lucide-react";
+import { COMPANY_INFO } from "@/data/companyContent";
+import { SubpageCta } from "@/components/common/SubpageCta";
 
 export const metadata = {
-  title: "About Us | Company Journey & Mission",
-  description: "Learn about Innovative Thermal Solutions Inc. Our history from 2020 to 2026, 50 years of combined engineering experience, ISO 9001 certification, and our mission.",
+  title: "Thermal engineering backed by in-house manufacturing. | ITS Cooling",
+  description:
+    "ITS works with customers to understand the thermal challenge, develop the right architecture and carry the design into controlled manufacturing.",
 };
 
 export default function AboutPage() {
   return (
-    <main className="relative w-full min-h-screen bg-black overflow-hidden pt-32 pb-28">
-      {/* Background glow */}
-      <div className="absolute top-20 right-1/4 w-[800px] h-[500px] bg-teal-500/10 rounded-full blur-[150px] pointer-events-none" />
-
-      {/* Header */}
-      <section className="px-6 lg:px-12 mb-24 max-w-7xl mx-auto relative z-10">
-        <div className="flex items-center gap-3 mb-6">
-          <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-          <span className="text-teal-400 font-mono text-xs tracking-[0.25em] uppercase">
-            Slide 1–3 • Company Profile & Story
-          </span>
-        </div>
-
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tighter text-white mb-8 max-w-5xl">
-          INNOVATIVE THERMAL <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-white to-gray-400">
-            SOLUTIONS INC.
-          </span>
-        </h1>
-
-        <p className="text-lg md:text-xl text-gray-300 font-light max-w-3xl border-l-2 border-teal-400/50 pl-6 py-2 mb-12">
-          Founded in 2020 with a single vision: deliver innovative thermal solutions through designing, manufacturing, and testing quality heat sink products on time for the global electronics industries.
-        </p>
-
-        {/* Vision & Mission Cards (Slide 2) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-[#020617] border border-white/10 p-8 lg:p-10 relative group hover:border-teal-500/40 transition-colors">
-            <span className="text-xs font-mono text-teal-400 uppercase tracking-widest block mb-4">
-              Slide 2 • Corporate Vision
-            </span>
-            <h2 className="text-2xl font-bold text-white mb-4">Our Vision</h2>
-            <p className="text-lg text-gray-300 font-light leading-relaxed">
-              "{COMPANY_INFO.vision}"
-            </p>
-          </div>
-
-          <div className="bg-[#020617] border border-white/10 p-8 lg:p-10 relative group hover:border-teal-500/40 transition-colors">
-            <span className="text-xs font-mono text-teal-400 uppercase tracking-widest block mb-4">
-              Slide 2 • Corporate Mission
-            </span>
-            <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
-            <p className="text-lg text-gray-300 font-light leading-relaxed">
-              "{COMPANY_INFO.mission}"
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CEO Statement & Credentials (Slide 45) */}
-      <section className="px-6 lg:px-12 mb-28 max-w-7xl mx-auto relative z-10">
-        <div className="bg-gradient-to-br from-[#0F172A] to-[#020617] border border-white/15 p-8 lg:p-14 relative overflow-hidden shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-4 flex flex-col items-center lg:items-start">
-              <div className="w-full max-w-sm aspect-[4/5] bg-black border border-white/20 relative overflow-hidden group shadow-xl">
-                <Image
-                  src="/images/assets/founder/DSC00309 (1).JPG"
-                  alt="Ahmed Zaghlol, PhD, PEng"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 35vw"
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <span className="text-xs font-mono text-teal-400 uppercase block mb-1">Founder & CEO</span>
-                  <h4 className="text-xl font-bold text-white">Ahmed Zaghlol, Ph.D., P.Eng.</h4>
-                </div>
-              </div>
-
-              <div className="w-full max-w-sm mt-4 grid grid-cols-2 gap-3 text-xs font-mono">
-                <div className="bg-black/50 border border-white/10 p-3 text-center">
-                  <span className="text-teal-400 font-bold block text-base">26</span>
-                  <span className="text-gray-400 text-[10px] uppercase">Years In Industry</span>
-                </div>
-                <div className="bg-black/50 border border-white/10 p-3 text-center">
-                  <span className="text-teal-400 font-bold block text-base">2</span>
-                  <span className="text-gray-400 text-[10px] uppercase">Thermal Patents</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-8">
-              <span className="text-xs font-mono text-teal-400 uppercase tracking-widest block mb-4">
-                Slide 45 • Leadership Statement
+    <main id="main-content" className="w-full min-h-screen bg-slate-50 pt-28 pb-20">
+      {/* Detail Hero */}
+      <section className="relative w-full bg-gradient-to-br from-white via-slate-50 to-sky-50 border-b border-slate-200 py-16 lg:py-24 px-6 lg:px-12 overflow-hidden">
+        <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
+        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+          <div className="lg:col-span-7">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="font-mono text-xs font-bold text-sky-600 px-2 py-0.5 bg-white border border-slate-200 rounded-sm">
+                ITS
               </span>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
-                "Turnkey Engineering & Manufacturing Supplier Delivering On Time."
-              </h3>
-              
-              <blockquote className="text-gray-300 font-light text-base lg:text-lg italic leading-relaxed mb-8 border-l-2 border-teal-400 pl-6 py-1">
-                "{COMPANY_INFO.ceoQuote}"
-              </blockquote>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm font-light text-gray-300">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
-                  <span>Combined 50+ years of engineering experience across our technical staff.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-teal-400 shrink-0 mt-0.5" />
-                  <span>Experts in designing experiments to test and evaluate thermal prototypes.</span>
-                </div>
-              </div>
+              <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
+                About Innovative Thermal Solutions
+              </span>
             </div>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
+              Thermal engineering backed by in-house manufacturing.
+            </h1>
+            <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
+              ITS works with customers to understand the thermal challenge, develop the right architecture and carry the design into controlled manufacturing.
+            </p>
+          </div>
+
+          <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white flex items-center justify-center p-6">
+            <Image
+              src="/images/manufacturing/precision-manufacturing.png"
+              alt="Inside ITS Manufacturing Facility"
+              width={480}
+              height={360}
+              priority
+              className="object-contain max-h-[300px] drop-shadow-md"
+            />
           </div>
         </div>
       </section>
 
-      {/* Core Values (Slide 3) */}
-      <section className="px-6 lg:px-12 mb-28 max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-          <div>
-            <span className="text-teal-400 font-mono text-xs uppercase tracking-widest block mb-2">
-              Slide 3 • Cultural Pillars
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-              OUR GUIDING VALUES.
-            </h2>
-          </div>
-          <p className="text-sm font-mono text-gray-400 max-w-md">
-            Our commitments to our team members, global clients, local communities, and engineering excellence.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {COMPANY_INFO.values.map((val, idx) => (
-            <div
-              key={val.title}
-              className="bg-[#020617] border border-white/10 p-8 hover:border-teal-500/50 hover:bg-[#070D18] transition-all duration-300 flex flex-col justify-between"
-            >
+      {/* Detail Content Articles */}
+      <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20">
+        <div className="divide-y divide-slate-200 mb-20">
+          {/* 01 A collaborative engineering company */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">01</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Philosophy
+              </span>
+            </div>
+            <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <span className="text-teal-400 font-mono text-xs mb-4 block">0{idx + 1}</span>
-                <h3 className="text-xl font-bold text-white mb-4 tracking-tight">{val.title}</h3>
-                <p className="text-sm text-gray-400 font-light leading-relaxed">{val.description}</p>
+                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-4">
+                  A collaborative engineering company
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed font-normal mb-6">
+                  ITS works with customers to understand the thermal challenge, develop the right architecture and carry the design into controlled manufacturing.
+                </p>
+                <div className="p-4 bg-slate-100 rounded-lg border-l-4 border-sky-600 italic text-slate-700 text-sm">
+                  &ldquo;{COMPANY_INFO.ceoQuote}&rdquo;
+                  <span className="block mt-2 font-mono text-xs font-bold text-slate-900 not-italic">
+                    — Dr. Ahmed Zaghlol, Founder &amp; CEO
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Comprehensive Company Milestones 2020–2026 (Slide 43) */}
-      <section className="px-6 lg:px-12 mb-28 max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-          <div>
-            <span className="text-teal-400 font-mono text-xs uppercase tracking-widest block mb-2">
-              Slide 43 • Company Milestones
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-              OUR JOURNEY: 2020 TO TODAY.
-            </h2>
-          </div>
-          <p className="text-sm font-mono text-gray-400 max-w-md">
-            From our founding workshop to our expanding 6,000 sq ft manufacturing facility in Guelph with a team of 27.
-          </p>
-        </div>
-
-        <div className="relative border-l border-white/20 pl-8 lg:pl-16 space-y-16 ml-4">
-          {MILESTONES.map((ms) => (
-            <div key={ms.year} className="relative group">
-              {/* Timeline Indicator Dot */}
-              <div className="absolute -left-[41px] lg:-left-[73px] top-1.5 w-6 h-6 rounded-full bg-black border-2 border-teal-400 flex items-center justify-center group-hover:scale-125 transition-transform shadow-lg shadow-teal-400/20">
-                <div className="w-2 h-2 rounded-full bg-teal-400" />
-              </div>
-
-              <div className="bg-[#020617] border border-white/10 p-8 lg:p-10 group-hover:border-teal-500/40 group-hover:bg-[#070D18] transition-all">
-                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-                  <div className="flex items-center gap-4">
-                    <span className="text-2xl md:text-4xl font-bold font-mono text-teal-400">
-                      {ms.year}
-                    </span>
-                    <span className="text-xs font-mono uppercase tracking-widest px-3 py-1 bg-white/5 border border-white/10 text-gray-300">
-                      Milestone {ms.step}
-                    </span>
+              <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-3">
+                <span className="text-xs uppercase font-mono tracking-wider text-slate-400 block font-semibold">
+                  Core Values
+                </span>
+                {COMPANY_INFO.values.map((v) => (
+                  <div key={v.title} className="text-xs font-mono">
+                    <strong className="text-slate-900 block">{v.title}</strong>
+                    <span className="text-slate-500 leading-normal">{v.description}</span>
                   </div>
+                ))}
+              </div>
+            </div>
+          </article>
 
-                  {ms.facilitySize && (
-                    <span className="text-xs font-mono text-gray-400 bg-black/60 px-3 py-1 border border-white/10">
-                      {ms.facilitySize}
-                    </span>
-                  )}
+          {/* 02 Experience */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">02</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Heritage
+              </span>
+            </div>
+            <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-4">
+                  Experience
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed font-normal mb-6">
+                  The current ITS website states that its engineering team brings more than 75 years of combined thermal-management experience.
+                </p>
+                <Link
+                  href="/team"
+                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-bold text-sky-600 hover:text-sky-800"
+                >
+                  <span>Meet Our Engineering Specialists</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                  <span className="block font-mono text-3xl font-bold text-slate-950">75+</span>
+                  <span className="text-xs font-mono uppercase text-slate-500">Years Combined Exp</span>
                 </div>
-
-                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                  {ms.title}
-                </h3>
-
-                <p className="text-base text-gray-300 font-light leading-relaxed mb-6">
-                  {ms.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-white/10">
-                  {ms.highlights.map((hl) => (
-                    <span
-                      key={hl}
-                      className="text-xs font-mono text-gray-300 bg-white/5 px-3 py-1 border border-white/10 flex items-center gap-1.5"
-                    >
-                      <CheckCircle2 className="w-3 h-3 text-teal-400" />
-                      <span>{hl}</span>
-                    </span>
-                  ))}
+                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                  <span className="block font-mono text-3xl font-bold text-sky-600">26</span>
+                  <span className="text-xs font-mono uppercase text-slate-500">CEO Thermal Exp</span>
+                </div>
+                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                  <span className="block font-mono text-3xl font-bold text-slate-950">2</span>
+                  <span className="text-xs font-mono uppercase text-slate-500">Registered Patents</span>
+                </div>
+                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
+                  <span className="block font-mono text-3xl font-bold text-sky-600">27+</span>
+                  <span className="text-xs font-mono uppercase text-slate-500">Engineering Team</span>
                 </div>
               </div>
             </div>
-          ))}
+          </article>
+
+          {/* 03 Manufacturing in Ontario */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">03</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Facilities
+              </span>
+            </div>
+            <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-4">
+                  Manufacturing in Ontario
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed font-normal mb-6">
+                  CNC machining and friction stir welding are operated from the ITS manufacturing facility in Guelph. For high-volume, cost-effective production, ITS also works with trusted manufacturing partners in Asia.
+                </p>
+                <Link
+                  href="/facility"
+                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-bold text-sky-600 hover:text-sky-800"
+                >
+                  <span>Tour the 6,000 sq ft Guelph Plant</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+              <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-3 text-xs font-mono text-slate-700">
+                <div className="flex items-center gap-2 text-slate-900 font-bold mb-2">
+                  <MapPin className="w-4 h-4 text-sky-600" />
+                  <span>290 Southgate Drive, Unit #2, Guelph, ON</span>
+                </div>
+                <p className="text-slate-500 leading-normal">
+                  Strategically situated in Ontario&#39;s advanced manufacturing corridor, offering same-day prototype reviews and resilient North American supply chain security.
+                </p>
+              </div>
+            </div>
+          </article>
         </div>
-      </section>
 
-      {/* Ongoing & Future Planning (Slide 44) */}
-      <section className="px-6 lg:px-12 max-w-7xl mx-auto relative z-10">
-        <div className="bg-[#020617] border border-white/15 p-10 lg:p-14">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
-            <div>
-              <span className="text-teal-400 font-mono text-xs uppercase tracking-widest block mb-2">
-                Slide 44 • Ongoing & Future Planning
-              </span>
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
-                CERTIFICATIONS & GLOBAL GROWTH.
-              </h2>
-            </div>
-            <p className="text-sm font-mono text-gray-400 max-w-md">
-              Committed to aerospace grade quality management, defense compliance, and expanding international service hubs.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* 01: ISO */}
-            <div className="bg-black/60 border border-teal-500/40 p-6 flex flex-col justify-between">
-              <div>
-                <span className="text-teal-400 font-mono text-xs block mb-2">01 / CURRENT STATUS</span>
-                <h4 className="text-xl font-bold text-white mb-2">ISO 9001:2015</h4>
-                <p className="text-xs text-gray-400 leading-relaxed mb-4">
-                  Certified January 17, 2021. Complete QMS auditing, strict incoming inspection, and full production traceability.
-                </p>
-              </div>
-              <span className="inline-flex items-center gap-2 text-xs font-mono text-teal-400 font-semibold">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Certified & Active</span>
-              </span>
-            </div>
-
-            {/* 02: AS9100 */}
-            <div className="bg-black/60 border border-white/10 p-6 flex flex-col justify-between">
-              <div>
-                <span className="text-amber-400 font-mono text-xs block mb-2">02 / AEROSPACE QUALITY</span>
-                <h4 className="text-xl font-bold text-white mb-2">AS9100 Certification</h4>
-                <p className="text-xs text-gray-400 leading-relaxed mb-4">
-                  Aerospace Quality Management standard implementation in progress to support flight-critical defense and avionics hardware.
-                </p>
-              </div>
-              <span className="inline-flex items-center gap-2 text-xs font-mono text-amber-400 font-semibold">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-ping" />
-                <span>In Progress</span>
-              </span>
-            </div>
-
-            {/* 03: CGP / ITAR */}
-            <div className="bg-black/60 border border-white/10 p-6 flex flex-col justify-between">
-              <div>
-                <span className="text-blue-400 font-mono text-xs block mb-2">03 / DEFENSE COMPLIANCE</span>
-                <h4 className="text-xl font-bold text-white mb-2">CGP & ITAR Equivalent</h4>
-                <p className="text-xs text-gray-400 leading-relaxed mb-4">
-                  Canadian Controlled Goods Program (CGP) trained and compliant, meeting ITAR security standards for defense applications.
-                </p>
-              </div>
-              <span className="inline-flex items-center gap-2 text-xs font-mono text-blue-400 font-semibold">
-                <span className="w-2 h-2 rounded-full bg-blue-400" />
-                <span>In Progress</span>
-              </span>
-            </div>
-
-            {/* 04: Expanding Locations */}
-            <div className="bg-black/60 border border-white/10 p-6 flex flex-col justify-between">
-              <div>
-                <span className="text-purple-400 font-mono text-xs block mb-2">04 / GLOBAL EXPANSION</span>
-                <h4 className="text-xl font-bold text-white mb-2">Expanding Locations</h4>
-                <p className="text-xs text-gray-400 leading-relaxed mb-4">
-                  Growing manufacturing capacity and regional client application support hubs to serve customers worldwide.
-                </p>
-              </div>
-              <span className="inline-flex items-center gap-2 text-xs font-mono text-purple-400 font-semibold">
-                <Globe className="w-4 h-4" />
-                <span>Worldwide Reach</span>
-              </span>
-            </div>
-          </div>
-        </div>
+        {/* Inline CTA */}
+        <SubpageCta
+          eyebrow="Have an application to discuss?"
+          title="Let's engineer the solution."
+          description="Connect directly with our thermal and mechanical engineering team in Guelph, Ontario to explore our in-house manufacturing capabilities."
+          primaryCtaText="Talk to a thermal engineer"
+          primaryCtaHref="/contact"
+        />
       </section>
     </main>
   );
