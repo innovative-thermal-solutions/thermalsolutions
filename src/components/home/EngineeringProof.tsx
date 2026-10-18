@@ -75,9 +75,9 @@ export function EngineeringProof() {
         </div>
 
         {/* Proof Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-16">
           {/* Left: Luminous Light Laboratory Flow & Heat Source Visualization */}
-          <div className="lg:col-span-6 relative aspect-[1.25/1] rounded-2xl bg-white border-2 border-slate-200 p-6 sm:p-8 overflow-hidden shadow-md flex flex-col justify-between">
+          <div className="w-full min-w-0 relative rounded-2xl bg-white border-2 border-slate-200 p-6 sm:p-8 overflow-hidden shadow-md flex flex-col justify-between min-h-[460px]">
             {/* Subtle Technical Grid Lines */}
             <div className="absolute inset-0 bg-grid-blueprint opacity-50 pointer-events-none" />
             <div className="absolute top-0 right-0 w-72 h-72 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
@@ -94,7 +94,7 @@ export function EngineeringProof() {
             </div>
 
             {/* Central Animated Fluid Circuit & Thermal Core */}
-            <div className="relative w-full h-full flex items-center justify-center my-4">
+            <div className="relative w-full min-h-[280px] flex items-center justify-center my-4">
               {/* Radiating Heat Core (Active Hotspot) */}
               <div className="absolute top-[32%] left-[42%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
                 {/* Concentric pulsing heat waves */}
@@ -179,7 +179,7 @@ export function EngineeringProof() {
           </div>
 
           {/* Right: Technical Capabilities List */}
-          <div className="lg:col-span-6 flex flex-col justify-between divide-y divide-slate-200 border-t border-slate-200">
+          <div className="w-full min-w-0 flex flex-col justify-between divide-y divide-slate-200 border-t border-slate-200">
             {capabilities.map((item) => (
               <Link
                 key={item.index}
