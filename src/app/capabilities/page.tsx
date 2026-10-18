@@ -66,11 +66,15 @@ export default function CapabilitiesPage() {
               </span>
             </div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
-              Turnkey capabilities from CAD to finished hardware.
+              Custom engineering &amp; manufacturing under one roof.
             </h1>
-            <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
-              Integrated in-house manufacturing under one roof in Guelph, Ontario. CNC routing, Friction Stir Welding, CMM inspection, and precision assembly.
+            <p className="text-slate-700 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal mb-4">
+              We are a one-stop solution for custom thermal management needs. From concept and CFD simulation to CNC machining, Friction Stir Welding, and helium leak testing — all executed in-house in Guelph, Ontario.
             </p>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-sky-100/70 border border-sky-300 rounded-lg text-xs font-mono font-semibold text-sky-900">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Zero Shelf Inventory · 100% Application-Specific Tooling &amp; Parts</span>
+            </div>
           </div>
 
           <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white flex items-center justify-center p-6">

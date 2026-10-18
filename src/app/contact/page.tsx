@@ -34,11 +34,15 @@ export default function ContactPage() {
               </span>
             </div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
-              Bring us the thermal challenge.
+              Bring us your cooling requirements.
             </h1>
-            <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
-              Share your application, operating conditions and project stage. The ITS team will help frame the next engineering step.
+            <p className="text-slate-700 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal mb-4">
+              We don&apos;t sell standard cooling products off shelves. Everything is 100% custom engineered for your specific thermal envelope, flow rate, and packaging constraints.
             </p>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-sky-100/70 border border-sky-300 rounded-lg text-xs font-mono font-semibold text-sky-900">
+              <span className="w-2 h-2 rounded-full bg-sky-600 animate-pulse" />
+              <span>One-Stop Turnkey Partner: Concept to Hardware Under One Roof in Guelph, ON</span>
+            </div>
           </div>
         </div>
       </section>
