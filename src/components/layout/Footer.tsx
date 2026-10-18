@@ -27,7 +27,7 @@ export function Footer() {
             </Link>
 
             <p className="text-slate-600 text-sm max-w-sm mb-6 leading-relaxed font-normal">
-              Advanced liquid cold plates, air-cooled heat sinks, friction stir welding and turnkey precision manufacturing for demanding power electronics in Guelph, Ontario.
+              100% custom-designed and manufactured liquid cold plates and heat sinks. A one-stop turnkey solution from concept to finished hardware under one roof in Guelph, Ontario. No shelf stock.
             </p>
 
             <div className="space-y-2.5 text-xs font-mono text-slate-700">

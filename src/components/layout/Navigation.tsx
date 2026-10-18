@@ -109,7 +109,7 @@ export function Navigation() {
             <span className="text-slate-600">•</span>
             <span className="text-slate-300 font-medium">GUELPH, ONTARIO, CANADA</span>
             <span className="text-slate-600">•</span>
-            <span className="text-slate-400">TURNKEY ADVANCED THERMAL SYSTEMS</span>
+            <span className="text-sky-300 font-bold">100% CUSTOM · ZERO SHELF INVENTORY</span>
           </div>
 
           <div className="flex items-center gap-6">

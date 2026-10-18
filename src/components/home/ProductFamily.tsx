@@ -102,17 +102,17 @@ export function ProductFamily() {
                 07
               </span>
               <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
-                Product Family
+                Custom Platforms
               </span>
             </div>
           </div>
           <div className="lg:col-span-9">
             <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950 uppercase leading-[0.92] mb-4">
-              Cooling Hardware, <br />
-              <span className="text-sky-600 font-bold">Engineered as a Complete System.</span>
+              Custom Cooling Solutions, <br />
+              <span className="text-sky-600 font-bold">Built for Your Specific Application.</span>
             </h2>
             <p className="text-slate-700 text-base sm:text-lg max-w-3xl font-normal leading-relaxed">
-              Every thermal solution is engineered around your specific semiconductor heat footprint, volumetric boundary, and fluid connection requirements — never constrained by catalogue limitations.
+              We do not sell standard products on shelves. Because every customer has different thermal requirements, we work with you to develop and manufacture application-specific hardware — taking care of the entire process from concept to finished product under one roof.
             </p>
           </div>
         </div>

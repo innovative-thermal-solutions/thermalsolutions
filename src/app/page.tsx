@@ -1,4 +1,5 @@
 import { CinematicStory } from "@/components/home/CinematicStory";
+import { CustomPhilosophy } from "@/components/home/CustomPhilosophy";
 import { ThermalSimulator } from "@/components/home/ThermalSimulator";
 import { ProductFamily } from "@/components/home/ProductFamily";
 import { IndustriesStory } from "@/components/home/IndustriesStory";
@@ -7,9 +8,9 @@ import { ManufacturingStory } from "@/components/home/ManufacturingStory";
 import { FinalCta } from "@/components/home/FinalCta";
 
 export const metadata = {
-  title: "Innovative Thermal Solutions | Advanced Thermal Management",
+  title: "Innovative Thermal Solutions | 100% Custom Thermal Management",
   description:
-    "Advanced liquid cold plates, heat sinks, friction stir welding and precision manufacturing for demanding power electronics in Guelph, Ontario.",
+    "We don't sell standard products off shelves. ITS Cooling designs and manufactures custom liquid cold plates and heat sinks from concept to finished hardware under one roof in Guelph, Ontario.",
 };
 
 export default function HomePage() {
@@ -17,6 +18,9 @@ export default function HomePage() {
     <main id="main-content" className="relative w-full min-h-screen bg-white">
       {/* 01-06 Cinematic Story Chapters */}
       <CinematicStory />
+
+      {/* What We Do: 100% Custom Cooling Solutions & Turnkey Workflow */}
+      <CustomPhilosophy />
 
       {/* Interactive Thermal Simulator */}
       <ThermalSimulator />

@@ -23,14 +23,15 @@ export default function AboutPage() {
                 ITS
               </span>
               <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
-                About Innovative Thermal Solutions
+                What We Do At ITS Cooling
               </span>
             </div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
-              Thermal engineering backed by in-house manufacturing.
+              Custom thermal engineering. <br />
+              <span className="text-sky-600">Zero shelf stock.</span>
             </h1>
             <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
-              ITS works with customers to understand the thermal challenge, develop the right architecture and carry the design into controlled manufacturing.
+              ITS Cooling designs and manufactures custom heat sinks and liquid cold plates based on our customers&#39; specific requirements. A one-stop solution from initial concept to finished hardware under one roof.
             </p>
           </div>
 
@@ -50,22 +51,28 @@ export default function AboutPage() {
       {/* Detail Content Articles */}
       <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20">
         <div className="divide-y divide-slate-200 mb-20">
-          {/* 01 A collaborative engineering company */}
+          {/* 01 What We Do at ITS Cooling */}
           <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-2">
               <span className="font-mono text-2xl font-bold text-sky-600">01</span>
               <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
-                Philosophy
+                Identity
               </span>
             </div>
             <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
                 <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-4">
-                  A collaborative engineering company
+                  What We Do at ITS Cooling
                 </h2>
-                <p className="text-slate-600 text-base leading-relaxed font-normal mb-6">
-                  ITS works with customers to understand the thermal challenge, develop the right architecture and carry the design into controlled manufacturing.
+                <p className="text-slate-600 text-base leading-relaxed font-normal mb-4">
+                  We don’t just sell standard cooling products. We work with customers to develop and manufacture cooling solutions that fit their applications.
                 </p>
+                <p className="text-slate-600 text-base leading-relaxed font-normal mb-6">
+                  The main message is simple: <strong>Customers can come to us with their cooling requirements, and we can take care of the entire process, from concept to finished product, all under one roof.</strong>
+                </p>
+                <div className="p-4 bg-sky-50 rounded-lg border border-sky-200 text-slate-800 text-xs font-mono mb-4 leading-relaxed">
+                  <strong>Zero Shelf Inventory:</strong> There is no product on shelves and nobody can purchase it. Everything is custom for a specific application. Simple idea: there will be different thermal requirements for different projects. Hence the new part all the time.
+                </div>
                 <div className="p-4 bg-slate-100 rounded-lg border-l-4 border-sky-600 italic text-slate-700 text-sm">
                   &ldquo;{COMPANY_INFO.ceoQuote}&rdquo;
                   <span className="block mt-2 font-mono text-xs font-bold text-slate-900 not-italic">

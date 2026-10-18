@@ -13,13 +13,13 @@ interface SubpageCtaProps {
 }
 
 export function SubpageCta({
-  eyebrow = "Have an application to discuss?",
-  title = "Let's engineer the solution.",
-  description = "Connect directly with our thermal and mechanical engineering team in Guelph, Ontario to review your CAD envelope, heat flux, and boundary conditions.",
-  primaryCtaText = "Talk to a thermal engineer",
+  eyebrow = "100% Custom Engineering · Zero Shelf Inventory",
+  title = "Bring us your cooling requirements.",
+  description = "We don't sell standard cooling products off shelves. Customers come to us with their thermal requirements, and we take care of the entire process — from concept to finished product under one roof.",
+  primaryCtaText = "Submit Your Requirements",
   primaryCtaHref = "/contact",
-  secondaryCtaText = "Explore technologies",
-  secondaryCtaHref = "/technologies",
+  secondaryCtaText = "Explore Capabilities",
+  secondaryCtaHref = "/capabilities",
 }: SubpageCtaProps) {
   return (
     <section className="w-full my-12">

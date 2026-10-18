@@ -22,14 +22,15 @@ export default function ProductsPage() {
                 ITS
               </span>
               <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
-                Thermal Products
+                Custom Cooling Hardware · No Shelf Inventory
               </span>
             </div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
-              Cooling hardware built around the heat source.
+              Engineered from scratch <br />
+              <span className="text-sky-600">for your heat source.</span>
             </h1>
             <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
-              Liquid cold plates, air-cooled heat sinks and integrated thermal assemblies engineered for demanding power electronics and harsh environments.
+              There is no product on shelves and nobody can purchase pre-made catalogue parts. Because every project has unique thermal requirements, we engineer custom liquid cold plates and heat sinks tailored to your exact application, all under one roof.
             </p>
           </div>
 

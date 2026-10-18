@@ -36,12 +36,12 @@ export function FinalCta() {
           </div>
 
           <h2 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-slate-950 uppercase leading-[0.9] mb-6">
-            Have a Demanding <br />
-            <span className="text-sky-600">Thermal Challenge?</span>
+            Bring Us Your <br />
+            <span className="text-sky-600">Cooling Requirements.</span>
           </h2>
 
           <p className="text-slate-700 text-lg sm:text-xl font-normal leading-relaxed mb-8 max-w-2xl">
-            Let&#39;s engineer the solution. Connect directly with our thermal and mechanical engineering team in Guelph, Ontario to review your CAD envelope, heat flux, and boundary conditions.
+            We don’t sell standard cooling products off shelves. Customers bring their project thermal requirements to us, and we handle the entire process — from initial design and CFD simulation to prototyping and final manufacturing, all under one roof in Guelph, Ontario.
           </p>
 
           <div className="flex flex-wrap items-center gap-4 mb-10">
