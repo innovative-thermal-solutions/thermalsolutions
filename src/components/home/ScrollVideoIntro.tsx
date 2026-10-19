@@ -348,11 +348,55 @@ export function ScrollVideoIntro() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Helper to cleanly stop auto-tour
+  const stopAutoPlay = useCallback(() => {
+    if (autoPlayRafRef.current) {
+      cancelAnimationFrame(autoPlayRafRef.current);
+      autoPlayRafRef.current = null;
+    }
+    setIsAutoPlaying(false);
+    if (audioRef.current && !audioRef.current.paused) {
+      audioRef.current.pause();
+    }
+  }, []);
+
+  // Cancel Auto-Tour immediately on any manual user interaction (wheel, touch, keys)
+  useEffect(() => {
+    const handleUserInterrupt = () => {
+      if (isAutoPlaying) {
+        stopAutoPlay();
+      }
+    };
+
+    window.addEventListener("wheel", handleUserInterrupt, { passive: true });
+    window.addEventListener("touchstart", handleUserInterrupt, { passive: true });
+    window.addEventListener("keydown", (e) => {
+      if (["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Space"].includes(e.code)) {
+        handleUserInterrupt();
+      }
+    });
+
+    return () => {
+      window.removeEventListener("wheel", handleUserInterrupt);
+      window.removeEventListener("touchstart", handleUserInterrupt);
+    };
+  }, [isAutoPlaying, stopAutoPlay]);
+
   // Skip to Hero Section
-  const handleSkipToHero = () => {
+  const handleSkipToHero = useCallback(() => {
+    stopAutoPlay();
+    if (audioRef.current && !audioRef.current.paused) {
+      audioRef.current.pause();
+    }
+
     const heroSection = document.getElementById("story");
     if (heroSection) {
-      heroSection.scrollIntoView({ behavior: "smooth" });
+      const navOffset = 85;
+      const targetTop = heroSection.getBoundingClientRect().top + window.scrollY - navOffset;
+      window.scrollTo({
+        top: Math.max(0, targetTop),
+        behavior: "smooth",
+      });
     } else {
       const container = containerRef.current;
       if (container) {
@@ -362,55 +406,104 @@ export function ScrollVideoIntro() {
         });
       }
     }
-  };
+  }, [stopAutoPlay]);
 
   // Auto Tour Playback
-  const toggleAutoPlay = () => {
+  const toggleAutoPlay = useCallback(() => {
     if (isAutoPlaying) {
-      setIsAutoPlaying(false);
-      if (autoPlayRafRef.current) cancelAnimationFrame(autoPlayRafRef.current);
-    } else {
-      setIsAutoPlaying(true);
-      const container = containerRef.current;
-      if (!container) return;
-
-      const containerTop = container.offsetTop;
-      const scrollRange = container.offsetHeight - window.innerHeight;
-      const startTime = performance.now();
-      const startScroll = window.scrollY;
-      const targetScroll = containerTop + scrollRange;
-      const totalDistance = targetScroll - startScroll;
-      const durationMs = (1 - scrollProgress) * (DURATION_SECONDS * 1000);
-
-      const autoScrollStep = (now: number) => {
-        const elapsed = now - startTime;
-        const p = Math.min(1, elapsed / durationMs);
-        window.scrollTo(0, startScroll + totalDistance * p);
-
-        if (p < 1) {
-          autoPlayRafRef.current = requestAnimationFrame(autoScrollStep);
-        } else {
-          setIsAutoPlaying(false);
-        }
-      };
-
-      autoPlayRafRef.current = requestAnimationFrame(autoScrollStep);
+      stopAutoPlay();
+      return;
     }
-  };
+
+    const container = containerRef.current;
+    if (!container) return;
+
+    const containerTop = container.offsetTop;
+    const scrollRange = container.offsetHeight - window.innerHeight;
+
+    // If near the end or past it, rewind to beginning to restart tour
+    let startY = window.scrollY;
+    let initialProgress = scrollProgress;
+
+    if (initialProgress >= 0.95 || startY >= containerTop + scrollRange - 10) {
+      startY = containerTop;
+      window.scrollTo(0, startY);
+      initialProgress = 0;
+      targetProgressRef.current = 0;
+      currentProgressRef.current = 0;
+    }
+
+    const targetY = containerTop + scrollRange;
+    const distance = targetY - startY;
+    const remainingFraction = Math.max(0.05, 1 - initialProgress);
+    const totalDurationMs = remainingFraction * DURATION_SECONDS * 1000;
+    const startTime = performance.now();
+
+    setIsAutoPlaying(true);
+
+    // Sync audio if unmuted
+    if (!isMuted && audioRef.current) {
+      audioRef.current.currentTime = Math.min(DURATION_SECONDS - 0.1, initialProgress * DURATION_SECONDS);
+      audioRef.current.play().catch(() => {});
+    }
+
+    const autoScrollStep = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / totalDurationMs);
+      const newY = startY + distance * progress;
+
+      window.scrollTo(0, newY);
+
+      if (progress < 1) {
+        autoPlayRafRef.current = requestAnimationFrame(autoScrollStep);
+      } else {
+        stopAutoPlay();
+      }
+    };
+
+    autoPlayRafRef.current = requestAnimationFrame(autoScrollStep);
+  }, [isAutoPlaying, scrollProgress, isMuted, stopAutoPlay]);
 
   // Toggle Audio
-  const toggleAudio = () => {
+  const toggleAudio = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
-    if (isMuted) {
-      audio.muted = false;
-      audio.play().catch(() => {});
-      setIsMuted(false);
-    } else {
+
+    if (!isMuted) {
+      // Turn audio off
+      audio.pause();
       audio.muted = true;
       setIsMuted(true);
+    } else {
+      // Turn audio on
+      audio.muted = false;
+      audio.volume = 0.85;
+      audio.currentTime = Math.min(
+        DURATION_SECONDS - 0.1,
+        Math.max(0, scrollProgress * DURATION_SECONDS)
+      );
+      audio
+        .play()
+        .then(() => {
+          setIsMuted(false);
+        })
+        .catch(() => {
+          setIsMuted(false);
+        });
     }
-  };
+  }, [isMuted, scrollProgress]);
+
+  // Pause audio automatically when user scrolls past the video section
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (!isInViewRef.current || scrollProgress >= 0.99) {
+      if (!audio.paused) {
+        audio.pause();
+      }
+    }
+  }, [scrollProgress]);
 
   const currentTimeFormatted = (scrollProgress * DURATION_SECONDS).toFixed(2);
   const percentFormatted = Math.round(scrollProgress * 100);
@@ -421,14 +514,17 @@ export function ScrollVideoIntro() {
       ref={containerRef}
       className="relative w-full h-[400vh] bg-slate-950 text-white"
     >
-      {/* Audio element linked to the video sound track */}
+      {/* Audio element with fallback sources */}
       <audio
         ref={audioRef}
-        src="/videos/hero-scroll-animation.mp4"
         loop
-        muted={isMuted}
-        preload="metadata"
-      />
+        playsInline
+        preload="auto"
+      >
+        <source src="/videos/hero-audio.m4a" type="audio/mp4" />
+        <source src="/videos/hero-audio.wav" type="audio/wav" />
+        <source src="/videos/hero-scroll-animation.mp4" type="audio/mp4" />
+      </audio>
 
       {/* Pinned Sticky Viewport */}
       <div className="sticky top-0 w-full h-screen overflow-hidden flex flex-col justify-between">
@@ -459,14 +555,21 @@ export function ScrollVideoIntro() {
 
           {/* Controls Bar: Auto Tour, Sound, Skip */}
           <div className="flex items-center gap-2 font-mono text-xs">
+            {/* Auto Tour Button */}
             <button
+              type="button"
+              id="btn-auto-tour"
               onClick={toggleAutoPlay}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-md border border-slate-700/80 rounded-md text-slate-200 hover:text-white transition-all cursor-pointer shadow-md"
+              className={`flex items-center gap-1.5 px-3 py-1.5 backdrop-blur-md rounded-md text-xs font-mono font-semibold transition-all cursor-pointer shadow-md select-none ${
+                isAutoPlaying
+                  ? "bg-sky-500 text-white border border-sky-400 ring-2 ring-sky-400/40"
+                  : "bg-slate-900/85 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700/80"
+              }`}
               title={isAutoPlaying ? "Pause Auto-Tour" : "Auto-Play Tour"}
             >
               {isAutoPlaying ? (
                 <>
-                  <Pause className="w-3.5 h-3.5 text-sky-400" />
+                  <Pause className="w-3.5 h-3.5 fill-white" />
                   <span>Pause</span>
                 </>
               ) : (
@@ -477,22 +580,39 @@ export function ScrollVideoIntro() {
               )}
             </button>
 
+            {/* Audio Toggle Button */}
             <button
+              type="button"
+              id="btn-audio-toggle"
               onClick={toggleAudio}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-slate-900/80 hover:bg-slate-800 backdrop-blur-md border border-slate-700/80 rounded-md text-slate-200 hover:text-white transition-all cursor-pointer shadow-md"
-              title={isMuted ? "Unmute Audio" : "Mute Audio"}
+              className={`flex items-center gap-1.5 px-3 py-1.5 backdrop-blur-md rounded-md text-xs font-mono font-semibold transition-all cursor-pointer shadow-md select-none ${
+                !isMuted
+                  ? "bg-emerald-950/80 text-emerald-300 border border-emerald-500/60 ring-2 ring-emerald-500/20"
+                  : "bg-slate-900/85 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/80"
+              }`}
+              title={!isMuted ? "Mute Audio" : "Unmute Audio"}
             >
-              {isMuted ? (
-                <VolumeX className="w-3.5 h-3.5 text-slate-400" />
+              {!isMuted ? (
+                <>
+                  <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>Audio On</span>
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                </>
               ) : (
-                <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
+                <>
+                  <VolumeX className="w-3.5 h-3.5 text-slate-400" />
+                  <span>Audio Off</span>
+                </>
               )}
-              <span className="hidden sm:inline">{isMuted ? "Audio Off" : "Audio On"}</span>
             </button>
 
+            {/* Skip to Hero Button */}
             <button
+              type="button"
+              id="btn-skip-to-hero"
               onClick={handleSkipToHero}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-600 hover:bg-sky-500 text-white font-bold rounded-md shadow-lg transition-all cursor-pointer group"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-mono text-xs font-bold rounded-md shadow-lg transition-all cursor-pointer group select-none"
+              title="Skip directly to Hero Section"
             >
               <span>Skip to Hero</span>
               <SkipForward className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
