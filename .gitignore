@@ -55,5 +55,6 @@ BusBar/
 *.jpg
 *.jpeg
 *.webp
+/*.mp4
 !public/**/*
 

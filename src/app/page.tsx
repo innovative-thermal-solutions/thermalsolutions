@@ -1,3 +1,4 @@
+import { ScrollVideoIntro } from "@/components/home/ScrollVideoIntro";
 import { CinematicStory } from "@/components/home/CinematicStory";
 import { CustomPhilosophy } from "@/components/home/CustomPhilosophy";
 import { ThermalSimulator } from "@/components/home/ThermalSimulator";
@@ -16,7 +17,10 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main id="main-content" className="relative w-full min-h-screen bg-white">
-      {/* 01-06 Cinematic Story Chapters */}
+      {/* 00 Cinematic Video Scroll Sequence (Above Hero) */}
+      <ScrollVideoIntro />
+
+      {/* 01-06 Cinematic Story Chapters (Hero Section) */}
       <CinematicStory />
 
       {/* What We Do: 100% Custom Cooling Solutions & Turnkey Workflow */}

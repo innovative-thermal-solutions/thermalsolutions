@@ -268,7 +268,7 @@ export function CinematicStory() {
   };
 
   return (
-    <section className="relative w-full min-h-[92vh] lg:min-h-[96vh] bg-gradient-to-br from-[#ffffff] via-[#f8fafc] to-[#f0f7ff] border-b border-slate-200 overflow-hidden flex flex-col justify-between pt-24 lg:pt-28">
+    <section id="story" className="relative w-full min-h-[92vh] lg:min-h-[96vh] bg-gradient-to-br from-[#ffffff] via-[#f8fafc] to-[#f0f7ff] border-b border-slate-200 overflow-hidden flex flex-col justify-between pt-24 lg:pt-28">
       {/* Light Technical Blueprint Grid Overlay */}
       <div className="absolute inset-0 bg-grid-blueprint pointer-events-none opacity-70" />
       <div className="absolute inset-0 bg-mesh-hero pointer-events-none" />
