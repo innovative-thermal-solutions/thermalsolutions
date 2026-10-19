@@ -20,6 +20,8 @@ import {
   Flame,
   Droplets,
   Wind,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 
 const TOTAL_FRAMES = 240;
@@ -133,145 +135,203 @@ export function ScrollVideoIntro() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Scroll state & progress
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [currentFrame, setCurrentFrame] = useState(0);
-  const [loadedCount, setLoadedCount] = useState(0);
+  // Direct DOM references for 60/120fps telemetry (zero React state re-render lag)
+  const timeTextRef = useRef<HTMLSpanElement>(null);
+  const frameTextRef = useRef<HTMLElement>(null);
+  const percentTextRef = useRef<HTMLSpanElement>(null);
+  const progressBarRef = useRef<HTMLDivElement>(null);
+  const scrollCueTextRef = useRef<HTMLSpanElement>(null);
+
+  // Preloader state
+  const [loadProgress, setLoadProgress] = useState(0);
+  const [isPreloaded, setIsPreloaded] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(true);
+  const [isDismissing, setIsDismissing] = useState(false);
+
+  // Controls state
+  const [activeStageIndex, setActiveStageIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isAudioOn, setIsAudioOn] = useState(false);
   const [isNearEnd, setIsNearEnd] = useState(false);
 
-  // References for animation loop & lerp
+  // Animation & LERP refs
   const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
   const targetProgressRef = useRef(0);
   const currentProgressRef = useRef(0);
   const rafIdRef = useRef<number | null>(null);
   const autoPlayRafRef = useRef<number | null>(null);
-  const isInViewRef = useRef(false);
+  const isInViewRef = useRef(true);
+  const currentStageIndexRef = useRef(0);
 
-  // Get current stage info based on progress
-  const currentStage =
-    STAGES.find((s) => scrollProgress >= s.start && scrollProgress <= s.end)?.data ||
-    STAGES[0].data;
+  const currentStage = STAGES[activeStageIndex].data;
 
-  // Progressive frame loader
-  useEffect(() => {
-    imagesRef.current = new Array(TOTAL_FRAMES).fill(null);
-    let loaded = 0;
-
-    // Load Frame 0 first immediately
-    const img0 = new Image();
-    img0.src = `/scroll-frames/frame_000.webp`;
-    img0.onload = () => {
-      imagesRef.current[0] = img0;
-      loaded++;
-      setLoadedCount(loaded);
-      // Immediate first draw
-      drawFrameToCanvas(0);
-    };
-
-    // Priority Tier 1: Keyframes spaced every 8 frames (0, 8, 16... 239)
-    const keyframeIndices: number[] = [];
-    for (let i = 0; i < TOTAL_FRAMES; i += 8) {
-      if (i !== 0) keyframeIndices.push(i);
-    }
-
-    keyframeIndices.forEach((idx) => {
-      const img = new Image();
-      img.src = `/scroll-frames/frame_${idx.toString().padStart(3, "0")}.webp`;
-      img.onload = () => {
-        imagesRef.current[idx] = img;
-        loaded++;
-        setLoadedCount(loaded);
-      };
-    });
-
-    // Priority Tier 2: Remaining in-between frames
-    const remainingIndices: number[] = [];
-    for (let i = 0; i < TOTAL_FRAMES; i++) {
-      if (i % 8 !== 0) remainingIndices.push(i);
-    }
-
-    // Stagger load remaining frames to avoid socket saturation
-    const loadRemaining = () => {
-      remainingIndices.forEach((idx) => {
-        const img = new Image();
-        img.src = `/scroll-frames/frame_${idx.toString().padStart(3, "0")}.webp`;
-        img.onload = () => {
-          imagesRef.current[idx] = img;
-          loaded++;
-          setLoadedCount(loaded);
-        };
-      });
-    };
-
-    const timer = setTimeout(loadRemaining, 120);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
-  // Find the closest loaded frame to prevent any blank canvas
-  const getRenderableImage = useCallback((targetIdx: number): HTMLImageElement | null => {
-    const images = imagesRef.current;
-    if (images[targetIdx]) return images[targetIdx];
-
-    // Search outward for nearest loaded frame
-    for (let offset = 1; offset < TOTAL_FRAMES; offset++) {
-      const forward = targetIdx + offset;
-      if (forward < TOTAL_FRAMES && images[forward]) return images[forward];
-      const backward = targetIdx - offset;
-      if (backward >= 0 && images[backward]) return images[backward];
-    }
-    return null;
-  }, []);
+  // Canvas rendering context ref to avoid getContext lookup on every RAF frame
+  const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
 
   // High-performance canvas draw with cover scaling
-  const drawFrameToCanvas = useCallback(
-    (frameIdx: number) => {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      const ctx = canvas.getContext("2d", { alpha: false });
-      if (!ctx) return;
+  const drawFrameToCanvas = useCallback((frameIdx: number) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
 
-      const img = getRenderableImage(frameIdx);
-      if (!img) return;
+    if (!ctxRef.current) {
+      ctxRef.current = canvas.getContext("2d", { alpha: false });
+      if (ctxRef.current) {
+        ctxRef.current.imageSmoothingEnabled = true;
+        ctxRef.current.imageSmoothingQuality = "medium";
+      }
+    }
+    const ctx = ctxRef.current;
+    if (!ctx) return;
 
-      const cw = canvas.width;
-      const ch = canvas.height;
-      const iw = img.naturalWidth || 1920;
-      const ih = img.naturalHeight || 1080;
+    const img = imagesRef.current[frameIdx] || imagesRef.current[0];
+    if (!img) return;
 
-      // Cover scaling math (center cropped to fill viewport)
-      const scale = Math.max(cw / iw, ch / ih);
-      const dw = iw * scale;
-      const dh = ih * scale;
-      const dx = (cw - dw) / 2;
-      const dy = (ch - dh) / 2;
+    const cw = canvas.width;
+    const ch = canvas.height;
+    const iw = img.naturalWidth || 1600;
+    const ih = img.naturalHeight || 900;
 
-      ctx.drawImage(img, dx, dy, dw, dh);
-    },
-    [getRenderableImage]
-  );
+    const scale = Math.max(cw / iw, ch / ih);
+    const dw = iw * scale;
+    const dh = ih * scale;
+    const dx = (cw - dw) / 2;
+    const dy = (ch - dh) / 2;
 
-  // Handle Canvas Resize for Retina Screens
+    ctx.drawImage(img, dx, dy, dw, dh);
+  }, []);
+
+  // Smoothly dismiss preloader with 700ms dissolve
+  const dismissPreloader = useCallback(() => {
+    setIsDismissing(true);
+    document.body.style.overflow = "";
+    setTimeout(() => {
+      setShowPreloader(false);
+    }, 700);
+  }, []);
+
+  const handleEnterExperience = () => {
+    dismissPreloader();
+  };
+
+  // Complete preloader: Smooth progress calibration & pre-decode all 240 frames
+  useEffect(() => {
+    // Reset window to top on initial mount/refresh
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+    }
+
+    imagesRef.current = new Array(TOTAL_FRAMES).fill(null);
+    let loaded = 0;
+    const total = TOTAL_FRAMES;
+    let animProgress = 0;
+    let dismissTimer: NodeJS.Timeout | null = null;
+    let safetyTimeout: NodeJS.Timeout | null = null;
+    let completed = false;
+
+    // Lock body scroll while initial preloader is active
+    document.body.style.overflow = "hidden";
+
+    const finishLoading = () => {
+      if (completed) return;
+      completed = true;
+      setIsPreloaded(true);
+      setLoadProgress(100);
+      drawFrameToCanvas(0);
+
+      // Auto dismiss after 600ms so user can see "100% READY" and enter smoothly
+      dismissTimer = setTimeout(() => {
+        dismissPreloader();
+      }, 700);
+    };
+
+    // Smooth progress counter that advances towards actual loaded percentage
+    const progressInterval = setInterval(() => {
+      const actualPct = Math.round((loaded / total) * 100);
+      const targetPct = Math.max(
+        actualPct,
+        animProgress < 85 ? animProgress + 4 : animProgress
+      );
+
+      if (animProgress < targetPct) {
+        animProgress = Math.min(100, animProgress + Math.max(1, Math.ceil((targetPct - animProgress) / 3)));
+        setLoadProgress(animProgress);
+      }
+
+      if ((loaded >= total || (loaded >= total * 0.95 && animProgress >= 98)) && animProgress >= 100) {
+        clearInterval(progressInterval);
+        finishLoading();
+      }
+    }, 25);
+
+    // Fallback safety timeout (4.5s max) to guarantee user is never locked out
+    safetyTimeout = setTimeout(() => {
+      clearInterval(progressInterval);
+      finishLoading();
+    }, 4500);
+
+    // Parallel load and pre-decode all 240 frames
+    for (let i = 0; i < total; i++) {
+      const img = new Image();
+      img.src = `/scroll-frames/frame_${i.toString().padStart(3, "0")}.webp`;
+
+      const onDecoded = () => {
+        imagesRef.current[i] = img;
+        loaded++;
+        if (i === 0) {
+          drawFrameToCanvas(0);
+        }
+      };
+
+      img.onload = () => {
+        if ("decode" in img) {
+          img
+            .decode()
+            .then(onDecoded)
+            .catch(onDecoded);
+        } else {
+          onDecoded();
+        }
+      };
+
+      img.onerror = onDecoded;
+    }
+
+    return () => {
+      clearInterval(progressInterval);
+      if (dismissTimer) clearTimeout(dismissTimer);
+      if (safetyTimeout) clearTimeout(safetyTimeout);
+      document.body.style.overflow = "";
+    };
+  }, [drawFrameToCanvas, dismissPreloader]);
+
+  // Handle Canvas Resize for Retina Screens with capped DPR to prevent fill-rate lag
   const handleResize = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     const rect = canvas.getBoundingClientRect();
-    const targetW = Math.round(rect.width * dpr);
-    const targetH = Math.round(rect.height * dpr);
+    const targetW = Math.min(1920, Math.round(rect.width * dpr));
+    const targetH = Math.min(1080, Math.round(rect.height * dpr));
 
     if (canvas.width !== targetW || canvas.height !== targetH) {
       canvas.width = targetW;
       canvas.height = targetH;
-      // Re-draw current frame
-      drawFrameToCanvas(currentFrame);
+      ctxRef.current = canvas.getContext("2d", { alpha: false });
+      if (ctxRef.current) {
+        ctxRef.current.imageSmoothingEnabled = true;
+        ctxRef.current.imageSmoothingQuality = "medium";
+      }
+      const frameIdx = Math.min(
+        TOTAL_FRAMES - 1,
+        Math.max(0, Math.round(currentProgressRef.current * (TOTAL_FRAMES - 1)))
+      );
+      drawFrameToCanvas(frameIdx);
     }
-  }, [currentFrame, drawFrameToCanvas]);
+  }, [drawFrameToCanvas]);
 
   useEffect(() => {
     handleResize();
@@ -279,16 +339,28 @@ export function ScrollVideoIntro() {
     return () => window.removeEventListener("resize", handleResize);
   }, [handleResize]);
 
-  // Main Animation & LERP loop
+  // Main 60/120 FPS Animation Loop
+  // Updates DOM refs directly to prevent React reconciliation lag
   useEffect(() => {
     let lastRenderedFrame = -1;
 
     const renderLoop = () => {
       if (isInViewRef.current) {
-        // Silky smooth LERP damping: 0.14 gives responsive yet buttery feel
+        // Highly responsive adaptive LERP:
+        // Snappy tracking when scrubbing, buttery smooth deceleration
         const diff = targetProgressRef.current - currentProgressRef.current;
-        if (Math.abs(diff) > 0.0001) {
-          currentProgressRef.current += diff * 0.14;
+        const absDiff = Math.abs(diff);
+        let factor = 0.35;
+        if (absDiff > 0.08) {
+          factor = 0.75; // near-instant response during fast scrubbing
+        } else if (absDiff > 0.03) {
+          factor = 0.55; // snappy tracking
+        } else if (absDiff > 0.008) {
+          factor = 0.40;
+        }
+
+        if (absDiff > 0.00005) {
+          currentProgressRef.current += diff * factor;
         } else {
           currentProgressRef.current = targetProgressRef.current;
         }
@@ -302,9 +374,37 @@ export function ScrollVideoIntro() {
         if (frameIndex !== lastRenderedFrame) {
           drawFrameToCanvas(frameIndex);
           lastRenderedFrame = frameIndex;
-          setCurrentFrame(frameIndex);
-          setScrollProgress(clampedProgress);
-          setIsNearEnd(clampedProgress >= 0.94);
+
+          // Direct DOM updates (zero React state overhead)
+          if (timeTextRef.current) {
+            timeTextRef.current.textContent = `${(clampedProgress * DURATION_SECONDS).toFixed(2)}s / ${DURATION_SECONDS.toFixed(1)}s`;
+          }
+          if (frameTextRef.current) {
+            frameTextRef.current.textContent = String(frameIndex).padStart(3, "0");
+          }
+          if (percentTextRef.current) {
+            percentTextRef.current.textContent = `${Math.round(clampedProgress * 100)}%`;
+          }
+          if (progressBarRef.current) {
+            progressBarRef.current.style.width = `${clampedProgress * 100}%`;
+          }
+
+          // Check near end
+          const nearEnd = clampedProgress >= 0.94;
+          setIsNearEnd((prev) => (prev !== nearEnd ? nearEnd : prev));
+
+          // Only trigger React state update when stage actually changes (5 times total across entire scroll)
+          let newStageIndex = 0;
+          for (let i = 0; i < STAGES.length; i++) {
+            if (clampedProgress >= STAGES[i].start && clampedProgress <= STAGES[i].end) {
+              newStageIndex = i;
+              break;
+            }
+          }
+          if (newStageIndex !== currentStageIndexRef.current) {
+            currentStageIndexRef.current = newStageIndex;
+            setActiveStageIndex(newStageIndex);
+          }
         }
       }
 
@@ -331,19 +431,16 @@ export function ScrollVideoIntro() {
 
       if (totalScrollDistance <= 0) return;
 
-      // Distance from top of container to top of viewport
       const scrolled = -rect.top;
       const rawProgress = scrolled / totalScrollDistance;
       const clamped = Math.max(0, Math.min(1, rawProgress));
 
       targetProgressRef.current = clamped;
-
-      // Check if in view
       isInViewRef.current = rect.bottom > 0 && rect.top < windowHeight;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Initial check
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -360,7 +457,7 @@ export function ScrollVideoIntro() {
     }
   }, []);
 
-  // Cancel Auto-Tour immediately on any manual user interaction (wheel, touch, keys)
+  // Cancel Auto-Tour immediately on any manual user interaction
   useEffect(() => {
     const handleUserInterrupt = () => {
       if (isAutoPlaying) {
@@ -421,9 +518,8 @@ export function ScrollVideoIntro() {
     const containerTop = container.offsetTop;
     const scrollRange = container.offsetHeight - window.innerHeight;
 
-    // If near the end or past it, rewind to beginning to restart tour
     let startY = window.scrollY;
-    let initialProgress = scrollProgress;
+    let initialProgress = currentProgressRef.current;
 
     if (initialProgress >= 0.95 || startY >= containerTop + scrollRange - 10) {
       startY = containerTop;
@@ -441,8 +537,7 @@ export function ScrollVideoIntro() {
 
     setIsAutoPlaying(true);
 
-    // Sync audio if unmuted
-    if (!isMuted && audioRef.current) {
+    if (isAudioOn && audioRef.current) {
       audioRef.current.currentTime = Math.min(DURATION_SECONDS - 0.1, initialProgress * DURATION_SECONDS);
       audioRef.current.play().catch(() => {});
     }
@@ -462,303 +557,400 @@ export function ScrollVideoIntro() {
     };
 
     autoPlayRafRef.current = requestAnimationFrame(autoScrollStep);
-  }, [isAutoPlaying, scrollProgress, isMuted, stopAutoPlay]);
+  }, [isAutoPlaying, isAudioOn, stopAutoPlay]);
 
   // Toggle Audio
   const toggleAudio = useCallback(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    if (!isMuted) {
-      // Turn audio off
+    if (isAudioOn) {
       audio.pause();
       audio.muted = true;
-      setIsMuted(true);
+      setIsAudioOn(false);
     } else {
-      // Turn audio on
       audio.muted = false;
       audio.volume = 0.85;
       audio.currentTime = Math.min(
         DURATION_SECONDS - 0.1,
-        Math.max(0, scrollProgress * DURATION_SECONDS)
+        Math.max(0, currentProgressRef.current * DURATION_SECONDS)
       );
       audio
         .play()
-        .then(() => {
-          setIsMuted(false);
-        })
-        .catch(() => {
-          setIsMuted(false);
-        });
+        .then(() => setIsAudioOn(true))
+        .catch(() => setIsAudioOn(true));
     }
-  }, [isMuted, scrollProgress]);
+  }, [isAudioOn]);
 
-  // Pause audio automatically when user scrolls past the video section
+  // Auto pause audio if scrolling past video
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    if (!isInViewRef.current || scrollProgress >= 0.99) {
+    if (!isInViewRef.current || currentProgressRef.current >= 0.99) {
       if (!audio.paused) {
         audio.pause();
       }
     }
-  }, [scrollProgress]);
-
-  const currentTimeFormatted = (scrollProgress * DURATION_SECONDS).toFixed(2);
-  const percentFormatted = Math.round(scrollProgress * 100);
+  }, []);
 
   return (
-    <section
-      id="scroll-video-intro"
-      ref={containerRef}
-      className="relative w-full h-[400vh] bg-slate-950 text-white"
-    >
-      {/* Audio element with fallback sources */}
-      <audio
-        ref={audioRef}
-        loop
-        playsInline
-        preload="auto"
-      >
-        <source src="/videos/hero-audio.m4a" type="audio/mp4" />
-        <source src="/videos/hero-audio.wav" type="audio/wav" />
-        <source src="/videos/hero-scroll-animation.mp4" type="audio/mp4" />
-      </audio>
+    <>
+      {/* ======================================================== */}
+      {/* PREMIUM HIGH-TECH PRELOADER SCREEN */}
+      {/* ======================================================== */}
+      {showPreloader && (
+        <div
+          id="experience-preloader"
+          className={`fixed inset-0 z-[100] bg-slate-950 text-white flex flex-col items-center justify-center px-6 transition-all duration-700 ease-out select-none ${
+            isDismissing
+              ? "opacity-0 pointer-events-none scale-105 blur-sm"
+              : "opacity-100 pointer-events-auto"
+          }`}
+        >
+          {/* Ambient Blueprint Grid & Glow */}
+          <div className="absolute inset-0 bg-grid-blueprint opacity-40 pointer-events-none" />
+          <div className="absolute w-[600px] h-[600px] rounded-full bg-sky-500/10 blur-[140px] pointer-events-none" />
+          <div className="absolute w-[350px] h-[350px] rounded-full bg-cyan-400/15 blur-[90px] pointer-events-none animate-pulse" />
 
-      {/* Pinned Sticky Viewport */}
-      <div className="sticky top-0 w-full h-screen overflow-hidden flex flex-col justify-between">
-        {/* Fullscreen Canvas GPU Renderer */}
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none"
-        />
+          <div className="relative z-10 max-w-lg w-full flex flex-col items-center text-center">
+            {/* Brand Emblem */}
+            <div className="relative mb-6">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 border border-sky-400/40 flex items-center justify-center font-extrabold text-xl text-sky-400 shadow-2xl shadow-sky-500/20">
+                ITS
+              </div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-cyan-400 animate-ping" />
+            </div>
 
-        {/* Ambient Vignette & Blueprint Matrix Overlays */}
-        <div className="absolute inset-0 bg-radial-vignette pointer-events-none z-10 opacity-70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/60 pointer-events-none z-10" />
+            {/* Title & Telemetry Header */}
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-sky-400 font-bold mb-2">
+              INNOVATIVE THERMAL SOLUTIONS
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white mb-2">
+              Calibrating Thermal Stream
+            </h2>
+            <p className="text-slate-400 text-xs sm:text-sm font-mono mb-8 max-w-md">
+              Pre-decoding 240 high-resolution frames into hardware GPU memory for zero-latency scroll playback.
+            </p>
 
-        {/* TOP HUD: Live Telemetry & Brand Banner */}
-        <header className="relative z-20 pt-28 lg:pt-32 px-6 lg:px-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pointer-events-auto">
-          {/* Brand & Stage Tag */}
-          <div className="flex items-center gap-3">
-            <div className="flex items-center gap-2 px-3 py-1 bg-slate-900/80 backdrop-blur-md border border-slate-700/80 rounded-md shadow-lg">
-              <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-              <span className="font-mono text-xs font-bold tracking-wider text-sky-300 uppercase">
-                INNOVATIVE THERMAL SOLUTIONS
+            {/* Glowing Linear Progress Bar */}
+            <div className="w-full bg-slate-900 border border-slate-700/80 rounded-full h-3 p-0.5 mb-4 shadow-inner">
+              <div
+                className="h-full bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-400 rounded-full transition-all duration-150 relative shadow-lg shadow-sky-500/40"
+                style={{ width: `${loadProgress}%` }}
+              >
+                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-white animate-ping" />
+              </div>
+            </div>
+
+            {/* Status Telemetry Stats */}
+            <div className="w-full flex items-center justify-between text-xs font-mono text-slate-400 mb-8 px-1">
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
+                <span>GPU VRAM DECODING</span>
+              </span>
+              <span className="text-white font-bold text-base tracking-wider font-mono">
+                {loadProgress}%
+              </span>
+              <span>
+                {Math.round((loadProgress / 100) * TOTAL_FRAMES)} / {TOTAL_FRAMES} FRAMES
               </span>
             </div>
-            <span className="hidden md:inline-block font-mono text-[11px] text-slate-400 uppercase tracking-widest px-2.5 py-1 bg-black/40 backdrop-blur-md border border-slate-800 rounded">
-              GUELPH, ONTARIO · FACILITY TOUR
-            </span>
-          </div>
 
-          {/* Controls Bar: Auto Tour, Sound, Skip */}
-          <div className="flex items-center gap-2 font-mono text-xs">
-            {/* Auto Tour Button */}
-            <button
-              type="button"
-              id="btn-auto-tour"
-              onClick={toggleAutoPlay}
-              className={`flex items-center gap-1.5 px-3 py-1.5 backdrop-blur-md rounded-md text-xs font-mono font-semibold transition-all cursor-pointer shadow-md select-none ${
-                isAutoPlaying
-                  ? "bg-sky-500 text-white border border-sky-400 ring-2 ring-sky-400/40"
-                  : "bg-slate-900/85 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700/80"
-              }`}
-              title={isAutoPlaying ? "Pause Auto-Tour" : "Auto-Play Tour"}
-            >
-              {isAutoPlaying ? (
-                <>
-                  <Pause className="w-3.5 h-3.5 fill-white" />
-                  <span>Pause</span>
-                </>
-              ) : (
-                <>
-                  <Play className="w-3.5 h-3.5 text-sky-400 fill-sky-400" />
-                  <span>Auto Tour</span>
-                </>
-              )}
-            </button>
-
-            {/* Audio Toggle Button */}
-            <button
-              type="button"
-              id="btn-audio-toggle"
-              onClick={toggleAudio}
-              className={`flex items-center gap-1.5 px-3 py-1.5 backdrop-blur-md rounded-md text-xs font-mono font-semibold transition-all cursor-pointer shadow-md select-none ${
-                !isMuted
-                  ? "bg-emerald-950/80 text-emerald-300 border border-emerald-500/60 ring-2 ring-emerald-500/20"
-                  : "bg-slate-900/85 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/80"
-              }`}
-              title={!isMuted ? "Mute Audio" : "Unmute Audio"}
-            >
-              {!isMuted ? (
-                <>
-                  <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Audio On</span>
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-                </>
-              ) : (
-                <>
-                  <VolumeX className="w-3.5 h-3.5 text-slate-400" />
-                  <span>Audio Off</span>
-                </>
-              )}
-            </button>
-
-            {/* Skip to Hero Button */}
-            <button
-              type="button"
-              id="btn-skip-to-hero"
-              onClick={handleSkipToHero}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-mono text-xs font-bold rounded-md shadow-lg transition-all cursor-pointer group select-none"
-              title="Skip directly to Hero Section"
-            >
-              <span>Skip to Hero</span>
-              <SkipForward className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-            </button>
-          </div>
-        </header>
-
-        {/* CENTER-LEFT HUD: Dynamic Phase Story Card */}
-        <div className="relative z-20 px-6 lg:px-12 my-auto max-w-2xl pointer-events-none select-none">
-          {/* Phase Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-sky-950/70 border border-sky-500/40 rounded-full backdrop-blur-md text-xs font-mono font-semibold text-sky-300 mb-4 shadow-xl">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
-            <span>{currentStage.badge}</span>
-          </div>
-
-          {/* Stage Headline */}
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[0.95] drop-shadow-2xl mb-4 transition-all duration-300">
-            {currentStage.title}
-          </h2>
-
-          {/* Description */}
-          <p className="text-slate-200 text-sm sm:text-base lg:text-lg leading-relaxed font-normal drop-shadow-md max-w-xl mb-6 bg-black/40 backdrop-blur-sm p-4 rounded-xl border border-white/10">
-            {currentStage.description}
-          </p>
-
-          {/* Real-time Engineering Telemetry Metrics */}
-          <div className="grid grid-cols-3 gap-3 max-w-lg pointer-events-auto">
-            {currentStage.metrics.map((m) => (
-              <div
-                key={m.label}
-                className="bg-slate-900/85 backdrop-blur-md border border-slate-700/80 rounded-xl p-3 shadow-lg"
-              >
-                <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-0.5">
-                  {m.label}
-                </span>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-lg sm:text-xl font-bold font-mono text-white">
-                    {m.value}
-                  </span>
-                  {m.unit && (
-                    <span className="text-[10px] font-mono text-sky-400 font-semibold">
-                      {m.unit}
-                    </span>
-                  )}
-                </div>
+            {/* Terminal Log */}
+            <div className="w-full bg-black/60 border border-slate-800/80 rounded-xl p-3 text-left font-mono text-[11px] text-slate-400 space-y-1 mb-8 shadow-xl">
+              <div className="text-emerald-400 flex items-center gap-2">
+                <span>✓</span>
+                <span>CFD Thermal Model Initialized</span>
               </div>
-            ))}
+              <div className={loadProgress > 30 ? "text-emerald-400" : "text-slate-500"}>
+                {loadProgress > 30 ? "✓" : "⟳"} 5-Axis CNC &amp; FSW Video Pipeline Buffering
+              </div>
+              <div className={loadProgress >= 100 ? "text-emerald-400" : "text-slate-500"}>
+                {loadProgress >= 100 ? "✓" : "⟳"} Hardware Decoding:{" "}
+                {loadProgress >= 100 ? "100% Complete · Ready" : `${loadProgress}%`}
+              </div>
+            </div>
+
+            {/* Manual Enter / Auto Enter Button */}
+            {isPreloaded ? (
+              <button
+                onClick={handleEnterExperience}
+                className="shine-sweep inline-flex items-center gap-2 px-8 py-3.5 bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider rounded-lg shadow-xl shadow-cyan-500/25 transition-all transform hover:scale-105 cursor-pointer animate-fade-in"
+              >
+                <span>ENTER EXPERIENCE</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            ) : (
+              <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
+                <div className="w-3.5 h-3.5 border-2 border-sky-400 border-t-transparent rounded-full animate-spin" />
+                <span>Allocating 60 FPS GPU Frame Buffer...</span>
+              </div>
+            )}
           </div>
         </div>
+      )}
 
-        {/* BOTTOM HUD: Interactive Scrubbing Timeline & Stage Indicator */}
-        <footer className="relative z-20 pb-8 px-6 lg:px-12 pointer-events-auto">
-          {/* 5 Stages Tracker Pills */}
-          <div className="grid grid-cols-5 gap-2 mb-4 max-w-3xl">
-            {STAGES.map((s, idx) => {
-              const isActive = scrollProgress >= s.start && scrollProgress <= s.end;
-              const isPassed = scrollProgress > s.end;
-              return (
-                <button
-                  key={s.data.stage}
-                  onClick={() => {
-                    const container = containerRef.current;
-                    if (!container) return;
-                    const containerTop = container.offsetTop;
-                    const scrollRange = container.offsetHeight - window.innerHeight;
-                    const target = containerTop + scrollRange * s.start;
-                    window.scrollTo({ top: target, behavior: "smooth" });
-                  }}
-                  className={`text-left p-2 rounded-lg border transition-all cursor-pointer backdrop-blur-md ${
-                    isActive
-                      ? "bg-sky-600/30 border-sky-400 text-white shadow-lg shadow-sky-500/20"
-                      : isPassed
-                      ? "bg-slate-900/60 border-slate-700 text-slate-400 hover:text-white"
-                      : "bg-black/40 border-white/5 text-slate-600 hover:text-slate-400"
-                  }`}
-                >
-                  <div className="flex items-center justify-between mb-0.5">
-                    <span className="font-mono text-[10px] font-bold">
-                      {s.data.stage}
-                    </span>
-                    {isPassed && (
-                      <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                    )}
-                  </div>
-                  <span className="hidden sm:block text-[10px] font-mono truncate font-medium">
-                    {s.data.category}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+      {/* ======================================================== */}
+      {/* 400vh SCROLL VIDEO INTRO SECTION */}
+      {/* ======================================================== */}
+      <section
+        id="scroll-video-intro"
+        ref={containerRef}
+        className="relative w-full h-[400vh] bg-slate-950 text-white"
+      >
+        {/* Audio element with fallback sources */}
+        <audio
+          ref={audioRef}
+          loop
+          playsInline
+          preload="auto"
+        >
+          <source src="/videos/hero-audio.m4a" type="audio/mp4" />
+          <source src="/videos/hero-audio.wav" type="audio/wav" />
+          <source src="/videos/hero-scroll-animation.mp4" type="audio/mp4" />
+        </audio>
 
-          {/* Timeline Scrubbing Bar */}
-          <div className="bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-2xl p-4 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4 max-w-[1440px] mx-auto">
-            {/* Playhead Time & Frame Telemetry */}
-            <div className="flex items-center gap-4 text-xs font-mono text-slate-300 shrink-0">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="font-bold text-white tracking-wider">
-                  {currentTimeFormatted}s / {DURATION_SECONDS.toFixed(1)}s
+        {/* Pinned Sticky Viewport */}
+        <div className="sticky top-0 w-full h-screen overflow-hidden flex flex-col justify-between">
+          {/* Fullscreen Canvas GPU Renderer */}
+          <canvas
+            ref={canvasRef}
+            className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none select-none"
+          />
+
+          {/* Ambient Vignette & Blueprint Matrix Overlays */}
+          <div className="absolute inset-0 bg-radial-vignette pointer-events-none z-10 opacity-70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/60 pointer-events-none z-10" />
+
+          {/* TOP HUD: Live Telemetry & Brand Banner */}
+          <header className="relative z-20 pt-28 lg:pt-32 px-6 lg:px-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pointer-events-auto">
+            {/* Brand & Stage Tag */}
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 px-3 py-1 bg-slate-900/80 backdrop-blur-md border border-slate-700/80 rounded-md shadow-lg">
+                <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
+                <span className="font-mono text-xs font-bold tracking-wider text-sky-300 uppercase">
+                  INNOVATIVE THERMAL SOLUTIONS
                 </span>
               </div>
-              <span className="text-slate-600">|</span>
-              <span className="text-slate-400">
-                FRAME <strong className="text-sky-400">{currentFrame.toString().padStart(3, "0")}</strong> / 240
+              <span className="hidden md:inline-block font-mono text-[11px] text-slate-400 uppercase tracking-widest px-2.5 py-1 bg-black/40 backdrop-blur-md border border-slate-800 rounded">
+                GUELPH, ONTARIO · FACILITY TOUR
               </span>
-              <span className="text-slate-600">|</span>
-              <span className="text-sky-300 font-bold">{percentFormatted}%</span>
             </div>
 
-            {/* Interactive Progress Bar */}
-            <div className="relative w-full h-2 bg-slate-800 rounded-full overflow-hidden flex-1 mx-2">
-              <div
-                className="absolute top-0 left-0 h-full bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-400 transition-all duration-75"
-                style={{ width: `${percentFormatted}%` }}
-              />
+            {/* Controls Bar: Auto Tour, Sound, Skip */}
+            <div className="flex items-center gap-2 font-mono text-xs">
+              {/* Auto Tour Button */}
+              <button
+                type="button"
+                id="btn-auto-tour"
+                onClick={toggleAutoPlay}
+                className={`flex items-center gap-1.5 px-3 py-1.5 backdrop-blur-md rounded-md text-xs font-mono font-semibold transition-all cursor-pointer shadow-md select-none ${
+                  isAutoPlaying
+                    ? "bg-sky-500 text-white border border-sky-400 ring-2 ring-sky-400/40"
+                    : "bg-slate-900/85 hover:bg-slate-800 text-slate-200 hover:text-white border border-slate-700/80"
+                }`}
+                title={isAutoPlaying ? "Pause Auto-Tour" : "Auto-Play Tour"}
+              >
+                {isAutoPlaying ? (
+                  <>
+                    <Pause className="w-3.5 h-3.5 fill-white" />
+                    <span>Pause</span>
+                  </>
+                ) : (
+                  <>
+                    <Play className="w-3.5 h-3.5 text-sky-400 fill-sky-400" />
+                    <span>Auto Tour</span>
+                  </>
+                )}
+              </button>
+
+              {/* Audio Toggle Button */}
+              <button
+                type="button"
+                id="btn-audio-toggle"
+                onClick={toggleAudio}
+                className={`flex items-center gap-1.5 px-3 py-1.5 backdrop-blur-md rounded-md text-xs font-mono font-semibold transition-all cursor-pointer shadow-md select-none ${
+                  isAudioOn
+                    ? "bg-emerald-950/80 text-emerald-300 border border-emerald-500/60 ring-2 ring-emerald-500/20"
+                    : "bg-slate-900/85 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-700/80"
+                }`}
+                title={isAudioOn ? "Mute Audio" : "Unmute Audio"}
+              >
+                {isAudioOn ? (
+                  <>
+                    <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
+                    <span>Audio On</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
+                  </>
+                ) : (
+                  <>
+                    <VolumeX className="w-3.5 h-3.5 text-slate-400" />
+                    <span>Audio Off</span>
+                  </>
+                )}
+              </button>
+
+              {/* Skip to Hero Button */}
+              <button
+                type="button"
+                id="btn-skip-to-hero"
+                onClick={handleSkipToHero}
+                className="flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-mono text-xs font-bold rounded-md shadow-lg transition-all cursor-pointer group select-none"
+                title="Skip directly to Hero Section"
+              >
+                <span>Skip to Hero</span>
+                <SkipForward className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              </button>
+            </div>
+          </header>
+
+          {/* CENTER-LEFT HUD: Dynamic Phase Story Card */}
+          <div className="relative z-20 px-6 lg:px-12 my-auto max-w-2xl pointer-events-none select-none">
+            {/* Phase Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-sky-950/70 border border-sky-500/40 rounded-full backdrop-blur-md text-xs font-mono font-semibold text-sky-300 mb-4 shadow-xl">
+              <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+              <span>{currentStage.badge}</span>
             </div>
 
-            {/* Scroll Cue or Completion Cue */}
-            <div className="shrink-0 flex items-center gap-2">
-              {isNearEnd ? (
-                <button
-                  onClick={handleSkipToHero}
-                  className="inline-flex items-center gap-2 text-xs font-mono font-bold text-sky-400 hover:text-sky-300 bg-sky-950/60 px-3 py-1 rounded-md border border-sky-500/40 animate-pulse cursor-pointer"
+            {/* Stage Headline */}
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black uppercase tracking-tight text-white leading-[0.95] drop-shadow-2xl mb-4 transition-all duration-300">
+              {currentStage.title}
+            </h2>
+
+            {/* Description */}
+            <p className="text-slate-200 text-sm sm:text-base lg:text-lg leading-relaxed font-normal drop-shadow-md max-w-xl mb-6 bg-black/40 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+              {currentStage.description}
+            </p>
+
+            {/* Real-time Engineering Telemetry Metrics */}
+            <div className="grid grid-cols-3 gap-3 max-w-lg pointer-events-auto">
+              {currentStage.metrics.map((m) => (
+                <div
+                  key={m.label}
+                  className="bg-slate-900/85 backdrop-blur-md border border-slate-700/80 rounded-xl p-3 shadow-lg"
                 >
-                  <span>ENTER HERO CHAPTERS</span>
-                  <ChevronDown className="w-3.5 h-3.5" />
-                </button>
-              ) : (
-                <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
-                  <span className="animate-pulse">SCROLL TO INSPECT</span>
-                  <ChevronDown className="w-3.5 h-3.5 animate-bounce text-sky-400" />
+                  <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-0.5">
+                    {m.label}
+                  </span>
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-lg sm:text-xl font-bold font-mono text-white">
+                      {m.value}
+                    </span>
+                    {m.unit && (
+                      <span className="text-[10px] font-mono text-sky-400 font-semibold">
+                        {m.unit}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              )}
+              ))}
             </div>
           </div>
-        </footer>
 
-        {/* Transition fade into light hero section as progress approaches 100% */}
-        {scrollProgress >= 0.88 && (
-          <div
-            className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/40 to-transparent pointer-events-none z-30 transition-opacity duration-200"
-            style={{ opacity: Math.min(1, Math.max(0, (scrollProgress - 0.88) / 0.12)) }}
-          />
-        )}
-      </div>
-    </section>
+          {/* BOTTOM HUD: Interactive Scrubbing Timeline & Stage Indicator */}
+          <footer className="relative z-20 pb-8 px-6 lg:px-12 pointer-events-auto">
+            {/* 5 Stages Tracker Pills */}
+            <div className="grid grid-cols-5 gap-2 mb-4 max-w-3xl">
+              {STAGES.map((s, idx) => {
+                const isActive = activeStageIndex === idx;
+                const isPassed = activeStageIndex > idx;
+                return (
+                  <button
+                    key={s.data.stage}
+                    onClick={() => {
+                      const container = containerRef.current;
+                      if (!container) return;
+                      const containerTop = container.offsetTop;
+                      const scrollRange = container.offsetHeight - window.innerHeight;
+                      const target = containerTop + scrollRange * s.start;
+                      window.scrollTo({ top: target, behavior: "smooth" });
+                    }}
+                    className={`text-left p-2 rounded-lg border transition-all cursor-pointer backdrop-blur-md ${
+                      isActive
+                        ? "bg-sky-600/30 border-sky-400 text-white shadow-lg shadow-sky-500/20"
+                        : isPassed
+                        ? "bg-slate-900/60 border-slate-700 text-slate-400 hover:text-white"
+                        : "bg-black/40 border-white/5 text-slate-600 hover:text-slate-400"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-0.5">
+                      <span className="font-mono text-[10px] font-bold">
+                        {s.data.stage}
+                      </span>
+                      {isPassed && (
+                        <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                      )}
+                    </div>
+                    <span className="hidden sm:block text-[10px] font-mono truncate font-medium">
+                      {s.data.category}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Timeline Scrubbing Bar */}
+            <div className="bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-2xl p-4 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4 max-w-[1440px] mx-auto">
+              {/* Playhead Time & Frame Telemetry with direct DOM refs */}
+              <div className="flex items-center gap-4 text-xs font-mono text-slate-300 shrink-0">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span ref={timeTextRef} className="font-bold text-white tracking-wider">
+                    0.00s / 10.0s
+                  </span>
+                </div>
+                <span className="text-slate-600">|</span>
+                <span className="text-slate-400">
+                  FRAME{" "}
+                  <strong ref={frameTextRef} className="text-sky-400">
+                    000
+                  </strong>{" "}
+                  / 240
+                </span>
+                <span className="text-slate-600">|</span>
+                <span ref={percentTextRef} className="text-sky-300 font-bold">
+                  0%
+                </span>
+              </div>
+
+              {/* Interactive Progress Bar */}
+              <div className="relative w-full h-2 bg-slate-800 rounded-full overflow-hidden flex-1 mx-2">
+                <div
+                  ref={progressBarRef}
+                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-400 transition-none will-change-[width]"
+                  style={{ width: "0%" }}
+                />
+              </div>
+
+              {/* Scroll Cue or Completion Cue */}
+              <div className="shrink-0 flex items-center gap-2">
+                {isNearEnd ? (
+                  <button
+                    onClick={handleSkipToHero}
+                    className="inline-flex items-center gap-2 text-xs font-mono font-bold text-sky-400 hover:text-sky-300 bg-sky-950/60 px-3 py-1 rounded-md border border-sky-500/40 animate-pulse cursor-pointer"
+                  >
+                    <span>ENTER HERO CHAPTERS</span>
+                    <ChevronDown className="w-3.5 h-3.5" />
+                  </button>
+                ) : (
+                  <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
+                    <span ref={scrollCueTextRef} className="animate-pulse">
+                      SCROLL TO INSPECT
+                    </span>
+                    <ChevronDown className="w-3.5 h-3.5 animate-bounce text-sky-400" />
+                  </div>
+                )}
+              </div>
+            </div>
+          </footer>
+
+          {/* Transition fade into light hero section as progress approaches 100% */}
+          {activeStageIndex === 4 && (
+            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/40 to-transparent pointer-events-none z-30 transition-opacity duration-300" />
+          )}
+        </div>
+      </section>
+    </>
   );
 }
