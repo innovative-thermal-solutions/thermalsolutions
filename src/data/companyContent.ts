@@ -566,58 +566,69 @@ export const PRODUCT_CATEGORIES = [
 
 export const INDUSTRIES = [
   {
-    slug: "power-converters",
+    slug: "power-electronics",
     slideNumber: "Slide 4",
-    title: "Power Converters / Automation",
-    subtitle: "High Heat Flux Dissipation for Industrial Drives & Supplies",
-    description: "Modern power converters, motor drives, and industrial power supplies pack immense switching energy into ultra-compact enclosures. ITS designs high-density liquid cold plates and precision air-cooled extrusions that eliminate IGBT hotspots.",
-    challenges: "Severe localized thermal peaks, variable duty cycles, and tight packaging constraints.",
-    itsApproach: "Custom multi-zone heatsinks and FSW cold plates with optimized fin pitch to handle dual AC and DC power modules efficiently.",
-    image: "/images/image35.png",
-    keySpecs: ["Handles up to 100W/cm² flux", "Multi-zone AC/DC cooling", "Low acoustic fan profile"]
-  },
-  {
-    slug: "clean-energy",
-    slideNumber: "Slide 5",
-    title: "Clean Energy",
-    subtitle: "Reliable Thermal Systems for Solar, Wind & Grid Storage",
-    description: "Utility-scale solar central inverters, wind turbine converters, and battery energy storage containers operate continuously in extreme outdoor conditions. ITS provides ruggedized thermal solutions engineered for 25-year field lifespans.",
-    challenges: "Harsh outdoor ambient temperatures (-40°C to +60°C), heavy thermal cycling, and zero-maintenance requirements.",
-    itsApproach: "Large-format Friction Stir Welded cold plates and heavy-duty extruded heatsinks with corrosion-resistant finishes.",
-    image: "/images/image36.png",
-    keySpecs: ["Corrosion-resistant anodizing", "Zero maintenance FSW seals", "Long lifecycle reliability"]
-  },
-  {
-    slug: "telecommunications",
-    slideNumber: "Slide 6",
-    title: "Satellites / Telecommunications",
-    subtitle: "Thermal Precision for Vacuum Environments & 5G Base Stations",
-    description: "From space-qualified satellites operating in the vacuum of orbit to ground station 5G massive MIMO radio units exposed to solar radiation, ITS delivers specialized two-phase heat pipe assemblies and skived heatsinks.",
-    challenges: "Lack of air convection in space, strict weight restrictions, and RF amplifier hotspot temperatures exceeding 100°C.",
-    itsApproach: "High-conductivity sintered copper heat pipe base plates and thin-fin skived heatsinks reducing peak RF temperatures by up to 20°C.",
-    image: "/images/image37.png",
-    keySpecs: ["20°C temperature reduction", "Weight-optimized avionics", "Vacuum-compatible brazing"]
-  },
-  {
-    slug: "aerospace-defense",
-    slideNumber: "Slide 7",
-    title: "Aerospace & Defense",
-    subtitle: "Mission-Critical Hardware for Extreme Shock, Vibration & Thermal Flux",
-    description: "Airborne radar systems, electronic warfare pods, and avionics flight computers require thermal solutions with absolute zero failure tolerance. ITS is trained in Canadian Controlled Goods (CGP) and ITAR standards.",
-    challenges: "Extreme G-forces, shock, rapid altitude pressure fluctuations, and strict military qualification requirements.",
-    itsApproach: "Monolithic 5-axis CNC chassis plates, deep hole gun-drilled cooling loops, and hermetic solid-state FSW joints.",
-    image: "/images/image38.png",
-    keySpecs: ["CGP & ITAR Compliant", "AS9100 In Progress", "100% Helium Leak Tested"]
+    title: "Power Electronics",
+    subtitle: "SiC & GaN High Heat-Flux Dissipation for Compact Inverters & Converters",
+    description: "Managing extreme, concentrated heat loads in compact power-conversion architectures, 800V silicon-carbide inverters, and high-frequency IGBT switches. ITS designs custom high-density liquid cold plates and precision micro-channel heat sinks that eliminate localized semiconductor hotspots.",
+    challenges: "Localized heat flux exceeding 120 W/cm², tight volumetric boundaries, high-voltage clearance rules, and dynamic thermal duty cycles.",
+    itsApproach: "Direct copper-tube embedded plates and 5-axis CNC micro-channel cold plates with customized multi-zone fluid delivery that equalizes junction temperatures across all semiconductor switches.",
+    image: "/images/industries/power-electronics.webp",
+    keySpecs: ["Up to 120 W/cm² heat flux", "Thermal resistance < 0.02 °C/W", "Uniform junction ΔT < 2°C", "Integrated laminated busbar routing"]
   },
   {
     slug: "ev-battery",
-    slideNumber: "Slide 8",
+    slideNumber: "Slide 5",
     title: "EV & Battery Systems",
-    subtitle: "High-Volume Liquid Cold Plates for Electric Vehicles & Buses",
-    description: "Commercial electric buses, passenger EVs, and fast-charging stations demand uniform battery cooling to ensure safety, maximize range, and prevent thermal runaway during rapid charging.",
-    challenges: "Large formats (up to 1450mm length), dynamic road vibrations, and requirement for strict isothermal cell temperatures.",
-    itsApproach: "In-house Friction Stir Welded aluminum cold plates delivering uniform velocity distribution and leak-tight joint strength under pressure.",
-    image: "/images/image39.png",
-    keySpecs: ["Up to 57\" x 24\" large plates", "Uniform velocity distribution", "FSW zero-porosity joints"]
+    subtitle: "High-Rate Automotive Traction & Heavy-Duty Commercial Bus Cooling",
+    description: "Uniform thermal regulation for ultra-fast DC charging stations, commercial electric buses, and high-performance automotive battery packs. ITS delivers lightweight aluminum ribbon chillers, battery cold plates, and inverter cooling systems engineered to prevent thermal runaway.",
+    challenges: "Large formats up to 57-inch lengths, continuous road shock and vibration, coolant pressure drop minimization, and strict cell-to-cell isothermal limits.",
+    itsApproach: "In-house Friction Stir Welded (FSW) aluminum cold plates with optimized serpentine flow paths that maintain pack temperature delta under 2.5°C under continuous high-rate discharge.",
+    image: "/images/industries/ev-battery.webp",
+    keySpecs: ["Uniform ΔT < 2.5°C across pack", "100% helium leak tested < 1×10⁻⁸ mbar·L/s", "Shock & vibration validated", "Corrosion-resistant Al-3003/6061 alloy"]
+  },
+  {
+    slug: "clean-energy",
+    slideNumber: "Slide 6",
+    title: "Clean Energy & Grid Storage",
+    subtitle: "Ruggedized 25-Year Reliability for Solar Inverters, Wind & BESS",
+    description: "Utility-scale central solar inverters, megawatt wind turbine nacelle converters, and containerized battery energy storage systems (BESS) require dependable thermal management in extreme outdoor conditions (-40°C to +60°C).",
+    challenges: "Severe ambient swings, heavy cyclic thermal fatigue, zero-maintenance expectations, and outdoor moisture/dust exposure.",
+    itsApproach: "Hermetically sealed FSW liquid cold plates and heavy-duty bonded-fin heat sinks with marine-grade anodized and chemical conversion finishes.",
+    image: "/images/industries/clean-energy.webp",
+    keySpecs: ["25+ Year operating lifespan", "Zero-maintenance solid-state FSW joints", "Direct glycol/dielectric fluid compatibility", "Corrosion-resistant anodized finishes"]
+  },
+  {
+    slug: "aerospace",
+    slideNumber: "Slide 7",
+    title: "Aerospace & Defence",
+    subtitle: "Mission-Critical Enclosures for Airborne Radar, Avionics & Missile Guidance",
+    description: "Airborne radar systems, electronic warfare pods, and flight control computers operating under extreme acceleration, rapid altitude pressure fluctuations, and severe thermal shock. ITS complies with Canadian Controlled Goods Program (CGP) and ITAR requirements.",
+    challenges: "Extreme G-force loading, high-altitude burst pressure, strict size, weight, and power (SWaP) limits, and zero-defect quality mandates.",
+    itsApproach: "Monolithic 5-axis CNC-machined chassis cold walls, gun-drilled fluid passages, and parent-metal strength solid-state friction stir welded covers.",
+    image: "/images/industries/aerospace.webp",
+    keySpecs: ["CGP & ITAR Compliant", "AS9100 Quality (In Progress)", "100% Helium Mass-Spec Leak Tested", "MIL-STD & DO-160 shock/vibration certified"]
+  },
+  {
+    slug: "satellite",
+    slideNumber: "Slide 8",
+    title: "Satellite Communications",
+    subtitle: "Zero-Gravity Heat Spreading & Vacuum-Compatible Radiator Systems",
+    description: "From orbital LEO satellites operating in the thermal extremes of space vacuum to ground earth station 5G massive MIMO terminals and Ka-band solid-state power amplifiers, ITS provides ultra-low thermal resistance spreading systems.",
+    challenges: "Absence of convective air cooling in vacuum, strict launch mass budgets, NASA outgassing compliance, and RF amplifier heat fluxes exceeding 100°C.",
+    itsApproach: "High-conductance embedded sintered-copper heat pipe arrays, thin-fin skived copper/aluminum heat sinks, and vacuum-rated fluxless brazed cold plates.",
+    image: "/images/industries/satellite.webp",
+    keySpecs: ["Zero-gravity heat spreading", "Outgassing compliant NASA SP-R-0022A", "20°C temperature reduction on RF amplifiers", "Thin-fin high-density skived profiles"]
+  },
+  {
+    slug: "industrial",
+    slideNumber: "Slide 9",
+    title: "Industrial Automation",
+    subtitle: "24/7 Continuous Duty for Variable Frequency Drives, CNCs & Laser Chillers",
+    description: "Durable, high-uptime cooling for industrial variable-frequency drives (VFD), multi-axis CNC spindle motor drives, automated factory robotics, and high-power fiber laser power supplies operating continuously under punishing factory conditions.",
+    challenges: "Abrasive particulate exposure, vibration from adjacent machinery, continuous 24/7/365 production duty, and minimal allowable pressure drop.",
+    itsApproach: "Rugged monolithic aluminum extrusion matrices, heavy-wall copper tube cold plates, and high-flow manifold designs that maximize uptime.",
+    image: "/images/manufacturing/precision-manufacturing.png",
+    keySpecs: ["Continuous 24/7/365 production duty", "Low backpressure fluid manifolding", "Standard SAE/NPT port interfaces", "Extruded & bonded fin architectures"]
   }
 ];
