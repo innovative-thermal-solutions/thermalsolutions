@@ -7,7 +7,7 @@ import { COMPANY_INFO } from "@/data/companyContent";
 
 export function FinalCta() {
   return (
-    <section className="relative w-full py-24 sm:py-28 px-6 lg:px-12 bg-gradient-to-br from-white via-sky-50/70 to-blue-50/60 border-t border-slate-200 text-slate-900 overflow-hidden">
+    <section id="contact-cta" className="relative w-full py-24 sm:py-28 px-6 lg:px-12 bg-gradient-to-br from-white via-sky-50/70 to-blue-50/60 border-t border-slate-200 text-slate-900 overflow-hidden">
       {/* Background blueprint grid & ambient cyan glow */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-sky-200/50 rounded-full blur-[100px] pointer-events-none" />
@@ -27,7 +27,7 @@ export function FinalCta() {
         <div className="max-w-3xl">
           <div className="flex items-center gap-2 mb-4">
             <span className="font-mono text-xs font-bold text-sky-700 px-2.5 py-0.5 bg-sky-50 border border-sky-300 rounded shadow-xs">
-              11
+              08
             </span>
             <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

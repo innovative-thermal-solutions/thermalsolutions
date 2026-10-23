@@ -52,6 +52,7 @@ const workflowSteps = [
 export function CustomPhilosophy() {
   return (
     <section id="philosophy" className="relative w-full py-24 px-6 lg:px-12 bg-white border-b border-slate-200 overflow-hidden">
+      <div id="turnkey" className="absolute -top-24 left-0" />
       {/* Background blueprint grid */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
       <div className="absolute top-10 right-10 w-96 h-96 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />
@@ -62,11 +63,11 @@ export function CustomPhilosophy() {
           <div className="lg:col-span-8">
             <div className="flex items-center gap-2 mb-3">
               <span className="font-mono text-xs font-bold text-sky-700 px-2.5 py-0.5 bg-sky-50 border border-sky-300 rounded shadow-xs">
-                WHAT WE DO AT ITS COOLING
+                03
               </span>
               <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                Custom By Design
+                The Turnkey Process &amp; Custom Philosophy
               </span>
             </div>
 

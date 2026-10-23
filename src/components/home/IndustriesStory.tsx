@@ -103,7 +103,7 @@ export function IndustriesStory() {
   const IconComponent = current.icon;
 
   return (
-    <section className="relative w-full py-24 px-6 lg:px-12 bg-white border-b border-slate-200 overflow-hidden">
+    <section id="industries" className="relative w-full py-24 px-6 lg:px-12 bg-white border-b border-slate-200 overflow-hidden">
       {/* Blueprint Grid Lines */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
 
@@ -113,7 +113,7 @@ export function IndustriesStory() {
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="font-mono text-xs font-bold text-sky-700 px-2.5 py-0.5 bg-sky-50 border border-sky-300 rounded shadow-xs">
-                08
+                07
               </span>
               <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
                 Target Applications

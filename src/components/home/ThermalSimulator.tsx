@@ -119,11 +119,11 @@ export function ThermalSimulator() {
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-3 mb-3">
             <span className="font-mono text-xs font-bold text-sky-700 bg-sky-50 px-2.5 py-0.5 border border-sky-300 rounded shadow-xs">
-              LAB BENCH
+              05
             </span>
             <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              Interactive CFD Thermal Engine
+              Interactive CFD Thermal Simulator
             </span>
           </div>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950 uppercase leading-[0.92] mb-4">

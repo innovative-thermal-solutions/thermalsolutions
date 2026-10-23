@@ -479,17 +479,17 @@ export function ScrollVideoIntro() {
     };
   }, [isAutoPlaying, stopAutoPlay]);
 
-  // Skip to Hero Section
-  const handleSkipToHero = useCallback(() => {
+  // Skip to Products Section
+  const handleSkipToProducts = useCallback(() => {
     stopAutoPlay();
     if (audioRef.current && !audioRef.current.paused) {
       audioRef.current.pause();
     }
 
-    const heroSection = document.getElementById("story");
-    if (heroSection) {
+    const productsSection = document.getElementById("products");
+    if (productsSection) {
       const navOffset = 85;
-      const targetTop = heroSection.getBoundingClientRect().top + window.scrollY - navOffset;
+      const targetTop = productsSection.getBoundingClientRect().top + window.scrollY - navOffset;
       window.scrollTo({
         top: Math.max(0, targetTop),
         behavior: "smooth",
@@ -791,15 +791,15 @@ export function ScrollVideoIntro() {
                 )}
               </button>
 
-              {/* Skip to Hero Button */}
+              {/* Skip to Products Button */}
               <button
                 type="button"
-                id="btn-skip-to-hero"
-                onClick={handleSkipToHero}
+                id="btn-skip-to-products"
+                onClick={handleSkipToProducts}
                 className="flex items-center gap-1.5 px-3.5 py-1.5 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-mono text-xs font-bold rounded-md shadow-lg transition-all cursor-pointer group select-none"
-                title="Skip directly to Hero Section"
+                title="Skip directly to Products Section"
               >
-                <span>Skip to Hero</span>
+                <span>View Products</span>
                 <SkipForward className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </button>
             </div>
@@ -927,10 +927,10 @@ export function ScrollVideoIntro() {
               <div className="shrink-0 flex items-center gap-2">
                 {isNearEnd ? (
                   <button
-                    onClick={handleSkipToHero}
+                    onClick={handleSkipToProducts}
                     className="inline-flex items-center gap-2 text-xs font-mono font-bold text-sky-400 hover:text-sky-300 bg-sky-950/60 px-3 py-1 rounded-md border border-sky-500/40 animate-pulse cursor-pointer"
                   >
-                    <span>ENTER HERO CHAPTERS</span>
+                    <span>EXPLORE PRODUCTS</span>
                     <ChevronDown className="w-3.5 h-3.5" />
                   </button>
                 ) : (
@@ -945,9 +945,9 @@ export function ScrollVideoIntro() {
             </div>
           </footer>
 
-          {/* Transition fade into light hero section as progress approaches 100% */}
+          {/* Transition fade into light section as progress approaches 100% */}
           {activeStageIndex === 4 && (
-            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/40 to-transparent pointer-events-none z-30 transition-opacity duration-300" />
+            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-50 via-slate-50/40 to-transparent pointer-events-none z-30 transition-opacity duration-300" />
           )}
         </div>
       </section>

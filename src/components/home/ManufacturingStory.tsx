@@ -93,7 +93,7 @@ export function ManufacturingStory() {
           <div className="lg:col-span-5 flex flex-col justify-center">
             <div className="flex items-center gap-2 mb-4">
               <span className="font-mono text-xs font-bold text-sky-700 px-2.5 py-0.5 bg-sky-50 border border-sky-300 rounded shadow-xs">
-                10
+                02
               </span>
               <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
                 In-House Manufacturing

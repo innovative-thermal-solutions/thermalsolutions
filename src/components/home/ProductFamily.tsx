@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check, ChevronDown, ChevronUp, Layers, Cpu, ShieldCheck, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { LineWaves } from "@/components/ui/LineWaves";
 
 const products = [
   {
@@ -39,7 +40,7 @@ const products = [
     description:
       "Extruded, bonded-fin, skived-fin, folded fin, and embedded two-phase heat pipe assemblies for high-reliability electronics enclosures.",
     href: "/products/heat-sinks",
-    image: "/images/products/pressed-tube-cold-plate.png",
+    image: "/images/products/bonded-heat-sink.png",
     specs: [
       "High aspect-ratio bonded fins (up to 40:1)",
       "Extruded & micro-skived fin configurations",
@@ -63,7 +64,7 @@ const products = [
     description:
       "Engineered cooling hardware carried from thermal sizing through multi-axis machining, joining, laminated busbar integration, and metrology.",
     href: "/products",
-    image: "/images/manufacturing/precision-manufacturing.png",
+    image: "/images/products/busbar-assembly.png",
     specs: [
       "Laminated low-inductance busbars integrated",
       "Sub-assembly wire harnesses & thermal sensors",
@@ -90,8 +91,28 @@ export function ProductFamily() {
 
   return (
     <section id="products" className="relative w-full py-24 px-6 lg:px-12 bg-slate-50/70 border-b border-slate-200 overflow-hidden">
+      {/* Dynamic LineWaves Background Effect */}
+      <div className="absolute inset-0 pointer-events-auto opacity-70 z-0">
+        <LineWaves
+          color1="#0284c7"
+          color2="#0ea5e9"
+          color3="#38bdf8"
+          speed={0.25}
+          lineCount={64}
+          lineWidth={1.2}
+          glow={0.5}
+          brightness={0.8}
+          highlight={0.85}
+          warpIntensity={0.85}
+          rotation={-25}
+          enableMouseInteraction={true}
+          lightMode={true}
+          opacity={0.35}
+        />
+      </div>
+
       {/* Background Blueprint Grid */}
-      <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-blueprint opacity-40 pointer-events-none z-0" />
 
       <div className="max-w-[1440px] mx-auto relative z-10">
         {/* Section Intro */}
@@ -99,7 +120,7 @@ export function ProductFamily() {
           <div className="lg:col-span-3">
             <div className="flex items-center gap-2 mb-2">
               <span className="font-mono text-xs font-bold text-sky-700 px-2.5 py-0.5 bg-white border border-sky-300 rounded shadow-xs">
-                07
+                01
               </span>
               <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
                 Custom Platforms

@@ -293,7 +293,7 @@ export function CinematicStory() {
               {/* Eyebrow & Live Mode Pill */}
               <div className="flex items-center gap-3 mb-4">
                 <span className="font-mono text-xs font-bold text-sky-700 px-2.5 py-0.5 bg-sky-50 border border-sky-300 rounded shadow-xs">
-                  STAGE {current.index} / 06
+                  06 // DEEP DIVE {current.index}
                 </span>
                 <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-sky-600 animate-ping" />
@@ -302,7 +302,7 @@ export function CinematicStory() {
               </div>
 
               {/* Title with High-Contrast Engineering Typography */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
+              <h2 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
                 {current.titleLines.map((line, i) => (
                   <span
                     key={i}
@@ -315,7 +315,7 @@ export function CinematicStory() {
                     {line}
                   </span>
                 ))}
-              </h1>
+              </h2>
 
               {/* Body */}
               <p className="text-base sm:text-lg text-slate-700 max-w-xl font-normal leading-relaxed mb-6">

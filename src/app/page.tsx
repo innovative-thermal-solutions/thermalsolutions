@@ -1,11 +1,11 @@
 import { ScrollVideoIntro } from "@/components/home/ScrollVideoIntro";
-import { CinematicStory } from "@/components/home/CinematicStory";
-import { CustomPhilosophy } from "@/components/home/CustomPhilosophy";
-import { ThermalSimulator } from "@/components/home/ThermalSimulator";
 import { ProductFamily } from "@/components/home/ProductFamily";
-import { IndustriesStory } from "@/components/home/IndustriesStory";
-import { EngineeringProof } from "@/components/home/EngineeringProof";
 import { ManufacturingStory } from "@/components/home/ManufacturingStory";
+import { CustomPhilosophy } from "@/components/home/CustomPhilosophy";
+import { EngineeringProof } from "@/components/home/EngineeringProof";
+import { ThermalSimulator } from "@/components/home/ThermalSimulator";
+import { CinematicStory } from "@/components/home/CinematicStory";
+import { IndustriesStory } from "@/components/home/IndustriesStory";
 import { FinalCta } from "@/components/home/FinalCta";
 
 export const metadata = {
@@ -17,31 +17,31 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main id="main-content" className="relative w-full min-h-screen bg-white">
-      {/* 00 Cinematic Video Scroll Sequence (Above Hero) */}
+      {/* 00 Cinematic Video Scroll Sequence (Above Fold Intro) */}
       <ScrollVideoIntro />
 
-      {/* 01-06 Cinematic Story Chapters (Hero Section) */}
-      <CinematicStory />
-
-      {/* What We Do: 100% Custom Cooling Solutions & Turnkey Workflow */}
-      <CustomPhilosophy />
-
-      {/* Interactive Thermal Simulator */}
-      <ThermalSimulator />
-
-      {/* 07 Product Family */}
+      {/* 01 Product Family (Directly after scroll video) */}
       <ProductFamily />
 
-      {/* 08 Applications / Industries */}
-      <IndustriesStory />
-
-      {/* 09 Engineering Proof & Flow Visualizer + Metrics Band */}
-      <EngineeringProof />
-
-      {/* 10 Real Manufacturing Video Story */}
+      {/* 02 In-House Manufacturing & Live Process Video */}
       <ManufacturingStory />
 
-      {/* 11 Start a Conversation Final CTA */}
+      {/* 03 The Turnkey Process & 100% Custom Philosophy */}
+      <CustomPhilosophy />
+
+      {/* 04 Engineering Proof, CFD Physics & Sensor Telemetry */}
+      <EngineeringProof />
+
+      {/* 05 Interactive Thermal Simulator & Lab Bench */}
+      <ThermalSimulator />
+
+      {/* 06 Interactive Hardware Architecture Deep-Dive */}
+      <CinematicStory />
+
+      {/* 07 Mission-Critical Target Applications & Industries */}
+      <IndustriesStory />
+
+      {/* 08 Start a Conversation Final Consultation CTA */}
       <FinalCta />
     </main>
   );

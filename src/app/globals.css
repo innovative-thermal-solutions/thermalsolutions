@@ -2,6 +2,9 @@
 
 @theme {
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-serif);
+  --font-display: var(--font-serif);
+  --font-mono: var(--font-mono);
   --color-brand-blue: #0284c7;
   --color-coolant: #0ea5e9;
   --color-deep-navy: #090e17;
@@ -37,6 +40,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif, .font-display {
+    font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+    letter-spacing: -0.02em;
   }
 
   ::selection {
