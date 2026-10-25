@@ -68,7 +68,7 @@ export default function ElectricBusCaseStudyPage() {
 
           <div className="relative aspect-[4/3] bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center p-6">
             <Image
-              src="/images/products/hypercool-cold-plate.png"
+              src="/images/products/custom-machined-cold-plate.png"
               alt="Electric Bus Cold Plate"
               width={420}
               height={300}

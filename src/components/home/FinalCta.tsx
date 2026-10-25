@@ -4,22 +4,33 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Phone, Mail, Clock, ShieldCheck, MapPin } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyContent";
+import { DitherWave } from "@/components/ui/DitherWave";
 
 export function FinalCta() {
   return (
     <section id="contact-cta" className="relative w-full py-24 sm:py-28 px-6 lg:px-12 bg-gradient-to-br from-white via-sky-50/70 to-blue-50/60 border-t border-slate-200 text-slate-900 overflow-hidden">
+      {/* Dynamic Dither Wave Background */}
+      <DitherWave
+        color1="#0284c7"
+        color2="#38bdf8"
+        speed={0.4}
+        frequency={2.4}
+        amplitude={0.3}
+        ditherSize={2.0}
+        opacity={0.2}
+      />
       {/* Background blueprint grid & ambient cyan glow */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-[500px] h-[500px] bg-sky-200/50 rounded-full blur-[100px] pointer-events-none" />
 
       {/* Right Column Cold Plate Render - Crisp Light Presentation */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full lg:w-1/2 h-full opacity-20 lg:opacity-30 pointer-events-none flex items-center justify-end">
+      <div className="absolute right-4 lg:right-12 top-1/2 -translate-y-1/2 w-full lg:w-[48%] h-full opacity-25 lg:opacity-95 pointer-events-none flex items-center justify-end">
         <Image
-          src="/images/products/hypercool-cold-plate.png"
-          alt="ITS Liquid Cold Plate Engineering"
+          src="/images/products/custom-machined-cold-plate.png"
+          alt="ITS 100% Custom Machined Liquid Cold Plate"
           width={700}
           height={700}
-          className="object-contain max-h-[500px] scale-110 -rotate-6 drop-shadow-2xl"
+          className="object-contain max-h-[520px] drop-shadow-[0_25px_50px_rgba(2,132,199,0.18)]"
         />
       </div>
 

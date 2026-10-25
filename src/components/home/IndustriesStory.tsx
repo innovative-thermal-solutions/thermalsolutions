@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, ChevronLeft, ChevronRight, Zap, BatteryCharging, Sun, Plane, Radio, Factory, CheckCircle2 } from "lucide-react";
+import { DitherWave } from "@/components/ui/DitherWave";
 
 const industries = [
   {
@@ -104,6 +105,16 @@ export function IndustriesStory() {
 
   return (
     <section id="industries" className="relative w-full py-24 px-6 lg:px-12 bg-white border-b border-slate-200 overflow-hidden">
+      {/* Dynamic Dither Wave Background */}
+      <DitherWave
+        color1="#0284c7"
+        color2="#38bdf8"
+        speed={0.35}
+        frequency={2.2}
+        amplitude={0.28}
+        ditherSize={2.0}
+        opacity={0.16}
+      />
       {/* Blueprint Grid Lines */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
 

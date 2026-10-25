@@ -17,6 +17,7 @@ import {
   Thermometer,
 } from "lucide-react";
 import Link from "next/link";
+import { DitherWave } from "@/components/ui/DitherWave";
 
 interface Preset {
   name: string;
@@ -110,6 +111,16 @@ export function ThermalSimulator() {
 
   return (
     <section id="simulator" className="relative w-full py-24 px-6 lg:px-12 bg-white border-b border-slate-200 overflow-hidden">
+      {/* Dynamic Dither Wave Background */}
+      <DitherWave
+        color1="#0284c7"
+        color2="#38bdf8"
+        speed={0.4}
+        frequency={2.4}
+        amplitude={0.28}
+        ditherSize={2.0}
+        opacity={0.16}
+      />
       {/* Background blueprint grid overlay */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
       <div className="absolute top-1/2 right-10 w-96 h-96 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />

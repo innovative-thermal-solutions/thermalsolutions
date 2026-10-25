@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import { Play, Pause, Volume2, VolumeX, ArrowRight, ShieldCheck, MapPin, Gauge, Cpu, CheckCircle2 } from "lucide-react";
+import { DitherWave } from "@/components/ui/DitherWave";
 
 export function ManufacturingStory() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -28,6 +29,17 @@ export function ManufacturingStory() {
 
   return (
     <section id="manufacturing" className="relative w-full py-24 px-6 lg:px-12 bg-white border-b border-slate-200 overflow-hidden">
+      {/* Dynamic Dither Wave Background */}
+      <DitherWave
+        color1="#0284c7"
+        color2="#38bdf8"
+        speed={0.35}
+        frequency={2.2}
+        amplitude={0.28}
+        ditherSize={2.0}
+        opacity={0.22}
+      />
+
       {/* Blueprint Grid Lines */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
 

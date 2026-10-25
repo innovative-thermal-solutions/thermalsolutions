@@ -21,6 +21,7 @@ import {
   ShieldCheck,
   CheckCircle2,
 } from "lucide-react";
+import { DitherWave } from "@/components/ui/DitherWave";
 
 interface Hotspot {
   id: string;
@@ -41,7 +42,7 @@ const chapters = [
     badge: "100% Application-Specific · Guelph, ON",
     cta: { text: "Custom Cooling Platforms", href: "#philosophy" },
     secondaryCta: { text: "Bring Your Requirements", href: "/contact" },
-    image: "/images/products/hypercool-cold-plate.png",
+    image: "/images/products/custom-machined-cold-plate.png",
     alt: "ITS Custom Machined Liquid Cold Plate",
     viewMode: "Custom Architecture",
     hotspots: [
@@ -269,6 +270,16 @@ export function CinematicStory() {
 
   return (
     <section id="story" className="relative w-full min-h-[92vh] lg:min-h-[96vh] bg-gradient-to-br from-[#ffffff] via-[#f8fafc] to-[#f0f7ff] border-b border-slate-200 overflow-hidden flex flex-col justify-between pt-24 lg:pt-28">
+      {/* Dynamic Dither Wave Background */}
+      <DitherWave
+        color1="#0284c7"
+        color2="#38bdf8"
+        speed={0.4}
+        frequency={2.5}
+        amplitude={0.3}
+        ditherSize={2.0}
+        opacity={0.18}
+      />
       {/* Light Technical Blueprint Grid Overlay */}
       <div className="absolute inset-0 bg-grid-blueprint pointer-events-none opacity-70" />
       <div className="absolute inset-0 bg-mesh-hero pointer-events-none" />

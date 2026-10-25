@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import {
-  ChevronDown,
   Play,
   Pause,
   SkipForward,
@@ -14,7 +13,6 @@ import {
   Cpu,
   Factory,
   ShieldCheck,
-  CheckCircle2,
   Maximize2,
   Sliders,
   Flame,
@@ -135,13 +133,6 @@ export function ScrollVideoIntro() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Direct DOM references for 60/120fps telemetry (zero React state re-render lag)
-  const timeTextRef = useRef<HTMLSpanElement>(null);
-  const frameTextRef = useRef<HTMLElement>(null);
-  const percentTextRef = useRef<HTMLSpanElement>(null);
-  const progressBarRef = useRef<HTMLDivElement>(null);
-  const scrollCueTextRef = useRef<HTMLSpanElement>(null);
-
   // Preloader state
   const [loadProgress, setLoadProgress] = useState(0);
   const [isPreloaded, setIsPreloaded] = useState(false);
@@ -152,7 +143,6 @@ export function ScrollVideoIntro() {
   const [activeStageIndex, setActiveStageIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(false);
   const [isAudioOn, setIsAudioOn] = useState(false);
-  const [isNearEnd, setIsNearEnd] = useState(false);
 
   // Animation & LERP refs
   const imagesRef = useRef<(HTMLImageElement | null)[]>([]);
@@ -374,24 +364,6 @@ export function ScrollVideoIntro() {
         if (frameIndex !== lastRenderedFrame) {
           drawFrameToCanvas(frameIndex);
           lastRenderedFrame = frameIndex;
-
-          // Direct DOM updates (zero React state overhead)
-          if (timeTextRef.current) {
-            timeTextRef.current.textContent = `${(clampedProgress * DURATION_SECONDS).toFixed(2)}s / ${DURATION_SECONDS.toFixed(1)}s`;
-          }
-          if (frameTextRef.current) {
-            frameTextRef.current.textContent = String(frameIndex).padStart(3, "0");
-          }
-          if (percentTextRef.current) {
-            percentTextRef.current.textContent = `${Math.round(clampedProgress * 100)}%`;
-          }
-          if (progressBarRef.current) {
-            progressBarRef.current.style.width = `${clampedProgress * 100}%`;
-          }
-
-          // Check near end
-          const nearEnd = clampedProgress >= 0.94;
-          setIsNearEnd((prev) => (prev !== nearEnd ? nearEnd : prev));
 
           // Only trigger React state update when stage actually changes (5 times total across entire scroll)
           let newStageIndex = 0;
@@ -724,7 +696,7 @@ export function ScrollVideoIntro() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/60 pointer-events-none z-10" />
 
           {/* TOP HUD: Live Telemetry & Brand Banner */}
-          <header className="relative z-20 pt-28 lg:pt-32 px-6 lg:px-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pointer-events-auto">
+          <header className="relative z-20 pt-24 lg:pt-28 px-6 lg:px-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pointer-events-auto">
             {/* Brand & Stage Tag */}
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-2 px-3 py-1 bg-slate-900/80 backdrop-blur-md border border-slate-700/80 rounded-md shadow-lg">
@@ -819,131 +791,10 @@ export function ScrollVideoIntro() {
             </h2>
 
             {/* Description */}
-            <p className="text-slate-200 text-sm sm:text-base lg:text-lg leading-relaxed font-normal drop-shadow-md max-w-xl mb-6 bg-black/40 backdrop-blur-sm p-4 rounded-xl border border-white/10">
+            <p className="text-slate-200 text-sm sm:text-base lg:text-lg leading-relaxed font-normal drop-shadow-md max-w-xl bg-black/40 backdrop-blur-sm p-4 rounded-xl border border-white/10">
               {currentStage.description}
             </p>
-
-            {/* Real-time Engineering Telemetry Metrics */}
-            <div className="grid grid-cols-3 gap-3 max-w-lg pointer-events-auto">
-              {currentStage.metrics.map((m) => (
-                <div
-                  key={m.label}
-                  className="bg-slate-900/85 backdrop-blur-md border border-slate-700/80 rounded-xl p-3 shadow-lg"
-                >
-                  <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-0.5">
-                    {m.label}
-                  </span>
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-lg sm:text-xl font-bold font-mono text-white">
-                      {m.value}
-                    </span>
-                    {m.unit && (
-                      <span className="text-[10px] font-mono text-sky-400 font-semibold">
-                        {m.unit}
-                      </span>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-
-          {/* BOTTOM HUD: Interactive Scrubbing Timeline & Stage Indicator */}
-          <footer className="relative z-20 pb-8 px-6 lg:px-12 pointer-events-auto">
-            {/* 5 Stages Tracker Pills */}
-            <div className="grid grid-cols-5 gap-2 mb-4 max-w-3xl">
-              {STAGES.map((s, idx) => {
-                const isActive = activeStageIndex === idx;
-                const isPassed = activeStageIndex > idx;
-                return (
-                  <button
-                    key={s.data.stage}
-                    onClick={() => {
-                      const container = containerRef.current;
-                      if (!container) return;
-                      const containerTop = container.offsetTop;
-                      const scrollRange = container.offsetHeight - window.innerHeight;
-                      const target = containerTop + scrollRange * s.start;
-                      window.scrollTo({ top: target, behavior: "smooth" });
-                    }}
-                    className={`text-left p-2 rounded-lg border transition-all cursor-pointer backdrop-blur-md ${
-                      isActive
-                        ? "bg-sky-600/30 border-sky-400 text-white shadow-lg shadow-sky-500/20"
-                        : isPassed
-                        ? "bg-slate-900/60 border-slate-700 text-slate-400 hover:text-white"
-                        : "bg-black/40 border-white/5 text-slate-600 hover:text-slate-400"
-                    }`}
-                  >
-                    <div className="flex items-center justify-between mb-0.5">
-                      <span className="font-mono text-[10px] font-bold">
-                        {s.data.stage}
-                      </span>
-                      {isPassed && (
-                        <CheckCircle2 className="w-3 h-3 text-emerald-400" />
-                      )}
-                    </div>
-                    <span className="hidden sm:block text-[10px] font-mono truncate font-medium">
-                      {s.data.category}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Timeline Scrubbing Bar */}
-            <div className="bg-slate-900/90 backdrop-blur-md border border-slate-700/80 rounded-2xl p-4 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4 max-w-[1440px] mx-auto">
-              {/* Playhead Time & Frame Telemetry with direct DOM refs */}
-              <div className="flex items-center gap-4 text-xs font-mono text-slate-300 shrink-0">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span ref={timeTextRef} className="font-bold text-white tracking-wider">
-                    0.00s / 10.0s
-                  </span>
-                </div>
-                <span className="text-slate-600">|</span>
-                <span className="text-slate-400">
-                  FRAME{" "}
-                  <strong ref={frameTextRef} className="text-sky-400">
-                    000
-                  </strong>{" "}
-                  / 240
-                </span>
-                <span className="text-slate-600">|</span>
-                <span ref={percentTextRef} className="text-sky-300 font-bold">
-                  0%
-                </span>
-              </div>
-
-              {/* Interactive Progress Bar */}
-              <div className="relative w-full h-2 bg-slate-800 rounded-full overflow-hidden flex-1 mx-2">
-                <div
-                  ref={progressBarRef}
-                  className="absolute top-0 left-0 h-full bg-gradient-to-r from-sky-500 via-cyan-400 to-sky-400 transition-none will-change-[width]"
-                  style={{ width: "0%" }}
-                />
-              </div>
-
-              {/* Scroll Cue or Completion Cue */}
-              <div className="shrink-0 flex items-center gap-2">
-                {isNearEnd ? (
-                  <button
-                    onClick={handleSkipToProducts}
-                    className="inline-flex items-center gap-2 text-xs font-mono font-bold text-sky-400 hover:text-sky-300 bg-sky-950/60 px-3 py-1 rounded-md border border-sky-500/40 animate-pulse cursor-pointer"
-                  >
-                    <span>EXPLORE PRODUCTS</span>
-                    <ChevronDown className="w-3.5 h-3.5" />
-                  </button>
-                ) : (
-                  <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
-                    <span ref={scrollCueTextRef} className="animate-pulse">
-                      SCROLL TO INSPECT
-                    </span>
-                    <ChevronDown className="w-3.5 h-3.5 animate-bounce text-sky-400" />
-                  </div>
-                )}
-              </div>
-            </div>
-          </footer>
 
           {/* Transition fade into light section as progress approaches 100% */}
           {activeStageIndex === 4 && (

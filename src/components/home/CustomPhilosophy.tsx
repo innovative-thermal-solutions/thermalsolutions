@@ -13,6 +13,7 @@ import {
   Compass,
   Zap,
 } from "lucide-react";
+import { DitherWave } from "@/components/ui/DitherWave";
 
 const workflowSteps = [
   {
@@ -53,6 +54,16 @@ export function CustomPhilosophy() {
   return (
     <section id="philosophy" className="relative w-full py-24 px-6 lg:px-12 bg-white border-b border-slate-200 overflow-hidden">
       <div id="turnkey" className="absolute -top-24 left-0" />
+      {/* Dynamic Dither Wave Background */}
+      <DitherWave
+        color1="#0284c7"
+        color2="#38bdf8"
+        speed={0.4}
+        frequency={2.5}
+        amplitude={0.3}
+        ditherSize={2.0}
+        opacity={0.2}
+      />
       {/* Background blueprint grid */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
       <div className="absolute top-10 right-10 w-96 h-96 bg-sky-100/50 rounded-full blur-3xl pointer-events-none" />

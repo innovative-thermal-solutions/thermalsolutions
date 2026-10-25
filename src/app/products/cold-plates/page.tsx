@@ -35,7 +35,7 @@ export default function ColdPlatesPage() {
 
           <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white flex items-center justify-center p-6">
             <Image
-              src="/images/products/hypercool-cold-plate.png"
+              src="/images/products/custom-machined-cold-plate.png"
               alt="Custom liquid cold plates"
               width={480}
               height={360}

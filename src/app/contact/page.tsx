@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle2, Phone, Mail, MapPin, Upload, ShieldCheck, Clock } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyContent";
+import { DitherWave } from "@/components/ui/DitherWave";
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -22,6 +23,16 @@ export default function ContactPage() {
     <main id="main-content" className="w-full min-h-screen bg-slate-50 pt-28 pb-20">
       {/* Detail Hero */}
       <section className="relative w-full bg-gradient-to-br from-white via-slate-50 to-sky-50 border-b border-slate-200 py-16 lg:py-24 px-6 lg:px-12 overflow-hidden">
+        {/* Dynamic Dither Wave Background */}
+        <DitherWave
+          color1="#0284c7"
+          color2="#38bdf8"
+          speed={0.35}
+          frequency={2.3}
+          amplitude={0.28}
+          ditherSize={2.0}
+          opacity={0.16}
+        />
         <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
         <div className="max-w-[1440px] mx-auto relative z-10">
           <div className="max-w-3xl">

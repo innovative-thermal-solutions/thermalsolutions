@@ -16,7 +16,7 @@ const products = [
     description:
       "Custom flow architectures engineered specifically for demanding power electronics, EV traction inverters, and battery thermal management.",
     href: "/products/cold-plates",
-    image: "/images/products/hypercool-cold-plate.png",
+    image: "/images/products/custom-machined-cold-plate.png",
     specs: [
       "Machined micro-channels (0.5mm fin pitch)",
       "Continuous pressed-in seamless copper/aluminum tubes",

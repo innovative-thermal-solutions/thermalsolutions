@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, ShieldCheck, Phone, Mail } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyContent";
+import { DitherWave } from "@/components/ui/DitherWave";
 
 interface SubpageCtaProps {
   eyebrow?: string;
@@ -24,6 +25,16 @@ export function SubpageCta({
   return (
     <section className="w-full my-12">
       <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-white via-sky-50/80 to-blue-50/60 border-2 border-sky-200/90 p-8 sm:p-12 lg:p-14 shadow-lg text-slate-900">
+        {/* Dynamic Dither Wave Background */}
+        <DitherWave
+          color1="#0284c7"
+          color2="#38bdf8"
+          speed={0.4}
+          frequency={2.4}
+          amplitude={0.3}
+          ditherSize={2.0}
+          opacity={0.18}
+        />
         {/* Subtle blueprint grid */}
         <div className="absolute inset-0 bg-grid-blueprint opacity-50 pointer-events-none" />
         <div className="absolute top-0 right-0 w-80 h-80 bg-sky-200/40 rounded-full blur-3xl pointer-events-none" />

@@ -78,7 +78,7 @@ export default function ProductsPage() {
 
               <div className="relative aspect-[4/3] bg-white rounded-xl border border-slate-200 p-6 flex items-center justify-center shadow-xs">
                 <Image
-                  src="/images/products/hypercool-cold-plate.png"
+                  src="/images/products/custom-machined-cold-plate.png"
                   alt="Liquid cold plates"
                   width={380}
                   height={280}
