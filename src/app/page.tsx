@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <main id="main-content" className="relative w-full min-h-screen bg-white">
+    <main id="main-content" className="relative w-full min-h-screen bg-transparent">
       {/* 00 Cinematic Video Scroll Sequence (Above Fold Intro) */}
       <ScrollVideoIntro />
 

@@ -75,21 +75,32 @@ const PIXEL_BUDGET = 4.5e6;
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
 
 const parseColor = (value: string, fallback: [number, number, number, number]): [number, number, number, number] => {
+  if (value === 'transparent') {
+    return [0, 0, 0, 0];
+  }
   try {
     if (typeof document === 'undefined') return fallback;
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     if (!ctx) return fallback;
-    ctx.fillStyle = '#000000';
+    ctx.fillStyle = 'transparent';
     ctx.fillStyle = value;
     const resolved = ctx.fillStyle;
+    if (resolved === 'transparent' || resolved === 'rgba(0, 0, 0, 0)') {
+      return [0, 0, 0, 0];
+    }
     if (resolved.startsWith('#')) {
       const n = parseInt(resolved.slice(1), 16);
       return [((n >> 16) & 255) / 255, ((n >> 8) & 255) / 255, (n & 255) / 255, 1];
     }
     const parts = resolved.match(/[\d.]+/g);
     if (!parts || parts.length < 3) return fallback;
-    return [Number(parts[0]) / 255, Number(parts[1]) / 255, Number(parts[2]) / 255, parts[3] ? Number(parts[3]) : 1];
+    return [
+      Number(parts[0]) / 255,
+      Number(parts[1]) / 255,
+      Number(parts[2]) / 255,
+      parts[3] !== undefined ? Number(parts[3]) : 1
+    ];
   } catch {
     return fallback;
   }
@@ -675,8 +686,8 @@ export const MicroSlats: React.FC<MicroSlatsProps> = ({
     };
 
     const resize = () => {
-      width = Math.max(1, container.clientWidth);
-      height = Math.max(1, container.clientHeight);
+      width = Math.max(1, container.clientWidth || (typeof window !== 'undefined' ? window.innerWidth : 1));
+      height = Math.max(1, container.clientHeight || (typeof window !== 'undefined' ? window.innerHeight : 1));
       renderer.dpr = Math.min(window.devicePixelRatio || 1, 2, Math.sqrt(PIXEL_BUDGET / (width * height)));
       renderer.setSize(width, height);
       buildFluid();
