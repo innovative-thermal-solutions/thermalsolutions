@@ -70,7 +70,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body
-        className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#f8fafc] text-[#090e17] selection:bg-sky-600 selection:text-white min-h-screen flex flex-col relative`}
+        className={`${inter.variable} ${playfair.variable} ${jetbrainsMono.variable} font-sans antialiased bg-transparent text-[#090e17] selection:bg-sky-600 selection:text-white min-h-screen flex flex-col relative`}
       >
         {/* Fullsite Interactive MicroSlats Thermal/Fluid Wave Background Effect Across All Pages */}
         <GlobalMicroSlatsBackground

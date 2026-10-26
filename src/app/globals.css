@@ -30,16 +30,22 @@
   html {
     scroll-behavior: auto;
     color-scheme: light;
-    background-color: #f8fafc;
+    background-color: transparent;
   }
 
   body {
-    background-color: #f8fafc;
+    background-color: transparent;
     color: #090e17;
     font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+  }
+
+  /* Make base page wrapper translucent so MicroSlats is visible across every page */
+  main[id="main-content"].bg-slate-50 {
+    background-color: rgba(248, 250, 252, 0.72) !important;
+    backdrop-filter: blur(2px);
   }
 
   h1, h2, h3, .font-serif, .font-display {

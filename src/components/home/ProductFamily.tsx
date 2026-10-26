@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Check, ChevronDown, ChevronUp, Layers, Cpu, ShieldCheck, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { LineWaves } from "@/components/ui/LineWaves";
 
 const products = [
   {
@@ -90,27 +89,7 @@ export function ProductFamily() {
   };
 
   return (
-    <section id="products" className="relative w-full py-24 px-6 lg:px-12 bg-slate-50/70 border-b border-slate-200 overflow-hidden">
-      {/* Dynamic LineWaves Background Effect */}
-      <div className="absolute inset-0 pointer-events-auto opacity-70 z-0">
-        <LineWaves
-          color1="#0284c7"
-          color2="#0ea5e9"
-          color3="#38bdf8"
-          speed={0.25}
-          lineCount={64}
-          lineWidth={1.2}
-          glow={0.5}
-          brightness={0.8}
-          highlight={0.85}
-          warpIntensity={0.85}
-          rotation={-25}
-          enableMouseInteraction={true}
-          lightMode={true}
-          opacity={0.35}
-        />
-      </div>
-
+    <section id="products" className="relative w-full py-24 px-6 lg:px-12 bg-transparent border-b border-slate-200/80 overflow-hidden">
       {/* Background Blueprint Grid */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-40 pointer-events-none z-0" />
 
