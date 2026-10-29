@@ -34,8 +34,8 @@ export default function AirCoolingPage() {
 
           <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white flex items-center justify-center p-6">
             <Image
-              src="/images/manufacturing/thermal-engineering.png"
-              alt="Air-cooled heat sinks manufactured by Innovative Thermal Solutions"
+              src="/images/products/bonded-heat-sink/bonded-heat-sink.png"
+              alt="Bonded fin air-cooled heat sink manufactured by Innovative Thermal Solutions"
               width={480}
               height={360}
               priority
@@ -161,6 +161,62 @@ export default function AirCoolingPage() {
                   <div className="p-2.5 bg-slate-50 rounded border border-slate-200">
                     <strong className="block text-slate-900">Cu-110 ETP</strong>
                     <span className="text-slate-500">High Spreading</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          {/* 04 Manufacturing & Engineering Reality */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">04</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Workshop
+              </span>
+            </div>
+            <div className="lg:col-span-10">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-3">
+                  In-House Air Cooling Manufacturing
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed max-w-3xl font-normal">
+                  Our Guelph facility houses complete CNC routing, fin gang-slitting, bonded fin assembly fixtures, and thermal testing wind tunnels to take air-cooled systems from concept sketch through full-rate production.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                  <div className="relative aspect-[16/10] w-full bg-slate-900">
+                    <Image
+                      src="/images/assets/user_showcase/air-cooled-banner.png"
+                      alt="Innovative Thermal Solutions Air Cooled Technology Suite"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-bold text-slate-900 text-sm uppercase mb-1">Engineered Air-Cooling Portfolio</h3>
+                    <p className="text-xs text-slate-500 font-mono">
+                      High aspect ratio extrusions, micro skiving, and two-phase thermal spreaders.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                  <div className="relative aspect-[16/10] w-full bg-slate-900">
+                    <Image
+                      src="/images/assets/user_showcase/IMG_0020-workshop.jpg"
+                      alt="ITS Air-Cooling Manufacturing Cell in Guelph, Ontario"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-bold text-slate-900 text-sm uppercase mb-1">Facility Production Floor</h3>
+                    <p className="text-xs text-slate-500 font-mono">
+                      Live CNC machining, deburring, and quality metrology inspection.
+                    </p>
                   </div>
                 </div>
               </div>

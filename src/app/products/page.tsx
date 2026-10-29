@@ -116,8 +116,8 @@ export default function ProductsPage() {
 
               <div className="relative aspect-[4/3] bg-white rounded-xl border border-slate-200 p-6 flex items-center justify-center shadow-xs">
                 <Image
-                  src="/images/manufacturing/thermal-engineering.png"
-                  alt="Air-cooled heat sinks"
+                  src="/images/products/bonded-heat-sink/bonded-heat-sink.png"
+                  alt="Air-cooled bonded-fin heat sinks"
                   width={380}
                   height={280}
                   className="object-contain max-h-[220px]"

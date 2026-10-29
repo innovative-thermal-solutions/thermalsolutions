@@ -221,6 +221,72 @@ export default function LiquidCoolingPage() {
               </div>
             </div>
           </article>
+
+          {/* 06 Production Formats: LFA0121 & High-Heat-Flux Flow Architecture */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">06</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Architectures
+              </span>
+            </div>
+            <div className="lg:col-span-10">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-3">
+                  Production Fluid Architecture Formats
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed max-w-3xl font-normal">
+                  Custom engineered manifolds and multi-pass internal fluid circulation plates built for mission-critical inverter modules, battery enclosures, and high-frequency power electronics.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                  <div className="relative aspect-[16/10] w-full bg-slate-900">
+                    <Image
+                      src="/images/assets/user_showcase/LFA0121.png"
+                      alt="LFA0121 High-Flux Multi-Port Liquid Cold Plate"
+                      fill
+                      className="object-contain p-4"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="font-bold text-slate-900 text-sm uppercase">LFA0121 Multi-Port Cold Plate</h3>
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-sky-50 text-sky-700 rounded border border-sky-200">
+                        High Heat Flux
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 font-mono">
+                      Precision dual-zone internal fluid circulation with integrated quick-disconnect ports.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                  <div className="relative aspect-[16/10] w-full bg-slate-900">
+                    <Image
+                      src="/images/assets/user_showcase/liquid-cooling-concept.png"
+                      alt="3D Fluid Dynamics & Cold Plate Internal Geometry Concept"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="font-bold text-slate-900 text-sm uppercase">CFD Channel Geometry</h3>
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200">
+                        Low ΔP Design
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 font-mono">
+                      Computational fluid simulation predicting boundary layer heat transfer and pressure drops.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 

@@ -478,9 +478,9 @@ export const PRODUCT_CATEGORIES = [
       },
       {
         name: "Copper Embedded Aluminum Cold Plates",
-        desc: "Hybrid construction pairing copper conduction blocks or tubes with lightweight aluminum chassis plates.",
-        specs: "Direct contact copper tubes, precision CNC expansion fit, cost-weight optimized.",
-        image: "/images/image85.png"
+        desc: "Hybrid construction pairing copper conduction blocks or tubes with lightweight aluminum chassis plates for optimal heat spreading directly beneath heat-flux components.",
+        specs: "Direct contact copper tubes, precision CNC expansion fit, front/back thermal equalization.",
+        image: "/images/products/copper-embedded-cold-plate/lfa0073-front.png"
       }
     ]
   },
@@ -494,19 +494,19 @@ export const PRODUCT_CATEGORIES = [
         name: "Extruded Aluminum Heat Sinks",
         desc: "High-efficiency aluminum extrusions with high fin aspect ratios, custom cut, CNC machined, and anodized in-house.",
         specs: "Custom aspect ratios up to 24:1, precision milling, RoHS clear or black anodize.",
-        image: "/images/image43.png"
+        image: "/images/assets/air_cooled/Extruded.png"
       },
       {
         name: "Skived Fin Heat Sinks",
         desc: "High-density monolithic fin arrays shaved from solid aluminum or copper blocks, eliminating thermal interface resistance between fins and base.",
         specs: "Ultra-thin fin pitch (down to 0.2mm), seamless monolithic thermal path.",
-        image: "/images/image50.png"
+        image: "/images/assets/user_showcase/Skived.png"
       },
       {
         name: "Fabricated & Bonded Fin Heat Sinks",
         desc: "High aspect ratio heatsinks with individually fabricated fins epoxy-bonded or brazed into grooved base plates for high airflow forced convection.",
         specs: "Extremely tall fin heights (> 100mm), aluminum or copper fin combinations.",
-        image: "/images/assets/bonded_heat_sink.png"
+        image: "/images/products/bonded-heat-sink/bonded-heat-sink.png"
       },
       {
         name: "Cold Forging Heat Sinks",
@@ -552,13 +552,13 @@ export const PRODUCT_CATEGORIES = [
         name: "High-Current Precision Milled Busbars",
         desc: "Oxygen-free high conductivity (OFHC) copper and aluminum busbars CNC machined to tight tolerances with nickel or tin plating.",
         specs: "Up to 1000A+ current ratings, high planarity, integrated mounting hardware.",
-        image: "/images/assets/busbar/Bus Bar.png"
+        image: "/images/products/busbar/busbar.png"
       },
       {
         name: "Thermally-Coupled Laminated Busbars",
         desc: "Multi-layer low inductance busbars laminated with high-dielectric insulation, engineered for direct mounting onto liquid cold plates.",
         specs: "Low parasitic inductance, epoxy powder or Nomex insulation, high dielectric strength.",
-        image: "/images/image2.png"
+        image: "/images/products/busbar/busbar-detail.png"
       }
     ]
   }

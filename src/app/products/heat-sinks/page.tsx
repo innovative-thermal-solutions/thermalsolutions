@@ -35,8 +35,8 @@ export default function HeatSinksPage() {
 
           <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white flex items-center justify-center p-6">
             <Image
-              src="/images/manufacturing/thermal-engineering.png"
-              alt="Custom air-cooled heat sinks"
+              src="/images/products/bonded-heat-sink/bonded-heat-sink.png"
+              alt="Custom bonded-fin air-cooled heat sink"
               width={480}
               height={360}
               priority
@@ -145,6 +145,77 @@ export default function HeatSinksPage() {
                   <div className="flex justify-between p-2 bg-slate-50 rounded">
                     <span>Aluminium (Al-6061)</span>
                     <strong className="text-slate-900">167 W/(m·K) · High Strength</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          {/* 04 Manufactured Solutions Showcase (AFC0006 & High-Density Fins) */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">04</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Showcase
+              </span>
+            </div>
+            <div className="lg:col-span-10">
+              <div className="mb-6">
+                <div className="inline-block px-2.5 py-1 bg-sky-50 border border-sky-200 text-sky-700 text-xs font-mono font-semibold rounded mb-3">
+                  Production Assemblies
+                </div>
+                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-3">
+                  Precision Fin Arrays &amp; Forced Convection Units
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed max-w-3xl font-normal">
+                  From micro-pitch skived fin arrays with razor-thin gaps to complete custom duct-mounted forced convection heat sink assemblies like the AFC0006, our designs are optimized for volumetric airflow efficiency.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                {/* AFC0006 Showcase */}
+                <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between">
+                  <div className="relative aspect-[16/10] w-full bg-slate-50 border border-slate-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-3">
+                    <Image
+                      src="/images/assets/user_showcase/AFC0006-render.png"
+                      alt="AFC0006 Custom Forced-Convection Heat Sink Assembly"
+                      fill
+                      className="object-contain p-2"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="font-bold text-slate-900 text-sm uppercase">AFC0006 Air-Cooled Assembly</h3>
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-sky-50 text-sky-700 rounded border border-sky-200">
+                        High CFM
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 font-mono">
+                      Integrated shroud mounting with custom CNC machined interface pad.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Pencil across Fins Fin Pitch */}
+                <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col justify-between">
+                  <div className="relative aspect-[16/10] w-full bg-slate-50 border border-slate-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-3">
+                    <Image
+                      src="/images/assets/user_showcase/pencil-fins.png"
+                      alt="Micro-pitch Aluminum Fin Array Pitch Comparison"
+                      fill
+                      className="object-contain p-2"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="font-bold text-slate-900 text-sm uppercase">Ultra-High Fin Density (Pencil Scale)</h3>
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200">
+                        0.4mm Gap
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 font-mono">
+                      Sub-millimeter fin pitch providing massive surface area multiplication per unit volume.
+                    </p>
                   </div>
                 </div>
               </div>

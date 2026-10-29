@@ -1,4 +1,4 @@
-import { ScrollVideoIntro } from "@/components/home/ScrollVideoIntro";
+import { HeroVideoSection } from "@/components/home/HeroVideoSection";
 import { ProductFamily } from "@/components/home/ProductFamily";
 import { ManufacturingStory } from "@/components/home/ManufacturingStory";
 import { CustomPhilosophy } from "@/components/home/CustomPhilosophy";
@@ -17,8 +17,8 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main id="main-content" className="relative w-full min-h-screen bg-transparent">
-      {/* 00 Cinematic Video Scroll Sequence (Above Fold Intro) */}
-      <ScrollVideoIntro />
+      {/* 00 Hero Raw Video Section (Live Workshop & Process Video) */}
+      <HeroVideoSection />
 
       {/* 01 Product Family (Directly after scroll video) */}
       <ProductFamily />

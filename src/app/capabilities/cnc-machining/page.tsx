@@ -143,6 +143,72 @@ export default function CncMachiningPage() {
               </div>
             </div>
           </article>
+
+          {/* 04 Finished Machined Hardware Showcase */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">04</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Hardware
+              </span>
+            </div>
+            <div className="lg:col-span-10">
+              <div className="mb-6">
+                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-3">
+                  Precision CNC Milled Hardware Gallery
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed max-w-3xl font-normal">
+                  Complex multi-pocket electronics enclosures, lightweight pocketed trays, and high-flatness chassis baseplates machined with micron precision.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                  <div className="relative aspect-[16/10] w-full bg-slate-900">
+                    <Image
+                      src="/images/assets/user_showcase/cnc-compartment-tray.png"
+                      alt="CNC-Machined Aluminum Multi-Compartment Tray"
+                      fill
+                      className="object-contain p-4"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="font-bold text-slate-900 text-sm uppercase">Compartment Module Tray</h3>
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-sky-50 text-sky-700 rounded border border-sky-200">
+                        Al-6061-T6
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 font-mono">
+                      Integrated EMI shielding walls, mounting bosses, and localized heat dissipation pockets.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs">
+                  <div className="relative aspect-[16/10] w-full bg-slate-900">
+                    <Image
+                      src="/images/assets/precision_milled_plate.png"
+                      alt="Precision-Milled Aluminum Chassis Plate"
+                      fill
+                      className="object-contain p-4"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="font-bold text-slate-900 text-sm uppercase">Precision Chassis Plate</h3>
+                      <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200">
+                        &lt; 0.05mm Flatness
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-500 font-mono">
+                      Post-weld skim cut TIM interface pad with precision drilled port inserts.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 

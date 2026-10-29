@@ -104,6 +104,89 @@ export default function ThermalEngineeringPage() {
           </div>
         </div>
 
+        {/* CAD Models & Virtual Prototypes Showcase */}
+        <div className="mb-16">
+          <div className="flex items-center gap-2 mb-3">
+            <span className="font-mono text-xs font-bold text-sky-600 px-2 py-0.5 bg-white border border-slate-200 rounded-sm">
+              CAD Models
+            </span>
+            <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
+              Virtual Prototyping
+            </span>
+          </div>
+          <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-4">
+            SolidWorks Digital Twin Modeling
+          </h2>
+          <p className="text-slate-600 text-base leading-relaxed max-w-3xl mb-8">
+            Every cooling component is engineered virtually to inspect flow paths, check tool clearances, and prevent packaging interference before cutting metal.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* LFA0073 CAD */}
+            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs p-5 flex flex-col justify-between">
+              <div className="relative aspect-[4/3] w-full bg-slate-50 rounded-xl overflow-hidden mb-4 border border-slate-100 flex items-center justify-center p-3">
+                <Image
+                  src="/images/assets/user_showcase/LFA0073-cad.png"
+                  alt="LFA0073 Liquid Cold Plate SolidWorks 3D CAD"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-sky-50 text-sky-700 rounded border border-sky-200 mb-1 inline-block">
+                  LFA0073 SolidWorks
+                </span>
+                <h4 className="font-bold text-slate-900 text-sm uppercase mb-1">Cold Plate Geometry</h4>
+                <p className="text-xs text-slate-500 font-mono">
+                  Multi-pass fluid channel CAD model with integrated O-ring grooves and mounting holes.
+                </p>
+              </div>
+            </div>
+
+            {/* AFC0006 CAD */}
+            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs p-5 flex flex-col justify-between">
+              <div className="relative aspect-[4/3] w-full bg-slate-50 rounded-xl overflow-hidden mb-4 border border-slate-100 flex items-center justify-center p-3">
+                <Image
+                  src="/images/assets/user_showcase/AFC0006-cad.png"
+                  alt="AFC0006 Air Cooled Assembly 3D Solid Model"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-sky-50 text-sky-700 rounded border border-sky-200 mb-1 inline-block">
+                  AFC0006 SolidWorks
+                </span>
+                <h4 className="font-bold text-slate-900 text-sm uppercase mb-1">Air-Cooled Assembly</h4>
+                <p className="text-xs text-slate-500 font-mono">
+                  Full 3D envelope model verifying fan duct clearance and fin aspect ratios.
+                </p>
+              </div>
+            </div>
+
+            {/* Air Cooled Thermal Concept */}
+            <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs p-5 flex flex-col justify-between">
+              <div className="relative aspect-[4/3] w-full bg-slate-900 rounded-xl overflow-hidden mb-4 border border-slate-800 flex items-center justify-center">
+                <Image
+                  src="/images/assets/user_showcase/air-cooled-concept.png"
+                  alt="Thermal Dynamics Heat Sink Prototype"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono font-semibold px-2 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200 mb-1 inline-block">
+                  Physics Prototype
+                </span>
+                <h4 className="font-bold text-slate-900 text-sm uppercase mb-1">Aerodynamic Airflow</h4>
+                <p className="text-xs text-slate-500 font-mono">
+                  Parametric fin array airflow optimization balancing CFM through-flow and backpressure.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* CTA */}
         <div className="rounded-2xl bg-slate-900 text-white p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
           <div>

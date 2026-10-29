@@ -163,10 +163,76 @@ export default function ColdPlatesPage() {
             </div>
           </article>
 
-          {/* 04 Technical documents */}
+          {/* 04 Featured Product: Copper Embedded Liquid Cold Plate (LFA0073) */}
           <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div className="lg:col-span-2">
               <span className="font-mono text-2xl font-bold text-sky-600">04</span>
+              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
+                Featured Plate
+              </span>
+            </div>
+            <div className="lg:col-span-10">
+              <div className="mb-6">
+                <div className="inline-block px-2.5 py-1 bg-sky-50 border border-sky-200 text-sky-700 text-xs font-mono font-semibold rounded mb-3">
+                  Product Part: LFA0073
+                </div>
+                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-3">
+                  Copper Embedded Liquid Cold Plate
+                </h2>
+                <p className="text-slate-600 text-base leading-relaxed max-w-3xl font-normal">
+                  Hybrid high-conductivity architecture integrating continuous seamless copper tubing expanded directly into precision-milled aluminum base plates. Delivers direct contact heat absorption under high-heat flux semiconductors while maintaining lightweight chassis rigidity.
+                </p>
+              </div>
+
+              {/* Front and Back Showcase */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col">
+                  <div className="relative aspect-[16/10] w-full bg-slate-50 border border-slate-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4">
+                    <Image
+                      src="/images/products/copper-embedded-cold-plate/lfa0073-front.png"
+                      alt="Copper Embedded Liquid Cold Plate - Front View (LFA0073)"
+                      fill
+                      className="object-contain p-2"
+                    />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-bold text-slate-900 text-sm uppercase">LFA0073 Front Interface</h3>
+                      <p className="text-xs text-slate-500 font-mono mt-0.5">Direct component mounting face &amp; precision fluid ports</p>
+                    </div>
+                    <span className="text-[11px] font-mono font-semibold px-2 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200">
+                      Front
+                    </span>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs flex flex-col">
+                  <div className="relative aspect-[16/10] w-full bg-slate-50 border border-slate-100 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-4">
+                    <Image
+                      src="/images/products/copper-embedded-cold-plate/lfa0073-back.png"
+                      alt="Copper Embedded Liquid Cold Plate - Back View (LFA0073)"
+                      fill
+                      className="object-contain p-2"
+                    />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-bold text-slate-900 text-sm uppercase">LFA0073 Back Circuit</h3>
+                      <p className="text-xs text-slate-500 font-mono mt-0.5">Continuous embedded copper channel routing &amp; structural chassis</p>
+                    </div>
+                    <span className="text-[11px] font-mono font-semibold px-2 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200">
+                      Back
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          {/* 05 Technical documents */}
+          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-2">
+              <span className="font-mono text-2xl font-bold text-sky-600">05</span>
               <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
                 Deliverables
               </span>

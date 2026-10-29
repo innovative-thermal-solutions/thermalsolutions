@@ -58,3 +58,4 @@ BusBar/
 /*.mp4
 !public/**/*
 
+*.zip
