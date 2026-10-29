@@ -1,0 +1,19 @@
+# Local raw root media archives not needed for Next.js build
+/202609091318.mp4
+/TensorPix - gemini_generated_video_4d95d0af-ezremove.mp4
+/*.zip
+/*.pptx
+/pptx_unzipped/
+/Engineer Pictures/
+/Founder and CEO photos/
+/Air Cooled Section/
+/Liquid Cooled Section/
+/BusBar/
+/BusBar /
+/Bonded Heat Sink/
+/Copper Embedded Liquid Cold Plate/
+/extracted_images/
+/*.jpg
+/*.png
+/Cold plate.webp
+.git
