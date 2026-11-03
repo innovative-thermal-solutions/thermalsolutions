@@ -10,7 +10,7 @@ const REFERENCE_MARKETS = [
     title: "More power. <br />Less thermal compromise.",
     description:
       "Custom heat sinks and cold plates for power converters, motor drives, UPS systems and industrial automation.",
-    image: "/images/reference/power.webp",
+    image: "/assets/power.webp",
     alt: "Power conversion and industrial automation applications",
     application: "Power & automation",
   },
@@ -20,7 +20,7 @@ const REFERENCE_MARKETS = [
     title: "Helping clean energy <br />keep its cool.",
     description:
       "Thermal solutions for inverters, renewable energy systems, power conversion and energy storage applications.",
-    image: "/images/reference/energy.webp",
+    image: "/assets/energy.webp",
     alt: "Renewable clean energy infrastructure",
     application: "Clean energy",
   },
@@ -30,7 +30,7 @@ const REFERENCE_MARKETS = [
     title: "Clear signals. <br />Controlled temperatures.",
     description:
       "Heat spreading and cooling solutions for RF generators, amplifiers and telecommunications electronics.",
-    image: "/images/reference/satellite.webp",
+    image: "/assets/satellite.webp",
     alt: "Satellite communications application",
     application: "Satellite & telecom",
   },
@@ -40,7 +40,7 @@ const REFERENCE_MARKETS = [
     title: "Precision for <br />demanding environments.",
     description:
       "Custom thermal engineering and precision manufacturing for aerospace and defense electronics. Project-specific quality and compliance requirements are reviewed with your team.",
-    image: "/images/reference/aerospace.webp",
+    image: "/assets/aerospace.webp",
     alt: "Aerospace and defense applications",
     application: "Aerospace & defense",
   },
@@ -50,7 +50,7 @@ const REFERENCE_MARKETS = [
     title: "Engineered for <br />the road ahead.",
     description:
       "Cooling solutions for battery packs, charging infrastructure and power electronics, including large-format electric bus cold plates.",
-    image: "/images/reference/ev.webp",
+    image: "/assets/ev.webp",
     alt: "Electric vehicle and battery applications",
     application: "EV & battery",
   },

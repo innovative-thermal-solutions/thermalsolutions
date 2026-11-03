@@ -18,7 +18,7 @@ export function ReferenceFswSection() {
         {/* Left Half: Friction Stir Welding Tool Process Photo */}
         <div className="lg:col-span-6 relative min-h-[320px] lg:min-h-full">
           <Image
-            src="/images/reference/fsw-process.webp"
+            src="/assets/fsw-process.webp"
             alt="Friction stir welding tool machining a metal workpiece"
             fill
             className="object-cover"

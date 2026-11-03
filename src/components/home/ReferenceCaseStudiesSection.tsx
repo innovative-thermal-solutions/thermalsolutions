@@ -70,7 +70,7 @@ export function ReferenceCaseStudiesSection() {
                 {/* Base: ITS Solution (After) */}
                 <div className="absolute inset-0">
                   <Image
-                    src="/images/reference/thermal-after.webp"
+                    src="/assets/thermal-after.webp"
                     alt="Thermal model after the ITS heat pipe redesign"
                     fill
                     className="object-contain"
@@ -87,7 +87,7 @@ export function ReferenceCaseStudiesSection() {
                 >
                   <div className="relative w-full h-full min-w-[320px]">
                     <Image
-                      src="/images/reference/thermal-before.webp"
+                      src="/assets/thermal-before.webp"
                       alt="Thermal model of the original amplifier cooling design"
                       fill
                       className="object-contain"
@@ -137,7 +137,7 @@ export function ReferenceCaseStudiesSection() {
         <div className="bg-white border border-[#d6deda] rounded-lg p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div className="relative w-full md:w-56 h-40 shrink-0 flex items-center justify-center p-2 bg-[#e9ece6] rounded">
             <Image
-              src="/images/reference/bus-plate.webp"
+              src="/assets/bus-plate.webp"
               alt="Large-format ITS electric bus aluminum battery cold plate"
               width={260}
               height={160}

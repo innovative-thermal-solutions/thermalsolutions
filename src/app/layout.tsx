@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
+import { ReferenceInteractiveModals } from "@/components/ui/ReferenceInteractiveModals";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -74,6 +75,7 @@ export default function RootLayout({
         <Navigation />
         <div className="flex-1 w-full relative z-10">{children}</div>
         <Footer />
+        <ReferenceInteractiveModals />
       </body>
     </html>
   );

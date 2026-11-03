@@ -22,7 +22,7 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     id: "extruded",
     name: "Extruded heat sinks",
     family: "air",
-    image: "/images/reference/air-family.webp",
+    image: "/assets/air-family.webp",
     tag: "AIR COOLED / EXTRUDED",
     short: "A practical foundation for everyday thermal challenges.",
     description: "Aluminum extrusion provides a cost-conscious starting point for air-cooled thermal designs. ITS develops the geometry, mounting features and finishing around the requirements of your assembly.",
@@ -35,7 +35,7 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     id: "skived",
     name: "Skived fin heat sinks",
     family: "air",
-    image: "/images/reference/extruded.webp",
+    image: "/assets/extruded.webp",
     tag: "AIR COOLED / HIGH FIN DENSITY",
     short: "Dense fin structures for compact cooling designs.",
     description: "Skiving forms thin fins from a single block of aluminum or copper. ITS evaluates fin density and spacing together with the airflow and heat source layout to develop the design.",
@@ -48,7 +48,7 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     id: "heatpipe",
     name: "Embedded heat pipes",
     family: "air",
-    image: "/images/reference/heat-pipe.webp",
+    image: "/assets/heat-pipe.webp",
     tag: "AIR COOLED / HEAT SPREADING",
     short: "Move heat away from concentrated hot spots.",
     description: "Heat pipes integrated into a heat sink help spread heat across the base. ITS uses this approach when concentrated heat sources make conventional heat sinks difficult to optimize.",
@@ -61,7 +61,7 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     id: "forged",
     name: "Fabricated & forged",
     family: "air",
-    image: "/images/reference/forged.webp",
+    image: "/assets/forged.webp",
     tag: "AIR COOLED / CUSTOM GEOMETRY",
     short: "More design possibilities for your application.",
     description: "Fabricated air-cooled designs and cold-forged heat sinks provide additional options for fin geometry and assembly. ITS selects the process to fit the thermal and manufacturing requirements.",
@@ -74,7 +74,7 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     id: "hypercool",
     name: "HyperCool cold plates",
     family: "liquid",
-    image: "/images/reference/hypercool.webp",
+    image: "/assets/hypercool.webp",
     tag: "LIQUID COOLED / HYPERCOOL",
     short: "Custom flow paths. Precision thermal management.",
     description: "HyperCool cold plates use machined internal flow paths tailored to the heat source layout. Thermal and hydraulic modeling support the design, with friction stir welding available for leak-tight construction.",
@@ -87,7 +87,7 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     id: "tube",
     name: "Pressed-in tube plates",
     family: "liquid",
-    image: "/images/reference/pressed-tube.webp",
+    image: "/assets/pressed-tube.webp",
     tag: "LIQUID COOLED / EMBEDDED TUBE",
     short: "An economical route to liquid cooling.",
     description: "A tube pressed into a machined plate creates a simple fluid path for liquid cooling. ITS configures the tube route and plate features around component locations, system constraints and budget.",
@@ -100,7 +100,7 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     id: "fsw",
     name: "Friction stir welded plates",
     family: "liquid",
-    image: "/images/reference/fsw-plate.webp",
+    image: "/assets/fsw-plate.webp",
     tag: "LIQUID COOLED / SOLID-STATE JOINING",
     short: "Sealed channels for demanding cooling assemblies.",
     description: "Friction stir welding closes machined fluid channels using a solid-state joining process. ITS has in-house FSW capability for precision thermal assemblies in aluminum and copper.",
@@ -113,7 +113,7 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     id: "copper",
     name: "Copper brazed cold plates",
     family: "liquid",
-    image: "/images/reference/copper-brazed.webp",
+    image: "/assets/copper-brazed.webp",
     tag: "LIQUID COOLED / COPPER",
     short: "Copper construction for demanding thermal designs.",
     description: "Copper vacuum-brazed cold plates are part of the ITS thermal solution portfolio. The appropriate construction is selected around the component layout, material requirements and system operating conditions.",
@@ -125,11 +125,11 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
 ];
 
 export const REFERENCE_TEAM = [
-  { img: "/images/reference/founder.webp", name: "Ahmed Zaghlol", role: "Founder & CEO" },
-  { img: "/images/reference/sam.webp", name: "Sam Hemming", role: "Lead Mechanical Engineer" },
-  { img: "/images/reference/david.webp", name: "David Dawson", role: "Thermal Engineer" },
-  { img: "/images/reference/matthew.webp", name: "Matthew Galvez", role: "Mechanical Engineer" },
-  { img: "/images/reference/abdu.webp", name: "Abdu Zaghlol", role: "Sales Manager" },
+  { img: "/assets/founder.webp", name: "Ahmed Zaghlol", role: "Founder & CEO" },
+  { img: "/assets/sam.webp", name: "Sam Hemming", role: "Lead Mechanical Engineer" },
+  { img: "/assets/david.webp", name: "David Dawson", role: "Thermal Engineer" },
+  { img: "/assets/matthew.webp", name: "Matthew Galvez", role: "Mechanical Engineer" },
+  { img: "/assets/abdu.webp", name: "Abdu Zaghlol", role: "Sales Manager" },
 ];
 
 export function ReferenceInteractiveModals() {
@@ -619,7 +619,7 @@ export function ReferenceInteractiveModals() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                   <div className="relative h-60 rounded bg-[#0b252c] p-4 flex items-center justify-center border border-slate-800">
                     <Image
-                      src="/images/reference/bus-plate.webp"
+                      src="/assets/bus-plate.webp"
                       alt="ITS electric bus battery cold plate"
                       width={360}
                       height={240}
@@ -755,7 +755,7 @@ export function ReferenceInteractiveModals() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="rounded bg-[#0b252c] p-3 border border-slate-800 text-center">
                     <Image
-                      src="/images/reference/flow-channel.webp"
+                      src="/assets/flow-channel.webp"
                       alt="Machined cold plate with internal fluid channels"
                       width={300}
                       height={180}
@@ -767,7 +767,7 @@ export function ReferenceInteractiveModals() {
                   </div>
                   <div className="rounded bg-[#0b252c] p-3 border border-slate-800 text-center">
                     <Image
-                      src="/images/reference/fsw-plate.webp"
+                      src="/assets/fsw-plate.webp"
                       alt="Friction stir welded cold plate assembly"
                       width={300}
                       height={180}

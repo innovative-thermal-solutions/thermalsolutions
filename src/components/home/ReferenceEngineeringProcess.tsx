@@ -9,7 +9,7 @@ const PROCESS_STEPS = [
     title: "Define & discover",
     description:
       "Start with your heat load, temperature targets, available space and production goals. We turn the constraints into a clear design brief.",
-    image: "/images/reference/temperature-model.webp",
+    image: "/assets/temperature-model.webp",
     alt: "Thermal analysis of a liquid cold plate",
     caption: "SIMULATE. ITERATE. OPTIMIZE.",
   },
@@ -18,7 +18,7 @@ const PROCESS_STEPS = [
     title: "Design & simulate",
     description:
       "CFD, parametric studies and iterative optimization explore the thermal design. SolidWorks supports mechanical design and integration.",
-    image: "/images/reference/velocity-model.webp",
+    image: "/assets/velocity-model.webp",
     alt: "Liquid cold plate velocity distribution model",
     caption: "THERMAL & HYDRAULIC ANALYSIS.",
   },
@@ -27,7 +27,7 @@ const PROCESS_STEPS = [
     title: "Machine & manufacture",
     description:
       "Five-axis CNC machining and friction stir welding bring the design to life at our Ontario facility, with trusted partners for high-volume production.",
-    image: "/images/reference/team-machining.webp",
+    image: "/assets/team-machining.webp",
     alt: "ITS team operating CNC manufacturing equipment",
     caption: "PRECISION MANUFACTURING. IN HOUSE.",
   },
@@ -36,7 +36,7 @@ const PROCESS_STEPS = [
     title: "Test & deliver",
     description:
       "Experiments and prototype evaluation check thermal performance against your project requirements before moving toward production.",
-    image: "/images/reference/liquid-assembly.webp",
+    image: "/assets/liquid-assembly.webp",
     alt: "Completed ITS liquid cold plate assembly",
     caption: "FROM PROTOTYPE TO PRODUCTION.",
   },

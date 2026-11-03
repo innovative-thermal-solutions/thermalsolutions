@@ -95,7 +95,7 @@ export function ReferenceHeroSection() {
 
               <div className="relative z-10 w-full h-full flex items-center justify-center p-4">
                 <Image
-                  src={liquidHero ? "/images/reference/hypercool.webp" : "/images/reference/hero-heatsink.webp"}
+                  src={liquidHero ? "/assets/hypercool.webp" : "/assets/hero-heatsink.webp"}
                   alt={liquidHero ? "ITS HyperCool liquid cold plate" : "ITS aluminum heat sink with embedded copper heat pipes"}
                   width={460}
                   height={380}

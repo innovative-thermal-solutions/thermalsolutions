@@ -19,7 +19,7 @@ export function ReferenceFacilitySection() {
         {/* Left: Manufacturing Facility Workshop Photo */}
         <div className="lg:col-span-6 relative min-h-[320px] lg:min-h-full">
           <Image
-            src="/images/reference/workshop.webp"
+            src="/assets/workshop.webp"
             alt="Innovative Thermal Solutions manufacturing facility in Guelph, Ontario"
             fill
             className="object-cover"
