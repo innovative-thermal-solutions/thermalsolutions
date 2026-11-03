@@ -89,7 +89,7 @@ export function ProductFamily() {
   };
 
   return (
-    <section id="products" className="relative w-full py-24 px-6 lg:px-12 bg-transparent border-b border-slate-200/80 overflow-hidden">
+    <section id="products" className="relative w-full py-24 px-6 lg:px-12 bg-slate-50 border-b border-slate-200 overflow-hidden">
       {/* Background Blueprint Grid */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-40 pointer-events-none z-0" />
 

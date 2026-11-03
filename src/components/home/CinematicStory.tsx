@@ -21,7 +21,6 @@ import {
   ShieldCheck,
   CheckCircle2,
 } from "lucide-react";
-import { DitherWave } from "@/components/ui/DitherWave";
 
 interface Hotspot {
   id: string;
@@ -270,22 +269,12 @@ export function CinematicStory() {
 
   return (
     <section id="story" className="relative w-full min-h-[92vh] lg:min-h-[96vh] bg-gradient-to-br from-[#ffffff] via-[#f8fafc] to-[#f0f7ff] border-b border-slate-200 overflow-hidden flex flex-col justify-between pt-24 lg:pt-28">
-      {/* Dynamic Dither Wave Background */}
-      <DitherWave
-        color1="#0284c7"
-        color2="#38bdf8"
-        speed={0.4}
-        frequency={2.5}
-        amplitude={0.3}
-        ditherSize={2.0}
-        opacity={0.18}
-      />
       {/* Light Technical Blueprint Grid Overlay */}
       <div className="absolute inset-0 bg-grid-blueprint pointer-events-none opacity-70" />
       <div className="absolute inset-0 bg-mesh-hero pointer-events-none" />
 
       {/* Radiant Ambient Halos for Depth */}
-      <div className="absolute top-16 right-10 w-[500px] h-[500px] bg-sky-200/40 rounded-full blur-[100px] pointer-events-none animate-pulse-subtle" />
+      <div className="absolute top-16 right-10 w-[500px] h-[500px] bg-sky-200/40 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-[600px] h-[600px] bg-cyan-100/50 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Main Content Grid */}

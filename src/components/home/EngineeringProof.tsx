@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, Cpu, Activity, ShieldCheck, CheckCircle2, Droplets, Thermometer, Gauge } from "lucide-react";
 import { motion } from "framer-motion";
-import { DitherWave } from "@/components/ui/DitherWave";
 
 const capabilities = [
   {
@@ -47,17 +46,7 @@ export function EngineeringProof() {
   const [activeSensor, setActiveSensor] = useState(sensors[1]);
 
   return (
-    <section id="capabilities" className="relative w-full py-24 px-6 lg:px-12 bg-slate-50/70 border-b border-slate-200 overflow-hidden">
-      {/* Dynamic Dither Wave Background */}
-      <DitherWave
-        color1="#0284c7"
-        color2="#38bdf8"
-        speed={0.45}
-        frequency={2.6}
-        amplitude={0.32}
-        ditherSize={2.0}
-        opacity={0.18}
-      />
+    <section id="capabilities" className="relative w-full py-24 px-6 lg:px-12 bg-slate-50 border-b border-slate-200 overflow-hidden">
       {/* Blueprint Grid Lines */}
       <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
 

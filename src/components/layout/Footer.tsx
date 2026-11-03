@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ShieldCheck, MapPin, Phone, Mail, ArrowUpRight, Cpu } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyContent";
@@ -197,18 +199,39 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar with Coordinates & Copyright */}
+        {/* Bottom Bar with Coordinates, Source modal trigger & Copyright */}
         <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
           <div className="flex items-center gap-3">
-            <span>© {new Date().getFullYear()} Innovative Thermal Solutions Inc. All rights reserved.</span>
+            <span>© 2026 Innovative Thermal Solutions Inc. All rights reserved.</span>
             <span className="hidden md:inline">•</span>
             <span className="hidden md:inline">Guelph, Ontario, Canada</span>
           </div>
 
-          <div className="flex items-center gap-6">
-            <span className="text-slate-400 font-mono">43°30&apos;48.2&quot;N 80°13&apos;40.5&quot;W</span>
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
+            <button
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  window.dispatchEvent(
+                    new CustomEvent("its-reference-modal", {
+                      detail: { type: "open-sources-detail" },
+                    })
+                  );
+                }
+              }}
+              className="text-[#087f83] hover:underline font-bold cursor-pointer"
+            >
+              Content sources ↗
+            </button>
             <span className="text-slate-300">•</span>
-            <span className="text-sky-700 font-bold">CANADIAN ADVANCED THERMAL MANUFACTURING</span>
+            <a href="https://www.itscooling.com" target="_blank" rel="noopener noreferrer" className="hover:text-slate-700">
+              itscooling.com ↗
+            </a>
+            <span className="text-slate-300">•</span>
+            <a href="#home" className="hover:text-slate-700">
+              Back to top ↑
+            </a>
+            <span className="text-slate-300 hidden sm:inline">•</span>
+            <span className="text-slate-400 font-mono hidden sm:inline">43.51° N / 80.21° W</span>
           </div>
         </div>
       </div>
