@@ -1,56 +1,48 @@
 import { HeroVideoSection } from "@/components/home/HeroVideoSection";
-import { CompanyIntroductionSection } from "@/components/home/CompanyIntroductionSection";
-import { FourCoolingSolutionCards } from "@/components/home/FourCoolingSolutionCards";
-import { TurnkeyProcessPdfSection } from "@/components/home/TurnkeyProcessPdfSection";
-import { ThermalDesignSimulationSection } from "@/components/home/ThermalDesignSimulationSection";
-import { MarketsWeServePdfSection } from "@/components/home/MarketsWeServePdfSection";
-import { FrictionStirWeldingPdfSection } from "@/components/home/FrictionStirWeldingPdfSection";
+import { ProductFamily } from "@/components/home/ProductFamily";
+import { ManufacturingStory } from "@/components/home/ManufacturingStory";
+import { CustomPhilosophy } from "@/components/home/CustomPhilosophy";
+import { EngineeringProof } from "@/components/home/EngineeringProof";
+import { ThermalSimulator } from "@/components/home/ThermalSimulator";
+import { CinematicStory } from "@/components/home/CinematicStory";
+import { IndustriesStory } from "@/components/home/IndustriesStory";
 import { FinalCta } from "@/components/home/FinalCta";
-import { SupplementaryInformationSection } from "@/components/home/SupplementaryInformationSection";
 
 export const metadata = {
-  title: "Innovative Thermal Solutions | 100% Custom Thermal Management & Manufacturing",
+  title: "Innovative Thermal Solutions | 100% Custom Thermal Management",
   description:
-    "Custom heat sinks, liquid cold plates and friction stir welding. Thermal engineering, testing and precision manufacturing from Guelph, Ontario.",
+    "We don't sell standard products off shelves. ITS Cooling designs and manufactures custom liquid cold plates and heat sinks from concept to finished hardware under one roof in Guelph, Ontario.",
 };
 
 export default function HomePage() {
   return (
     <main id="main-content" className="relative w-full min-h-screen bg-slate-50">
-      {/* =========================================================================
-          MASTER MANDATORY HOMEPAGE SEQUENCE AS ORDERED IN DESIGN.PDF
-          ========================================================================= */}
-
-      {/* SECTION 01 — HERO VIDEO + PHOTOS */}
+      {/* 00 Hero Raw Video Section (Live Workshop & Process Video) */}
       <HeroVideoSection />
 
-      {/* SECTION 02 — COMPANY INTRODUCTION: Description on what we do.. ( We design, we manufacture ) */}
-      <CompanyIntroductionSection />
+      {/* 01 Product Family (Directly after scroll video) */}
+      <ProductFamily />
 
-      {/* SECTION 03 — FOUR COOLING SOLUTION CARDS (Natural Convection, Forced Convection, Custom Liquid Cold Plate, Bus Bar) */}
-      <FourCoolingSolutionCards />
+      {/* 02 In-House Manufacturing & Live Process Video */}
+      <ManufacturingStory />
 
-      {/* SECTION 04 — THE TURNKEY PROCESS: Concept to Hardware Under One Roof */}
-      <TurnkeyProcessPdfSection />
+      {/* 03 The Turnkey Process & 100% Custom Philosophy */}
+      <CustomPhilosophy />
 
-      {/* SECTION 05 — THERMAL DESIGN, SIMULATION & ENGINEERING (Prominent CFD image + Interactive Simulator) */}
-      <ThermalDesignSimulationSection />
+      {/* 04 Engineering Proof, CFD Physics & Sensor Telemetry */}
+      <EngineeringProof />
 
-      {/* SECTION 06 — MARKETS WE SERVE IN (Industrial layout with multi-industry explorer) */}
-      <MarketsWeServePdfSection />
+      {/* 05 Interactive Thermal Simulator & Lab Bench */}
+      <ThermalSimulator />
 
-      {/* SECTION 07 — FRICTION STIR WELDING (Engineered. Milled. Welded. Tested Here.) */}
-      <FrictionStirWeldingPdfSection />
+      {/* 06 Interactive Hardware Architecture Deep-Dive */}
+      <CinematicStory />
 
-      {/* SECTION 08 — BRING US YOUR COOLING REQUIREMENTS (Final CTA with Talk to Engineer & Explore Technologies) */}
+      {/* 07 Mission-Critical Target Applications & Industries */}
+      <IndustriesStory />
+
+      {/* 08 Start a Conversation Final Consultation CTA */}
       <FinalCta />
-
-      {/* =========================================================================
-          SUPPLEMENTARY TECHNICAL ARCHIVE & REFERENCE EXTENSIONS
-          (Preserves 100% of all technical datasheets, interactive sliders, FSW details,
-           team modals, solution comparisons, full FAQ accordion, and deep-dive specs)
-          ========================================================================= */}
-      <SupplementaryInformationSection />
     </main>
   );
 }
