@@ -98,16 +98,16 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
   },
   {
     id: "fsw",
-    name: "Friction stir welded plates",
+    name: "Bus bar",
     family: "liquid",
     image: "/assets/fsw-plate.webp",
-    tag: "LIQUID COOLED / SOLID-STATE JOINING",
-    short: "Sealed channels for demanding cooling assemblies.",
-    description: "Friction stir welding closes machined fluid channels using a solid-state joining process. ITS has in-house FSW capability for precision thermal assemblies in aluminum and copper.",
-    material: "Aluminum or copper",
-    construction: "CNC machining with friction stir welded closure",
-    application: "Battery systems and power electronics",
-    considerations: "Channel geometry, joint design and validation"
+    tag: "LIQUID COOLED / BUS BAR & COLD PLATE",
+    short: "Integrated bus bar assemblies & sealed channels for demanding cooling.",
+    description: "Integrated power bus bar assemblies and solid-state joined cold plates. ITS engineers laminated and liquid-cooled bus bars alongside precision friction stir welded assemblies for battery systems and power conversion.",
+    material: "Copper or Aluminum",
+    construction: "Precision CNC machining with integrated bus bar & solid-state joining",
+    application: "Battery packs, inverters and high-current power electronics",
+    considerations: "Current carrying capacity, channel geometry, dielectric insulation and validation"
   },
   {
     id: "copper",
