@@ -538,7 +538,7 @@ export const PRODUCT_CATEGORIES = [
         name: "Heat Pipe Tower & Fin Stack Assemblies",
         desc: "Remote heat dissipation assemblies with multi-bend heat pipes routing heat to dense folded or stamped fin arrays with dedicated blower fans.",
         specs: "Complex 3D pipe routing, nickel-plated copper, custom mounting brackets.",
-        image: "/images/image14.png"
+        image: "/assets/heat-pipe.webp"
       }
     ]
   },
