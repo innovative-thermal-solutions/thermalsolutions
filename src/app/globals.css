@@ -1,9 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-serif);
-  --font-display: var(--font-serif);
+  --font-sans: var(--font-sans), 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: var(--font-mono);
   --color-brand-blue: #0284c7;
   --color-coolant: #0ea5e9;
@@ -25,6 +26,8 @@
     --navy: #090e17;
     --white: #ffffff;
     --max: 1440px;
+    --font: var(--font-sans), 'DM Sans', Arial, sans-serif;
+    --heading: var(--font-heading), 'Space Grotesk', Arial, sans-serif;
   }
 
   html {
@@ -36,15 +39,15 @@
   body {
     background-color: #f8fafc;
     color: #090e17;
-    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: var(--font-sans), 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
-  h1, h2, h3, .font-serif, .font-display {
-    font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
-    letter-spacing: -0.02em;
+  h1, h2, h3, h4, h5, h6, .font-serif, .font-display, .font-heading {
+    font-family: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.04em;
   }
 
   ::selection {
