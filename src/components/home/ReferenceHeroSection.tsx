@@ -18,9 +18,25 @@ export function ReferenceHeroSection() {
 
   return (
     <section id="home" className="relative w-full bg-[#091f26] text-[#f4f6ef] overflow-hidden border-b border-slate-800">
+      {/* Background Video Layer */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover object-center opacity-30 brightness-90 saturate-75"
+        >
+          <source src="/videos/hero-workshop-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Darkening / Tint gradient overlays to maintain high contrast text readability and brand teal tone */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#091f26]/95 via-[#091f26]/80 to-[#091f26]/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#091f26] via-transparent to-[#091f26]/70" />
+      </div>
+
       {/* Blueprint Grid with Ambient Radial Glow */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-40"
+        className="absolute inset-0 pointer-events-none opacity-40 z-0"
         style={{
           backgroundImage:
             "linear-gradient(rgba(117,185,181,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(117,185,181,0.08) 1px, transparent 1px)",
@@ -28,7 +44,7 @@ export function ReferenceHeroSection() {
           maskImage: "linear-gradient(90deg, transparent, #000 25%)",
         }}
       />
-      <div className="absolute right-0 top-0 w-[600px] h-[600px] bg-[#19655a]/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute right-0 top-0 w-[600px] h-[600px] bg-[#19655a]/20 rounded-full blur-[140px] pointer-events-none z-0" />
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 pt-28 lg:pt-36 pb-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

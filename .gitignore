@@ -1,14 +1,8 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
 /.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+.pnp.js
+.yarn/install-state.gz
 
 # testing
 /coverage
@@ -28,10 +22,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# local env files
+.env*.local
 
 # vercel
 .vercel
@@ -40,22 +33,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# root extraction and scratch files
-pptx_unzipped/
-extracted_images/
-*.pptx
-extract_*.py
-pptx_content.md
-Air Cooled Section/
-Liquid Cooled Section/
-Engineer Pictures/
-Founder and CEO photos/
-BusBar/
-*.png
-*.jpg
-*.jpeg
-*.webp
+# Large user root raw videos (already in public/videos or external)
 /*.mp4
-!public/**/*
-
-*.zip
