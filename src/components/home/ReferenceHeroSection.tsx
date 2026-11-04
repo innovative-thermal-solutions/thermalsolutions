@@ -25,13 +25,13 @@ export function ReferenceHeroSection() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover object-center opacity-30 brightness-90 saturate-75"
+          className="w-full h-full object-cover object-center opacity-45 brightness-95"
         >
           <source src="/videos/hero-workshop-bg.mp4" type="video/mp4" />
         </video>
         {/* Darkening / Tint gradient overlays to maintain high contrast text readability and brand teal tone */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#091f26]/95 via-[#091f26]/80 to-[#091f26]/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#091f26] via-transparent to-[#091f26]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#091f26]/90 via-[#091f26]/75 to-[#091f26]/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#091f26] via-transparent to-[#091f26]/60" />
       </div>
 
       {/* Blueprint Grid with Ambient Radial Glow */}
