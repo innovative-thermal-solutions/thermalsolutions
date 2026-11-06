@@ -9,7 +9,6 @@ import { EngineeringProof } from "@/components/home/EngineeringProof";
 import { ThermalSimulator } from "@/components/home/ThermalSimulator";
 import { CinematicStory } from "@/components/home/CinematicStory";
 import { ReferenceCaseStudiesSection } from "@/components/home/ReferenceCaseStudiesSection";
-import { ReferenceFacilitySection } from "@/components/home/ReferenceFacilitySection";
 import { ReferenceFaqSection } from "@/components/home/ReferenceFaqSection";
 import { ReferenceContactSection } from "@/components/home/ReferenceContactSection";
 
@@ -55,10 +54,7 @@ export default function HomePage() {
       {/* 11 COMPLETE REFERENCE CASE STUDIES & BEFORE/AFTER THERMAL COMPARISON SLIDER */}
       <ReferenceCaseStudiesSection />
 
-      {/* 12 COMPLETE REFERENCE FACILITY, TEAM & QUALITY INFO */}
-      <ReferenceFacilitySection />
-
-      {/* 13 COMPLETE REFERENCE FAQ ACCORDION */}
+      {/* 12 COMPLETE REFERENCE FAQ ACCORDION */}
       <ReferenceFaqSection />
 
       {/* 14 COMPLETE REFERENCE CONTACT & PROJECT BRIEF SECTION */}
