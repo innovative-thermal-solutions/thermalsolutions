@@ -6,69 +6,91 @@
   --font-heading: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: var(--font-mono);
-  --color-brand-blue: #0284c7;
-  --color-coolant: #0ea5e9;
-  --color-deep-navy: #090e17;
-  --color-slate-surface: #f8fafc;
-  --color-slate-border: #e2e8f0;
+
+  /* Reference website palette */
+  --color-ink: #0b252c;
+  --color-dark: #091f26;
+  --color-muted: #647475;
+  --color-teal: #087f83;
+  --color-aqua: #81e6d6;
+  --color-paper: #f2f4f0;
+  --color-line: #d6deda;
+
+  --color-brand-blue: #087f83;
+  --color-coolant: #81e6d6;
+  --color-deep-navy: #091f26;
+  --color-slate-surface: #f2f4f0;
+  --color-slate-border: #d6deda;
 }
 
 @layer base {
   :root {
-    --page: #f8fafc;
-    --card: #ffffff;
-    --text: #090e17;
-    --muted: #64748b;
-    --border: #e2e8f0;
-    --coolant: #0284c7;
-    --blue: #0369a1;
-    --cyan: #06b6d4;
-    --navy: #090e17;
+    --ink: #0b252c;
+    --dark: #091f26;
+    --muted: #647475;
+    --teal: #087f83;
+    --aqua: #81e6d6;
+    --paper: #f2f4f0;
+    --line: #d6deda;
+
+    --page: #f2f4f0;
+    --card: #f7f8f3;
+    --text: #0b252c;
+    --border: #d6deda;
+    --coolant: #087f83;
+    --blue: #087f83;
+    --cyan: #81e6d6;
+    --navy: #091f26;
     --white: #ffffff;
-    --max: 1440px;
+    --max: 1450px;
     --font: var(--font-sans), 'DM Sans', Arial, sans-serif;
     --heading: var(--font-heading), 'Space Grotesk', Arial, sans-serif;
   }
 
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
     color-scheme: light;
-    background-color: #f8fafc;
+    background-color: #f2f4f0;
   }
 
   body {
-    background-color: #f8fafc;
-    color: #090e17;
-    font-family: var(--font-sans), 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f2f4f0;
+    color: #0b252c;
+    font-family: var(--font-sans), 'DM Sans', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6, .font-serif, .font-display, .font-heading {
-    font-family: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-    letter-spacing: -0.04em;
+    font-family: var(--font-heading), 'Space Grotesk', Arial, sans-serif;
+    font-weight: 500;
+    line-height: 1.06;
+    letter-spacing: -0.055em;
+    color: #0b252c;
   }
 
   ::selection {
-    background: #0284c7;
-    color: #ffffff;
+    background: #81e6d6;
+    color: #091f26;
   }
 
-  /* Clean light technical scrollbar */
+  /* Clean engineering scrollbar */
   ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    background: #f2f4f0;
   }
   ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
+    background: #bcc8c3;
+    border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #0284c7;
+    background: #087f83;
   }
 }
 
