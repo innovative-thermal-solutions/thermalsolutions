@@ -97,10 +97,10 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     considerations: "Tube diameter, coolant compatibility and fittings"
   },
   {
-    id: "fsw",
+    id: "busbar",
     name: "Bus bar",
     family: "liquid",
-    image: "/assets/fsw-plate.webp",
+    image: "/assets/busbar.webp",
     tag: "LIQUID COOLED / BUS BAR & COLD PLATE",
     short: "Integrated bus bar assemblies & sealed channels for demanding cooling.",
     description: "Integrated power bus bar assemblies and solid-state joined cold plates. ITS engineers laminated and liquid-cooled bus bars alongside precision friction stir welded assemblies for battery systems and power conversion.",
