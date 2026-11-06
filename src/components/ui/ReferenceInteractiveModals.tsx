@@ -536,11 +536,11 @@ export function ReferenceInteractiveModals() {
 
       {/* 3. MULTI-PURPOSE DETAIL MODAL */}
       {detailModal.open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
-          <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-[#091f26] border border-white/20 text-[#f4f6ef] rounded-lg p-6 sm:p-8 shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-fade-in">
+          <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white border border-[#d6deda] text-[#0b252c] rounded-xl p-6 sm:p-8 shadow-2xl">
             <button
               onClick={() => setDetailModal({ open: false, type: "product" })}
-              className="absolute top-4 right-4 text-2xl leading-none text-slate-400 hover:text-white transition-colors cursor-pointer"
+              className="absolute top-4 right-4 text-2xl leading-none text-slate-400 hover:text-slate-900 transition-colors cursor-pointer"
               aria-label="Close details"
             >
               ×
@@ -548,11 +548,11 @@ export function ReferenceInteractiveModals() {
 
             {detailModal.type === "product" && detailModal.product && (
               <div className="space-y-6">
-                <p className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase">
+                <p className="text-[11px] font-mono tracking-widest text-[#087f83] font-bold uppercase">
                   {detailModal.product.tag}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                  <div className="relative h-56 rounded bg-[#0b252c] p-4 flex items-center justify-center border border-slate-800">
+                  <div className="relative h-56 rounded-lg bg-[#f2f4f0] p-4 flex items-center justify-center border border-[#d6deda]">
                     <Image
                       src={detailModal.product.image}
                       alt={detailModal.product.name}
@@ -562,35 +562,35 @@ export function ReferenceInteractiveModals() {
                     />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-serif text-white mb-2">{detailModal.product.name}</h2>
-                    <p className="text-slate-300 text-sm leading-relaxed">{detailModal.product.description}</p>
+                    <h2 className="text-2xl font-serif font-bold text-[#0b252c] mb-2">{detailModal.product.name}</h2>
+                    <p className="text-slate-600 text-sm leading-relaxed">{detailModal.product.description}</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-800 pt-6 text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-[#d6deda] pt-6 text-xs">
                   <div>
-                    <strong className="block text-[10px] font-mono text-slate-400 tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
                       MATERIAL
                     </strong>
-                    <span className="text-white">{detailModal.product.material}</span>
+                    <span className="text-[#0b252c] font-medium">{detailModal.product.material}</span>
                   </div>
                   <div>
-                    <strong className="block text-[10px] font-mono text-slate-400 tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
                       CONSTRUCTION
                     </strong>
-                    <span className="text-white">{detailModal.product.construction}</span>
+                    <span className="text-[#0b252c] font-medium">{detailModal.product.construction}</span>
                   </div>
                   <div>
-                    <strong className="block text-[10px] font-mono text-slate-400 tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
                       APPLICATIONS
                     </strong>
-                    <span className="text-white">{detailModal.product.application}</span>
+                    <span className="text-[#0b252c] font-medium">{detailModal.product.application}</span>
                   </div>
                   <div>
-                    <strong className="block text-[10px] font-mono text-slate-400 tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
                       DESIGN CONSIDERATIONS
                     </strong>
-                    <span className="text-white">{detailModal.product.considerations}</span>
+                    <span className="text-[#0b252c] font-medium">{detailModal.product.considerations}</span>
                   </div>
                 </div>
 
@@ -604,7 +604,7 @@ export function ReferenceInteractiveModals() {
                     setInquiryStep("form");
                     setInquiryOpen(true);
                   }}
-                  className="px-6 py-3 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3 bg-[#01747A] hover:bg-[#015f64] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-sm hover:shadow-md"
                 >
                   Discuss this solution <span>↗</span>
                 </button>
@@ -613,11 +613,11 @@ export function ReferenceInteractiveModals() {
 
             {detailModal.type === "bus" && (
               <div className="space-y-6">
-                <p className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase">
+                <p className="text-[11px] font-mono tracking-widest text-[#087f83] font-bold uppercase">
                   PROJECT SPOTLIGHT / EV & BATTERY
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                  <div className="relative h-60 rounded bg-[#0b252c] p-4 flex items-center justify-center border border-slate-800">
+                  <div className="relative h-60 rounded-lg bg-[#f2f4f0] p-4 flex items-center justify-center border border-[#d6deda]">
                     <Image
                       src="/assets/bus-plate.webp"
                       alt="ITS electric bus battery cold plate"
@@ -627,25 +627,25 @@ export function ReferenceInteractiveModals() {
                     />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-serif text-white mb-2">Large-format battery cooling.</h2>
-                    <p className="text-slate-300 text-sm leading-relaxed">
+                    <h2 className="text-2xl font-serif font-bold text-[#0b252c] mb-2">Large-format battery cooling.</h2>
+                    <p className="text-slate-600 text-sm leading-relaxed">
                       Aluminum cold plate developed for an electric bus battery pack. The company presentation documents a 1,450 × 610 × 15 mm plate designed for this application.
                     </p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-800 pt-6 text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-[#d6deda] pt-6 text-xs">
                   <div>
-                    <strong className="block text-[10px] font-mono text-slate-400 tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
                       PLATE SIZE
                     </strong>
-                    <span className="text-white">57 × 24 × 0.6 in / 1,450 × 610 × 15 mm</span>
+                    <span className="text-[#0b252c] font-medium">57 × 24 × 0.6 in / 1,450 × 610 × 15 mm</span>
                   </div>
                   <div>
-                    <strong className="block text-[10px] font-mono text-slate-400 tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
                       APPLICATION
                     </strong>
-                    <span className="text-white">Electric bus battery pack cooling</span>
+                    <span className="text-[#0b252c] font-medium">Electric bus battery pack cooling</span>
                   </div>
                 </div>
 
@@ -660,7 +660,7 @@ export function ReferenceInteractiveModals() {
                     setInquiryStep("form");
                     setInquiryOpen(true);
                   }}
-                  className="px-6 py-3 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3 bg-[#01747A] hover:bg-[#015f64] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-sm hover:shadow-md"
                 >
                   Discuss your battery project ↗
                 </button>
