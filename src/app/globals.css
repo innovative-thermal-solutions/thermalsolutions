@@ -69,7 +69,36 @@
     font-weight: 500;
     line-height: 1.06;
     letter-spacing: -0.055em;
-    color: #0b252c;
+  }
+
+  /* Ensure text inside dark background sections and banners is crisp white and fully legible */
+  .text-white,
+  .text-white h1,
+  .text-white h2,
+  .text-white h3,
+  .text-white h4,
+  .text-white h5,
+  .text-white h6,
+  [class*="bg-slate-900"] h1,
+  [class*="bg-slate-900"] h2,
+  [class*="bg-slate-900"] h3,
+  [class*="bg-slate-900"] h4,
+  [class*="bg-slate-950"] h1,
+  [class*="bg-slate-950"] h2,
+  [class*="bg-slate-950"] h3,
+  [class*="bg-[#091f26]"] h1,
+  [class*="bg-[#091f26]"] h2,
+  [class*="bg-[#091f26]"] h3,
+  [class*="bg-[#0b252c]"] h1,
+  [class*="bg-[#0b252c]"] h2,
+  [class*="bg-[#0b252c]"] h3,
+  [class*="bg-[#0c6c70]"] h1,
+  [class*="bg-[#0c6c70]"] h2,
+  [class*="bg-[#0c6c70]"] h3,
+  [class*="bg-zinc-900"] h1,
+  [class*="bg-zinc-900"] h2,
+  [class*="bg-zinc-900"] h3 {
+    color: #ffffff !important;
   }
 
   ::selection {
