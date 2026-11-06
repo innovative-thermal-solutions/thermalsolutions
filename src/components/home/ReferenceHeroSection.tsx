@@ -17,20 +17,20 @@ export function ReferenceHeroSection() {
   };
 
   return (
-    <section id="home" className="relative w-full bg-[#091f26] text-[#f4f6ef] overflow-hidden border-b border-slate-800">
-      {/* Background Video Layer */}
+    <section id="home" className="relative w-full min-h-screen flex flex-col justify-between bg-[#091f26] text-[#f4f6ef] overflow-hidden border-b border-slate-800">
+      {/* Background Video Layer - Full Screen Cover */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover object-center opacity-75 brightness-100"
+          className="w-full h-full object-cover object-center opacity-85 brightness-105 scale-105"
         >
           <source src="/videos/hero-workshop-bg.mp4" type="video/mp4" />
         </video>
         {/* Soft gradient overlay for text readability without washing out the video */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#091f26]/85 via-[#091f26]/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#091f26]/85 via-[#091f26]/45 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#091f26] via-transparent to-[#091f26]/40" />
       </div>
 
@@ -46,8 +46,8 @@ export function ReferenceHeroSection() {
       />
       <div className="absolute right-0 top-0 w-[600px] h-[600px] bg-[#19655a]/20 rounded-full blur-[140px] pointer-events-none z-0" />
 
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 pt-28 lg:pt-36 pb-20 relative z-10">
-        <div className="max-w-3xl">
+      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 pt-36 sm:pt-44 lg:pt-52 pb-16 relative z-10 flex-1 flex flex-col justify-center">
+        <div className="max-w-4xl">
           {/* Main Hero Copy */}
           <div className="flex items-center gap-2 mb-6">
             <span className="w-2 h-2 rounded-full bg-[#81e6d6] shadow-[0_0_8px_#81e6d6]" />
