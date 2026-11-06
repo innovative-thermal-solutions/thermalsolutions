@@ -143,14 +143,14 @@ export function Navigation() {
       >
         <div className="max-w-[1450px] mx-auto px-6 lg:px-10 flex justify-between items-center gap-4">
           {/* Brand Logo */}
-          <Link href="/" className="flex items-center gap-3.5 group shrink-0">
+          <Link href="/" className="flex items-center gap-3.5 group shrink-0 py-1">
             <Image
-              src="/images/logo/its-logo-tight.svg"
+              src="/images/logo/its-logo-navbar.svg"
               alt="Innovative Thermal Solutions - ITS Cooling Logo"
-              width={160}
-              height={44}
+              width={260}
+              height={70}
               priority
-              className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+              className="h-14 sm:h-16 lg:h-16 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
             />
           </Link>
 

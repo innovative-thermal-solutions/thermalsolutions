@@ -14,11 +14,11 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
           {/* Brand Info (2 columns) */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-3.5 mb-5 group">
+            <Link href="/" className="inline-flex items-center gap-3.5 mb-6 group">
               <img
                 src="/images/logo/its-logo-tight.svg"
                 alt="Innovative Thermal Solutions - ITS Cooling Logo"
-                className="h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+                className="h-16 sm:h-20 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </Link>
 
