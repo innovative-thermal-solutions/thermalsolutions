@@ -66,44 +66,50 @@ export function ReferenceCaseStudiesSection() {
 
             {/* Right Column: Interactive Drag Comparison */}
             <div className="lg:col-span-7 flex flex-col items-center">
-              <div className="relative w-full h-64 sm:h-80 rounded overflow-hidden select-none bg-slate-950 border border-slate-700">
+              <div className="relative w-full h-64 sm:h-80 rounded overflow-hidden select-none bg-[#f4f7f6] border border-[#d6deda]">
                 {/* Base: ITS Solution (After) */}
-                <div className="absolute inset-0">
-                  <Image
-                    src="/assets/thermal-after.webp"
-                    alt="Thermal model after the ITS heat pipe redesign"
-                    fill
-                    className="object-contain"
-                  />
-                  <span className="absolute bottom-3 right-3 px-2 py-1 bg-black/70 backdrop-blur-md rounded text-[9px] font-mono text-[#81e6d6] z-10">
+                <div className="absolute inset-0 flex items-center justify-center p-3">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src="/assets/thermal-after.webp"
+                      alt="Thermal model after the ITS heat pipe redesign"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-contain"
+                      priority
+                    />
+                  </div>
+                  <span className="absolute top-3 right-3 px-2 py-1 bg-[#0b252c]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#81e6d6] z-10 uppercase tracking-wider font-semibold shadow-sm">
                     ITS SOLUTION
                   </span>
                 </div>
 
-                {/* Overlay: Original Design (Before) */}
+                {/* Overlay: Original Design (Before) with CSS clip-path to prevent zooming/stretching */}
                 <div
-                  className="absolute inset-0 overflow-hidden"
-                  style={{ width: `${sliderPos}%` }}
+                  className="absolute inset-0 flex items-center justify-center p-3 pointer-events-none"
+                  style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
                 >
-                  <div className="relative w-full h-full min-w-[320px]">
+                  <div className="relative w-full h-full">
                     <Image
                       src="/assets/thermal-before.webp"
                       alt="Thermal model of the original amplifier cooling design"
                       fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       className="object-contain"
+                      priority
                     />
                   </div>
-                  <span className="absolute bottom-3 left-3 px-2 py-1 bg-black/70 backdrop-blur-md rounded text-[9px] font-mono text-white z-10">
+                  <span className="absolute top-3 left-3 px-2 py-1 bg-[#0b252c]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#e2ece9] z-10 uppercase tracking-wider font-semibold shadow-sm">
                     ORIGINAL DESIGN
                   </span>
                 </div>
 
                 {/* Divider Line & Handle */}
                 <div
-                  className="absolute top-0 bottom-0 w-0.5 bg-white shadow-[0_0_8px_rgba(255,255,255,0.8)] z-20 pointer-events-none"
+                  className="absolute top-0 bottom-0 w-[2px] bg-[#087f83] shadow-[0_0_10px_rgba(8,127,131,0.5)] z-20 pointer-events-none"
                   style={{ left: `${sliderPos}%` }}
                 >
-                  <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-white text-slate-900 flex items-center justify-center text-xs font-mono font-bold shadow-lg">
+                  <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#81e6d6] text-[#0b252c] border-2 border-white flex items-center justify-center text-sm font-bold shadow-md">
                     ↔
                   </div>
                 </div>
@@ -111,13 +117,15 @@ export function ReferenceCaseStudiesSection() {
 
               {/* Slider Input Control */}
               <div className="w-full mt-4 flex flex-col items-center gap-1.5">
-                <label
-                  htmlFor="thermal-range"
-                  className="text-xs font-mono text-slate-600 flex items-center gap-2 cursor-pointer"
-                >
-                  <span>Drag to compare the thermal models</span>
+                <div className="w-full max-w-md flex items-center justify-between text-xs font-mono text-slate-600">
+                  <label
+                    htmlFor="thermal-range"
+                    className="flex items-center gap-2 cursor-pointer"
+                  >
+                    <span>Drag to compare the thermal models</span>
+                  </label>
                   <span className="text-[#087f83] font-bold">← →</span>
-                </label>
+                </div>
                 <input
                   id="thermal-range"
                   type="range"
@@ -125,7 +133,7 @@ export function ReferenceCaseStudiesSection() {
                   max="100"
                   value={sliderPos}
                   onChange={(e) => setSliderPos(Number(e.target.value))}
-                  className="w-full max-w-md accent-[#087f83] cursor-pointer"
+                  className="w-full max-w-md accent-[#087f83] cursor-ew-resize h-2 bg-[#d6deda] rounded-lg appearance-none"
                   aria-label="Compare original design with ITS solution"
                 />
               </div>
