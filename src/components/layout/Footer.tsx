@@ -15,17 +15,11 @@ export function Footer() {
           {/* Brand Info (2 columns) */}
           <div className="lg:col-span-2">
             <Link href="/" className="inline-flex items-center gap-3.5 mb-5 group">
-              <div className="w-10 h-10 rounded-md bg-slate-950 text-white flex items-center justify-center font-bold text-base tracking-tight group-hover:bg-sky-600 transition-colors shadow-sm">
-                ITS
-              </div>
-              <div>
-                <span className="block font-extrabold text-lg tracking-tight text-slate-950 leading-tight">
-                  INNOVATIVE THERMAL
-                </span>
-                <span className="block text-xs uppercase tracking-[0.2em] text-slate-500 font-mono font-semibold">
-                  SOLUTIONS INC.
-                </span>
-              </div>
+              <img
+                src="/images/logo/its-logo-tight.svg"
+                alt="Innovative Thermal Solutions - ITS Cooling Logo"
+                className="h-12 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+              />
             </Link>
 
             <p className="text-slate-600 text-sm max-w-sm mb-6 leading-relaxed font-normal">

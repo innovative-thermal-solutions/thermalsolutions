@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   Menu,
@@ -143,17 +144,14 @@ export function Navigation() {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10 flex justify-between items-center gap-4">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3.5 group shrink-0">
-            <div className="w-9 h-9 rounded-md bg-slate-950 text-white flex items-center justify-center font-extrabold text-sm tracking-tighter group-hover:bg-sky-600 transition-colors shadow-sm">
-              ITS
-            </div>
-            <div className="flex flex-col border-l-2 border-slate-200 pl-3">
-              <span className="font-extrabold text-xs uppercase tracking-[0.16em] text-slate-950 leading-tight">
-                Innovative
-              </span>
-              <span className="text-[11px] uppercase tracking-[0.16em] text-slate-500 font-mono font-semibold leading-tight">
-                Thermal Solutions
-              </span>
-            </div>
+            <Image
+              src="/images/logo/its-logo-tight.svg"
+              alt="Innovative Thermal Solutions - ITS Cooling Logo"
+              width={160}
+              height={44}
+              priority
+              className="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+            />
           </Link>
 
           {/* Desktop Nav Links & Interactive Dropdowns */}
