@@ -56,13 +56,13 @@ export function ReferenceHeroSection() {
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-7xl lg:text-[84px] font-serif font-medium tracking-tight text-white leading-[0.98] mb-6">
-            Power ahead. <br />
-            Keep your <em className="not-italic text-[#81e6d6]">cool.</em>
+          <h1 className="text-4xl sm:text-6xl lg:text-[76px] font-bold tracking-tight text-white leading-[1.05] mb-6 uppercase">
+            THERMAL MANAGEMENT <br className="hidden sm:inline" />
+            <span className="text-[#81e6d6]">SOLUTIONS</span>
           </h1>
 
-          <p className="text-slate-300 text-base sm:text-xl leading-relaxed max-w-2xl mb-8">
-            When performance creates heat, we create possibilities. Custom thermal solutions, engineered and manufactured for your next breakthrough.
+          <p className="text-slate-200 text-lg sm:text-2xl font-medium leading-relaxed max-w-2xl mb-8">
+            From Thermal Design to Manufacturing
           </p>
 
           {/* CTAs */}
