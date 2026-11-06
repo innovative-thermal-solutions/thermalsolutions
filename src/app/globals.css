@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-sans), 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: var(--font-mono);
+  --font-sans: var(--font-sans), 'DM Sans', Arial, sans-serif;
+  --font-serif: var(--font-heading), 'Space Grotesk', Arial, sans-serif;
+  --font-heading: var(--font-heading), 'Space Grotesk', Arial, sans-serif;
+  --font-display: var(--font-heading), 'Space Grotesk', Arial, sans-serif;
+  --font-mono: var(--font-mono), monospace;
 
   /* Reference website palette */
   --color-ink: #0b252c;
@@ -15,6 +15,31 @@
   --color-aqua: #81e6d6;
   --color-paper: #f2f4f0;
   --color-line: #d6deda;
+
+  /* Global theme override so existing subpages instantly inherit reference aesthetic */
+  --color-slate-50: #f2f4f0;
+  --color-slate-100: #e7ede7;
+  --color-slate-200: #d6deda;
+  --color-slate-300: #becfc9;
+  --color-slate-400: #9cb1ad;
+  --color-slate-500: #647475;
+  --color-slate-600: #4a5c5f;
+  --color-slate-700: #2a4146;
+  --color-slate-800: #143239;
+  --color-slate-900: #091f26;
+  --color-slate-950: #0b252c;
+
+  --color-sky-50: #edf8f6;
+  --color-sky-100: #d4f2ed;
+  --color-sky-200: #ade7df;
+  --color-sky-300: #81e6d6;
+  --color-sky-400: #4bd4c0;
+  --color-sky-500: #1fbba8;
+  --color-sky-600: #087f83;
+  --color-sky-700: #0c6c70;
+  --color-sky-800: #0f565a;
+  --color-sky-900: #10474b;
+  --color-sky-950: #062a2d;
 
   --color-brand-blue: #087f83;
   --color-coolant: #81e6d6;
