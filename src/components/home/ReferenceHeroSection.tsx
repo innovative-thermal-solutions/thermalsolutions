@@ -15,21 +15,45 @@ const HERO_VIDEOS = [
 
 export function ReferenceHeroSection() {
   const [liquidHero, setLiquidHero] = useState(false);
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [activeSlot, setActiveSlot] = useState<0 | 1>(0);
+  const [slotSources, setSlotSources] = useState<[string, string]>([
+    HERO_VIDEOS[0],
+    HERO_VIDEOS[1],
+  ]);
+  const videoIndexRef = useRef(0);
+  const videoRefs = [useRef<HTMLVideoElement>(null), useRef<HTMLVideoElement>(null)];
 
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.load();
-      videoRef.current.play().catch(() => {
-        // Autoplay may be restricted or deferred by browser
-      });
+  // Keep the inactive video element preloaded with the upcoming video source
+  const handleVideoEnded = (slotEnded: 0 | 1) => {
+    if (slotEnded !== activeSlot) return;
+
+    const nextIndex = (videoIndexRef.current + 1) % HERO_VIDEOS.length;
+    videoIndexRef.current = nextIndex;
+
+    const inactiveSlot = (slotEnded === 0 ? 1 : 0) as 0 | 1;
+    const inactiveVideo = videoRefs[inactiveSlot].current;
+
+    if (inactiveVideo) {
+      inactiveVideo.currentTime = 0;
+      inactiveVideo.play().catch(() => {});
     }
-  }, [currentVideoIndex]);
 
-  const handleVideoEnded = () => {
-    setCurrentVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+    // Smoothly cross-fade to the inactive slot
+    setActiveSlot(inactiveSlot);
+
+    // Prepare the video after next for the newly inactive slot
+    const afterNextIndex = (nextIndex + 1) % HERO_VIDEOS.length;
+    setSlotSources((prev) => {
+      const updated: [string, string] = [...prev];
+      updated[slotEnded] = HERO_VIDEOS[afterNextIndex];
+      return updated;
+    });
   };
+
+  // Preload and start playback
+  useEffect(() => {
+    videoRefs[0].current?.play().catch(() => {});
+  }, []);
 
   const openInquiry = (cooling?: string) => {
     window.dispatchEvent(
@@ -41,22 +65,36 @@ export function ReferenceHeroSection() {
 
   return (
     <section id="home" className="relative w-full min-h-screen flex flex-col justify-between bg-[#091f26] text-[#f4f6ef] overflow-hidden border-b border-slate-800">
-      {/* Background Video Layer - Full Screen Sequential Loop Cover */}
+      {/* Background Video Layer - Dual Video Cross-fading Loop */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        {/* Video Slot A */}
         <video
-          ref={videoRef}
+          ref={videoRefs[0]}
+          src={slotSources[0]}
           autoPlay
           muted
           playsInline
-          onEnded={handleVideoEnded}
-          key={HERO_VIDEOS[currentVideoIndex]}
-          className="w-full h-full object-cover object-center opacity-85 brightness-105 scale-105 transition-opacity duration-700"
-        >
-          <source src={HERO_VIDEOS[currentVideoIndex]} type="video/mp4" />
-        </video>
+          preload="auto"
+          onEnded={() => handleVideoEnded(0)}
+          className={`absolute inset-0 w-full h-full object-cover object-center brightness-105 scale-105 transition-opacity duration-1000 ease-in-out ${
+            activeSlot === 0 ? "opacity-85 z-10" : "opacity-0 z-0"
+          }`}
+        />
+        {/* Video Slot B */}
+        <video
+          ref={videoRefs[1]}
+          src={slotSources[1]}
+          muted
+          playsInline
+          preload="auto"
+          onEnded={() => handleVideoEnded(1)}
+          className={`absolute inset-0 w-full h-full object-cover object-center brightness-105 scale-105 transition-opacity duration-1000 ease-in-out ${
+            activeSlot === 1 ? "opacity-85 z-10" : "opacity-0 z-0"
+          }`}
+        />
         {/* Soft gradient overlay for text readability without washing out the video */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#091f26]/85 via-[#091f26]/45 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#091f26] via-transparent to-[#091f26]/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#091f26]/85 via-[#091f26]/45 to-transparent z-20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#091f26] via-transparent to-[#091f26]/40 z-20" />
       </div>
 
       {/* Blueprint Grid with Ambient Radial Glow */}
