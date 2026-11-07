@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function ReferenceFswSection() {
   const openFswModal = () => {
@@ -62,13 +63,13 @@ export function ReferenceFswSection() {
           </div>
 
           <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="/technologies/friction-stir-welding"
+            <Link
+              href="/fsw"
               className="px-6 py-3.5 bg-[#01747A] hover:bg-[#015f64] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-3 cursor-pointer shadow-sm"
             >
               <span>Explore FSW Dedicated Landing Page</span>
               <span>→</span>
-            </a>
+            </Link>
             <button
               onClick={openFswModal}
               className="px-5 py-3.5 bg-white hover:bg-slate-100 border border-[#d6deda] text-[#0b252c] font-bold text-xs font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
