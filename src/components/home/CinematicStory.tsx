@@ -79,7 +79,7 @@ const chapters = [
     feature: "Zero Shelf Stock · Made-to-Order",
     badge: "Custom Flow Cavities",
     cta: { text: "View Cold Plate Platforms", href: "/products/cold-plates" },
-    secondaryCta: { text: "Thermal Simulator", href: "#simulator" },
+    secondaryCta: { text: "Thermal Simulator", href: "/thermal-simulation" },
     image: "/images/products/pressed-tube-cold-plate.png",
     alt: "ITS Precision Channel Geometry Cold Plate",
     viewMode: "Internal Channel Dynamics",

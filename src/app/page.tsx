@@ -6,7 +6,6 @@ import { ManufacturingStory } from "@/components/home/ManufacturingStory";
 import { CustomPhilosophy } from "@/components/home/CustomPhilosophy";
 import { ReferenceFswSection } from "@/components/home/ReferenceFswSection";
 import { EngineeringProof } from "@/components/home/EngineeringProof";
-import { ThermalSimulator } from "@/components/home/ThermalSimulator";
 import { CinematicStory } from "@/components/home/CinematicStory";
 import { ReferenceCaseStudiesSection } from "@/components/home/ReferenceCaseStudiesSection";
 import { ReferenceFaqSection } from "@/components/home/ReferenceFaqSection";
@@ -45,19 +44,16 @@ export default function HomePage() {
       {/* 08 ENGINEERING PROOF, SENSORS & REAL-TIME CFD PHYSICS */}
       <EngineeringProof />
 
-      {/* 09 INTERACTIVE CFD THERMAL SIMULATOR & LAB BENCH */}
-      <ThermalSimulator />
-
-      {/* 10 INTERACTIVE HARDWARE ARCHITECTURE DEEP-DIVE */}
+      {/* 09 INTERACTIVE HARDWARE ARCHITECTURE DEEP-DIVE */}
       <CinematicStory />
 
-      {/* 11 COMPLETE REFERENCE CASE STUDIES & BEFORE/AFTER THERMAL COMPARISON SLIDER */}
+      {/* 10 COMPLETE REFERENCE CASE STUDIES & BEFORE/AFTER THERMAL COMPARISON SLIDER */}
       <ReferenceCaseStudiesSection />
 
-      {/* 12 COMPLETE REFERENCE FAQ ACCORDION */}
+      {/* 11 COMPLETE REFERENCE FAQ ACCORDION */}
       <ReferenceFaqSection />
 
-      {/* 14 COMPLETE REFERENCE CONTACT & PROJECT BRIEF SECTION */}
+      {/* 12 COMPLETE REFERENCE CONTACT & PROJECT BRIEF SECTION */}
       <ReferenceContactSection />
     </main>
   );

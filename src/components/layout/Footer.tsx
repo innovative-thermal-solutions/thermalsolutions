@@ -78,6 +78,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/thermal-simulation" className="hover:text-sky-600 font-medium transition-colors">
+                  CFD Thermal Simulator
+                </Link>
+              </li>
+              <li>
                 <Link href="/capabilities/cnc-machining" className="hover:text-sky-600 font-medium transition-colors">
                   5-Axis CNC Machining
                 </Link>

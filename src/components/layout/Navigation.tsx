@@ -60,6 +60,12 @@ export function Navigation() {
       desc: "Finite-element flow simulation & topology design",
       icon: Activity,
     },
+    {
+      name: "Real-Time Thermal Simulator",
+      href: "/thermal-simulation",
+      desc: "Interactive CFD & cold plate performance calculator",
+      icon: Cpu,
+    },
   ];
 
   const productsMenu = [
