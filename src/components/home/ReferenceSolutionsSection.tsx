@@ -6,7 +6,7 @@ import { Search, Plus, Check } from "lucide-react";
 import { REFERENCE_PRODUCTS, SolutionProduct } from "@/components/ui/ReferenceInteractiveModals";
 
 export function ReferenceSolutionsSection() {
-  const [filter, setFilter] = useState<"all" | "air" | "liquid">("all");
+  const [filter, setFilter] = useState<"all" | "air" | "liquid" | "busbar">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedToCompare, setSelectedToCompare] = useState<string[]>([]);
 
@@ -79,11 +79,12 @@ export function ReferenceSolutionsSection() {
 
         {/* Toolbar: Filters & Search */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-6 border-b border-[#d6deda] mb-8">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {[
               { id: "all", label: "All solutions", count: "08" },
               { id: "air", label: "Air cooled" },
               { id: "liquid", label: "Liquid cooled" },
+              { id: "busbar", label: "Bus bar" },
             ].map((tab) => (
               <button
                 key={tab.id}

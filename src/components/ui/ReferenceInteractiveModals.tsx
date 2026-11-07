@@ -6,7 +6,7 @@ import Image from "next/image";
 export interface SolutionProduct {
   id: string;
   name: string;
-  family: "air" | "liquid";
+  family: "air" | "liquid" | "busbar";
   image: string;
   tag: string;
   short: string;
@@ -99,9 +99,9 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
   {
     id: "busbar",
     name: "Bus bar",
-    family: "liquid",
+    family: "busbar",
     image: "/assets/busbar.webp",
-    tag: "LIQUID COOLED / BUS BAR & COLD PLATE",
+    tag: "POWER DISTRIBUTION / LAMINATED BUS BAR",
     short: "Integrated bus bar assemblies & sealed channels for demanding cooling.",
     description: "Integrated power bus bar assemblies and solid-state joined cold plates. ITS engineers laminated and liquid-cooled bus bars alongside precision friction stir welded assemblies for battery systems and power conversion.",
     material: "Copper or Aluminum",
