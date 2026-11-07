@@ -64,53 +64,77 @@ export function ReferenceCaseStudiesSection() {
               </span>
             </div>
 
-            {/* Right Column: Interactive Drag Comparison */}
+            {/* Right Column: Interactive Drag Comparison with Non-Overlapping Architecture */}
             <div className="lg:col-span-7 flex flex-col items-center">
-              <div className="relative w-full h-64 sm:h-80 rounded overflow-hidden select-none bg-[#f4f7f6] border border-[#d6deda]">
-                {/* Base: ITS Solution (After) */}
-                <div className="absolute inset-0 flex items-center justify-center p-3">
-                  <div className="relative w-full h-full">
+              <div className="relative w-full h-64 sm:h-80 rounded overflow-hidden select-none bg-[#f4f7f6] border border-[#d6deda] flex items-center p-3 sm:p-5">
+                {/* 1. Main Thermal Heat Sink Model Area (Interactive Slider) */}
+                <div className="relative flex-1 h-full min-w-0 overflow-hidden">
+                  {/* Base: ITS Solution (After) */}
+                  <div className="absolute inset-0">
                     <Image
-                      src="/assets/thermal-after.webp"
+                      src="/assets/thermal-model-after.webp"
                       alt="Thermal model after the ITS heat pipe redesign"
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 80vw, 40vw"
                       className="object-contain"
                       priority
                     />
+                    <span className="absolute top-2 left-2 px-2 py-0.5 bg-[#0b252c]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#81e6d6] z-10 uppercase tracking-wider font-semibold shadow-xs">
+                      ITS SOLUTION
+                    </span>
                   </div>
-                  <span className="absolute top-3 right-3 px-2 py-1 bg-[#0b252c]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#81e6d6] z-10 uppercase tracking-wider font-semibold shadow-sm">
-                    ITS SOLUTION
-                  </span>
-                </div>
 
-                {/* Overlay: Original Design (Before) with CSS clip-path to prevent zooming/stretching */}
-                <div
-                  className="absolute inset-0 flex items-center justify-center p-3 pointer-events-none"
-                  style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
-                >
-                  <div className="relative w-full h-full">
+                  {/* Overlay: Original Design (Before) with CSS clip-path */}
+                  <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{ clipPath: `inset(0 ${100 - sliderPos}% 0 0)` }}
+                  >
                     <Image
-                      src="/assets/thermal-before.webp"
+                      src="/assets/thermal-model-before.webp"
                       alt="Thermal model of the original amplifier cooling design"
                       fill
-                      sizes="(max-width: 768px) 100vw, 50vw"
+                      sizes="(max-width: 768px) 80vw, 40vw"
                       className="object-contain"
                       priority
                     />
+                    <span className="absolute top-2 left-2 px-2 py-0.5 bg-[#0b252c]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#e2ece9] z-10 uppercase tracking-wider font-semibold shadow-xs">
+                      ORIGINAL DESIGN
+                    </span>
                   </div>
-                  <span className="absolute top-3 left-3 px-2 py-1 bg-[#0b252c]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#e2ece9] z-10 uppercase tracking-wider font-semibold shadow-sm">
-                    ORIGINAL DESIGN
-                  </span>
+
+                  {/* Divider Line & Handle */}
+                  <div
+                    className="absolute top-0 bottom-0 w-[2px] bg-[#087f83] shadow-[0_0_8px_rgba(8,127,131,0.5)] z-20 pointer-events-none"
+                    style={{ left: `${sliderPos}%` }}
+                  >
+                    <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#81e6d6] text-[#0b252c] border-2 border-white flex items-center justify-center text-xs font-bold shadow-md">
+                      ↔
+                    </div>
+                  </div>
                 </div>
 
-                {/* Divider Line & Handle */}
-                <div
-                  className="absolute top-0 bottom-0 w-[2px] bg-[#087f83] shadow-[0_0_10px_rgba(8,127,131,0.5)] z-20 pointer-events-none"
-                  style={{ left: `${sliderPos}%` }}
-                >
-                  <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#81e6d6] text-[#0b252c] border-2 border-white flex items-center justify-center text-sm font-bold shadow-md">
-                    ↔
+                {/* 2. Temperature Scale Bar: cleanly separated on the right so it NEVER overlaps or clips */}
+                <div className="relative w-20 sm:w-24 h-full shrink-0 border-l border-[#d6deda]/80 pl-2 sm:pl-3 flex items-center justify-center">
+                  <div className="relative w-full h-full">
+                    {sliderPos < 50 ? (
+                      <Image
+                        src="/assets/thermal-scale-after.webp"
+                        alt="Temperature scale for ITS solution (Max 102°C)"
+                        fill
+                        sizes="100px"
+                        className="object-contain transition-opacity duration-200"
+                        priority
+                      />
+                    ) : (
+                      <Image
+                        src="/assets/thermal-scale-before.webp"
+                        alt="Temperature scale for original design (Max 122°C)"
+                        fill
+                        sizes="100px"
+                        className="object-contain transition-opacity duration-200"
+                        priority
+                      />
+                    )}
                   </div>
                 </div>
               </div>
