@@ -1,12 +1,35 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, RotateCw, Check } from "lucide-react";
 
+const HERO_VIDEOS = [
+  "/videos/hero-workshop-bg.mp4",
+  "/videos/hero-bg-1.mp4",
+  "/videos/hero-bg-2.mp4",
+  "/videos/hero-bg-3.mp4",
+  "/videos/hero-bg-4.mp4",
+];
+
 export function ReferenceHeroSection() {
   const [liquidHero, setLiquidHero] = useState(false);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+      videoRef.current.play().catch(() => {
+        // Autoplay may be restricted or deferred by browser
+      });
+    }
+  }, [currentVideoIndex]);
+
+  const handleVideoEnded = () => {
+    setCurrentVideoIndex((prev) => (prev + 1) % HERO_VIDEOS.length);
+  };
 
   const openInquiry = (cooling?: string) => {
     window.dispatchEvent(
@@ -18,16 +41,18 @@ export function ReferenceHeroSection() {
 
   return (
     <section id="home" className="relative w-full min-h-screen flex flex-col justify-between bg-[#091f26] text-[#f4f6ef] overflow-hidden border-b border-slate-800">
-      {/* Background Video Layer - Full Screen Cover */}
+      {/* Background Video Layer - Full Screen Sequential Loop Cover */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <video
+          ref={videoRef}
           autoPlay
-          loop
           muted
           playsInline
-          className="w-full h-full object-cover object-center opacity-85 brightness-105 scale-105"
+          onEnded={handleVideoEnded}
+          key={HERO_VIDEOS[currentVideoIndex]}
+          className="w-full h-full object-cover object-center opacity-85 brightness-105 scale-105 transition-opacity duration-700"
         >
-          <source src="/videos/hero-workshop-bg.mp4" type="video/mp4" />
+          <source src={HERO_VIDEOS[currentVideoIndex]} type="video/mp4" />
         </video>
         {/* Soft gradient overlay for text readability without washing out the video */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#091f26]/85 via-[#091f26]/45 to-transparent" />
