@@ -53,7 +53,7 @@ export function ReferenceEngineeringProcess() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <p className="text-[11px] font-mono tracking-widest text-[#087f83] uppercase mb-2 font-bold">
-              02 / HOW WE WORK
+              02 / WORK FLOW AT ITS
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05]">
               From “what if” <br />
