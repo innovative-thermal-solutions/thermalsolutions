@@ -9,17 +9,17 @@ const PROCESS_STEPS = [
     title: "Define & discover",
     description:
       "Start with your heat load, temperature targets, available space and production goals. We turn the constraints into a clear design brief.",
-    image: "/assets/temperature-model.webp",
-    alt: "Thermal analysis of a liquid cold plate",
-    caption: "SIMULATE. ITERATE. OPTIMIZE.",
+    image: "/images/process/define-and-discover.png",
+    alt: "ITS Define and Discover engineering requirements and boundaries",
+    caption: "DEFINE REQUIREMENTS & CONSTRAINTS.",
   },
   {
     step: "02",
     title: "Design & simulate",
     description:
       "CFD, parametric studies and iterative optimization explore the thermal design. SolidWorks supports mechanical design and integration.",
-    image: "/assets/velocity-model.webp",
-    alt: "Liquid cold plate velocity distribution model",
+    image: "/images/process/design-and-simulate.png",
+    alt: "ITS CFD thermal simulation and fluid topology optimization",
     caption: "THERMAL & HYDRAULIC ANALYSIS.",
   },
   {
@@ -27,8 +27,8 @@ const PROCESS_STEPS = [
     title: "Machine & manufacture",
     description:
       "Five-axis CNC machining and friction stir welding bring the design to life at our Ontario facility, with trusted partners for high-volume production.",
-    image: "/assets/team-machining.webp",
-    alt: "ITS team operating CNC manufacturing equipment",
+    image: "/images/process/machine-and-manufacture.png",
+    alt: "ITS Precision CNC machining and friction stir welding",
     caption: "PRECISION MANUFACTURING. IN HOUSE.",
   },
   {
