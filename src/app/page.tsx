@@ -5,7 +5,6 @@ import { ReferenceIndustriesSection } from "@/components/home/ReferenceIndustrie
 import { ReferenceEngineeringProcess } from "@/components/home/ReferenceEngineeringProcess";
 import { ManufacturingStory } from "@/components/home/ManufacturingStory";
 import { ReferenceFswSection } from "@/components/home/ReferenceFswSection";
-import { EngineeringProof } from "@/components/home/EngineeringProof";
 import { CinematicStory } from "@/components/home/CinematicStory";
 import { ReferenceCaseStudiesSection } from "@/components/home/ReferenceCaseStudiesSection";
 import { ReferenceFaqSection } from "@/components/home/ReferenceFaqSection";
@@ -42,10 +41,7 @@ export default function HomePage() {
       {/* 06 COMPLETE REFERENCE FRICTION STIR WELDING SHOWCASE */}
       <ReferenceFswSection />
 
-      {/* 08 ENGINEERING PROOF, SENSORS & REAL-TIME CFD PHYSICS */}
-      <EngineeringProof />
-
-      {/* 09 INTERACTIVE HARDWARE ARCHITECTURE DEEP-DIVE */}
+      {/* 07 INTERACTIVE HARDWARE ARCHITECTURE DEEP-DIVE */}
       <CinematicStory />
 
       {/* 10 COMPLETE REFERENCE CASE STUDIES & BEFORE/AFTER THERMAL COMPARISON SLIDER */}
