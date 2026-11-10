@@ -3,7 +3,6 @@ import { ReferenceSolutionsSection } from "@/components/home/ReferenceSolutionsS
 import { ReferenceIndustriesSection } from "@/components/home/ReferenceIndustriesSection";
 import { ReferenceEngineeringProcess } from "@/components/home/ReferenceEngineeringProcess";
 import { ManufacturingStory } from "@/components/home/ManufacturingStory";
-import { CustomPhilosophy } from "@/components/home/CustomPhilosophy";
 import { ReferenceFswSection } from "@/components/home/ReferenceFswSection";
 import { EngineeringProof } from "@/components/home/EngineeringProof";
 import { CinematicStory } from "@/components/home/CinematicStory";
@@ -35,10 +34,7 @@ export default function HomePage() {
       {/* 05 IN-HOUSE PRECISION MANUFACTURING & CNC VIDEO HUD */}
       <ManufacturingStory />
 
-      {/* 06 100% CUSTOM TURNKEY CONCEPT-TO-HARDWARE PHILOSOPHY */}
-      <CustomPhilosophy />
-
-      {/* 07 COMPLETE REFERENCE FRICTION STIR WELDING SHOWCASE */}
+      {/* 06 COMPLETE REFERENCE FRICTION STIR WELDING SHOWCASE */}
       <ReferenceFswSection />
 
       {/* 08 ENGINEERING PROOF, SENSORS & REAL-TIME CFD PHYSICS */}
