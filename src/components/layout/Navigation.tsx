@@ -106,31 +106,31 @@ export function Navigation() {
   return (
     <header className="fixed top-0 w-full z-50 transition-all duration-300">
       {/* Top Status & Telemetry Bar */}
-      <div className="hidden lg:block bg-[#091f26] text-[#cfdbd8] py-2 px-6 lg:px-12 text-[11px] font-mono border-b border-[#ffffff16]">
+      <div className="hidden lg:block bg-[#091f26] text-[#81e6d6] py-2 px-6 lg:px-12 text-[11px] font-mono border-b border-[#ffffff16]">
         <div className="max-w-[1450px] mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 text-[#81e6d6] font-semibold">
               <ShieldCheck className="w-3.5 h-3.5 text-[#81e6d6]" />
               <span>ISO 9001:2015 CERTIFIED</span>
             </span>
-            <span className="text-[#647475]">•</span>
-            <span className="text-[#cfdbd8] font-medium">GUELPH, ONTARIO, CANADA</span>
-            <span className="text-[#647475]">•</span>
+            <span className="text-[#81e6d6]/60">•</span>
+            <span className="text-[#81e6d6] font-medium">GUELPH, ONTARIO, CANADA</span>
+            <span className="text-[#81e6d6]/60">•</span>
             <span className="text-[#81e6d6] font-semibold">100% CUSTOM · ZERO SHELF INVENTORY</span>
           </div>
 
           <div className="flex items-center gap-6">
             <a
               href={`tel:${COMPANY_INFO.phone}`}
-              className="flex items-center gap-1.5 text-[#cfdbd8] hover:text-[#81e6d6] transition-colors"
+              className="flex items-center gap-1.5 text-[#81e6d6] hover:text-white transition-colors font-medium"
             >
               <Phone className="w-3 h-3 text-[#81e6d6]" />
               <span>{COMPANY_INFO.phone}</span>
             </a>
-            <span className="text-[#647475]">•</span>
+            <span className="text-[#81e6d6]/60">•</span>
             <a
               href={`mailto:${COMPANY_INFO.salesEmail}`}
-              className="flex items-center gap-1.5 text-[#cfdbd8] hover:text-[#81e6d6] transition-colors"
+              className="flex items-center gap-1.5 text-[#81e6d6] hover:text-white transition-colors font-medium"
             >
               <Mail className="w-3 h-3 text-[#81e6d6]" />
               <span>Sales: {COMPANY_INFO.salesEmail}</span>
@@ -170,12 +170,12 @@ export function Navigation() {
             >
               <Link
                 href="/technologies"
-                className={`flex items-center gap-1 text-[13px] font-medium transition-colors py-2 ${
-                  pathname.startsWith("/technologies") ? "text-[#81e6d6]" : "text-[#cfdbd8] hover:text-[#81e6d6]"
+                className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
+                  pathname.startsWith("/technologies") ? "text-[#81e6d6]" : "text-[#81e6d6] hover:text-white"
                 }`}
               >
                 <span>Technologies</span>
-                <ChevronDown className="w-3 h-3" />
+                <ChevronDown className="w-3 h-3 text-[#81e6d6]" />
               </Link>
 
               <AnimatePresence>
@@ -224,12 +224,12 @@ export function Navigation() {
             >
               <Link
                 href="/products"
-                className={`flex items-center gap-1 text-[13px] font-medium transition-colors py-2 ${
-                  pathname.startsWith("/products") ? "text-[#81e6d6]" : "text-[#cfdbd8] hover:text-[#81e6d6]"
+                className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
+                  pathname.startsWith("/products") ? "text-[#81e6d6]" : "text-[#81e6d6] hover:text-white"
                 }`}
               >
                 <span>Products</span>
-                <ChevronDown className="w-3 h-3" />
+                <ChevronDown className="w-3 h-3 text-[#81e6d6]" />
               </Link>
 
               <AnimatePresence>
@@ -277,8 +277,8 @@ export function Navigation() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-[13px] font-medium transition-colors relative py-1 ${
-                    isActive ? "text-[#81e6d6]" : "text-[#cfdbd8] hover:text-[#81e6d6]"
+                  className={`text-[13px] font-semibold transition-colors relative py-1 ${
+                    isActive ? "text-[#81e6d6]" : "text-[#81e6d6] hover:text-white"
                   }`}
                 >
                   {link.name}
