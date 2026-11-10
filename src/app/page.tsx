@@ -9,6 +9,7 @@ import { EngineeringProof } from "@/components/home/EngineeringProof";
 import { CinematicStory } from "@/components/home/CinematicStory";
 import { ReferenceCaseStudiesSection } from "@/components/home/ReferenceCaseStudiesSection";
 import { ReferenceFaqSection } from "@/components/home/ReferenceFaqSection";
+import { ReferenceCustomersSection } from "@/components/home/ReferenceCustomersSection";
 import { ReferenceContactSection } from "@/components/home/ReferenceContactSection";
 
 export const metadata = {
@@ -53,7 +54,10 @@ export default function HomePage() {
       {/* 11 COMPLETE REFERENCE FAQ ACCORDION */}
       <ReferenceFaqSection />
 
-      {/* 12 COMPLETE REFERENCE CONTACT & PROJECT BRIEF SECTION */}
+      {/* 12 OUR CUSTOMERS */}
+      <ReferenceCustomersSection />
+
+      {/* 13 COMPLETE REFERENCE CONTACT & PROJECT BRIEF SECTION */}
       <ReferenceContactSection />
     </main>
   );
