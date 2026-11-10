@@ -30,11 +30,11 @@ export default function HomePage() {
       {/* 03 WHO WE ARE */}
       <WhoWeAreSection />
 
-      {/* 04 COMPLETE REFERENCE INDUSTRIES EXPLORER (5 Primary Sectors) */}
-      <ReferenceIndustriesSection />
-
-      {/* 04 COMPLETE REFERENCE 4-STAGE ENGINEERING PROCESS */}
+      {/* 04 WORK FLOW AT ITS (4-Stage Engineering Process) */}
       <ReferenceEngineeringProcess />
+
+      {/* 05 COMPLETE REFERENCE INDUSTRIES EXPLORER (5 Primary Sectors) */}
+      <ReferenceIndustriesSection />
 
       {/* 05 IN-HOUSE PRECISION MANUFACTURING & CNC VIDEO HUD */}
       <ManufacturingStory />
