@@ -41,11 +41,11 @@ export default function HomePage() {
       {/* 06 COMPLETE REFERENCE FRICTION STIR WELDING SHOWCASE */}
       <ReferenceFswSection />
 
-      {/* 07 INTERACTIVE HARDWARE ARCHITECTURE DEEP-DIVE */}
-      <CinematicStory />
-
-      {/* 10 COMPLETE REFERENCE CASE STUDIES & BEFORE/AFTER THERMAL COMPARISON SLIDER */}
+      {/* 07 COMPLETE REFERENCE CASE STUDIES & BEFORE/AFTER THERMAL COMPARISON SLIDER */}
       <ReferenceCaseStudiesSection />
+
+      {/* 08 INTERACTIVE HARDWARE ARCHITECTURE DEEP-DIVE */}
+      <CinematicStory />
 
       {/* 11 COMPLETE REFERENCE FAQ ACCORDION */}
       <ReferenceFaqSection />
