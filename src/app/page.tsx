@@ -1,5 +1,6 @@
 import { ReferenceHeroSection } from "@/components/home/ReferenceHeroSection";
 import { ReferenceSolutionsSection } from "@/components/home/ReferenceSolutionsSection";
+import { WhoWeAreSection } from "@/components/home/WhoWeAreSection";
 import { ReferenceIndustriesSection } from "@/components/home/ReferenceIndustriesSection";
 import { ReferenceEngineeringProcess } from "@/components/home/ReferenceEngineeringProcess";
 import { ManufacturingStory } from "@/components/home/ManufacturingStory";
@@ -25,7 +26,10 @@ export default function HomePage() {
       {/* 02 COMPLETE REFERENCE COOLING SOLUTIONS (8 Products, Filters, Search, Compare, Finder) */}
       <ReferenceSolutionsSection />
 
-      {/* 03 COMPLETE REFERENCE INDUSTRIES EXPLORER (5 Primary Sectors) */}
+      {/* 03 WHO WE ARE */}
+      <WhoWeAreSection />
+
+      {/* 04 COMPLETE REFERENCE INDUSTRIES EXPLORER (5 Primary Sectors) */}
       <ReferenceIndustriesSection />
 
       {/* 04 COMPLETE REFERENCE 4-STAGE ENGINEERING PROCESS */}
