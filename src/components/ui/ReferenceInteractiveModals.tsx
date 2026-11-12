@@ -35,7 +35,7 @@ export const REFERENCE_PRODUCTS: SolutionProduct[] = [
     id: "skived",
     name: "Skived fin heat sinks",
     family: "air",
-    image: "/assets/extruded.webp",
+    image: "/assets/skived.webp",
     tag: "AIR COOLED / HIGH FIN DENSITY",
     short: "Dense fin structures for compact cooling designs.",
     description: "Skiving forms thin fins from a single block of aluminum or copper. ITS evaluates fin density and spacing together with the airflow and heat source layout to develop the design.",

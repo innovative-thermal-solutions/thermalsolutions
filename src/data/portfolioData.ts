@@ -34,7 +34,7 @@ export const PORTFOLIO_PRODUCTS: PortfolioItem[] = [
     id: "skived",
     name: "Skived fin heat sinks",
     family: "air",
-    image: "/images/portfolio/extruded.webp",
+    image: "/images/portfolio/skived.webp",
     tag: "AIR COOLED / HIGH FIN DENSITY",
     short: "Dense fin structures for compact cooling designs.",
     description:
