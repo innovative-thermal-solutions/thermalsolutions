@@ -67,7 +67,7 @@ export function ReferenceHeroSection() {
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-10">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <a
               href="#solutions"
               className="inline-flex items-center justify-between gap-6 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-md shadow-[#00747a]/20"
@@ -83,16 +83,6 @@ export function ReferenceHeroSection() {
               <span>Talk to an engineer</span>
               <span className="text-lg">↗</span>
             </button>
-          </div>
-
-          {/* Verification Proof Strip */}
-          <div className="flex flex-wrap items-center gap-3 pt-6 border-t border-slate-800 text-xs font-mono text-[#a9bfb9]">
-            <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#141f22] border border-slate-700 rounded">
-              <Check className="w-3.5 h-3.5 text-[#00747a]" />
-              <span>ISO 9001:2015 certified</span>
-            </div>
-            <span className="text-slate-600 hidden sm:inline">|</span>
-            <span className="tracking-wider">Made in Ontario. Built for your world.</span>
           </div>
         </div>
       </div>
