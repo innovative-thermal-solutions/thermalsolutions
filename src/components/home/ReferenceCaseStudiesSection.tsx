@@ -79,7 +79,7 @@ export function ReferenceCaseStudiesSection() {
                       className="object-contain"
                       priority
                     />
-                    <span className="absolute top-2 left-2 px-2 py-0.5 bg-[#141f22]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#00747a] z-10 uppercase tracking-wider font-semibold shadow-xs">
+                    <span className="absolute top-2 right-3 px-2 py-0.5 bg-[#141f22]/90 border border-[#00747a]/30 backdrop-blur-md rounded text-[9px] font-mono text-[#00747a] z-10 uppercase tracking-wider font-semibold shadow-xs">
                       ITS SOLUTION
                     </span>
                   </div>
@@ -97,7 +97,7 @@ export function ReferenceCaseStudiesSection() {
                       className="object-contain"
                       priority
                     />
-                    <span className="absolute top-2 left-2 px-2 py-0.5 bg-[#141f22]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#e2ece9] z-10 uppercase tracking-wider font-semibold shadow-xs">
+                    <span className="absolute top-2 left-3 px-2 py-0.5 bg-[#141f22]/90 border border-slate-700 backdrop-blur-md rounded text-[9px] font-mono text-[#e2ece9] z-10 uppercase tracking-wider font-semibold shadow-xs">
                       ORIGINAL DESIGN
                     </span>
                   </div>
