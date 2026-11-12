@@ -19,6 +19,8 @@ import {
   Activity,
   Droplets,
   Factory,
+  Users,
+  Building2,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY_INFO } from "@/data/companyContent";
@@ -77,10 +79,24 @@ export function Navigation() {
     },
   ];
 
+  const aboutMenu = [
+    {
+      name: "About ITS Cooling",
+      href: "/about",
+      desc: "Our story, Canadian facility, & single-source partner vision",
+      icon: Building2,
+    },
+    {
+      name: "ITS Team",
+      href: "/about/our-design-manufacturing-experts-engineers-team",
+      desc: "Meet our leadership, design & manufacturing engineering experts",
+      icon: Users,
+    },
+  ];
+
   const mainLinks = [
     { name: "Quality", href: "/quality" },
     { name: "Case Studies", href: "/case-studies" },
-    { name: "About", href: "/about" },
   ];
 
   return (
@@ -284,7 +300,7 @@ export function Navigation() {
               </AnimatePresence>
             </div>
 
-            {/* Remaining Main Links: Industries, Quality, Case Studies, About */}
+            {/* Remaining Main Links: Quality, Case Studies */}
             {mainLinks.map((link) => {
               const isActive = pathname.startsWith(link.href);
               return (
@@ -306,6 +322,60 @@ export function Navigation() {
                 </Link>
               );
             })}
+
+            {/* About Dropdown (with ITS Team) */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("about")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link
+                href="/about"
+                className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
+                  pathname.startsWith("/about") || pathname.startsWith("/team") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+                }`}
+              >
+                <span>About</span>
+                <ChevronDown className="w-3 h-3 text-[#00747a]" />
+              </Link>
+
+              <AnimatePresence>
+                {activeDropdown === "about" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute top-full right-0 w-80 p-3 bg-[#182427] border border-[#ffffff22] rounded-lg shadow-xl z-50 text-[#e9f0ef]"
+                  >
+                    <div className="space-y-1">
+                      {aboutMenu.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-start gap-3 p-2.5 rounded-md hover:bg-[#1f2e32] transition-colors group"
+                          >
+                            <div className="p-2 rounded bg-[#0f1719] text-[#00747a] group-hover:bg-[#00747a] group-hover:text-[#0f1719] transition-colors">
+                              <Icon className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <div className="text-xs font-semibold text-white group-hover:text-[#00747a] transition-colors">
+                                {item.name}
+                              </div>
+                              <div className="text-[11px] text-[#9da8a9] leading-tight">
+                                {item.desc}
+                              </div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
           {/* Desktop Right CTA matching .btn of reference */}
@@ -409,6 +479,26 @@ export function Navigation() {
                   {link.name}
                 </Link>
               ))}
+
+              <Link
+                href="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-bold text-slate-900 hover:text-sky-600 pt-1"
+              >
+                About
+              </Link>
+              <div className="pl-4 space-y-2 border-l border-slate-200">
+                {aboutMenu.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block text-xs text-slate-600 hover:text-sky-600"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
 
               <div className="pt-6 border-t border-slate-200">
                 <Link
