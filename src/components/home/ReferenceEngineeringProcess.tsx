@@ -9,7 +9,7 @@ const PROCESS_STEPS = [
     title: "Define & discover",
     description:
       "Start with your heat load, temperature targets, available space and production goals. We turn the constraints into a clear design brief.",
-    image: "/images/process/define-and-discover.png",
+    image: "/images/process/define-and-discover-blended.webp",
     alt: "ITS Define and Discover engineering requirements and boundaries",
     caption: "DEFINE REQUIREMENTS & CONSTRAINTS.",
   },
@@ -77,13 +77,17 @@ export function ReferenceEngineeringProcess() {
               <span>IN-HOUSE FACILITY GUELPH</span>
             </div>
 
-            <div className="relative w-full h-64 sm:h-72 flex items-center justify-center p-2">
+            <div className="relative w-full h-64 sm:h-72 flex items-center justify-center p-2 overflow-hidden rounded">
               <Image
                 src={current.image}
                 alt={current.alt}
                 width={500}
                 height={320}
-                className="object-contain max-h-full transition-all duration-300"
+                className="object-contain max-h-full transition-all duration-300 drop-shadow-sm"
+                style={{
+                  maskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 88%)",
+                  WebkitMaskImage: "radial-gradient(ellipse at center, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 88%)",
+                }}
               />
             </div>
 
