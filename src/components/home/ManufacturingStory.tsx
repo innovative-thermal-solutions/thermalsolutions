@@ -55,22 +55,22 @@ export function ManufacturingStory() {
           {/* Typography arranged cleanly on the left with brand highlights */}
           <h2 className="font-sans font-black tracking-[-0.04em] uppercase leading-[0.88] sm:leading-[0.84] text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-left mb-6">
             <span className="block text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
-              DESIGNED.
+              IN-HOUSE
             </span>
             <span className="block text-[#c5cecf] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
-              BUILT.
+              FRICTION
             </span>
             <span className="block text-[#7f888a] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
-              TESTED.
+              STIR
             </span>
             <span className="block text-[#00747a] drop-shadow-[0_6px_28px_rgba(0,116,122,0.6)]">
-              HERE.
+              WELDING.
             </span>
           </h2>
 
           {/* Subtitle */}
           <p className="text-[#e2e8e9] text-xs sm:text-sm font-mono tracking-wider mb-8 max-w-md drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-[#091113]/60 p-3 rounded-lg border border-white/10 backdrop-blur-sm">
-            In-house advanced thermal machining &amp; Friction Stir Welding cell in Guelph, Ontario.
+            Hermetic solid-state joining and precision thermal manufacturing under one roof in Guelph, Ontario.
           </p>
 
           {/* Link / CTA */}
