@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { RotateCw, ZoomIn, Box } from "lucide-react";
 
@@ -66,14 +67,20 @@ export function CadViewer({ modelUrl, className = "" }: CadViewerProps) {
     scene.add(dirLight3);
 
     // Subtle CAD Floor Grid
-    const gridHelper = new THREE.GridHelper(3, 20, 0x00747a, 0x233134);
+    const gridHelper = new THREE.GridHelper(3, 20, 0x01747A, 0x233134);
     gridHelper.position.y = -0.45;
     (gridHelper.material as THREE.Material).opacity = 0.45;
     (gridHelper.material as THREE.Material).transparent = true;
     scene.add(gridHelper);
 
+    // Draco Loader for compressed CAD meshes
+    const dracoLoader = new DRACOLoader();
+    dracoLoader.setDecoderPath("/draco/");
+    dracoLoader.preload();
+
     // Load Model
     const loader = new GLTFLoader();
+    loader.setDRACOLoader(dracoLoader);
     let loadedObject: THREE.Group | null = null;
 
     loader.load(
@@ -162,9 +169,9 @@ export function CadViewer({ modelUrl, className = "" }: CadViewerProps) {
 
       {/* Loading Overlay */}
       {loading && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#0f1719]/90 backdrop-blur-sm z-20">
-          <div className="w-8 h-8 rounded-full border-2 border-[#00747a] border-t-transparent animate-spin mb-3" />
-          <span className="text-xs font-mono text-[#00747a] tracking-widest uppercase">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#00272a]/95 backdrop-blur-sm z-20">
+          <div className="w-8 h-8 rounded-full border-2 border-teal-300 border-t-transparent animate-spin mb-3" />
+          <span className="text-xs font-mono text-teal-200 tracking-widest uppercase">
             Loading CAD Model...
           </span>
         </div>
