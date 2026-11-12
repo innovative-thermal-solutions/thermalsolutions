@@ -78,7 +78,6 @@ export function Navigation() {
   ];
 
   const mainLinks = [
-    { name: "Industries", href: "/industries" },
     { name: "Quality", href: "/quality" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "About", href: "/about" },

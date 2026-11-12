@@ -67,7 +67,7 @@ export default async function IndustryDetailPage({
       <section className="px-6 lg:px-12 max-w-7xl mx-auto mb-12">
         <div className="flex items-center gap-2 text-xs font-mono text-slate-500 mb-8">
           <Link
-            href="/industries"
+            href="/#industries"
             className="hover:text-sky-600 transition-colors inline-flex items-center gap-1.5"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
