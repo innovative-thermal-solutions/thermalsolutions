@@ -35,9 +35,9 @@ export function ReferenceFswSection() {
           <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-3 font-bold">
             04 / THE CONNECTION MAKES THE DIFFERENCE
           </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.04] mb-6 text-[#141f22]">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.04] mb-6 text-[#00747a]">
             A stronger bond. <br />
-            <span className="text-[#7f7c7d]">A cooler future.</span>
+            <span className="text-[#141f22]">A cooler future.</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8 max-w-xl">
             Friction stir welding joins metal without melting it. For liquid cold plates, that means a precise way to seal complex internal channels while limiting distortion.

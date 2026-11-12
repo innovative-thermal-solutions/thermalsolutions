@@ -25,9 +25,9 @@ export function ReferenceCaseStudiesSection() {
             <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
               04 / ENGINEERING IN ACTION
             </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05]">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#00747a] leading-[1.05]">
               Real challenges. <br />
-              <span className="text-[#7f7c7d]">Measurable progress.</span>
+              <span className="text-[#141f22]">Measurable progress.</span>
             </h2>
           </div>
           <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">

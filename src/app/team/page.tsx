@@ -74,7 +74,7 @@ export default function TeamPage() {
                     <span className="text-xs font-mono text-sky-400 uppercase tracking-widest block mb-1">
                       Founder &amp; CEO
                     </span>
-                    <h3 className="text-2xl font-bold">{leadership.name}</h3>
+                    <h3 className="text-2xl font-bold text-white">{leadership.name}</h3>
                   </div>
                 </div>
 

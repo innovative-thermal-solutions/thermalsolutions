@@ -55,9 +55,9 @@ export function ReferenceEngineeringProcess() {
             <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
               02 / WORK FLOW AT ITS
             </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05]">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#00747a] leading-[1.05]">
               From “what if” <br />
-              <span className="text-[#7f7c7d]">to working hardware.</span>
+              <span className="text-[#141f22]">to working hardware.</span>
             </h2>
           </div>
           <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">

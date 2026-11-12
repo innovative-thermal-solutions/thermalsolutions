@@ -43,9 +43,9 @@ export function ReferenceFaqSection() {
             <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
               A FEW GOOD QUESTIONS
             </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05] mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#00747a] leading-[1.05] mb-6">
               Let’s clear <br />
-              <span className="text-[#7f7c7d]">the air.</span>
+              <span className="text-[#141f22]">the air.</span>
             </h2>
             <button
               onClick={openInquiry}

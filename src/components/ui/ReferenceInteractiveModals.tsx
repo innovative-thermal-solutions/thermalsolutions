@@ -288,7 +288,7 @@ export function ReferenceInteractiveModals() {
             <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-1">
               LET’S BUILD SOMETHING THAT PERFORMS
             </p>
-            <h2 className="text-2xl sm:text-3xl font-serif font-medium tracking-tight mb-2">
+            <h2 className="text-2xl sm:text-3xl font-serif font-medium tracking-tight mb-2 text-white">
               What are you working on?
             </h2>
             <p className="text-slate-300 text-sm mb-6">
@@ -455,7 +455,7 @@ export function ReferenceInteractiveModals() {
             <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-1">
               A GOOD PLACE TO START
             </p>
-            <h2 className="text-2xl sm:text-3xl font-serif font-medium tracking-tight mb-2">
+            <h2 className="text-2xl sm:text-3xl font-serif font-medium tracking-tight mb-2 text-white">
               Find your cooling approach.
             </h2>
             <p className="text-slate-300 text-sm mb-6">

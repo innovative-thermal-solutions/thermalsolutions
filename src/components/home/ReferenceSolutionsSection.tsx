@@ -66,9 +66,9 @@ export function ReferenceSolutionsSection() {
             <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
               01 / THE RIGHT SOLUTION
             </p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05]">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#00747a] leading-[1.05]">
               Every thermal challenge. <br />
-              <span className="text-[#7f7c7d]">A better way to cool.</span>
+              <span className="text-[#141f22]">A better way to cool.</span>
             </h2>
           </div>
           <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">

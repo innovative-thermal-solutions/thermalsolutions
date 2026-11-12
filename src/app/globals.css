@@ -122,36 +122,32 @@
     font-weight: 500;
     line-height: 1.06;
     letter-spacing: -0.055em;
+    color: #141f22;
   }
 
-  /* Ensure text inside dark background sections and banners is crisp white and fully legible */
-  .text-white,
-  .text-white h1,
-  .text-white h2,
-  .text-white h3,
-  .text-white h4,
-  .text-white h5,
-  .text-white h6,
-  [class*="bg-slate-900"] h1,
-  [class*="bg-slate-900"] h2,
-  [class*="bg-slate-900"] h3,
-  [class*="bg-slate-900"] h4,
-  [class*="bg-slate-950"] h1,
-  [class*="bg-slate-950"] h2,
-  [class*="bg-slate-950"] h3,
-  [class*="bg-[#0f1719]"] h1,
-  [class*="bg-[#0f1719]"] h2,
-  [class*="bg-[#0f1719]"] h3,
-  [class*="bg-[#141f22]"] h1,
-  [class*="bg-[#141f22]"] h2,
-  [class*="bg-[#141f22]"] h3,
-  [class*="bg-[#00747a]"] h1,
-  [class*="bg-[#00747a]"] h2,
-  [class*="bg-[#00747a]"] h3,
-  [class*="bg-zinc-900"] h1,
-  [class*="bg-zinc-900"] h2,
-  [class*="bg-zinc-900"] h3 {
-    color: #ffffff !important;
+  /* Specific dark-section headings only - never use blanket ancestor selectors that bleed into light sections */
+  .dark-section h1,
+  .dark-section h2,
+  .dark-section h3,
+  .dark-section h4,
+  .dark-section h5,
+  .dark-section h6,
+  section[class*="bg-slate-900"] > div h1,
+  section[class*="bg-slate-900"] > div h2,
+  section[class*="bg-slate-900"] > div h3,
+  section[class*="bg-slate-950"] > div h1,
+  section[class*="bg-slate-950"] > div h2,
+  section[class*="bg-slate-950"] > div h3,
+  section[class*="bg-[#0f1719]"] > div h1,
+  section[class*="bg-[#0f1719]"] > div h2,
+  section[class*="bg-[#0f1719]"] > div h3,
+  section[class*="bg-[#091113]"] > div h1,
+  section[class*="bg-[#091113]"] > div h2,
+  section[class*="bg-[#091113]"] > div h3,
+  section[class*="bg-[#12333b]"] > div h1,
+  section[class*="bg-[#12333b]"] > div h2,
+  section[class*="bg-[#12333b]"] > div h3 {
+    color: #ffffff;
   }
 
   ::selection {
