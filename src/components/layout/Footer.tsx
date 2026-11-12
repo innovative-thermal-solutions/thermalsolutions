@@ -103,9 +103,15 @@ export function Footer() {
           <div>
             <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-white mb-5 font-bold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
-              Products
+              Products & Portfolio
             </h4>
             <ul className="space-y-3 flex flex-col text-sm text-[#9da8a9]">
+              <li>
+                <Link href="/portfolio" className="text-white font-bold hover:text-[#00747a] transition-colors flex items-center gap-1.5">
+                  <span>Product Portfolio</span>
+                  <span className="text-[10px] font-mono px-1.5 py-0.2 bg-[#00747a] text-white rounded">New</span>
+                </Link>
+              </li>
               <li>
                 <Link href="/products/cold-plates" className="hover:text-white font-medium transition-colors">
                   Liquid Cold Plates

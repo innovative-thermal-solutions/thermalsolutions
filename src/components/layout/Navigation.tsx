@@ -96,7 +96,8 @@ export function Navigation() {
   ];
 
   const mainLinks = [
-    { name: "Capabilities", href: "/capabilities/cnc-machining" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Capabilities", href: "/capabilities" },
     { name: "Industries", href: "/industries" },
     { name: "Quality", href: "/quality" },
     { name: "Case Studies", href: "/case-studies" },
