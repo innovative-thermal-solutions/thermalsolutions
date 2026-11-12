@@ -92,7 +92,7 @@ export function ReferenceIndustriesSection() {
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-12 sm:mb-16">
           <div>
             <p className="text-[12px] font-mono tracking-[0.2em] text-[#6cb3af] uppercase mb-4 font-semibold">
-              02 / BUILT FOR YOUR INDUSTRY
+              03 / BUILT FOR YOUR INDUSTRY
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-sans font-semibold tracking-tight text-[#f4f7f5] leading-[1.08]">
               Behind the systems <br />
