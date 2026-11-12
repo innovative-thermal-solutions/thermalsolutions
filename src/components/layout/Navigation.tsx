@@ -96,8 +96,6 @@ export function Navigation() {
   ];
 
   const mainLinks = [
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "Capabilities", href: "/capabilities" },
     { name: "Industries", href: "/industries" },
     { name: "Quality", href: "/quality" },
     { name: "Case Studies", href: "/case-studies" },
@@ -163,60 +161,6 @@ export function Navigation() {
 
           {/* Desktop Nav Links & Interactive Dropdowns */}
           <div className="hidden xl:flex items-center gap-6 2xl:gap-8 text-[13px] font-sans">
-            {/* Technologies Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setActiveDropdown("technologies")}
-              onMouseLeave={() => setActiveDropdown(null)}
-            >
-              <Link
-                href="/technologies"
-                className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
-                  pathname.startsWith("/technologies") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
-                }`}
-              >
-                <span>Technologies</span>
-                <ChevronDown className="w-3 h-3 text-[#00747a]" />
-              </Link>
-
-              <AnimatePresence>
-                {activeDropdown === "technologies" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 8 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.18 }}
-                    className="absolute top-full left-0 w-80 p-3 bg-[#182427] border border-[#ffffff22] rounded-lg shadow-xl z-50 text-[#e9f0ef]"
-                  >
-                    <div className="space-y-1">
-                      {technologiesMenu.map((item) => {
-                        const Icon = item.icon;
-                        return (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className="flex items-start gap-3 p-2.5 rounded-md hover:bg-[#1f2e32] transition-colors group"
-                          >
-                            <div className="p-2 rounded bg-[#0f1719] text-[#00747a] group-hover:bg-[#00747a] group-hover:text-[#0f1719] transition-colors">
-                              <Icon className="w-4 h-4" />
-                            </div>
-                            <div>
-                              <div className="text-xs font-semibold text-white group-hover:text-[#00747a] transition-colors">
-                                {item.name}
-                              </div>
-                              <div className="text-[11px] text-[#9da8a9] leading-tight">
-                                {item.desc}
-                              </div>
-                            </div>
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-
             {/* Products Dropdown */}
             <div
               className="relative"
@@ -271,7 +215,95 @@ export function Navigation() {
               </AnimatePresence>
             </div>
 
-            {/* Other Main Links */}
+            {/* Portfolio Link */}
+            <Link
+              href="/portfolio"
+              className={`text-[13px] font-semibold transition-colors relative py-1 ${
+                pathname.startsWith("/portfolio") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+              }`}
+            >
+              Portfolio
+              {pathname.startsWith("/portfolio") && (
+                <motion.div
+                  layoutId="activeNavIndicator"
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#00747a]"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+            </Link>
+
+            {/* Capabilities Link */}
+            <Link
+              href="/capabilities"
+              className={`text-[13px] font-semibold transition-colors relative py-1 ${
+                pathname.startsWith("/capabilities") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+              }`}
+            >
+              Capabilities
+              {pathname.startsWith("/capabilities") && (
+                <motion.div
+                  layoutId="activeNavIndicator"
+                  className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#00747a]"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+            </Link>
+
+            {/* Technologies Dropdown (Moved after Capabilities) */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("technologies")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <Link
+                href="/technologies"
+                className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
+                  pathname.startsWith("/technologies") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+                }`}
+              >
+                <span>Technologies</span>
+                <ChevronDown className="w-3 h-3 text-[#00747a]" />
+              </Link>
+
+              <AnimatePresence>
+                {activeDropdown === "technologies" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.18 }}
+                    className="absolute top-full left-0 w-80 p-3 bg-[#182427] border border-[#ffffff22] rounded-lg shadow-xl z-50 text-[#e9f0ef]"
+                  >
+                    <div className="space-y-1">
+                      {technologiesMenu.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            className="flex items-start gap-3 p-2.5 rounded-md hover:bg-[#1f2e32] transition-colors group"
+                          >
+                            <div className="p-2 rounded bg-[#0f1719] text-[#00747a] group-hover:bg-[#00747a] group-hover:text-[#0f1719] transition-colors">
+                              <Icon className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <div className="text-xs font-semibold text-white group-hover:text-[#00747a] transition-colors">
+                                {item.name}
+                              </div>
+                              <div className="text-[11px] text-[#9da8a9] leading-tight">
+                                {item.desc}
+                              </div>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Remaining Main Links: Industries, Quality, Case Studies, About */}
             {mainLinks.map((link) => {
               const isActive = pathname.startsWith(link.href);
               return (
@@ -331,14 +363,14 @@ export function Navigation() {
                 Navigation
               </span>
               <Link
-                href="/technologies"
+                href="/products"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-base font-bold text-slate-900 hover:text-sky-600"
               >
-                Technologies
+                Products
               </Link>
               <div className="pl-4 space-y-2 border-l border-slate-200">
-                {technologiesMenu.map((item) => (
+                {productsMenu.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
@@ -351,14 +383,30 @@ export function Navigation() {
               </div>
 
               <Link
-                href="/products"
+                href="/portfolio"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-bold text-slate-900 hover:text-sky-600 pt-2"
+                className="text-base font-bold text-slate-900 hover:text-sky-600 pt-1"
               >
-                Products
+                Portfolio
+              </Link>
+
+              <Link
+                href="/capabilities"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-bold text-slate-900 hover:text-sky-600 pt-1"
+              >
+                Capabilities
+              </Link>
+
+              <Link
+                href="/technologies"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-base font-bold text-slate-900 hover:text-sky-600 pt-1"
+              >
+                Technologies
               </Link>
               <div className="pl-4 space-y-2 border-l border-slate-200">
-                {productsMenu.map((item) => (
+                {technologiesMenu.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
