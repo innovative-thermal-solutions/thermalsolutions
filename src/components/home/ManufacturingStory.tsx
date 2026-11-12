@@ -52,14 +52,6 @@ export function ManufacturingStory() {
       {/* Content moved to Left side so the Center-Right Friction Stir Welding Tool and joint seam are 100% visible */}
       <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-20 sm:py-28 relative z-10">
         <div className="max-w-2xl text-left">
-          {/* Top Tag: 10 / REAL MANUFACTURING */}
-          <div className="flex items-center gap-2 mb-4 sm:mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#00747a] font-bold bg-[#091113]/80 px-2.5 py-1 rounded border border-[#00747a]/30 backdrop-blur-md">
-              10 / REAL MANUFACTURING · GUELPH, ON
-            </span>
-          </div>
-
           {/* Typography arranged cleanly on the left with brand highlights */}
           <h2 className="font-sans font-black tracking-[-0.04em] uppercase leading-[0.88] sm:leading-[0.84] text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-left mb-6">
             <span className="block text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
