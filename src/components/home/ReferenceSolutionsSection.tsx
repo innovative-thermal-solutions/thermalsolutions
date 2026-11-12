@@ -152,21 +152,13 @@ export function ReferenceSolutionsSection() {
                   </div>
                 </div>
 
-                <div className="px-5 pb-5 pt-0 border-t border-slate-100 flex items-center justify-between mt-auto">
-                  <label className="flex items-center gap-2 text-xs font-mono text-slate-600 cursor-pointer select-none">
-                    <input
-                      type="checkbox"
-                      checked={isCompared}
-                      onChange={() => toggleCompare(p.id)}
-                      className="rounded text-[#00747a] focus:ring-[#00747a]"
-                    />
-                    <span>Add to compare</span>
-                  </label>
+                <div className="px-5 pb-5 pt-0 border-t border-slate-100 flex items-center justify-end mt-auto">
                   <button
                     onClick={() => openDetail(p)}
-                    className="text-[11px] font-mono text-[#00747a] hover:underline cursor-pointer"
+                    className="text-[11px] font-mono text-[#00747a] hover:underline cursor-pointer font-semibold flex items-center gap-1"
                   >
-                    Specs ↗
+                    <span>View Specifications</span>
+                    <span>↗</span>
                   </button>
                 </div>
               </div>
@@ -200,33 +192,6 @@ export function ReferenceSolutionsSection() {
             <span>↗</span>
           </button>
         </div>
-
-        {/* Floating Compare Bar */}
-        {selectedToCompare.length > 0 && (
-          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-[#0f1719] border border-[#00747a]/40 text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-4 animate-fade-in text-xs font-mono">
-            <span>
-              {selectedToCompare.length} solution{selectedToCompare.length > 1 ? "s" : ""} selected
-            </span>
-            <button
-              onClick={openCompare}
-              disabled={selectedToCompare.length < 2}
-              className={`px-4 py-1.5 rounded font-bold uppercase transition-colors cursor-pointer ${
-                selectedToCompare.length >= 2
-                  ? "bg-[#00747a] text-white hover:bg-[#005d62]"
-                  : "bg-slate-700 text-slate-400 cursor-not-allowed"
-              }`}
-            >
-              {selectedToCompare.length < 2 ? "Select one more to compare" : "Compare solutions ↗"}
-            </button>
-            <button
-              onClick={() => setSelectedToCompare([])}
-              className="text-slate-400 hover:text-white ml-1 text-sm font-bold cursor-pointer"
-              title="Clear selection"
-            >
-              ×
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );

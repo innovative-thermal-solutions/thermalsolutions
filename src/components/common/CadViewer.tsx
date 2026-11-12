@@ -194,3 +194,4 @@ export function CadViewer({ modelUrl, className = "" }: CadViewerProps) {
     </div>
   );
 }
+
