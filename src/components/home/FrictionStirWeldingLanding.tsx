@@ -339,6 +339,46 @@ export function FrictionStirWeldingLanding() {
             </div>
           </div>
 
+          {/* In-House Friction Stir Welding Video Section (25s - 36s loop) */}
+          <div className="rounded-2xl overflow-hidden border border-[#d8dedf] bg-[#091113] shadow-md relative group">
+            <div className="relative aspect-video sm:aspect-[21/9] w-full overflow-hidden">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                className="w-full h-full object-cover filter brightness-[0.9] contrast-[1.08]"
+              >
+                <source src="/videos/fsw-loop-25-36.mp4" type="video/mp4" />
+                Your browser does not support video playback.
+              </video>
+
+              {/* Gradient overlays for industrial edge */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
+
+              {/* Top Telemetry Overlay */}
+              <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-white text-[11px] font-mono z-10 pointer-events-none">
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-black/75 backdrop-blur-md rounded-md border border-white/20">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="font-bold tracking-wider">IN-HOUSE FSW PROCESS CELL IN ACTION</span>
+                </div>
+                <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-black/75 backdrop-blur-md rounded-md border border-white/20 text-[#c5cecf]">
+                  <span>SOLID-STATE HERMETIC JOINING · GUELPH, ON</span>
+                </div>
+              </div>
+
+              {/* Bottom Subtitle / Info */}
+              <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between z-10 pointer-events-none">
+                <div className="px-3.5 py-2 bg-black/70 backdrop-blur-md rounded-lg border border-white/15 max-w-lg">
+                  <p className="text-white text-xs font-mono font-medium">
+                    Continuous rotating FSW tool generating frictional heat &amp; plastic deformation to produce void-free joints.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Sub-Stage 2: Interactive Before & After Machining Comparison Slider */}
           <div className="p-8 sm:p-12 rounded-2xl bg-white border border-[#d8dedf] shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
