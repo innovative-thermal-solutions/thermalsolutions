@@ -35,3 +35,27 @@ next-env.d.ts
 
 # Large user root raw videos (already in public/videos or external)
 /*.mp4
+
+# Root raw media & scratch scripts
+/*.[mM][oO][vV]
+/*.zip
+/pptx_unzipped/
+/downloaded_sharepoint/
+/extracted_images/
+/extract_*.py
+/pptx_content.md
+/lfa0180_rev.01 (1).glb
+/Air Cooled Section/
+/Bonded Heat Sink/
+/BusBar/
+/BusBar /
+/Copper Embedded Liquid Cold Plate/
+/Engineer Pictures/
+/Founder and CEO photos/
+/Liquid Cooled Section/
+/its logo/
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/*.pptx
