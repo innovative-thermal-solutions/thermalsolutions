@@ -72,7 +72,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
       <body
-        className={`${dmSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#f2f4f0] text-[#0b252c] selection:bg-[#81e6d6] selection:text-[#091f26] min-h-screen flex flex-col relative`}
+        className={`${dmSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#f8faf9] text-[#141f22] selection:bg-[#00747a] selection:text-[#0f1719] min-h-screen flex flex-col relative`}
       >
         <Navigation />
         <div className="flex-1 w-full relative z-10">{children}</div>

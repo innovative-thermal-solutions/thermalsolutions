@@ -47,7 +47,7 @@ export function FrictionStirWeldingPdfSection() {
               fill
               className="object-cover"
             />
-            <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-black/75 backdrop-blur-md rounded border border-white/15 text-[10px] font-mono tracking-widest text-[#81e6d6]">
+            <div className="absolute top-4 left-4 z-10 px-3 py-1 bg-black/75 backdrop-blur-md rounded border border-white/15 text-[10px] font-mono tracking-widest text-[#00747a]">
               IN-HOUSE CNC &amp; FSW / GUELPH, ONTARIO
             </div>
           </div>

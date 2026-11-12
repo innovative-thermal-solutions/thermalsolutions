@@ -58,17 +58,17 @@ export function ReferenceSolutionsSection() {
   };
 
   return (
-    <section id="solutions" className="relative w-full py-24 px-6 sm:px-8 lg:px-12 bg-[#f2f4f0] text-[#0b252c] border-b border-[#d6deda]">
+    <section id="solutions" className="relative w-full py-24 px-6 sm:px-8 lg:px-12 bg-[#f8faf9] text-[#141f22] border-b border-[#d8dedf]">
       <div className="max-w-[1440px] mx-auto">
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <p className="text-[11px] font-mono tracking-widest text-[#087f83] uppercase mb-2 font-bold">
+            <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
               01 / THE RIGHT SOLUTION
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05]">
               Every thermal challenge. <br />
-              <span className="text-[#647475]">A better way to cool.</span>
+              <span className="text-[#7f7c7d]">A better way to cool.</span>
             </h2>
           </div>
           <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
@@ -78,7 +78,7 @@ export function ReferenceSolutionsSection() {
         </div>
 
         {/* Toolbar: Filters & Search */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-6 border-b border-[#d6deda] mb-8">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-6 border-b border-[#d8dedf] mb-8">
           <div className="flex flex-wrap items-center gap-3">
             {[
               { id: "all", label: "All solutions", count: "08" },
@@ -91,8 +91,8 @@ export function ReferenceSolutionsSection() {
                 onClick={() => setFilter(tab.id as any)}
                 className={`px-4 py-2 text-xs font-mono uppercase tracking-wider rounded transition-colors cursor-pointer ${
                   filter === tab.id
-                    ? "bg-[#0b252c] text-white font-bold"
-                    : "bg-white text-slate-700 hover:bg-slate-200 border border-[#d6deda]"
+                    ? "bg-[#141f22] text-white font-bold"
+                    : "bg-white text-slate-700 hover:bg-slate-200 border border-[#d8dedf]"
                 }`}
               >
                 <span>{tab.label}</span>
@@ -108,7 +108,7 @@ export function ReferenceSolutionsSection() {
               placeholder="Find a solution (e.g. copper, FSW)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-[#d6deda] rounded pl-9 pr-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#087f83]"
+              className="w-full bg-white border border-[#d8dedf] rounded pl-9 pr-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#00747a]"
             />
           </div>
         </div>
@@ -120,7 +120,7 @@ export function ReferenceSolutionsSection() {
             return (
               <div
                 key={p.id}
-                className="group bg-white border border-[#d6deda] rounded overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all"
+                className="group bg-white border border-[#d8dedf] rounded overflow-hidden flex flex-col justify-between hover:shadow-lg transition-all"
               >
                 <div>
                   <button
@@ -138,12 +138,12 @@ export function ReferenceSolutionsSection() {
                   </button>
 
                   <div className="p-5">
-                    <span className="text-[10px] font-mono tracking-widest text-[#087f83] uppercase block mb-1 font-bold">
+                    <span className="text-[10px] font-mono tracking-widest text-[#00747a] uppercase block mb-1 font-bold">
                       {p.tag}
                     </span>
                     <button
                       onClick={() => openDetail(p)}
-                      className="text-left font-serif text-lg font-bold text-slate-900 hover:text-[#087f83] transition-colors flex items-center justify-between w-full mb-2 cursor-pointer"
+                      className="text-left font-serif text-lg font-bold text-slate-900 hover:text-[#00747a] transition-colors flex items-center justify-between w-full mb-2 cursor-pointer"
                     >
                       <span>{p.name}</span>
                       <span className="text-sm">↗</span>
@@ -158,13 +158,13 @@ export function ReferenceSolutionsSection() {
                       type="checkbox"
                       checked={isCompared}
                       onChange={() => toggleCompare(p.id)}
-                      className="rounded text-[#087f83] focus:ring-[#087f83]"
+                      className="rounded text-[#00747a] focus:ring-[#00747a]"
                     />
                     <span>Add to compare</span>
                   </label>
                   <button
                     onClick={() => openDetail(p)}
-                    className="text-[11px] font-mono text-[#087f83] hover:underline cursor-pointer"
+                    className="text-[11px] font-mono text-[#00747a] hover:underline cursor-pointer"
                   >
                     Specs ↗
                   </button>
@@ -175,7 +175,7 @@ export function ReferenceSolutionsSection() {
         </div>
 
         {filteredProducts.length === 0 && (
-          <div className="p-12 text-center bg-white rounded border border-[#d6deda] my-8">
+          <div className="p-12 text-center bg-white rounded border border-[#d8dedf] my-8">
             <p className="text-sm text-slate-600 font-mono">
               No solutions match your search. Try searching for “copper”, “air”, “skived”, or “cold plate”.
             </p>
@@ -183,7 +183,7 @@ export function ReferenceSolutionsSection() {
         )}
 
         {/* Solution Help Banner */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 bg-white border border-[#d6deda] rounded">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 bg-white border border-[#d8dedf] rounded">
           <div>
             <strong className="block text-sm font-serif text-slate-900 mb-1">
               Not sure where to begin?
@@ -194,7 +194,7 @@ export function ReferenceSolutionsSection() {
           </div>
           <button
             onClick={openFinder}
-            className="px-5 py-2.5 bg-[#0b252c] hover:bg-[#15515a] text-white text-xs font-mono uppercase tracking-wider font-bold rounded transition-colors inline-flex items-center gap-2 cursor-pointer shrink-0"
+            className="px-5 py-2.5 bg-[#141f22] hover:bg-[#15515a] text-white text-xs font-mono uppercase tracking-wider font-bold rounded transition-colors inline-flex items-center gap-2 cursor-pointer shrink-0"
           >
             <span>Find your cooling approach</span>
             <span>↗</span>
@@ -203,7 +203,7 @@ export function ReferenceSolutionsSection() {
 
         {/* Floating Compare Bar */}
         {selectedToCompare.length > 0 && (
-          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-[#091f26] border border-[#81e6d6]/40 text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-4 animate-fade-in text-xs font-mono">
+          <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-[#0f1719] border border-[#00747a]/40 text-white px-5 py-3 rounded-full shadow-2xl flex items-center gap-4 animate-fade-in text-xs font-mono">
             <span>
               {selectedToCompare.length} solution{selectedToCompare.length > 1 ? "s" : ""} selected
             </span>
@@ -212,7 +212,7 @@ export function ReferenceSolutionsSection() {
               disabled={selectedToCompare.length < 2}
               className={`px-4 py-1.5 rounded font-bold uppercase transition-colors cursor-pointer ${
                 selectedToCompare.length >= 2
-                  ? "bg-[#81e6d6] text-[#091f26] hover:bg-[#a4f5e7]"
+                  ? "bg-[#00747a] text-white hover:bg-[#005d62]"
                   : "bg-slate-700 text-slate-400 cursor-not-allowed"
               }`}
             >

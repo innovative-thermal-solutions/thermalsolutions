@@ -47,10 +47,10 @@ export function ReferenceCustomersSection() {
       <div className="max-w-[1440px] mx-auto">
         {/* Section Heading */}
         <div className="text-center mb-14">
-          <p className="text-xs sm:text-sm font-mono tracking-[0.25em] text-[#087f83] uppercase font-bold">
+          <p className="text-xs sm:text-sm font-mono tracking-[0.25em] text-[#00747a] uppercase font-bold">
             OUR CUSTOMERS
           </p>
-          <div className="w-12 h-0.5 bg-[#087f83]/40 mx-auto mt-3" />
+          <div className="w-12 h-0.5 bg-[#00747a]/40 mx-auto mt-3" />
         </div>
 
         {/* Logos Flex/Grid Container */}

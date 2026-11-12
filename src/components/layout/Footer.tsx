@@ -6,9 +6,17 @@ import { COMPANY_INFO } from "@/data/companyContent";
 
 export function Footer() {
   return (
-    <footer className="w-full bg-slate-50 text-slate-800 pt-20 pb-12 px-6 lg:px-12 border-t border-slate-200 relative overflow-hidden">
-      {/* Light blueprint grid background */}
-      <div className="absolute inset-0 bg-grid-blueprint opacity-50 pointer-events-none" />
+    <footer className="w-full bg-[#0f1719] text-[#e8eded] pt-20 pb-12 px-6 lg:px-12 border-t border-[#233134] relative overflow-hidden">
+      {/* Subtle blueprint grid background */}
+      <div 
+        className="absolute inset-0 opacity-15 pointer-events-none" 
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,116,122,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.15) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
+      <div className="absolute right-0 bottom-0 w-[500px] h-[500px] bg-[#00747a]/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-[1440px] mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-16">
@@ -18,72 +26,73 @@ export function Footer() {
               <img
                 src="/images/logo/its-logo-tight.svg"
                 alt="Innovative Thermal Solutions - ITS Cooling Logo"
-                className="h-16 sm:h-20 w-auto object-contain transition-transform group-hover:scale-105"
+                className="h-16 sm:h-20 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.6)]"
               />
             </Link>
 
-            <p className="text-slate-600 text-sm max-w-sm mb-6 leading-relaxed font-normal">
+            <p className="text-[#9da8a9] text-sm max-w-sm mb-6 leading-relaxed font-normal">
               100% custom-designed and manufactured liquid cold plates and heat sinks. A one-stop turnkey solution from concept to finished hardware under one roof in Guelph, Ontario. No shelf stock.
             </p>
 
-            <div className="space-y-2.5 text-xs font-mono text-slate-700">
+            <div className="space-y-2.5 text-xs font-mono text-[#bcc5c6]">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#00747a] shrink-0 mt-0.5" />
                 <span>290 Southgate Drive, Unit #2, Guelph, ON N1G 4P5, Canada</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-sky-600 shrink-0" />
-                <a href={`tel:${COMPANY_INFO.phone}`} className="hover:text-sky-700 font-bold transition-colors">
+                <Phone className="w-4 h-4 text-[#00747a] shrink-0" />
+                <a href={`tel:${COMPANY_INFO.phone}`} className="hover:text-white font-bold transition-colors">
                   +1 (519) 763-4454
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-sky-600 shrink-0" />
-                <a href={`mailto:${COMPANY_INFO.salesEmail}`} className="hover:text-sky-700 font-bold transition-colors">
+                <Mail className="w-4 h-4 text-[#00747a] shrink-0" />
+                <a href={`mailto:${COMPANY_INFO.salesEmail}`} className="hover:text-white font-bold transition-colors">
                   {COMPANY_INFO.salesEmail}
                 </a>
               </div>
             </div>
 
-            <div className="mt-6 inline-flex items-center gap-2 px-3.5 py-1.5 bg-white border border-slate-300 rounded-md text-xs font-mono text-slate-800 shadow-2xs">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <div className="mt-6 inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#141f22] border border-[#233134] rounded-md text-xs font-mono text-[#d8dedf] shadow-xs">
+              <ShieldCheck className="w-4 h-4 text-[#00747a]" />
               <span>ISO 9001:2015 Certified System</span>
             </div>
           </div>
 
           {/* Col 1: Technologies */}
           <div>
-            <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-slate-900 mb-5 font-bold">
+            <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-white mb-5 font-bold flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
               Technologies
             </h4>
-            <ul className="space-y-3 flex flex-col text-sm text-slate-600">
+            <ul className="space-y-3 flex flex-col text-sm text-[#9da8a9]">
               <li>
-                <Link href="/technologies/liquid-cooling" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/technologies/liquid-cooling" className="hover:text-white font-medium transition-colors">
                   Liquid Cooling
                 </Link>
               </li>
               <li>
-                <Link href="/technologies/air-cooling" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/technologies/air-cooling" className="hover:text-white font-medium transition-colors">
                   Air Cooling
                 </Link>
               </li>
               <li>
-                <Link href="/capabilities/friction-stir-welding" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/capabilities/friction-stir-welding" className="hover:text-white font-medium transition-colors">
                   Friction Stir Welding
                 </Link>
               </li>
               <li>
-                <Link href="/technologies/thermal-engineering" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/technologies/thermal-engineering" className="hover:text-white font-medium transition-colors">
                   Thermal Engineering & CFD
                 </Link>
               </li>
               <li>
-                <Link href="/thermal-simulation" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/thermal-simulation" className="hover:text-white font-medium transition-colors">
                   CFD Thermal Simulator
                 </Link>
               </li>
               <li>
-                <Link href="/capabilities/cnc-machining" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/capabilities/cnc-machining" className="hover:text-white font-medium transition-colors">
                   5-Axis CNC Machining
                 </Link>
               </li>
@@ -92,32 +101,33 @@ export function Footer() {
 
           {/* Col 2: Products */}
           <div>
-            <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-slate-900 mb-5 font-bold">
+            <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-white mb-5 font-bold flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
               Products
             </h4>
-            <ul className="space-y-3 flex flex-col text-sm text-slate-600">
+            <ul className="space-y-3 flex flex-col text-sm text-[#9da8a9]">
               <li>
-                <Link href="/products/cold-plates" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/products/cold-plates" className="hover:text-white font-medium transition-colors">
                   Liquid Cold Plates
                 </Link>
               </li>
               <li>
-                <Link href="/products/liquid-cold-plates" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/products/liquid-cold-plates" className="hover:text-white font-medium transition-colors">
                   Machined Micro-Channel
                 </Link>
               </li>
               <li>
-                <Link href="/products/heat-sinks" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/products/heat-sinks" className="hover:text-white font-medium transition-colors">
                   Air-Cooled Heat Sinks
                 </Link>
               </li>
               <li>
-                <Link href="/products/busbar" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/products/busbar" className="hover:text-white font-medium transition-colors">
                   Busbars & Interconnects
                 </Link>
               </li>
               <li>
-                <Link href="/products/heat-pipes" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/products/heat-pipes" className="hover:text-white font-medium transition-colors">
                   Embedded Heat Pipes
                 </Link>
               </li>
@@ -126,32 +136,33 @@ export function Footer() {
 
           {/* Col 3: Industries */}
           <div>
-            <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-slate-900 mb-5 font-bold">
+            <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-white mb-5 font-bold flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
               Industries
             </h4>
-            <ul className="space-y-3 flex flex-col text-sm text-slate-600">
+            <ul className="space-y-3 flex flex-col text-sm text-[#9da8a9]">
               <li>
-                <Link href="/industries/power-electronics" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/industries/power-electronics" className="hover:text-white font-medium transition-colors">
                   Power Electronics
                 </Link>
               </li>
               <li>
-                <Link href="/industries/ev-battery" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/industries/ev-battery" className="hover:text-white font-medium transition-colors">
                   EV & Battery Systems
                 </Link>
               </li>
               <li>
-                <Link href="/industries/clean-energy" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/industries/clean-energy" className="hover:text-white font-medium transition-colors">
                   Clean Energy & BESS
                 </Link>
               </li>
               <li>
-                <Link href="/industries/aerospace" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/industries/aerospace" className="hover:text-white font-medium transition-colors">
                   Aerospace & Defence
                 </Link>
               </li>
               <li>
-                <Link href="/industries/satellite" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/industries/satellite" className="hover:text-white font-medium transition-colors">
                   Satellite Communications
                 </Link>
               </li>
@@ -160,37 +171,38 @@ export function Footer() {
 
           {/* Col 4: Company & Quality */}
           <div>
-            <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-slate-900 mb-5 font-bold">
+            <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-white mb-5 font-bold flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
               Company
             </h4>
-            <ul className="space-y-3 flex flex-col text-sm text-slate-600">
+            <ul className="space-y-3 flex flex-col text-sm text-[#9da8a9]">
               <li>
-                <Link href="/about" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/about" className="hover:text-white font-medium transition-colors">
                   About ITS
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/team" className="hover:text-white font-medium transition-colors">
                   Engineering Team
                 </Link>
               </li>
               <li>
-                <Link href="/facility" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/facility" className="hover:text-white font-medium transition-colors">
                   Guelph Facility
                 </Link>
               </li>
               <li>
-                <Link href="/quality" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/quality" className="hover:text-white font-medium transition-colors">
                   Quality Management
                 </Link>
               </li>
               <li>
-                <Link href="/case-studies" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/case-studies" className="hover:text-white font-medium transition-colors">
                   Case Studies & Proof
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-sky-600 font-medium transition-colors">
+                <Link href="/contact" className="hover:text-white font-medium transition-colors">
                   Contact / RFQ
                 </Link>
               </li>
@@ -199,11 +211,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar with Coordinates, Source modal trigger & Copyright */}
-        <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+        <div className="pt-8 border-t border-[#233134] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#7f7c7d]">
           <div className="flex items-center gap-3">
             <span>© 2026 Innovative Thermal Solutions Inc. All rights reserved.</span>
             <span className="hidden md:inline">•</span>
-            <span className="hidden md:inline">Guelph, Ontario, Canada</span>
+            <span className="hidden md:inline text-[#9da8a9]">Guelph, Ontario, Canada</span>
           </div>
 
           <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
@@ -217,20 +229,20 @@ export function Footer() {
                   );
                 }
               }}
-              className="text-[#087f83] hover:underline font-bold cursor-pointer"
+              className="text-[#00747a] hover:text-white hover:underline font-bold cursor-pointer"
             >
               Content sources ↗
             </button>
-            <span className="text-slate-300">•</span>
-            <a href="https://www.itscooling.com" target="_blank" rel="noopener noreferrer" className="hover:text-slate-700">
+            <span className="text-slate-700">•</span>
+            <a href="https://www.itscooling.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               itscooling.com ↗
             </a>
-            <span className="text-slate-300">•</span>
-            <a href="#home" className="hover:text-slate-700">
+            <span className="text-slate-700">•</span>
+            <a href="#home" className="hover:text-white transition-colors">
               Back to top ↑
             </a>
-            <span className="text-slate-300 hidden sm:inline">•</span>
-            <span className="text-slate-400 font-mono hidden sm:inline">43.51° N / 80.21° W</span>
+            <span className="text-slate-700 hidden sm:inline">•</span>
+            <span className="text-[#9da8a9] font-mono hidden sm:inline">43.51° N / 80.21° W</span>
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ export default function ThermalSimulationPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-8">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 hover:text-[#087f83] transition-colors mb-6"
+          className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-slate-500 hover:text-[#00747a] transition-colors mb-6"
         >
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Home</span>
@@ -27,9 +27,9 @@ export default function ThermalSimulationPage() {
 
       {/* Bottom CTA Block */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-12">
-        <div className="rounded-2xl bg-[#0b252c] text-white p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg border border-slate-800">
+        <div className="rounded-2xl bg-[#141f22] text-white p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg border border-slate-800">
           <div>
-            <span className="text-[10px] font-mono tracking-widest text-[#81e6d6] uppercase font-bold mb-2 block">
+            <span className="text-[10px] font-mono tracking-widest text-[#00747a] uppercase font-bold mb-2 block">
               READY TO VALIDATE YOUR COOLING ARCHITECTURE?
             </span>
             <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-2">
@@ -41,7 +41,7 @@ export default function ThermalSimulationPage() {
           </div>
           <Link
             href="/contact"
-            className="px-6 py-3.5 bg-[#81e6d6] text-[#0b252c] hover:bg-white font-mono font-bold text-xs uppercase tracking-wider rounded transition-colors whitespace-nowrap shadow-sm"
+            className="px-6 py-3.5 bg-[#00747a] text-white hover:bg-white font-mono font-bold text-xs uppercase tracking-wider rounded transition-colors whitespace-nowrap shadow-sm"
           >
             Request Custom CFD Design →
           </Link>

@@ -106,33 +106,33 @@ export function Navigation() {
   return (
     <header className="fixed top-0 w-full z-50 transition-all duration-300">
       {/* Top Status & Telemetry Bar */}
-      <div className="hidden lg:block bg-[#091f26] text-[#81e6d6] py-2 px-6 lg:px-12 text-[11px] font-mono border-b border-[#ffffff16]">
+      <div className="hidden lg:block bg-[#0f1719] text-[#00747a] py-2 px-6 lg:px-12 text-[11px] font-mono border-b border-[#ffffff16]">
         <div className="max-w-[1450px] mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-[#81e6d6] font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#81e6d6]" />
+            <span className="flex items-center gap-1.5 text-[#00747a] font-semibold">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#00747a]" />
               <span>ISO 9001:2015 CERTIFIED</span>
             </span>
-            <span className="text-[#81e6d6]/60">•</span>
-            <span className="text-[#81e6d6] font-medium">GUELPH, ONTARIO, CANADA</span>
-            <span className="text-[#81e6d6]/60">•</span>
-            <span className="text-[#81e6d6] font-semibold">100% CUSTOM · ZERO SHELF INVENTORY</span>
+            <span className="text-[#00747a]/60">•</span>
+            <span className="text-[#00747a] font-medium">GUELPH, ONTARIO, CANADA</span>
+            <span className="text-[#00747a]/60">•</span>
+            <span className="text-[#00747a] font-semibold">100% CUSTOM · ZERO SHELF INVENTORY</span>
           </div>
 
           <div className="flex items-center gap-6">
             <a
               href={`tel:${COMPANY_INFO.phone}`}
-              className="flex items-center gap-1.5 text-[#81e6d6] hover:text-white transition-colors font-medium"
+              className="flex items-center gap-1.5 text-[#00747a] hover:text-white transition-colors font-medium"
             >
-              <Phone className="w-3 h-3 text-[#81e6d6]" />
+              <Phone className="w-3 h-3 text-[#00747a]" />
               <span>{COMPANY_INFO.phone}</span>
             </a>
-            <span className="text-[#81e6d6]/60">•</span>
+            <span className="text-[#00747a]/60">•</span>
             <a
               href={`mailto:${COMPANY_INFO.salesEmail}`}
-              className="flex items-center gap-1.5 text-[#81e6d6] hover:text-white transition-colors font-medium"
+              className="flex items-center gap-1.5 text-[#00747a] hover:text-white transition-colors font-medium"
             >
-              <Mail className="w-3 h-3 text-[#81e6d6]" />
+              <Mail className="w-3 h-3 text-[#00747a]" />
               <span>Sales: {COMPANY_INFO.salesEmail}</span>
             </a>
           </div>
@@ -143,8 +143,8 @@ export function Navigation() {
       <nav
         className={`w-full transition-all duration-300 ${
           scrolled
-            ? "bg-[#091f26]/98 backdrop-blur-xl py-3 border-b border-[#ffffff19] shadow-md text-[#e9f0ef]"
-            : "bg-[#091f26] py-4 border-b border-[#ffffff16] text-[#e9f0ef]"
+            ? "bg-[#0f1719]/98 backdrop-blur-xl py-3 border-b border-[#ffffff19] shadow-md text-[#e9f0ef]"
+            : "bg-[#0f1719] py-4 border-b border-[#ffffff16] text-[#e9f0ef]"
         }`}
       >
         <div className="max-w-[1450px] mx-auto px-6 lg:px-10 flex justify-between items-center gap-4">
@@ -171,11 +171,11 @@ export function Navigation() {
               <Link
                 href="/technologies"
                 className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
-                  pathname.startsWith("/technologies") ? "text-[#81e6d6]" : "text-[#81e6d6] hover:text-white"
+                  pathname.startsWith("/technologies") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
                 }`}
               >
                 <span>Technologies</span>
-                <ChevronDown className="w-3 h-3 text-[#81e6d6]" />
+                <ChevronDown className="w-3 h-3 text-[#00747a]" />
               </Link>
 
               <AnimatePresence>
@@ -185,7 +185,7 @@ export function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.18 }}
-                    className="absolute top-full left-0 w-80 p-3 bg-[#0d2a31] border border-[#ffffff22] rounded-lg shadow-xl z-50 text-[#e9f0ef]"
+                    className="absolute top-full left-0 w-80 p-3 bg-[#182427] border border-[#ffffff22] rounded-lg shadow-xl z-50 text-[#e9f0ef]"
                   >
                     <div className="space-y-1">
                       {technologiesMenu.map((item) => {
@@ -194,16 +194,16 @@ export function Navigation() {
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="flex items-start gap-3 p-2.5 rounded-md hover:bg-[#143b44] transition-colors group"
+                            className="flex items-start gap-3 p-2.5 rounded-md hover:bg-[#1f2e32] transition-colors group"
                           >
-                            <div className="p-2 rounded bg-[#091f26] text-[#81e6d6] group-hover:bg-[#81e6d6] group-hover:text-[#091f26] transition-colors">
+                            <div className="p-2 rounded bg-[#0f1719] text-[#00747a] group-hover:bg-[#00747a] group-hover:text-[#0f1719] transition-colors">
                               <Icon className="w-4 h-4" />
                             </div>
                             <div>
-                              <div className="text-xs font-semibold text-white group-hover:text-[#81e6d6] transition-colors">
+                              <div className="text-xs font-semibold text-white group-hover:text-[#00747a] transition-colors">
                                 {item.name}
                               </div>
-                              <div className="text-[11px] text-[#9cb1ad] leading-tight">
+                              <div className="text-[11px] text-[#9da8a9] leading-tight">
                                 {item.desc}
                               </div>
                             </div>
@@ -225,11 +225,11 @@ export function Navigation() {
               <Link
                 href="/products"
                 className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
-                  pathname.startsWith("/products") ? "text-[#81e6d6]" : "text-[#81e6d6] hover:text-white"
+                  pathname.startsWith("/products") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
                 }`}
               >
                 <span>Products</span>
-                <ChevronDown className="w-3 h-3 text-[#81e6d6]" />
+                <ChevronDown className="w-3 h-3 text-[#00747a]" />
               </Link>
 
               <AnimatePresence>
@@ -239,7 +239,7 @@ export function Navigation() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.18 }}
-                    className="absolute top-full left-0 w-80 p-3 bg-[#0d2a31] border border-[#ffffff22] rounded-lg shadow-xl z-50 text-[#e9f0ef]"
+                    className="absolute top-full left-0 w-80 p-3 bg-[#182427] border border-[#ffffff22] rounded-lg shadow-xl z-50 text-[#e9f0ef]"
                   >
                     <div className="space-y-1">
                       {productsMenu.map((item) => {
@@ -248,16 +248,16 @@ export function Navigation() {
                           <Link
                             key={item.name}
                             href={item.href}
-                            className="flex items-start gap-3 p-2.5 rounded-md hover:bg-[#143b44] transition-colors group"
+                            className="flex items-start gap-3 p-2.5 rounded-md hover:bg-[#1f2e32] transition-colors group"
                           >
-                            <div className="p-2 rounded bg-[#091f26] text-[#81e6d6] group-hover:bg-[#81e6d6] group-hover:text-[#091f26] transition-colors">
+                            <div className="p-2 rounded bg-[#0f1719] text-[#00747a] group-hover:bg-[#00747a] group-hover:text-[#0f1719] transition-colors">
                               <Icon className="w-4 h-4" />
                             </div>
                             <div>
-                              <div className="text-xs font-semibold text-white group-hover:text-[#81e6d6] transition-colors">
+                              <div className="text-xs font-semibold text-white group-hover:text-[#00747a] transition-colors">
                                 {item.name}
                               </div>
-                              <div className="text-[11px] text-[#9cb1ad] leading-tight">
+                              <div className="text-[11px] text-[#9da8a9] leading-tight">
                                 {item.desc}
                               </div>
                             </div>
@@ -278,14 +278,14 @@ export function Navigation() {
                   key={link.name}
                   href={link.href}
                   className={`text-[13px] font-semibold transition-colors relative py-1 ${
-                    isActive ? "text-[#81e6d6]" : "text-[#81e6d6] hover:text-white"
+                    isActive ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
                   }`}
                 >
                   {link.name}
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#81e6d6]"
+                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#00747a]"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -298,7 +298,7 @@ export function Navigation() {
           <div className="hidden lg:flex items-center gap-4 shrink-0">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-between gap-4 px-5 py-2.5 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#0b252c] text-[13px] font-semibold tracking-normal rounded-[3px] transition-all transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-between gap-3 px-5 py-2.5 bg-[#00747a] hover:bg-[#005d62] text-white text-[13px] font-semibold tracking-normal rounded-[3px] transition-all transform hover:-translate-y-0.5 shadow-sm"
             >
               <span>Talk to an Engineer</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -307,7 +307,7 @@ export function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className="xl:hidden p-2 text-[#cfdbd8] hover:text-[#81e6d6] transition-colors cursor-pointer"
+            className="xl:hidden p-2 text-[#cfdbd8] hover:text-[#00747a] transition-colors cursor-pointer"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation menu"
           >
@@ -323,7 +323,7 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden bg-[#0d2a31] border-b border-[#ffffff22] px-6 py-8 overflow-y-auto max-h-[85vh] shadow-2xl text-[#e9f0ef]"
+            className="xl:hidden bg-[#182427] border-b border-[#ffffff22] px-6 py-8 overflow-y-auto max-h-[85vh] shadow-2xl text-[#e9f0ef]"
           >
             <div className="flex flex-col space-y-4">
               <span className="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-bold">

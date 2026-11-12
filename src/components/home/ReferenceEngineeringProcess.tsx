@@ -47,17 +47,17 @@ export function ReferenceEngineeringProcess() {
   const current = PROCESS_STEPS[activeStep];
 
   return (
-    <section id="engineering" className="relative w-full py-24 px-6 sm:px-8 lg:px-12 bg-[#f2f4f0] text-[#0b252c] border-b border-[#d6deda]">
+    <section id="engineering" className="relative w-full py-24 px-6 sm:px-8 lg:px-12 bg-[#f8faf9] text-[#141f22] border-b border-[#d8dedf]">
       <div className="max-w-[1440px] mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <p className="text-[11px] font-mono tracking-widest text-[#087f83] uppercase mb-2 font-bold">
+            <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
               02 / WORK FLOW AT ITS
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05]">
               From “what if” <br />
-              <span className="text-[#647475]">to working hardware.</span>
+              <span className="text-[#7f7c7d]">to working hardware.</span>
             </h2>
           </div>
           <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
@@ -69,9 +69,9 @@ export function ReferenceEngineeringProcess() {
         {/* Process Interactive Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           {/* Left Column: Stage Visual Window */}
-          <div className="lg:col-span-6 bg-white border border-[#d6deda] rounded-lg p-6 flex flex-col justify-between shadow-sm min-h-[380px]">
+          <div className="lg:col-span-6 bg-white border border-[#d8dedf] rounded-lg p-6 flex flex-col justify-between shadow-sm min-h-[380px]">
             <div className="flex items-center justify-between text-xs font-mono text-slate-400 mb-4 pb-3 border-b border-slate-100">
-              <span className="text-[#087f83] font-bold">
+              <span className="text-[#00747a] font-bold">
                 0{activeStep + 1} — 04 / PROCESS MILESTONE
               </span>
               <span>IN-HOUSE FACILITY GUELPH</span>
@@ -89,7 +89,7 @@ export function ReferenceEngineeringProcess() {
 
             <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-600">
               <span className="tracking-wider">{current.caption}</span>
-              <span className="text-[#087f83] font-bold">ISO 9001:2015</span>
+              <span className="text-[#00747a] font-bold">ISO 9001:2015</span>
             </div>
           </div>
 
@@ -103,7 +103,7 @@ export function ReferenceEngineeringProcess() {
                   onClick={() => setActiveStep(idx)}
                   className={`p-5 rounded-lg border transition-all cursor-pointer ${
                     isActive
-                      ? "bg-white border-[#087f83] shadow-md ring-1 ring-[#087f83]/20"
+                      ? "bg-white border-[#00747a] shadow-md ring-1 ring-[#00747a]/20"
                       : "bg-[#e9ece6] border-transparent hover:bg-white/80 text-slate-700"
                   }`}
                 >
@@ -111,7 +111,7 @@ export function ReferenceEngineeringProcess() {
                     <div className="flex items-start gap-4">
                       <span
                         className={`text-sm font-mono font-bold px-2 py-0.5 rounded ${
-                          isActive ? "bg-[#0b252c] text-[#81e6d6]" : "bg-white text-slate-500"
+                          isActive ? "bg-[#141f22] text-[#00747a]" : "bg-white text-slate-500"
                         }`}
                       >
                         {step.step}
@@ -125,7 +125,7 @@ export function ReferenceEngineeringProcess() {
                         </p>
                       </div>
                     </div>
-                    <span className="text-lg font-mono text-[#087f83]">
+                    <span className="text-lg font-mono text-[#00747a]">
                       {isActive ? "−" : "+"}
                     </span>
                   </div>

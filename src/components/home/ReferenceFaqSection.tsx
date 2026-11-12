@@ -35,21 +35,21 @@ export function ReferenceFaqSection() {
   };
 
   return (
-    <section className="relative w-full py-24 px-6 sm:px-8 lg:px-12 bg-[#f2f4f0] text-[#0b252c] border-b border-[#d6deda]">
+    <section className="relative w-full py-24 px-6 sm:px-8 lg:px-12 bg-[#f8faf9] text-[#141f22] border-b border-[#d8dedf]">
       <div className="max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Column Heading */}
           <div className="lg:col-span-5">
-            <p className="text-[11px] font-mono tracking-widest text-[#087f83] uppercase mb-2 font-bold">
+            <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
               A FEW GOOD QUESTIONS
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05] mb-6">
               Let’s clear <br />
-              <span className="text-[#647475]">the air.</span>
+              <span className="text-[#7f7c7d]">the air.</span>
             </h2>
             <button
               onClick={openInquiry}
-              className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#087f83] hover:underline cursor-pointer"
+              className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#00747a] hover:underline cursor-pointer"
             >
               <span>Ask our engineers</span>
               <span>↗</span>
@@ -57,12 +57,12 @@ export function ReferenceFaqSection() {
           </div>
 
           {/* Right Column: Expandable Details Accordion */}
-          <div className="lg:col-span-7 divide-y divide-[#d6deda] border-y border-[#d6deda]">
+          <div className="lg:col-span-7 divide-y divide-[#d8dedf] border-y border-[#d8dedf]">
             {FAQS.map((item, i) => (
               <details key={i} className="group py-5 cursor-pointer">
-                <summary className="flex items-center justify-between text-base sm:text-lg font-serif font-bold text-slate-900 group-hover:text-[#087f83] transition-colors list-none">
+                <summary className="flex items-center justify-between text-base sm:text-lg font-serif font-bold text-slate-900 group-hover:text-[#00747a] transition-colors list-none">
                   <span>{item.q}</span>
-                  <span className="text-xl font-mono text-[#087f83] ml-4 transition-transform group-open:rotate-45">
+                  <span className="text-xl font-mono text-[#00747a] ml-4 transition-transform group-open:rotate-45">
                     +
                   </span>
                 </summary>

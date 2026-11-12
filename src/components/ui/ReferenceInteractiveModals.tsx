@@ -250,7 +250,7 @@ export function ReferenceInteractiveModals() {
       {/* 1. INQUIRY MODAL */}
       {inquiryOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
-          <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-[#091f26] border border-white/20 text-[#f4f6ef] rounded-lg p-6 sm:p-8 shadow-2xl">
+          <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-[#0f1719] border border-white/20 text-[#f4f6ef] rounded-lg p-6 sm:p-8 shadow-2xl">
             <button
               onClick={() => setInquiryOpen(false)}
               className="absolute top-4 right-4 text-2xl leading-none text-slate-400 hover:text-white transition-colors cursor-pointer"
@@ -259,7 +259,7 @@ export function ReferenceInteractiveModals() {
               ×
             </button>
 
-            <p className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase mb-1">
+            <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-1">
               LET’S BUILD SOMETHING THAT PERFORMS
             </p>
             <h2 className="text-2xl sm:text-3xl font-serif font-medium tracking-tight mb-2">
@@ -280,7 +280,7 @@ export function ReferenceInteractiveModals() {
                       placeholder="Full name"
                       value={inquiryData.name}
                       onChange={(e) => setInquiryData({ ...inquiryData, name: e.target.value })}
-                      className="w-full bg-[#0b252c] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#81e6d6] outline-none"
+                      className="w-full bg-[#141f22] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#00747a] outline-none"
                     />
                   </label>
                   <label className="flex flex-col gap-1.5">
@@ -291,7 +291,7 @@ export function ReferenceInteractiveModals() {
                       placeholder="you@company.com"
                       value={inquiryData.email}
                       onChange={(e) => setInquiryData({ ...inquiryData, email: e.target.value })}
-                      className="w-full bg-[#0b252c] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#81e6d6] outline-none"
+                      className="w-full bg-[#141f22] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#00747a] outline-none"
                     />
                   </label>
                   <label className="flex flex-col gap-1.5">
@@ -302,7 +302,7 @@ export function ReferenceInteractiveModals() {
                       placeholder="Company name"
                       value={inquiryData.company}
                       onChange={(e) => setInquiryData({ ...inquiryData, company: e.target.value })}
-                      className="w-full bg-[#0b252c] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#81e6d6] outline-none"
+                      className="w-full bg-[#141f22] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#00747a] outline-none"
                     />
                   </label>
                   <label className="flex flex-col gap-1.5">
@@ -310,7 +310,7 @@ export function ReferenceInteractiveModals() {
                     <select
                       value={inquiryData.application}
                       onChange={(e) => setInquiryData({ ...inquiryData, application: e.target.value })}
-                      className="w-full bg-[#0b252c] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#81e6d6] outline-none"
+                      className="w-full bg-[#141f22] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#00747a] outline-none"
                     >
                       <option>Power & automation</option>
                       <option>Clean energy</option>
@@ -325,7 +325,7 @@ export function ReferenceInteractiveModals() {
                     <select
                       value={inquiryData.cooling}
                       onChange={(e) => setInquiryData({ ...inquiryData, cooling: e.target.value })}
-                      className="w-full bg-[#0b252c] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#81e6d6] outline-none"
+                      className="w-full bg-[#141f22] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#00747a] outline-none"
                     >
                       <option>Help me choose</option>
                       <option>Air cooled heat sink</option>
@@ -339,7 +339,7 @@ export function ReferenceInteractiveModals() {
                     <select
                       value={inquiryData.stage}
                       onChange={(e) => setInquiryData({ ...inquiryData, stage: e.target.value })}
-                      className="w-full bg-[#0b252c] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#81e6d6] outline-none"
+                      className="w-full bg-[#141f22] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#00747a] outline-none"
                     >
                       <option>Concept & feasibility</option>
                       <option>Design optimization</option>
@@ -357,7 +357,7 @@ export function ReferenceInteractiveModals() {
                     placeholder="Heat load, temperature target, dimensions, quantity, timing…"
                     value={inquiryData.details}
                     onChange={(e) => setInquiryData({ ...inquiryData, details: e.target.value })}
-                    className="w-full bg-[#0b252c] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#81e6d6] outline-none"
+                    className="w-full bg-[#141f22] border border-slate-700 rounded px-3 py-2 text-white font-sans text-sm focus:border-[#00747a] outline-none"
                   />
                 </label>
 
@@ -367,7 +367,7 @@ export function ReferenceInteractiveModals() {
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-6 py-3 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
                 >
                   Prepare project inquiry <span>↗</span>
                 </button>
@@ -377,12 +377,12 @@ export function ReferenceInteractiveModals() {
                 <h3 className="text-lg font-bold text-white">Your project brief is ready.</h3>
                 <p className="text-sm text-slate-300">
                   Review your brief below, then open it in your email app or copy it into a message to{" "}
-                  <a href="mailto:Engineering@itscooling.com" className="text-[#81e6d6] underline">
+                  <a href="mailto:Engineering@itscooling.com" className="text-[#00747a] underline">
                     Engineering@itscooling.com
                   </a>
                   .
                 </p>
-                <pre className="p-4 bg-[#0b252c] border border-slate-700 rounded text-xs font-mono text-slate-200 whitespace-pre-wrap max-h-56 overflow-y-auto">
+                <pre className="p-4 bg-[#141f22] border border-slate-700 rounded text-xs font-mono text-slate-200 whitespace-pre-wrap max-h-56 overflow-y-auto">
                   {briefText}
                 </pre>
                 <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -390,7 +390,7 @@ export function ReferenceInteractiveModals() {
                     href={`mailto:Engineering@itscooling.com?subject=${encodeURIComponent(
                       "Thermal project inquiry — " + inquiryData.company
                     )}&body=${encodeURIComponent(briefText)}`}
-                    className="px-5 py-2.5 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2"
+                    className="px-5 py-2.5 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2"
                   >
                     Open email draft ↗
                   </a>
@@ -407,7 +407,7 @@ export function ReferenceInteractiveModals() {
                     Edit form
                   </button>
                 </div>
-                {copyStatus && <p className="text-xs text-[#81e6d6] mt-2 font-mono">{copyStatus}</p>}
+                {copyStatus && <p className="text-xs text-[#00747a] mt-2 font-mono">{copyStatus}</p>}
               </div>
             )}
           </div>
@@ -417,7 +417,7 @@ export function ReferenceInteractiveModals() {
       {/* 2. FINDER QUESTIONNAIRE MODAL */}
       {finderOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
-          <div className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-[#091f26] border border-white/20 text-[#f4f6ef] rounded-lg p-6 sm:p-8 shadow-2xl">
+          <div className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto bg-[#0f1719] border border-white/20 text-[#f4f6ef] rounded-lg p-6 sm:p-8 shadow-2xl">
             <button
               onClick={() => setFinderOpen(false)}
               className="absolute top-4 right-4 text-2xl leading-none text-slate-400 hover:text-white transition-colors cursor-pointer"
@@ -426,7 +426,7 @@ export function ReferenceInteractiveModals() {
               ×
             </button>
 
-            <p className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase mb-1">
+            <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-1">
               A GOOD PLACE TO START
             </p>
             <h2 className="text-2xl sm:text-3xl font-serif font-medium tracking-tight mb-2">
@@ -449,7 +449,7 @@ export function ReferenceInteractiveModals() {
                   ].map((opt) => (
                     <label
                       key={opt.val}
-                      className="flex items-center gap-3 p-3 rounded bg-[#0b252c] border border-slate-800 hover:border-slate-600 cursor-pointer text-sm"
+                      className="flex items-center gap-3 p-3 rounded bg-[#141f22] border border-slate-800 hover:border-slate-600 cursor-pointer text-sm"
                     >
                       <input
                         type="radio"
@@ -458,7 +458,7 @@ export function ReferenceInteractiveModals() {
                         required
                         checked={finderForm.loop === opt.val}
                         onChange={(e) => setFinderForm({ ...finderForm, loop: e.target.value })}
-                        className="text-[#81e6d6] focus:ring-[#81e6d6]"
+                        className="text-[#00747a] focus:ring-[#00747a]"
                       />
                       <span>{opt.label}</span>
                     </label>
@@ -476,7 +476,7 @@ export function ReferenceInteractiveModals() {
                   ].map((opt) => (
                     <label
                       key={opt.val}
-                      className="flex items-center gap-3 p-3 rounded bg-[#0b252c] border border-slate-800 hover:border-slate-600 cursor-pointer text-sm"
+                      className="flex items-center gap-3 p-3 rounded bg-[#141f22] border border-slate-800 hover:border-slate-600 cursor-pointer text-sm"
                     >
                       <input
                         type="radio"
@@ -485,7 +485,7 @@ export function ReferenceInteractiveModals() {
                         required
                         checked={finderForm.challenge === opt.val}
                         onChange={(e) => setFinderForm({ ...finderForm, challenge: e.target.value })}
-                        className="text-[#81e6d6] focus:ring-[#81e6d6]"
+                        className="text-[#00747a] focus:ring-[#00747a]"
                       />
                       <span>{opt.label}</span>
                     </label>
@@ -494,14 +494,14 @@ export function ReferenceInteractiveModals() {
 
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-6 py-3 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
                 >
                   Explore a starting point ↗
                 </button>
               </form>
             ) : (
               <div className="space-y-4">
-                <p className="text-[10px] font-mono tracking-widest text-[#81e6d6] uppercase">
+                <p className="text-[10px] font-mono tracking-widest text-[#00747a] uppercase">
                   YOUR STARTING POINT
                 </p>
                 <h3 className="text-2xl font-serif text-white">{finderResult.title}</h3>
@@ -517,7 +517,7 @@ export function ReferenceInteractiveModals() {
                       setInquiryStep("form");
                       setInquiryOpen(true);
                     }}
-                    className="px-5 py-2.5 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer"
+                    className="px-5 py-2.5 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors cursor-pointer"
                   >
                     Talk through your project ↗
                   </button>
@@ -537,7 +537,7 @@ export function ReferenceInteractiveModals() {
       {/* 3. MULTI-PURPOSE DETAIL MODAL */}
       {detailModal.open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-fade-in">
-          <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white border border-[#d6deda] text-[#0b252c] rounded-xl p-6 sm:p-8 shadow-2xl">
+          <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-white border border-[#d8dedf] text-[#141f22] rounded-xl p-6 sm:p-8 shadow-2xl">
             <button
               onClick={() => setDetailModal({ open: false, type: "product" })}
               className="absolute top-4 right-4 text-2xl leading-none text-slate-400 hover:text-slate-900 transition-colors cursor-pointer"
@@ -548,11 +548,11 @@ export function ReferenceInteractiveModals() {
 
             {detailModal.type === "product" && detailModal.product && (
               <div className="space-y-6">
-                <p className="text-[11px] font-mono tracking-widest text-[#087f83] font-bold uppercase">
+                <p className="text-[11px] font-mono tracking-widest text-[#00747a] font-bold uppercase">
                   {detailModal.product.tag}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                  <div className="relative h-56 rounded-lg bg-[#f2f4f0] p-4 flex items-center justify-center border border-[#d6deda]">
+                  <div className="relative h-56 rounded-lg bg-[#f8faf9] p-4 flex items-center justify-center border border-[#d8dedf]">
                     <Image
                       src={detailModal.product.image}
                       alt={detailModal.product.name}
@@ -562,35 +562,35 @@ export function ReferenceInteractiveModals() {
                     />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-serif font-bold text-[#0b252c] mb-2">{detailModal.product.name}</h2>
+                    <h2 className="text-2xl font-serif font-bold text-[#141f22] mb-2">{detailModal.product.name}</h2>
                     <p className="text-slate-600 text-sm leading-relaxed">{detailModal.product.description}</p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-[#d6deda] pt-6 text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-[#d8dedf] pt-6 text-xs">
                   <div>
-                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#7f7c7d] tracking-wider uppercase mb-1">
                       MATERIAL
                     </strong>
-                    <span className="text-[#0b252c] font-medium">{detailModal.product.material}</span>
+                    <span className="text-[#141f22] font-medium">{detailModal.product.material}</span>
                   </div>
                   <div>
-                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#7f7c7d] tracking-wider uppercase mb-1">
                       CONSTRUCTION
                     </strong>
-                    <span className="text-[#0b252c] font-medium">{detailModal.product.construction}</span>
+                    <span className="text-[#141f22] font-medium">{detailModal.product.construction}</span>
                   </div>
                   <div>
-                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#7f7c7d] tracking-wider uppercase mb-1">
                       APPLICATIONS
                     </strong>
-                    <span className="text-[#0b252c] font-medium">{detailModal.product.application}</span>
+                    <span className="text-[#141f22] font-medium">{detailModal.product.application}</span>
                   </div>
                   <div>
-                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#7f7c7d] tracking-wider uppercase mb-1">
                       DESIGN CONSIDERATIONS
                     </strong>
-                    <span className="text-[#0b252c] font-medium">{detailModal.product.considerations}</span>
+                    <span className="text-[#141f22] font-medium">{detailModal.product.considerations}</span>
                   </div>
                 </div>
 
@@ -613,11 +613,11 @@ export function ReferenceInteractiveModals() {
 
             {detailModal.type === "bus" && (
               <div className="space-y-6">
-                <p className="text-[11px] font-mono tracking-widest text-[#087f83] font-bold uppercase">
+                <p className="text-[11px] font-mono tracking-widest text-[#00747a] font-bold uppercase">
                   PROJECT SPOTLIGHT / EV & BATTERY
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                  <div className="relative h-60 rounded-lg bg-[#f2f4f0] p-4 flex items-center justify-center border border-[#d6deda]">
+                  <div className="relative h-60 rounded-lg bg-[#f8faf9] p-4 flex items-center justify-center border border-[#d8dedf]">
                     <Image
                       src="/assets/bus-plate.webp"
                       alt="ITS electric bus battery cold plate"
@@ -627,25 +627,25 @@ export function ReferenceInteractiveModals() {
                     />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-serif font-bold text-[#0b252c] mb-2">Large-format battery cooling.</h2>
+                    <h2 className="text-2xl font-serif font-bold text-[#141f22] mb-2">Large-format battery cooling.</h2>
                     <p className="text-slate-600 text-sm leading-relaxed">
                       Aluminum cold plate developed for an electric bus battery pack. The company presentation documents a 1,450 × 610 × 15 mm plate designed for this application.
                     </p>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-[#d6deda] pt-6 text-xs">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-[#d8dedf] pt-6 text-xs">
                   <div>
-                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#7f7c7d] tracking-wider uppercase mb-1">
                       PLATE SIZE
                     </strong>
-                    <span className="text-[#0b252c] font-medium">57 × 24 × 0.6 in / 1,450 × 610 × 15 mm</span>
+                    <span className="text-[#141f22] font-medium">57 × 24 × 0.6 in / 1,450 × 610 × 15 mm</span>
                   </div>
                   <div>
-                    <strong className="block text-[10px] font-mono text-[#647475] tracking-wider uppercase mb-1">
+                    <strong className="block text-[10px] font-mono text-[#7f7c7d] tracking-wider uppercase mb-1">
                       APPLICATION
                     </strong>
-                    <span className="text-[#0b252c] font-medium">Electric bus battery pack cooling</span>
+                    <span className="text-[#141f22] font-medium">Electric bus battery pack cooling</span>
                   </div>
                 </div>
 
@@ -669,7 +669,7 @@ export function ReferenceInteractiveModals() {
 
             {detailModal.type === "compare" && detailModal.compareProducts && (
               <div className="space-y-6">
-                <p className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase">
+                <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase">
                   SIDE BY SIDE
                 </p>
                 <h2 className="text-2xl font-serif text-white">The right fit starts here.</h2>
@@ -680,7 +680,7 @@ export function ReferenceInteractiveModals() {
                 <div className="overflow-x-auto border border-slate-800 rounded">
                   <table className="w-full text-xs text-left">
                     <thead>
-                      <tr className="border-b border-slate-800 bg-[#0b252c]">
+                      <tr className="border-b border-slate-800 bg-[#141f22]">
                         <th className="p-3 text-slate-400 font-mono">Solution</th>
                         {detailModal.compareProducts.map((p) => (
                           <th key={p.id} className="p-3 text-white font-medium">
@@ -735,7 +735,7 @@ export function ReferenceInteractiveModals() {
                     setInquiryStep("form");
                     setInquiryOpen(true);
                   }}
-                  className="px-6 py-3 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
                 >
                   Talk through the options ↗
                 </button>
@@ -744,7 +744,7 @@ export function ReferenceInteractiveModals() {
 
             {detailModal.type === "fsw" && (
               <div className="space-y-6">
-                <p className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase">
+                <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase">
                   FRICTION STIR WELDING / ITS COOLING
                 </p>
                 <h2 className="text-2xl font-serif text-white">Joined without melting.</h2>
@@ -753,7 +753,7 @@ export function ReferenceInteractiveModals() {
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="rounded bg-[#0b252c] p-3 border border-slate-800 text-center">
+                  <div className="rounded bg-[#141f22] p-3 border border-slate-800 text-center">
                     <Image
                       src="/assets/flow-channel.webp"
                       alt="Machined cold plate with internal fluid channels"
@@ -765,7 +765,7 @@ export function ReferenceInteractiveModals() {
                       Machined Internal Channels
                     </span>
                   </div>
-                  <div className="rounded bg-[#0b252c] p-3 border border-slate-800 text-center">
+                  <div className="rounded bg-[#141f22] p-3 border border-slate-800 text-center">
                     <Image
                       src="/assets/fsw-plate.webp"
                       alt="Friction stir welded cold plate assembly"
@@ -816,7 +816,7 @@ export function ReferenceInteractiveModals() {
                     setInquiryStep("form");
                     setInquiryOpen(true);
                   }}
-                  className="px-6 py-3 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
                 >
                   Discuss FSW for your project ↗
                 </button>
@@ -825,7 +825,7 @@ export function ReferenceInteractiveModals() {
 
             {detailModal.type === "team" && (
               <div className="space-y-6">
-                <p className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase">
+                <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase">
                   THE TEAM BEHIND YOUR THERMAL SOLUTION
                 </p>
                 <h2 className="text-2xl font-serif text-white">Engineering is a team effort.</h2>
@@ -835,7 +835,7 @@ export function ReferenceInteractiveModals() {
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                   {REFERENCE_TEAM.map((tm) => (
-                    <div key={tm.name} className="text-center bg-[#0b252c] border border-slate-800 p-3 rounded">
+                    <div key={tm.name} className="text-center bg-[#141f22] border border-slate-800 p-3 rounded">
                       <div className="relative w-20 h-20 mx-auto rounded-full overflow-hidden mb-2 bg-slate-800">
                         <Image src={tm.img} alt={tm.name} fill className="object-cover" />
                       </div>
@@ -853,7 +853,7 @@ export function ReferenceInteractiveModals() {
                     setInquiryStep("form");
                     setInquiryOpen(true);
                   }}
-                  className="px-6 py-3 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
+                  className="px-6 py-3 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
                 >
                   Connect with our team ↗
                 </button>
@@ -862,7 +862,7 @@ export function ReferenceInteractiveModals() {
 
             {detailModal.type === "sources" && (
               <div className="space-y-6">
-                <p className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase">
+                <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase">
                   CONTENT & REFERENCES
                 </p>
                 <h2 className="text-2xl font-serif text-white">Built around ITS’s work.</h2>
@@ -871,18 +871,18 @@ export function ReferenceInteractiveModals() {
                     ITS Cooling Company Presentation — For Sharing: product imagery, case studies, manufacturing capabilities, company milestones and team information.
                   </li>
                   <li>
-                    <a href="https://www.itscooling.com/" target="_blank" rel="noopener noreferrer" className="text-[#81e6d6] underline">
+                    <a href="https://www.itscooling.com/" target="_blank" rel="noopener noreferrer" className="text-[#00747a] underline">
                       ITS Cooling website
                     </a>
                     : product categories, engineering services, markets and company contact information.
                   </li>
                   <li>
                     Visual direction inspired by{" "}
-                    <a href="https://terminal-industries.com/markets/terminal-for-financial-decision-makers" target="_blank" rel="noopener noreferrer" className="text-[#81e6d6] underline">
+                    <a href="https://terminal-industries.com/markets/terminal-for-financial-decision-makers" target="_blank" rel="noopener noreferrer" className="text-[#00747a] underline">
                       Terminal Industries
                     </a>{" "}
                     and{" "}
-                    <a href="https://www.amepower.com/" target="_blank" rel="noopener noreferrer" className="text-[#81e6d6] underline">
+                    <a href="https://www.amepower.com/" target="_blank" rel="noopener noreferrer" className="text-[#00747a] underline">
                       AmePower
                     </a>
                     . Their branding and commercial claims have not been reused.

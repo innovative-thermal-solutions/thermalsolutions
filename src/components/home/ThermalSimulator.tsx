@@ -118,7 +118,7 @@ export function ThermalSimulator() {
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-3 mb-3">
-            <span className="font-mono text-xs font-bold text-sky-700 bg-sky-50 px-2.5 py-0.5 border border-sky-300 rounded shadow-xs">
+            <span className="font-mono text-xs font-bold text-[#005d62] bg-[#e6f3f4] px-2.5 py-0.5 border border-[#b2d9dc] rounded shadow-xs">
               05
             </span>
             <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold flex items-center gap-1.5">
@@ -128,7 +128,7 @@ export function ThermalSimulator() {
           </div>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-950 uppercase leading-[0.92] mb-4">
             Model Your Cold Plate <br />
-            <span className="text-sky-600">Performance in Real Time.</span>
+            <span className="text-[#00747a]">Performance in Real Time.</span>
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             Test how semiconductor heat load (Q), coolant flow velocity, and micro-channel geometry interact to govern operating temperatures and pressure drop.
@@ -148,14 +148,14 @@ export function ThermalSimulator() {
                 onClick={() => applyPreset(preset)}
                 className={`p-2.5 rounded-lg border text-left transition-all cursor-pointer ${
                   heatLoad === preset.power && flowRate === preset.flow
-                    ? "bg-white border-sky-500 shadow-sm ring-1 ring-sky-300"
+                    ? "bg-white border-[#00747a] shadow-sm ring-1 ring-[#00747a]/30"
                     : "bg-white/80 border-slate-200 hover:border-slate-300 hover:bg-white"
                 }`}
               >
                 <div className="text-xs font-bold text-slate-900">{preset.name}</div>
                 <div className="text-[10px] font-mono text-slate-500 flex justify-between mt-0.5">
                   <span>{preset.badge}</span>
-                  <span className="text-sky-600 font-bold">{preset.power} W</span>
+                  <span className="text-[#00747a] font-bold">{preset.power} W</span>
                 </div>
               </button>
             ))}
@@ -169,7 +169,7 @@ export function ThermalSimulator() {
             <div>
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-200">
                 <span className="text-xs uppercase font-mono tracking-wider font-bold text-slate-900 flex items-center gap-2">
-                  <Sliders className="w-4 h-4 text-sky-600" />
+                  <Sliders className="w-4 h-4 text-[#00747a]" />
                   Boundary Conditions
                 </span>
                 <button
@@ -207,7 +207,7 @@ export function ThermalSimulator() {
                       }`}
                     >
                       <div className="font-sans font-semibold">{item.label}</div>
-                      <div className={`text-[10px] mt-0.5 ${architecture === item.id ? "text-sky-300" : "text-sky-600 font-bold"}`}>
+                      <div className={`text-[10px] mt-0.5 ${architecture === item.id ? "text-[#00747a]" : "text-[#00747a] font-bold"}`}>
                         {item.rth}
                       </div>
                     </button>
@@ -234,7 +234,7 @@ export function ThermalSimulator() {
                   step={50}
                   value={heatLoad}
                   onChange={(e) => setHeatLoad(Number(e.target.value))}
-                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600"
+                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#00747a]"
                 />
                 <div className="flex justify-between text-[10px] font-mono text-slate-400 mt-1.5">
                   <span>200 W (Module)</span>
@@ -247,7 +247,7 @@ export function ThermalSimulator() {
               <div className="mb-6 bg-white p-4 rounded-xl border border-slate-200/90 shadow-2xs">
                 <div className="flex justify-between items-center text-xs font-mono mb-2">
                   <label htmlFor={flowRateInputId} className="text-slate-800 font-bold flex items-center gap-1.5">
-                    <Droplet className="w-3.5 h-3.5 text-sky-500" />
+                    <Droplet className="w-3.5 h-3.5 text-[#00747a]" />
                     Coolant Flow Rate
                   </label>
                   <span className="font-bold text-slate-950 px-2.5 py-0.5 bg-slate-100 border border-slate-300 rounded text-xs font-mono">
@@ -262,7 +262,7 @@ export function ThermalSimulator() {
                   step={0.5}
                   value={flowRate}
                   onChange={(e) => setFlowRate(Number(e.target.value))}
-                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600"
+                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#00747a]"
                 />
                 <div className="flex justify-between text-[10px] font-mono text-slate-400 mt-1.5">
                   <span>1.0 LPM (Laminar)</span>
@@ -275,7 +275,7 @@ export function ThermalSimulator() {
               <div className="mb-6 bg-white p-4 rounded-xl border border-slate-200/90 shadow-2xs">
                 <div className="flex justify-between items-center text-xs font-mono mb-2">
                   <label htmlFor={inletTempInputId} className="text-slate-800 font-bold flex items-center gap-1.5">
-                    <Thermometer className="w-3.5 h-3.5 text-sky-600" />
+                    <Thermometer className="w-3.5 h-3.5 text-[#00747a]" />
                     Coolant Inlet Temp (T_in)
                   </label>
                   <span className="font-bold text-slate-950 px-2.5 py-0.5 bg-slate-100 border border-slate-300 rounded text-xs font-mono">
@@ -290,7 +290,7 @@ export function ThermalSimulator() {
                   step={1}
                   value={inletTemp}
                   onChange={(e) => setInletTemp(Number(e.target.value))}
-                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-sky-600"
+                  className="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#00747a]"
                 />
                 <div className="flex justify-between text-[10px] font-mono text-slate-400 mt-1.5">
                   <span>15 °C (Chilled)</span>
@@ -300,8 +300,8 @@ export function ThermalSimulator() {
               </div>
             </div>
 
-            <div className="text-[11px] font-mono text-slate-600 bg-sky-50/80 p-3 rounded-lg border border-sky-200 flex items-center gap-2 mt-2">
-              <CheckCircle2 className="w-4 h-4 text-sky-700 shrink-0" />
+            <div className="text-[11px] font-mono text-slate-600 bg-[#e6f3f4]/80 p-3 rounded-lg border border-[#b2d9dc] flex items-center gap-2 mt-2">
+              <CheckCircle2 className="w-4 h-4 text-[#005d62] shrink-0" />
               <span>Calculated with 50/50 Water-Glycol fluid properties at 1 atm.</span>
             </div>
           </div>
@@ -312,15 +312,15 @@ export function ThermalSimulator() {
             <div>
               <div className="flex flex-wrap items-center justify-between pb-4 border-b border-slate-200 mb-6 gap-2">
                 <div className="flex items-center gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-sky-600 animate-ping" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#00747a] animate-ping" />
                   <span className="text-xs uppercase font-mono tracking-wider font-extrabold text-slate-900 flex items-center gap-2">
-                    <Cpu className="w-4 h-4 text-sky-600" />
+                    <Cpu className="w-4 h-4 text-[#00747a]" />
                     CFD Solution Output
                   </span>
                 </div>
                 <div className="flex items-center gap-4 text-xs font-mono">
                   <span className="px-2.5 py-1 bg-slate-100 text-slate-800 rounded border border-slate-200">
-                    R_th: <strong className="text-sky-700 font-bold">{effectiveRth} °C/W</strong>
+                    R_th: <strong className="text-[#005d62] font-bold">{effectiveRth} °C/W</strong>
                   </span>
                   <span className="px-2.5 py-1 bg-slate-100 text-slate-800 rounded border border-slate-200">
                     ΔP: <strong className="text-slate-900 font-bold">{pressureDrop} kPa</strong>
@@ -356,11 +356,11 @@ export function ThermalSimulator() {
                 </div>
 
                 {/* Outlet Temp Card */}
-                <div className="p-4 bg-gradient-to-br from-sky-50/60 to-white border border-sky-200 rounded-xl shadow-xs">
+                <div className="p-4 bg-gradient-to-br from-sky-50/60 to-white border border-[#b2d9dc] rounded-xl shadow-xs">
                   <span className="block text-[11px] font-mono uppercase text-sky-800 mb-1">
                     Coolant Outlet (T_out)
                   </span>
-                  <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-sky-700 font-mono">
+                  <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#005d62] font-mono">
                     {outletTemp} <span className="text-base text-sky-400">°C</span>
                   </div>
                   <span className="text-[11px] font-mono text-slate-600 mt-1.5 block">
@@ -475,7 +475,7 @@ export function ThermalSimulator() {
               </p>
               <Link
                 href="/contact"
-                className="shine-sweep inline-flex items-center gap-2 px-6 py-3 bg-slate-950 text-white hover:bg-sky-600 font-bold text-xs uppercase tracking-wider rounded-md transition-colors whitespace-nowrap shadow-sm group"
+                className="shine-sweep inline-flex items-center gap-2 px-6 py-3 bg-slate-950 text-white hover:bg-[#00747a] font-bold text-xs uppercase tracking-wider rounded-md transition-colors whitespace-nowrap shadow-sm group"
               >
                 <span>Request Custom CFD Design</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

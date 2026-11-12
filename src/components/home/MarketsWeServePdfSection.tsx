@@ -73,11 +73,11 @@ export function MarketsWeServePdfSection() {
   };
 
   return (
-    <section id="markets-we-serve" className="relative w-full py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-[#091f26] text-white border-b border-slate-800">
+    <section id="markets-we-serve" className="relative w-full py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-[#0f1719] text-white border-b border-slate-800">
       <div className="max-w-[1440px] mx-auto">
         {/* Exact Section Heading from Design.pdf Page 2 */}
         <div className="mb-12">
-          <p className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase mb-2 font-bold">
+          <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
             05 / APPLICATION DOMAINS
           </p>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white mb-2">
@@ -95,7 +95,7 @@ export function MarketsWeServePdfSection() {
             <div>
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-6 leading-tight">
                 Behind the systems <br />
-                <span className="text-[#a3c0bb]">that move us forward.</span>
+                <span className="text-[#9da8a9]">that move us forward.</span>
               </h3>
 
               <div className="space-y-2">
@@ -107,7 +107,7 @@ export function MarketsWeServePdfSection() {
                       onClick={() => setActiveMarket(m)}
                       className={`w-full text-left px-4 py-3 rounded-lg border text-xs font-mono uppercase tracking-wider transition-all flex items-center justify-between cursor-pointer ${
                         isActive
-                          ? "bg-[#0b252c] border-[#81e6d6] text-[#81e6d6] font-bold shadow-sm"
+                          ? "bg-[#141f22] border-[#00747a] text-[#00747a] font-bold shadow-sm"
                           : "border-transparent hover:bg-white/5 text-slate-400 hover:text-white"
                       }`}
                     >
@@ -120,7 +120,7 @@ export function MarketsWeServePdfSection() {
             </div>
 
             <div className="pt-6 mt-6 border-t border-slate-800/80 text-[11px] font-mono text-slate-400">
-              <span className="text-[#81e6d6]">Key Telemetry: </span>
+              <span className="text-[#00747a]">Key Telemetry: </span>
               <span>{activeMarket.stats}</span>
             </div>
           </div>
@@ -133,10 +133,10 @@ export function MarketsWeServePdfSection() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#091f26] via-[#091f26]/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f1719] via-[#0f1719]/70 to-transparent" />
 
             <div className="relative z-10 max-w-xl">
-              <span className="text-[10px] font-mono tracking-widest text-[#81e6d6] uppercase font-bold block mb-2">
+              <span className="text-[10px] font-mono tracking-widest text-[#00747a] uppercase font-bold block mb-2">
                 {activeMarket.label}
               </span>
 
@@ -151,7 +151,7 @@ export function MarketsWeServePdfSection() {
 
               <button
                 onClick={() => openInquiry(activeMarket.application)}
-                className="px-6 py-3 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-lg"
+                className="px-6 py-3 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-lg"
               >
                 <span>Discuss your application</span>
                 <span>↗</span>

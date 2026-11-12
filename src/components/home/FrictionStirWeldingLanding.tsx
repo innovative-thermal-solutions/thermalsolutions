@@ -71,19 +71,19 @@ export function FrictionStirWeldingLanding() {
   const [isPlayingVideo, setIsPlayingVideo] = useState<boolean>(true);
 
   return (
-    <main id="main-content" className="w-full min-h-screen bg-[#f2f4f0] text-[#0b252c] pt-24 lg:pt-28 pb-20 selection:bg-[#81e6d6] selection:text-[#091f26]">
+    <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22] pt-24 lg:pt-28 pb-20 selection:bg-[#00747a] selection:text-[#0f1719]">
       {/* Breadcrumb Navigation */}
       <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 py-4">
         <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
-          <Link href="/" className="hover:text-[#087f83] transition-colors">
+          <Link href="/" className="hover:text-[#00747a] transition-colors">
             Home
           </Link>
           <span>/</span>
-          <Link href="/capabilities" className="hover:text-[#087f83] transition-colors">
+          <Link href="/capabilities" className="hover:text-[#00747a] transition-colors">
             In-house capabilities
           </Link>
           <span>/</span>
-          <span className="text-[#087f83] font-semibold">Friction stir welding</span>
+          <span className="text-[#00747a] font-semibold">Friction stir welding</span>
         </div>
       </div>
 
@@ -93,20 +93,20 @@ export function FrictionStirWeldingLanding() {
           {/* Left Column: Heading & Technical Explanation */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <div className="flex items-center gap-3 mb-5">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#087f83] animate-pulse" />
-              <span className="font-mono text-xs font-bold text-[#087f83] tracking-[0.2em] uppercase">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00747a] animate-pulse" />
+              <span className="font-mono text-xs font-bold text-[#00747a] tracking-[0.2em] uppercase">
                 IN-HOUSE SOLID-STATE JOINING · GUELPH, ONTARIO
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-[#0b252c] leading-[1.02] mb-6">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-medium tracking-tight text-[#141f22] leading-[1.02] mb-6">
               Friction stir <br />
-              <span className="text-[#087f83]">welding.</span>
+              <span className="text-[#00747a]">welding.</span>
             </h1>
 
             <div className="space-y-5 text-slate-700 text-base sm:text-lg leading-relaxed font-normal max-w-2xl">
               <p>
-                At <strong className="text-[#0b252c] font-semibold">ITS Cooling</strong>, we use friction stir welding (FSW) to seal internal fluid channels in custom liquid cold plates and advanced cooling assemblies. The solid-state process joins the cover to the body without melting the base material.
+                At <strong className="text-[#141f22] font-semibold">ITS Cooling</strong>, we use friction stir welding (FSW) to seal internal fluid channels in custom liquid cold plates and advanced cooling assemblies. The solid-state process joins the cover to the body without melting the base material.
               </p>
               <p className="text-slate-600 text-sm sm:text-base">
                 For applications where joint strength, dimensional stability, leak-tight performance, and repeatability are critical, we evaluate the alloy, geometry, and joint design for aluminum and copper assemblies.
@@ -114,17 +114,17 @@ export function FrictionStirWeldingLanding() {
             </div>
 
             {/* Quick Action Pill Bar */}
-            <div className="mt-8 pt-8 border-t border-[#d6deda] flex flex-wrap items-center gap-4">
+            <div className="mt-8 pt-8 border-t border-[#d8dedf] flex flex-wrap items-center gap-4">
               <a
                 href="#why-fsw"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#087f83] hover:bg-[#0c6c70] text-white text-xs font-mono font-bold uppercase tracking-wider rounded transition-all shadow-sm group"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-[#00747a] hover:bg-[#0c6c70] text-white text-xs font-mono font-bold uppercase tracking-wider rounded transition-all shadow-sm group"
               >
                 <span>Why FSW Technology</span>
                 <span className="group-hover:translate-y-0.5 transition-transform">↓</span>
               </a>
               <a
                 href="#cold-plate-example"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-slate-100 text-[#0b252c] border border-[#d6deda] text-xs font-mono font-bold uppercase tracking-wider rounded transition-all shadow-xs"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-slate-100 text-[#141f22] border border-[#d8dedf] text-xs font-mono font-bold uppercase tracking-wider rounded transition-all shadow-xs"
               >
                 <span>See Cold Plate Example</span>
                 <span>↓</span>
@@ -134,11 +134,11 @@ export function FrictionStirWeldingLanding() {
 
           {/* Right Column: Hero Video Demonstration Card */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden border border-[#d6deda] bg-[#091f26] shadow-xl group">
+            <div className="relative rounded-2xl overflow-hidden border border-[#d8dedf] bg-[#0f1719] shadow-xl group">
               {/* Header Telemetry Badge */}
-              <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between text-[11px] font-mono text-[#81e6d6] bg-[#091f26]/85 backdrop-blur-md px-3.5 py-2 rounded-lg border border-[#ffffff15]">
+              <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between text-[11px] font-mono text-[#00747a] bg-[#0f1719]/85 backdrop-blur-md px-3.5 py-2 rounded-lg border border-[#ffffff15]">
                 <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#81e6d6] animate-ping" />
+                  <span className="w-2 h-2 rounded-full bg-[#00747a] animate-ping" />
                   <span className="font-semibold uppercase tracking-wider">FSW Tool Path in Action</span>
                 </div>
                 <span className="text-[#cfdbd8]/70">Guelph CNC Cell</span>
@@ -156,21 +156,21 @@ export function FrictionStirWeldingLanding() {
                 >
                   <source src="/assets/fsw-demonstration.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#091f26]/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f1719]/80 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Bottom Captions */}
-              <div className="p-5 bg-[#091f26] text-white border-t border-[#ffffff15]">
+              <div className="p-5 bg-[#0f1719] text-white border-t border-[#ffffff15]">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-xs font-mono text-[#81e6d6] uppercase tracking-wider font-semibold">
+                    <div className="text-xs font-mono text-[#00747a] uppercase tracking-wider font-semibold">
                       Hermetic Fluid Seam
                     </div>
                     <div className="text-sm font-medium text-slate-200 mt-0.5">
                       Tool traversing 3D serpentine channel path
                     </div>
                   </div>
-                  <div className="px-3 py-1 bg-[#143239] border border-[#81e6d6]/30 rounded text-[11px] font-mono text-[#81e6d6]">
+                  <div className="px-3 py-1 bg-[#1d2a2d] border border-[#00747a]/30 rounded text-[11px] font-mono text-[#00747a]">
                     ISO 9001:2015
                   </div>
                 </div>
@@ -181,17 +181,17 @@ export function FrictionStirWeldingLanding() {
       </section>
 
       {/* 02 WHY FSW SECTION: Brought Right After FSW Explanation */}
-      <section id="why-fsw" className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-white border-y border-[#d6deda]">
+      <section id="why-fsw" className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-white border-y border-[#d8dedf]">
         <div className="max-w-[1440px] mx-auto">
           {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <p className="text-[11px] font-mono tracking-widest text-[#087f83] uppercase mb-2 font-bold">
+              <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
                 02 / WHY FRICTION STIR WELDING
               </p>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#0b252c] leading-[1.05]">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#141f22] leading-[1.05]">
                 Built around <br />
-                <span className="text-[#087f83]">the joint.</span>
+                <span className="text-[#00747a]">the joint.</span>
               </h2>
             </div>
             <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
@@ -204,11 +204,11 @@ export function FrictionStirWeldingLanding() {
             {WHY_FSW_POINTS.map((pt) => (
               <div
                 key={pt.num}
-                className="group p-8 rounded-xl bg-[#f7f8f4] border border-[#d6deda] hover:border-[#087f83] transition-all hover:shadow-md flex flex-col justify-between"
+                className="group p-8 rounded-xl bg-[#f7f8f4] border border-[#d8dedf] hover:border-[#00747a] transition-all hover:shadow-md flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-sm font-bold text-[#087f83] bg-white px-3 py-1 rounded border border-[#d6deda]">
+                    <span className="font-mono text-sm font-bold text-[#00747a] bg-white px-3 py-1 rounded border border-[#d8dedf]">
                       {pt.num}
                     </span>
                     <span className="text-[11px] font-mono text-slate-500 font-semibold uppercase tracking-wider">
@@ -216,7 +216,7 @@ export function FrictionStirWeldingLanding() {
                     </span>
                   </div>
 
-                  <h3 className="text-2xl font-serif font-medium text-[#0b252c] mb-3 group-hover:text-[#087f83] transition-colors">
+                  <h3 className="text-2xl font-serif font-medium text-[#141f22] mb-3 group-hover:text-[#00747a] transition-colors">
                     {pt.title}
                   </h3>
 
@@ -225,7 +225,7 @@ export function FrictionStirWeldingLanding() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-[#d6deda] flex items-center gap-2 text-xs font-mono text-[#087f83] font-semibold">
+                <div className="mt-6 pt-4 border-t border-[#d8dedf] flex items-center gap-2 text-xs font-mono text-[#00747a] font-semibold">
                   <Check className="w-3.5 h-3.5 flex-shrink-0" />
                   <span>{pt.highlight}</span>
                 </div>
@@ -234,9 +234,9 @@ export function FrictionStirWeldingLanding() {
           </div>
 
           {/* Comparison Callout: FSW vs Brazing */}
-          <div className="mt-16 p-8 sm:p-12 rounded-2xl bg-[#091f26] text-white border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-lg">
+          <div className="mt-16 p-8 sm:p-12 rounded-2xl bg-[#0f1719] text-white border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-lg">
             <div className="lg:col-span-4">
-              <span className="text-[11px] font-mono tracking-widest text-[#81e6d6] uppercase font-bold block mb-2">
+              <span className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase font-bold block mb-2">
                 JOINING METHODS COMPARISON
               </span>
               <h3 className="text-2xl sm:text-3xl font-serif font-medium text-white leading-snug">
@@ -256,17 +256,17 @@ export function FrictionStirWeldingLanding() {
       </section>
 
       {/* 03 COLD PLATE EXAMPLE: Two Faces, Video & Interactive Before/After Machined Slider */}
-      <section id="cold-plate-example" className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#f2f4f0]">
+      <section id="cold-plate-example" className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-12 bg-[#f8faf9]">
         <div className="max-w-[1440px] mx-auto">
           {/* Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <p className="text-[11px] font-mono tracking-widest text-[#087f83] uppercase mb-2 font-bold">
+              <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
                 03 / INSIDE THE HARDWARE
               </p>
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#0b252c] leading-[1.05]">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#141f22] leading-[1.05]">
                 One cold plate. <br />
-                <span className="text-[#087f83]">Two faces.</span>
+                <span className="text-[#00747a]">Two faces.</span>
               </h2>
             </div>
             <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
@@ -277,20 +277,20 @@ export function FrictionStirWeldingLanding() {
           {/* Sub-Stage 1: Internal Component Disassembly (Face 1 & Face 2) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {/* Face 1 Card */}
-            <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#d6deda] shadow-xs flex flex-col justify-between">
+            <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#d8dedf] shadow-xs flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-slate-500 mb-4 pb-3 border-b border-slate-100">
-                  <span className="text-[#087f83] font-bold">FACE 01 / BEFORE WELDING</span>
+                  <span className="text-[#00747a] font-bold">FACE 01 / BEFORE WELDING</span>
                   <span>BODY &amp; COVER PLATE</span>
                 </div>
-                <h3 className="text-2xl font-serif font-medium text-[#0b252c] mb-2">
+                <h3 className="text-2xl font-serif font-medium text-[#141f22] mb-2">
                   Body &amp; cover plate
                 </h3>
                 <p className="text-sm text-slate-600 mb-6 leading-relaxed">
                   The separate cover precisely matches the profile of the open coolant channel, ready for hermetic solid-state stirring.
                 </p>
 
-                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#eef2f0] border border-[#d6deda] flex items-center justify-center p-4">
+                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#eef2f0] border border-[#d8dedf] flex items-center justify-center p-4">
                   <Image
                     src="/assets/fsw-face-1.webp"
                     alt="Face 1 cold plate body with open channel and cover plate"
@@ -303,25 +303,25 @@ export function FrictionStirWeldingLanding() {
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-600">
                 <span>Direct Open Flow Cavity</span>
-                <span className="text-[#087f83] font-bold">CNC Pre-Milled</span>
+                <span className="text-[#00747a] font-bold">CNC Pre-Milled</span>
               </div>
             </div>
 
             {/* Face 2 Card */}
-            <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#d6deda] shadow-xs flex flex-col justify-between">
+            <div className="p-8 sm:p-10 rounded-2xl bg-white border border-[#d8dedf] shadow-xs flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between text-xs font-mono text-slate-500 mb-4 pb-3 border-b border-slate-100">
-                  <span className="text-[#087f83] font-bold">FACE 02 / BEFORE WELDING</span>
+                  <span className="text-[#00747a] font-bold">FACE 02 / BEFORE WELDING</span>
                   <span>BODY, COVER &amp; PIN-FIN INSERT</span>
                 </div>
-                <h3 className="text-2xl font-serif font-medium text-[#0b252c] mb-2">
+                <h3 className="text-2xl font-serif font-medium text-[#141f22] mb-2">
                   Body, cover plate &amp; pin-fin insert
                 </h3>
                 <p className="text-sm text-slate-600 mb-6 leading-relaxed">
                   This face features an intricate serpentine channel and high surface-area pin-fin insert for extreme heat flux zones.
                 </p>
 
-                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#eef2f0] border border-[#d6deda] flex items-center justify-center p-4">
+                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#eef2f0] border border-[#d8dedf] flex items-center justify-center p-4">
                   <Image
                     src="/assets/fsw-face-2.webp"
                     alt="Face 2 cold plate body with serpentine channels and pin-fin insert"
@@ -334,30 +334,30 @@ export function FrictionStirWeldingLanding() {
 
               <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-600">
                 <span>Serpentine Channel + Pin-Fin</span>
-                <span className="text-[#087f83] font-bold">Multi-Component FSW</span>
+                <span className="text-[#00747a] font-bold">Multi-Component FSW</span>
               </div>
             </div>
           </div>
 
           {/* Sub-Stage 2: Interactive Before & After Machining Comparison Slider */}
-          <div className="p-8 sm:p-12 rounded-2xl bg-white border border-[#d6deda] shadow-sm">
+          <div className="p-8 sm:p-12 rounded-2xl bg-white border border-[#d8dedf] shadow-sm">
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
               <div>
-                <p className="text-xs font-mono text-[#087f83] uppercase tracking-wider font-bold mb-1">
+                <p className="text-xs font-mono text-[#00747a] uppercase tracking-wider font-bold mb-1">
                   03 // WELDED TO FINISHED HARDWARE
                 </p>
-                <h3 className="text-2xl sm:text-3xl font-serif font-medium text-[#0b252c]">
+                <h3 className="text-2xl sm:text-3xl font-serif font-medium text-[#141f22]">
                   From weld seam to machined surface.
                 </h3>
               </div>
 
               {/* Face Switcher Tabs */}
-              <div className="inline-flex rounded-lg border border-[#d6deda] p-1 bg-[#f7f8f4] self-start sm:self-auto">
+              <div className="inline-flex rounded-lg border border-[#d8dedf] p-1 bg-[#f7f8f4] self-start sm:self-auto">
                 <button
                   onClick={() => setActiveFace("face1")}
                   className={`px-4 py-2 text-xs font-mono uppercase tracking-wider rounded transition-colors cursor-pointer ${
                     activeFace === "face1"
-                      ? "bg-[#0b252c] text-white font-bold"
+                      ? "bg-[#141f22] text-white font-bold"
                       : "text-slate-600 hover:text-slate-950"
                   }`}
                 >
@@ -367,7 +367,7 @@ export function FrictionStirWeldingLanding() {
                   onClick={() => setActiveFace("face2")}
                   className={`px-4 py-2 text-xs font-mono uppercase tracking-wider rounded transition-colors cursor-pointer ${
                     activeFace === "face2"
-                      ? "bg-[#0b252c] text-white font-bold"
+                      ? "bg-[#141f22] text-white font-bold"
                       : "text-slate-600 hover:text-slate-950"
                   }`}
                 >
@@ -377,7 +377,7 @@ export function FrictionStirWeldingLanding() {
             </div>
 
             {/* Before/After Interactive Comparison Stage */}
-            <div className="relative aspect-[16/9] w-full max-w-4xl mx-auto rounded-xl overflow-hidden border border-[#d6deda] bg-[#0c2328] select-none">
+            <div className="relative aspect-[16/9] w-full max-w-4xl mx-auto rounded-xl overflow-hidden border border-[#d8dedf] bg-[#0c2328] select-none">
               {/* After Image (Right/Underneath) */}
               <div className="absolute inset-0 w-full h-full">
                 <Image
@@ -390,7 +390,7 @@ export function FrictionStirWeldingLanding() {
                   fill
                   className="object-contain p-4"
                 />
-                <span className="absolute top-4 right-4 z-10 font-mono text-xs font-bold text-white bg-[#0b252c]/90 px-3 py-1.5 rounded border border-white/20 backdrop-blur-md">
+                <span className="absolute top-4 right-4 z-10 font-mono text-xs font-bold text-white bg-[#141f22]/90 px-3 py-1.5 rounded border border-white/20 backdrop-blur-md">
                   AFTER FINAL MACHINING
                 </span>
               </div>
@@ -410,18 +410,18 @@ export function FrictionStirWeldingLanding() {
                   fill
                   className="object-contain p-4"
                 />
-                <span className="absolute top-4 left-4 z-10 font-mono text-xs font-bold text-[#81e6d6] bg-[#091f26]/90 px-3 py-1.5 rounded border border-[#81e6d6]/30 backdrop-blur-md">
+                <span className="absolute top-4 left-4 z-10 font-mono text-xs font-bold text-[#00747a] bg-[#0f1719]/90 px-3 py-1.5 rounded border border-[#00747a]/30 backdrop-blur-md">
                   AFTER WELDING (AS-WELDED SEAM)
                 </span>
               </div>
 
               {/* Vertical Divider Slider Line */}
               <div
-                className="absolute top-0 bottom-0 w-1 bg-[#81e6d6] cursor-ew-resize z-20 pointer-events-none"
+                className="absolute top-0 bottom-0 w-1 bg-[#00747a] cursor-ew-resize z-20 pointer-events-none"
                 style={{ left: `${sliderPosition}%` }}
               >
-                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#0b252c] border-2 border-[#81e6d6] flex items-center justify-center text-white shadow-lg">
-                  <SlidersHorizontal className="w-3.5 h-3.5 text-[#81e6d6]" />
+                <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#141f22] border-2 border-[#00747a] flex items-center justify-center text-white shadow-lg">
+                  <SlidersHorizontal className="w-3.5 h-3.5 text-[#00747a]" />
                 </div>
               </div>
 

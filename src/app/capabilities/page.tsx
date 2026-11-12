@@ -149,9 +149,9 @@ const PROCESS_STEPS = [
 
 export default function CapabilitiesPage() {
   return (
-    <main id="main-content" className="w-full min-h-screen bg-[#091f26] text-[#f4f6ef] overflow-hidden">
+    <main id="main-content" className="w-full min-h-screen bg-[#0f1719] text-[#f4f6ef] overflow-hidden">
       {/* 01 PAGE HERO */}
-      <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] pt-36 sm:pt-44 lg:pt-52 pb-20 px-6 sm:px-8 lg:px-14 bg-[#091f26] border-b border-slate-800 flex flex-col justify-end overflow-hidden">
+      <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] pt-36 sm:pt-44 lg:pt-52 pb-20 px-6 sm:px-8 lg:px-14 bg-[#0f1719] border-b border-slate-800 flex flex-col justify-end overflow-hidden">
         {/* Subtle grid background */}
         <div
           className="absolute inset-0 pointer-events-none opacity-20"
@@ -161,10 +161,10 @@ export default function CapabilitiesPage() {
             backgroundSize: "64px 64px",
           }}
         />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-[#19655a]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-[#00747a]/20 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="w-full max-w-[1440px] mx-auto relative z-10 flex-1 flex flex-col justify-end">
-          <p className="text-[12px] font-mono tracking-[0.25em] text-[#81e6d6] uppercase font-bold mb-6">
+          <p className="text-[12px] font-mono tracking-[0.25em] text-[#00747a] uppercase font-bold mb-6">
             ENGINEERING + MANUFACTURING
           </p>
 
@@ -180,14 +180,14 @@ export default function CapabilitiesPage() {
             <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <Link
                 href="/contact"
-                className="px-6 sm:px-8 py-3.5 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-lg shadow-[#81e6d6]/10"
+                className="px-6 sm:px-8 py-3.5 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-lg shadow-[#00747a]/10"
               >
                 <span>Discuss your application</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
               <a
                 href="#capability-process"
-                className="text-xs sm:text-sm font-mono text-[#a3c0bb] hover:text-white uppercase tracking-wider inline-flex items-center gap-2 py-3.5 px-4 transition-colors"
+                className="text-xs sm:text-sm font-mono text-[#9da8a9] hover:text-white uppercase tracking-wider inline-flex items-center gap-2 py-3.5 px-4 transition-colors"
               >
                 <span>Explore the process</span>
                 <ArrowDown className="w-4 h-4" />
@@ -198,19 +198,19 @@ export default function CapabilitiesPage() {
       </section>
 
       {/* 02 CAPABILITY MANIFESTO */}
-      <section className="relative w-full py-24 sm:py-32 lg:py-40 px-6 sm:px-8 lg:px-14 bg-[#f2f4f0] text-[#0b252c] border-b border-[#d6deda]">
+      <section className="relative w-full py-24 sm:py-32 lg:py-40 px-6 sm:px-8 lg:px-14 bg-[#f8faf9] text-[#141f22] border-b border-[#d8dedf]">
         <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div className="lg:col-span-3">
-            <p className="text-[12px] font-mono tracking-[0.2em] text-[#087f83] uppercase font-bold">
+            <p className="text-[12px] font-mono tracking-[0.2em] text-[#00747a] uppercase font-bold">
               ONE TEAM / ONE PATH
             </p>
           </div>
           <div className="lg:col-span-9">
             <p className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-serif font-light text-[#596a72] leading-[1.08] tracking-tight">
-              We can <strong className="font-semibold text-[#091f26]">analyze it.</strong> <br />
-              We can <strong className="font-semibold text-[#091f26]">design it.</strong> <br />
-              We can <strong className="font-semibold text-[#091f26]">manufacture it.</strong> <br />
-              We can <strong className="font-semibold text-[#091f26]">verify it.</strong>
+              We can <strong className="font-semibold text-[#0f1719]">analyze it.</strong> <br />
+              We can <strong className="font-semibold text-[#0f1719]">design it.</strong> <br />
+              We can <strong className="font-semibold text-[#0f1719]">manufacture it.</strong> <br />
+              We can <strong className="font-semibold text-[#0f1719]">verify it.</strong>
             </p>
           </div>
         </div>
@@ -226,8 +226,8 @@ export default function CapabilitiesPage() {
             id={chapter.id}
             className={`relative w-full py-20 sm:py-28 lg:py-36 px-6 sm:px-8 lg:px-14 border-b transition-colors ${
               isDark
-                ? "bg-[#091f26] text-[#f4f6ef] border-slate-800"
-                : "bg-[#f2f4f0] text-[#0b252c] border-[#d6deda]"
+                ? "bg-[#0f1719] text-[#f4f6ef] border-slate-800"
+                : "bg-[#f8faf9] text-[#141f22] border-[#d8dedf]"
             }`}
           >
             {/* Subtle dark grid background for dark sections */}
@@ -247,7 +247,7 @@ export default function CapabilitiesPage() {
                 {/* Artwork Frame */}
                 <div
                   className={`lg:col-span-6 relative aspect-[3/2] w-full rounded-xl overflow-hidden shadow-2xl border ${
-                    isDark ? "border-slate-800 bg-[#07191f]" : "border-[#d6deda] bg-white"
+                    isDark ? "border-slate-800 bg-[#07191f]" : "border-[#d8dedf] bg-white"
                   } ${chapter.reverse ? "lg:order-2" : "lg:order-1"}`}
                 >
                   <Image
@@ -260,14 +260,14 @@ export default function CapabilitiesPage() {
                   <div
                     className={`absolute inset-0 pointer-events-none ${
                       isDark
-                        ? "bg-gradient-to-t from-[#091f26]/40 via-transparent to-transparent"
+                        ? "bg-gradient-to-t from-[#0f1719]/40 via-transparent to-transparent"
                         : "bg-gradient-to-t from-black/10 via-transparent to-transparent"
                     }`}
                   />
                   {/* Artwork Index Number */}
                   <span
                     className={`absolute bottom-4 right-5 text-4xl sm:text-5xl font-mono font-bold tracking-tight opacity-35 select-none pointer-events-none ${
-                      isDark ? "text-white" : "text-[#091f26]"
+                      isDark ? "text-white" : "text-[#0f1719]"
                     }`}
                   >
                     {chapter.num}
@@ -282,7 +282,7 @@ export default function CapabilitiesPage() {
                 >
                   <p
                     className={`text-[12px] font-mono tracking-[0.2em] uppercase font-bold mb-3 ${
-                      isDark ? "text-[#81e6d6]" : "text-[#087f83]"
+                      isDark ? "text-[#00747a]" : "text-[#00747a]"
                     }`}
                   >
                     {chapter.num} / {chapter.category}
@@ -290,7 +290,7 @@ export default function CapabilitiesPage() {
 
                   <h2
                     className={`text-3xl sm:text-4xl lg:text-5xl font-serif font-medium tracking-tight mb-4 ${
-                      isDark ? "text-white" : "text-[#091f26]"
+                      isDark ? "text-white" : "text-[#0f1719]"
                     }`}
                   >
                     {chapter.title}
@@ -319,8 +319,8 @@ export default function CapabilitiesPage() {
                         key={tag}
                         className={`text-xs font-mono py-1.5 px-3.5 rounded-full border tracking-wide ${
                           isDark
-                            ? "bg-[#0c2831] border-[#1b4651] text-[#a3c0bb]"
-                            : "bg-white border-[#d6deda] text-slate-700 shadow-sm"
+                            ? "bg-[#0c2831] border-[#1b4651] text-[#9da8a9]"
+                            : "bg-white border-[#d8dedf] text-slate-700 shadow-sm"
                         }`}
                       >
                         {tag}
@@ -335,12 +335,12 @@ export default function CapabilitiesPage() {
       })}
 
       {/* 04 COMPLETE ITS PROCESS RAIL */}
-      <section id="capability-process" className="relative w-full py-24 sm:py-32 px-6 sm:px-8 lg:px-14 bg-[#091f26] text-white border-b border-slate-800">
+      <section id="capability-process" className="relative w-full py-24 sm:py-32 px-6 sm:px-8 lg:px-14 bg-[#0f1719] text-white border-b border-slate-800">
         <div className="w-full max-w-[1440px] mx-auto">
           {/* Section Heading */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <p className="text-[12px] font-mono tracking-[0.2em] text-[#81e6d6] uppercase font-bold mb-3">
+              <p className="text-[12px] font-mono tracking-[0.2em] text-[#00747a] uppercase font-bold mb-3">
                 THE COMPLETE ITS PROCESS
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium tracking-tight leading-[1.08] text-white">
@@ -361,9 +361,9 @@ export default function CapabilitiesPage() {
                 className="relative pt-6 pb-8 px-4 sm:px-5 flex flex-col justify-between min-h-[160px] sm:min-h-[190px] group hover:bg-[#0c2831]/50 transition-colors"
               >
                 {/* Node Indicator Dot */}
-                <span className="w-2 h-2 rounded-full bg-[#81e6d6] shadow-[0_0_12px_#81e6d6] absolute -top-1 left-4 sm:left-5" />
+                <span className="w-2 h-2 rounded-full bg-[#00747a] shadow-[0_0_12px_#00747a] absolute -top-1 left-4 sm:left-5" />
 
-                <span className="text-xs font-mono text-[#81e6d6] font-bold tracking-wider">
+                <span className="text-xs font-mono text-[#00747a] font-bold tracking-wider">
                   {step.num}
                 </span>
 
@@ -377,9 +377,9 @@ export default function CapabilitiesPage() {
       </section>
 
       {/* 05 FINAL CALL TO ACTION */}
-      <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 lg:px-14 bg-gradient-to-b from-[#091f26] to-[#06171d] text-white text-center">
+      <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 lg:px-14 bg-gradient-to-b from-[#0f1719] to-[#06171d] text-white text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          <p className="text-[12px] font-mono tracking-[0.25em] text-[#81e6d6] uppercase font-bold mb-4">
+          <p className="text-[12px] font-mono tracking-[0.25em] text-[#00747a] uppercase font-bold mb-4">
             START WITH THE THERMAL CHALLENGE
           </p>
 
@@ -394,7 +394,7 @@ export default function CapabilitiesPage() {
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <Link
               href="/contact"
-              className="px-8 py-4 bg-[#81e6d6] hover:bg-[#a4f5e7] text-[#091f26] font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-xl shadow-[#81e6d6]/10"
+              className="px-8 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-xl shadow-[#00747a]/10"
             >
               <span>Talk to a thermal engineer</span>
               <ArrowUpRight className="w-4 h-4" />

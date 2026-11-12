@@ -15,17 +15,17 @@ export function ReferenceCaseStudiesSection() {
   };
 
   return (
-    <section id="results" className="relative w-full py-24 px-6 sm:px-8 lg:px-12 bg-[#f2f4f0] text-[#0b252c] border-b border-[#d6deda]">
+    <section id="results" className="relative w-full py-24 px-6 sm:px-8 lg:px-12 bg-[#f8faf9] text-[#141f22] border-b border-[#d8dedf]">
       <div className="max-w-[1440px] mx-auto">
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
-            <p className="text-[11px] font-mono tracking-widest text-[#087f83] uppercase mb-2 font-bold">
+            <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
               04 / ENGINEERING IN ACTION
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05]">
               Real challenges. <br />
-              <span className="text-[#647475]">Measurable progress.</span>
+              <span className="text-[#7f7c7d]">Measurable progress.</span>
             </h2>
           </div>
           <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
@@ -34,11 +34,11 @@ export function ReferenceCaseStudiesSection() {
         </div>
 
         {/* Case Study 01: RF & Telecommunications with Interactive Slider */}
-        <div className="bg-white border border-[#d6deda] rounded-lg p-6 sm:p-10 mb-10 shadow-sm">
+        <div className="bg-white border border-[#d8dedf] rounded-lg p-6 sm:p-10 mb-10 shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column Copy */}
             <div className="lg:col-span-5">
-              <p className="text-[10px] font-mono tracking-widest text-[#087f83] uppercase font-bold mb-2">
+              <p className="text-[10px] font-mono tracking-widest text-[#00747a] uppercase font-bold mb-2">
                 CASE STUDY / RF &amp; TELECOMMUNICATIONS
               </p>
               <h3 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 leading-tight mb-4">
@@ -47,8 +47,8 @@ export function ReferenceCaseStudiesSection() {
               </h3>
 
               <div className="flex items-baseline gap-2 mb-6">
-                <span className="text-6xl sm:text-7xl font-bold font-mono text-[#087f83]">20</span>
-                <span className="text-2xl font-bold font-mono text-[#087f83]">°C</span>
+                <span className="text-6xl sm:text-7xl font-bold font-mono text-[#00747a]">20</span>
+                <span className="text-2xl font-bold font-mono text-[#00747a]">°C</span>
                 <p className="text-xs text-slate-600 ml-2 font-sans">
                   up to 20°C reduction <br />
                   in peak temperature
@@ -66,7 +66,7 @@ export function ReferenceCaseStudiesSection() {
 
             {/* Right Column: Interactive Drag Comparison with Non-Overlapping Architecture */}
             <div className="lg:col-span-7 flex flex-col items-center">
-              <div className="relative w-full h-64 sm:h-80 rounded overflow-hidden select-none bg-[#f4f7f6] border border-[#d6deda] flex items-center p-3 sm:p-5">
+              <div className="relative w-full h-64 sm:h-80 rounded overflow-hidden select-none bg-[#f4f7f6] border border-[#d8dedf] flex items-center p-3 sm:p-5">
                 {/* 1. Main Thermal Heat Sink Model Area (Interactive Slider) */}
                 <div className="relative flex-1 h-full min-w-0 overflow-hidden">
                   {/* Base: ITS Solution (After) */}
@@ -79,7 +79,7 @@ export function ReferenceCaseStudiesSection() {
                       className="object-contain"
                       priority
                     />
-                    <span className="absolute top-2 left-2 px-2 py-0.5 bg-[#0b252c]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#81e6d6] z-10 uppercase tracking-wider font-semibold shadow-xs">
+                    <span className="absolute top-2 left-2 px-2 py-0.5 bg-[#141f22]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#00747a] z-10 uppercase tracking-wider font-semibold shadow-xs">
                       ITS SOLUTION
                     </span>
                   </div>
@@ -97,24 +97,24 @@ export function ReferenceCaseStudiesSection() {
                       className="object-contain"
                       priority
                     />
-                    <span className="absolute top-2 left-2 px-2 py-0.5 bg-[#0b252c]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#e2ece9] z-10 uppercase tracking-wider font-semibold shadow-xs">
+                    <span className="absolute top-2 left-2 px-2 py-0.5 bg-[#141f22]/90 backdrop-blur-md rounded text-[9px] font-mono text-[#e2ece9] z-10 uppercase tracking-wider font-semibold shadow-xs">
                       ORIGINAL DESIGN
                     </span>
                   </div>
 
                   {/* Divider Line & Handle */}
                   <div
-                    className="absolute top-0 bottom-0 w-[2px] bg-[#087f83] shadow-[0_0_8px_rgba(8,127,131,0.5)] z-20 pointer-events-none"
+                    className="absolute top-0 bottom-0 w-[2px] bg-[#00747a] shadow-[0_0_8px_rgba(8,127,131,0.5)] z-20 pointer-events-none"
                     style={{ left: `${sliderPos}%` }}
                   >
-                    <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#81e6d6] text-[#0b252c] border-2 border-white flex items-center justify-center text-xs font-bold shadow-md">
+                    <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-7 h-7 rounded-full bg-[#00747a] text-[#141f22] border-2 border-white flex items-center justify-center text-xs font-bold shadow-md">
                       ↔
                     </div>
                   </div>
                 </div>
 
                 {/* 2. Temperature Scale Bar: cleanly separated on the right so it NEVER overlaps or clips */}
-                <div className="relative w-20 sm:w-24 h-full shrink-0 border-l border-[#d6deda]/80 pl-2 sm:pl-3 flex items-center justify-center">
+                <div className="relative w-20 sm:w-24 h-full shrink-0 border-l border-[#d8dedf]/80 pl-2 sm:pl-3 flex items-center justify-center">
                   <div className="relative w-full h-full">
                     {sliderPos < 50 ? (
                       <Image
@@ -148,7 +148,7 @@ export function ReferenceCaseStudiesSection() {
                   >
                     <span>Drag to compare the thermal models</span>
                   </label>
-                  <span className="text-[#087f83] font-bold">← →</span>
+                  <span className="text-[#00747a] font-bold">← →</span>
                 </div>
                 <input
                   id="thermal-range"
@@ -157,7 +157,7 @@ export function ReferenceCaseStudiesSection() {
                   max="100"
                   value={sliderPos}
                   onChange={(e) => setSliderPos(Number(e.target.value))}
-                  className="w-full max-w-md accent-[#087f83] cursor-ew-resize h-2 bg-[#d6deda] rounded-lg appearance-none"
+                  className="w-full max-w-md accent-[#00747a] cursor-ew-resize h-2 bg-[#d8dedf] rounded-lg appearance-none"
                   aria-label="Compare original design with ITS solution"
                 />
               </div>
@@ -166,7 +166,7 @@ export function ReferenceCaseStudiesSection() {
         </div>
 
         {/* Case Study 02: EV & Battery Large-Format Cold Plate */}
-        <div className="bg-white border border-[#d6deda] rounded-lg p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
+        <div className="bg-white border border-[#d8dedf] rounded-lg p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div className="relative w-full md:w-56 h-40 shrink-0 flex items-center justify-center p-2 bg-[#e9ece6] rounded">
             <Image
               src="/assets/bus-plate.webp"
@@ -178,7 +178,7 @@ export function ReferenceCaseStudiesSection() {
           </div>
 
           <div className="flex-1">
-            <p className="text-[10px] font-mono tracking-widest text-[#087f83] uppercase font-bold mb-1">
+            <p className="text-[10px] font-mono tracking-widest text-[#00747a] uppercase font-bold mb-1">
               EV &amp; BATTERY
             </p>
             <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 mb-2">
@@ -190,18 +190,18 @@ export function ReferenceCaseStudiesSection() {
             </p>
             <button
               onClick={openBusProject}
-              className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#087f83] hover:underline cursor-pointer"
+              className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#00747a] hover:underline cursor-pointer"
             >
               <span>Explore the project</span>
               <span>↗</span>
             </button>
           </div>
 
-          <div className="md:border-l md:border-[#d6deda] md:pl-8 text-center md:text-left shrink-0">
+          <div className="md:border-l md:border-[#d8dedf] md:pl-8 text-center md:text-left shrink-0">
             <span className="text-4xl sm:text-5xl font-mono font-bold text-slate-900 block">
               1,450<span className="text-base text-slate-500 font-sans ml-1">mm</span>
             </span>
-            <span className="text-[10px] font-mono tracking-widest text-[#087f83] uppercase font-bold block mt-1">
+            <span className="text-[10px] font-mono tracking-widest text-[#00747a] uppercase font-bold block mt-1">
               ENGINEERED AT SCALE
             </span>
           </div>
