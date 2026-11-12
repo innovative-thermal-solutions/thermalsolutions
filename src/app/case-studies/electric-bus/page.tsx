@@ -68,11 +68,11 @@ export default function ElectricBusCaseStudyPage() {
 
           <div className="relative aspect-[4/3] bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-center p-6">
             <Image
-              src="/images/products/custom-machined-cold-plate.png"
-              alt="Electric Bus Cold Plate"
-              width={420}
-              height={300}
-              className="object-contain max-h-[260px] drop-shadow-sm"
+              src="/assets/bus-plate.webp"
+              alt="Electric Bus Cold Plate with Forklift Scale"
+              width={520}
+              height={400}
+              className="object-contain max-h-[320px] drop-shadow-md"
             />
           </div>
         </div>

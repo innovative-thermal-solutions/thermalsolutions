@@ -420,7 +420,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Zero-porosity FSW weld seam withstood 300+ PSI pressure test",
       "Validated for high shock, cyclic thermal expansion, and road vibration"
     ],
-    image: "/images/image126.png",
+    image: "/assets/bus-plate.webp",
     chartImage: "/images/image114.png"
   },
   {

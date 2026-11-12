@@ -24,7 +24,7 @@ export function CaseStudiesPreview() {
       title: "Electric Bus Large-Format Cold Plate",
       metric: "57″ × 24″",
       metricLabel: "1450 mm FSW Cold Plate",
-      image: "/images/image126.png",
+      image: "/assets/bus-plate.webp",
       description: "Slide 33: Large-format battery cooling cold plate with uniform velocity distribution and zero-porosity FSW joints.",
       href: "/case-studies/electric-bus",
     }
