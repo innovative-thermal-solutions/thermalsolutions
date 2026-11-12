@@ -37,18 +37,6 @@ export function Navigation() {
 
   const technologiesMenu = [
     {
-      name: "Liquid Cooling",
-      href: "/technologies/liquid-cooling",
-      desc: "Micro-channel cold plates & direct flow cavities",
-      icon: Droplets,
-    },
-    {
-      name: "Air Cooling",
-      href: "/technologies/air-cooling",
-      desc: "Extruded, bonded-fin & skived heat sinks",
-      icon: Wind,
-    },
-    {
       name: "Friction Stir Welding",
       href: "/capabilities/friction-stir-welding",
       desc: "Hermetic solid-state joints without filler metals",
@@ -59,12 +47,6 @@ export function Navigation() {
       href: "/technologies/thermal-engineering",
       desc: "Finite-element flow simulation & topology design",
       icon: Activity,
-    },
-    {
-      name: "Real-Time Thermal Simulator",
-      href: "/thermal-simulation",
-      desc: "Interactive CFD & cold plate performance calculator",
-      icon: Cpu,
     },
   ];
 
