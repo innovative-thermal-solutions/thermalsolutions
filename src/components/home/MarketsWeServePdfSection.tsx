@@ -73,29 +73,29 @@ export function MarketsWeServePdfSection() {
   };
 
   return (
-    <section id="markets-we-serve" className="relative w-full py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-[#0f1719] text-white border-b border-slate-800">
+    <section id="markets-we-serve" className="relative w-full py-20 lg:py-24 px-6 sm:px-8 lg:px-12 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63]">
       <div className="max-w-[1440px] mx-auto">
         {/* Exact Section Heading from Design.pdf Page 2 */}
         <div className="mb-12">
-          <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
+          <p className="text-[11px] font-mono tracking-widest text-teal-200 uppercase mb-2 font-bold">
             05 / APPLICATION DOMAINS
           </p>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white mb-2">
             Markets we serve in
           </h2>
-          <p className="text-slate-400 text-sm max-w-xl">
+          <p className="text-teal-50 text-sm max-w-xl font-normal">
             From power conversion to electrification, thermal performance makes the difference.
           </p>
         </div>
 
         {/* Industrial Explorer Matching Design.pdf Page 2 */}
-        <div className="rounded-2xl overflow-hidden border border-slate-800 bg-[#07191f] grid grid-cols-1 lg:grid-cols-12 shadow-2xl">
+        <div className="rounded-2xl overflow-hidden border border-white/20 bg-[#003b3e]/90 grid grid-cols-1 lg:grid-cols-12 shadow-2xl">
           {/* Left: Navigation Menu */}
-          <div className="lg:col-span-4 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-slate-800 flex flex-col justify-between">
+          <div className="lg:col-span-4 p-6 sm:p-8 border-b lg:border-b-0 lg:border-r border-white/15 flex flex-col justify-between">
             <div>
               <h3 className="text-2xl sm:text-3xl font-serif font-bold text-white mb-6 leading-tight">
                 Behind the systems <br />
-                <span className="text-[#9da8a9]">that move us forward.</span>
+                <span className="text-teal-200">that move us forward.</span>
               </h3>
 
               <div className="space-y-2">
@@ -107,8 +107,8 @@ export function MarketsWeServePdfSection() {
                       onClick={() => setActiveMarket(m)}
                       className={`w-full text-left px-4 py-3 rounded-lg border text-xs font-mono uppercase tracking-wider transition-all flex items-center justify-between cursor-pointer ${
                         isActive
-                          ? "bg-[#141f22] border-[#00747a] text-[#00747a] font-bold shadow-sm"
-                          : "border-transparent hover:bg-white/5 text-slate-400 hover:text-white"
+                          ? "bg-white text-[#01747A] border-white font-bold shadow-sm"
+                          : "border-transparent hover:bg-white/10 text-teal-100 hover:text-white"
                       }`}
                     >
                       <span>{m.label}</span>
@@ -119,8 +119,8 @@ export function MarketsWeServePdfSection() {
               </div>
             </div>
 
-            <div className="pt-6 mt-6 border-t border-slate-800/80 text-[11px] font-mono text-slate-400">
-              <span className="text-[#00747a]">Key Telemetry: </span>
+            <div className="pt-6 mt-6 border-t border-white/15 text-[11px] font-mono text-teal-100">
+              <span className="text-teal-200 font-bold">Key Telemetry: </span>
               <span>{activeMarket.stats}</span>
             </div>
           </div>
@@ -133,10 +133,10 @@ export function MarketsWeServePdfSection() {
               fill
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0f1719] via-[#0f1719]/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#003b3e] via-[#003b3e]/70 to-transparent" />
 
             <div className="relative z-10 max-w-xl">
-              <span className="text-[10px] font-mono tracking-widest text-[#00747a] uppercase font-bold block mb-2">
+              <span className="text-[10px] font-mono tracking-widest text-teal-200 uppercase font-bold block mb-2">
                 {activeMarket.label}
               </span>
 

@@ -149,48 +149,48 @@ const PROCESS_STEPS = [
 
 export default function CapabilitiesPage() {
   return (
-    <main id="main-content" className="w-full min-h-screen bg-[#0f1719] text-[#f4f6ef] overflow-hidden">
+    <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22] overflow-hidden">
       {/* 01 PAGE HERO */}
-      <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] pt-36 sm:pt-44 lg:pt-52 pb-20 px-6 sm:px-8 lg:px-14 bg-[#0f1719] border-b border-slate-800 flex flex-col justify-end overflow-hidden">
+      <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] pt-36 sm:pt-44 lg:pt-52 pb-20 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] flex flex-col justify-end overflow-hidden">
         {/* Subtle grid background */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-20"
+          className="absolute inset-0 pointer-events-none opacity-15"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(117,185,181,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(117,185,181,0.08) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
             backgroundSize: "64px 64px",
           }}
         />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-[#00747a]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="w-full max-w-[1440px] mx-auto relative z-10 flex-1 flex flex-col justify-end">
-          <p className="text-[12px] font-mono tracking-[0.25em] text-[#00747a] uppercase font-bold mb-6">
+          <p className="text-[12px] font-mono tracking-[0.25em] text-teal-200 uppercase font-bold mb-6">
             ENGINEERING + MANUFACTURING
           </p>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.2rem] font-serif font-medium tracking-tight text-[#f4f6ef] leading-[0.98] sm:leading-[0.94] max-w-5xl mb-12">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.2rem] font-serif font-medium tracking-tight text-white leading-[0.98] sm:leading-[0.94] max-w-5xl mb-12">
             FROM THERMAL CONCEPT TO FINISHED HARDWARE.
           </h1>
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pt-8 border-t border-slate-800/80">
-            <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed font-light">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pt-8 border-t border-white/20">
+            <p className="text-teal-50 text-base sm:text-lg max-w-xl leading-relaxed font-normal">
               Engineering, design, advanced manufacturing and quality—connected to develop thermal solutions for demanding applications.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-6">
               <Link
                 href="/contact"
-                className="px-6 sm:px-8 py-3.5 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-lg shadow-[#00747a]/10"
+                className="px-6 sm:px-8 py-3.5 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-lg shadow-black/10"
               >
                 <span>Discuss your application</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-4 h-4 text-[#01747A]" />
               </Link>
               <a
                 href="#capability-process"
-                className="text-xs sm:text-sm font-mono text-[#9da8a9] hover:text-white uppercase tracking-wider inline-flex items-center gap-2 py-3.5 px-4 transition-colors"
+                className="text-xs sm:text-sm font-mono text-teal-100 hover:text-white uppercase tracking-wider inline-flex items-center gap-2 py-3.5 px-4 transition-colors"
               >
                 <span>Explore the process</span>
-                <ArrowDown className="w-4 h-4" />
+                <ArrowDown className="w-4 h-4 text-teal-200" />
               </a>
             </div>
           </div>
@@ -335,12 +335,12 @@ export default function CapabilitiesPage() {
       })}
 
       {/* 04 COMPLETE ITS PROCESS RAIL */}
-      <section id="capability-process" className="relative w-full py-24 sm:py-32 px-6 sm:px-8 lg:px-14 bg-[#0f1719] text-white border-b border-slate-800">
+      <section id="capability-process" className="relative w-full py-24 sm:py-32 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63]">
         <div className="w-full max-w-[1440px] mx-auto">
           {/* Section Heading */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
-              <p className="text-[12px] font-mono tracking-[0.2em] text-[#00747a] uppercase font-bold mb-3">
+              <p className="text-[12px] font-mono tracking-[0.2em] text-teal-200 uppercase font-bold mb-3">
                 THE COMPLETE ITS PROCESS
               </p>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium tracking-tight leading-[1.08] text-white">
@@ -348,22 +348,22 @@ export default function CapabilitiesPage() {
                 One manufacturing path.
               </h2>
             </div>
-            <p className="text-slate-300 text-sm sm:text-base max-w-md leading-relaxed font-light">
+            <p className="text-teal-50 text-sm sm:text-base max-w-md leading-relaxed font-normal">
               Capabilities are valuable because they connect. The same thermal problem stays visible from analysis through inspection.
             </p>
           </div>
 
           {/* Process Rail (7 Columns) */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 border-t border-slate-800 divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 border-t border-white/20 divide-y sm:divide-y-0 sm:divide-x divide-white/20">
             {PROCESS_STEPS.map((step) => (
               <div
                 key={step.num}
-                className="relative pt-6 pb-8 px-4 sm:px-5 flex flex-col justify-between min-h-[160px] sm:min-h-[190px] group hover:bg-[#0c2831]/50 transition-colors"
+                className="relative pt-6 pb-8 px-4 sm:px-5 flex flex-col justify-between min-h-[160px] sm:min-h-[190px] group hover:bg-white/10 transition-colors"
               >
                 {/* Node Indicator Dot */}
-                <span className="w-2 h-2 rounded-full bg-[#00747a] shadow-[0_0_12px_#00747a] absolute -top-1 left-4 sm:left-5" />
+                <span className="w-2 h-2 rounded-full bg-white shadow-[0_0_12px_rgba(255,255,255,0.9)] absolute -top-1 left-4 sm:left-5" />
 
-                <span className="text-xs font-mono text-[#00747a] font-bold tracking-wider">
+                <span className="text-xs font-mono text-teal-200 font-bold tracking-wider">
                   {step.num}
                 </span>
 
@@ -377,9 +377,9 @@ export default function CapabilitiesPage() {
       </section>
 
       {/* 05 FINAL CALL TO ACTION */}
-      <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 lg:px-14 bg-gradient-to-b from-[#0f1719] to-[#06171d] text-white text-center">
+      <section className="relative w-full py-24 sm:py-32 px-6 sm:px-8 lg:px-14 bg-gradient-to-b from-[#003b3e] to-[#01747A] text-white text-center">
         <div className="max-w-3xl mx-auto flex flex-col items-center">
-          <p className="text-[12px] font-mono tracking-[0.25em] text-[#00747a] uppercase font-bold mb-4">
+          <p className="text-[12px] font-mono tracking-[0.25em] text-teal-200 uppercase font-bold mb-4">
             START WITH THE THERMAL CHALLENGE
           </p>
 
@@ -387,21 +387,21 @@ export default function CapabilitiesPage() {
             Bring us the application.
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-lg leading-relaxed font-light mb-10 max-w-2xl">
+          <p className="text-teal-50 text-base sm:text-lg leading-relaxed font-normal mb-10 max-w-2xl">
             Engineering and manufacturing can develop the path from first model to finished thermal hardware.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <Link
               href="/contact"
-              className="px-8 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-xl shadow-[#00747a]/10"
+              className="px-8 py-4 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-xl shadow-black/10"
             >
               <span>Talk to a thermal engineer</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 text-[#01747A]" />
             </Link>
             <Link
               href="/products"
-              className="px-8 py-4 border border-slate-700 hover:border-slate-500 bg-slate-900/40 text-white font-medium text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
+              className="px-8 py-4 border border-white/30 hover:border-white/60 bg-white/10 text-white font-medium text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer"
             >
               <span>Explore products</span>
             </Link>

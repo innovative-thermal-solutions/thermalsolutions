@@ -64,67 +64,67 @@ export default function PortfolioPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
       {/* 01 PORTFOLIO HERO */}
-      <section className="relative w-full pt-36 sm:pt-44 lg:pt-48 pb-20 px-6 sm:px-8 lg:px-14 bg-[#0f1719] text-[#f4f6ef] border-b border-[#233134] overflow-hidden">
+      <section className="relative w-full pt-36 sm:pt-44 lg:pt-48 pb-20 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden">
         {/* Subtle grid background */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-20"
+          className="absolute inset-0 pointer-events-none opacity-15"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(0,116,122,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.12) 1px, transparent 1px)",
+              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-[#00747a]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="w-full max-w-[1440px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Intro Column */}
           <div className="lg:col-span-6 xl:col-span-6">
             <div className="flex items-center gap-2 mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#00747a] shadow-[0_0_8px_#00747a]" />
-              <span className="text-[12px] font-mono tracking-[0.25em] text-[#00747a] uppercase font-bold">
+              <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+              <span className="text-[12px] font-mono tracking-[0.25em] text-teal-100 uppercase font-bold">
                 THE ITS COOLING COLLECTION
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-serif font-medium tracking-tight text-white leading-[0.95] mb-8">
               Product <br />
-              <em className="not-italic text-[#00747a]">portfolio.</em>
+              <em className="not-italic text-teal-200">portfolio.</em>
             </h1>
 
-            <p className="text-[#bcc5c6] text-base sm:text-lg max-w-lg leading-relaxed mb-10 font-normal">
+            <p className="text-teal-50 text-base sm:text-lg max-w-lg leading-relaxed mb-10 font-normal">
               From finned heat sinks to liquid cold plates and custom busbars. Find the construction, material and dimensions that fit your next design.
             </p>
 
             <a
               href="#catalog"
-              className="inline-flex items-center gap-3 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs font-mono uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-lg shadow-[#00747a]/20 cursor-pointer"
+              className="inline-flex items-center gap-3 px-7 py-4 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-lg shadow-black/10 cursor-pointer"
             >
               <span>Browse products</span>
-              <ArrowDown className="w-4 h-4" />
+              <ArrowDown className="w-4 h-4 text-[#01747A]" />
             </a>
           </div>
 
           {/* Right Product Spotlight Hero Figure (Interactive 3D CAD Model) */}
           <div className="lg:col-span-6 xl:col-span-6">
-            <div className="relative p-6 sm:p-8 rounded-xl border border-[#233134] bg-gradient-to-br from-[#141f22] to-[#0f1719] shadow-2xl overflow-hidden group">
+            <div className="relative p-6 sm:p-8 rounded-xl border border-white/20 bg-[#003b3e]/90 shadow-2xl overflow-hidden group">
               {/* Radial glow backdrop */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,116,122,0.25)_0%,_transparent_70%)] pointer-events-none" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.12)_0%,_transparent_70%)] pointer-events-none" />
               
-              <div className="flex items-center justify-between text-[11px] font-mono text-[#7f7c7d] uppercase tracking-wider mb-4 relative z-10">
-                <span className="text-[#00747a] font-bold">INTERACTIVE 3D CAD MODEL / COMPLEX PART</span>
-                <span className="px-2 py-0.5 bg-[#00747a]/20 text-[#00747a] rounded border border-[#00747a]/30">
+              <div className="flex items-center justify-between text-[11px] font-mono text-teal-100 uppercase tracking-wider mb-4 relative z-10">
+                <span className="text-teal-200 font-bold">INTERACTIVE 3D CAD MODEL / COMPLEX PART</span>
+                <span className="px-2 py-0.5 bg-white/15 text-white rounded border border-white/25">
                   LFA0180 REV.01
                 </span>
               </div>
 
               {/* 3D CAD Model Interactive Canvas */}
-              <div className="relative w-full h-[320px] sm:h-[400px] flex items-center justify-center rounded-lg overflow-hidden border border-[#233134]/60 bg-[#0b1214] z-10">
+              <div className="relative w-full h-[320px] sm:h-[400px] flex items-center justify-center rounded-lg overflow-hidden border border-white/15 bg-[#00272a] z-10">
                 <CadViewer modelUrl="/models/lfa0180-complex-part.glb" className="w-full h-full" />
               </div>
 
-              <div className="pt-4 border-t border-[#233134] flex items-center justify-between text-xs font-mono text-[#d8dedf] relative z-10">
-                <span className="font-semibold">Complex CNC Liquid Cold Plate Geometry</span>
-                <span className="text-[#7f7c7d]">Interactive 3D Orbit &amp; Zoom</span>
+              <div className="pt-4 border-t border-white/15 flex items-center justify-between text-xs font-mono text-teal-50 relative z-10">
+                <span className="font-semibold text-white">Complex CNC Liquid Cold Plate Geometry</span>
+                <span className="text-teal-200">Interactive 3D Orbit &amp; Zoom</span>
               </div>
             </div>
           </div>
@@ -363,39 +363,39 @@ export default function PortfolioPage() {
       </section>
 
       {/* 03 CONTACT CALLOUT SECTION */}
-      <section className="w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-14 bg-[#141f22] text-white border-b border-[#233134]">
+      <section className="w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63]">
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <div className="lg:col-span-8">
-            <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase font-bold mb-3">
+            <p className="text-[11px] font-mono tracking-widest text-teal-200 uppercase font-bold mb-3">
               DESIGNED TO FIT
             </p>
-            <h2 className="text-3xl sm:text-5xl font-serif font-medium tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-serif font-medium tracking-tight mb-4 text-white">
               Working with a tight envelope?
             </h2>
-            <p className="text-[#bcc5c6] text-base sm:text-lg max-w-xl leading-relaxed mb-8 font-normal">
+            <p className="text-teal-50 text-base sm:text-lg max-w-xl leading-relaxed mb-8 font-normal">
               Share your available space, heat load and operating conditions with our engineering team. We deliver complete custom thermal assemblies from first simulation to machined hardware.
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs font-mono uppercase tracking-wider rounded transition-all shadow-lg shadow-[#00747a]/20 cursor-pointer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all shadow-lg shadow-black/10 cursor-pointer"
             >
               <span>Discuss your project</span>
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-4 h-4 text-[#01747A]" />
             </Link>
           </div>
 
-          <div className="lg:col-span-4 p-8 bg-[#0f1719] border border-[#233134] rounded-xl flex flex-col justify-center space-y-4 font-mono text-xs">
-            <span className="text-[11px] text-[#7f7c7d] uppercase tracking-wider font-bold">
-              ENGINEERING & SALES OFFICE
+          <div className="lg:col-span-4 p-8 bg-[#003b3e]/90 border border-white/20 rounded-xl flex flex-col justify-center space-y-4 font-mono text-xs">
+            <span className="text-[11px] text-teal-200 uppercase tracking-wider font-bold">
+              ENGINEERING &amp; SALES OFFICE
             </span>
-            <div className="flex items-center gap-2 text-[#d8dedf]">
-              <Mail className="w-4 h-4 text-[#00747a] shrink-0" />
+            <div className="flex items-center gap-2 text-teal-50">
+              <Mail className="w-4 h-4 text-teal-200 shrink-0" />
               <a href="mailto:Engineering@itscooling.com" className="hover:text-white transition-colors">
                 Engineering@itscooling.com ↗
               </a>
             </div>
-            <div className="flex items-center gap-2 text-[#d8dedf]">
-              <Phone className="w-4 h-4 text-[#00747a] shrink-0" />
+            <div className="flex items-center gap-2 text-teal-50">
+              <Phone className="w-4 h-4 text-teal-200 shrink-0" />
               <a href="tel:+15197634454" className="hover:text-white transition-colors">
                 +1 (519) 763-4454 ↗
               </a>
