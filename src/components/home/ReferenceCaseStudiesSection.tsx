@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export function ReferenceCaseStudiesSection() {
   const [sliderPos, setSliderPos] = useState(50);
@@ -58,6 +60,16 @@ export function ReferenceCaseStudiesSection() {
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
                 ITS’s embedded heat pipe design improved heat distribution in a wireless solid-state amplifier. Explore the thermal models to see the difference.
               </p>
+
+              <div className="mb-6">
+                <Link
+                  href="/case-studies"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00747a] hover:bg-[#005d62] text-white font-mono text-xs font-bold uppercase tracking-wider rounded-md transition-all shadow-xs group"
+                >
+                  <span>View More Case Studies</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </Link>
+              </div>
 
               <span className="text-[10px] text-slate-400 font-mono block italic">
                 Reported project result from the ITS company presentation. Results depend on application and operating conditions.
