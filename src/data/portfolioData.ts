@@ -74,14 +74,16 @@ export const PORTFOLIO_PRODUCTS: PortfolioItem[] = [
   },
   {
     id: "bonded-fin",
-    name: "Bonded copper heat sinks",
+    name: "Bonded Heat Sink",
     family: "air",
-    image: "/images/portfolio/bonded-copper-heat-sink.webp",
+    image: "/images/portfolio/bonded-heat-sink.webp",
     tag: "AIR COOLED / BONDED FIN",
-    short: "Copper fins bonded to a base add surface area for air cooling.",
-    material: "Copper fins; base specified per project",
-    construction: "Copper fins bonded to a base",
-    application: "Power electronics and telecommunications equipment",
+    short: "High-aspect-ratio bonded fin assemblies for high-power thermal spreading.",
+    description:
+      "Bonded fin heat sinks utilize specialized epoxy bonding or brazing to join individual aluminum or copper fins into an extruded or machined base plate, overcoming standard extrusion ratio limits.",
+    material: "Aluminum or Copper fins with Aluminum base",
+    construction: "Bonded or brazed fin-to-base joint",
+    application: "Power electronics, motor drives and industrial inverters",
   },
   {
     id: "copper-sink",
@@ -112,16 +114,16 @@ export const PORTFOLIO_PRODUCTS: PortfolioItem[] = [
   },
   {
     id: "tube",
-    name: "Pressed-in tube plates",
+    name: "Copper Embedded Cold Plate",
     family: "liquid",
-    image: "/images/portfolio/pressed-tube.webp",
+    image: "/images/portfolio/copper-embedded-cold-plate.webp",
     tag: "LIQUID COOLED / EMBEDDED TUBE",
     short: "An economical route to liquid cooling.",
     description:
-      "A tube pressed into a machined plate creates a simple fluid path for liquid cooling. ITS configures the tube route and plate features around component locations, system constraints and budget.",
-    material: "Plate and tube materials selected for the project",
-    construction: "Tube embedded into a machined plate",
-    application: "Industrial equipment and electronic assemblies",
+      "Continuous copper cooling tubes are mechanically pressed or epoxied into precision-milled aluminum base plates, ensuring direct copper-to-component thermal contact without internal joint risks.",
+    material: "Copper tubing embedded in 6061-T6 Aluminum plate",
+    construction: "Seamless continuous copper tube pressed into CNC channel",
+    application: "Industrial equipment, power conversion, RF and laser assemblies",
     considerations: "Tube diameter, coolant compatibility and fittings",
   },
   {
@@ -168,15 +170,30 @@ export const PORTFOLIO_PRODUCTS: PortfolioItem[] = [
 
   // --- POWER DISTRIBUTION / ELECTRICAL ---
   {
-    id: "busbar",
-    name: "Custom busbars",
+    id: "laminated-busbar",
+    name: "Laminated Bus Bar",
     family: "electrical",
-    image: "/images/portfolio/its-busbars.webp",
-    tag: "POWER DISTRIBUTION / CONDUCTIVE BARS",
-    short: "Conductive bars and laminated assemblies for electrical power distribution.",
-    material: "Copper or aluminum",
-    construction: "Bare, coated, plated, formed or laminated",
-    application: "Electrical and power electronics assemblies",
+    image: "/images/portfolio/laminated-busbar.webp",
+    tag: "POWER DISTRIBUTION / LAMINATED BUS BAR",
+    short: "Integrated bus bar assemblies & sealed channels for demanding cooling.",
+    description:
+      "Multi-layer laminated power bus bars engineered with thin dielectric insulation films to minimize parasitic inductance and distribute high currents in power electronics and battery packs.",
+    material: "High-conductivity Copper (C11000) or Aluminum",
+    construction: "Multi-layer laminated conductors with bonded dielectric insulation",
+    application: "Traction inverters, battery packs, and grid energy storage",
+  },
+  {
+    id: "copper-busbar",
+    name: "Copper Bus Bar",
+    family: "electrical",
+    image: "/images/portfolio/copper-busbar.webp",
+    tag: "POWER DISTRIBUTION / SOLID COPPER",
+    short: "Custom formed, plated, and machined copper conductors for high current distribution.",
+    description:
+      "Precision-machined and formed solid copper bus bars with custom hole patterns, plating (tin, nickel, or silver), and optional insulation coatings for high-amperage electrical routing.",
+    material: "ETP Copper (C11000) / Oxygen-Free Copper (C10200)",
+    construction: "CNC-machined, bent, and surface-treated solid conductor",
+    application: "Switchgear, industrial power distribution, EV charging infrastructure, and transformer connections",
   },
 ];
 

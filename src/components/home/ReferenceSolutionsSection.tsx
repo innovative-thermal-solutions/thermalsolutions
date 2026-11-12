@@ -81,10 +81,10 @@ export function ReferenceSolutionsSection() {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 pb-6 border-b border-[#d8dedf] mb-8">
           <div className="flex flex-wrap items-center gap-3">
             {[
-              { id: "all", label: "All solutions", count: "08" },
-              { id: "air", label: "Air cooled" },
-              { id: "liquid", label: "Liquid cooled" },
-              { id: "busbar", label: "Bus bar" },
+              { id: "all", label: "All solutions", count: String(REFERENCE_PRODUCTS.length).padStart(2, "0") },
+              { id: "air", label: "Air cooled", count: String(REFERENCE_PRODUCTS.filter(p => p.family === "air").length).padStart(2, "0") },
+              { id: "liquid", label: "Liquid cooled", count: String(REFERENCE_PRODUCTS.filter(p => p.family === "liquid").length).padStart(2, "0") },
+              { id: "busbar", label: "Bus bar", count: String(REFERENCE_PRODUCTS.filter(p => p.family === "busbar").length).padStart(2, "0") },
             ].map((tab) => (
               <button
                 key={tab.id}
