@@ -27,8 +27,8 @@ export function ManufacturingStory() {
   };
 
   return (
-    <section id="manufacturing" className="relative w-full min-h-[85vh] lg:min-h-[92vh] flex items-center justify-center bg-[#091113] text-white overflow-hidden border-b border-[#233134]">
-      {/* Background Full-Bleed Video from 25s to 36s */}
+    <section id="manufacturing" className="relative w-full min-h-[90vh] lg:min-h-[96vh] flex items-center bg-[#091113] text-white overflow-hidden border-b border-[#233134]">
+      {/* Background Full-Bleed Video - Made Much Brighter and Vibrant */}
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <video
           ref={videoRef}
@@ -37,57 +37,60 @@ export function ManufacturingStory() {
           loop
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center filter brightness-[0.72] contrast-[1.12] scale-[1.02]"
+          className="w-full h-full object-cover object-center filter brightness-[1.05] contrast-[1.15] saturate-[1.1] scale-[1.02]"
         >
           <source src="/videos/designed-built-tested-loop.mp4" type="video/mp4" />
           Your browser does not support video playback.
         </video>
 
-        {/* Cinematic Dark Gradient Overlays matching Screenshot 2 */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#091113]/90 via-[#091113]/35 to-[#091113]/80" />
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[0.5px]" />
+        {/* Minimal soft gradient on the left edge only to keep text readable without blocking center welding tool */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#091113]/90 via-[#091113]/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#091113] to-transparent pointer-events-none" />
+        <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#091113]/80 to-transparent pointer-events-none" />
       </div>
 
-      {/* Center Content Overlay matching user reference screenshot 2 */}
-      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-24 sm:py-32 relative z-10 flex flex-col items-center justify-center text-center">
-        {/* Top Tag: 10 / REAL MANUFACTURING */}
-        <div className="flex items-center gap-2 mb-6 sm:mb-8">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
-          <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#00747a] font-bold">
-            10 / REAL MANUFACTURING
-          </span>
-        </div>
+      {/* Content moved to Left side so the Center-Right Friction Stir Welding Tool and joint seam are 100% visible */}
+      <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 py-20 sm:py-28 relative z-10">
+        <div className="max-w-2xl text-left">
+          {/* Top Tag: 10 / REAL MANUFACTURING */}
+          <div className="flex items-center gap-2 mb-4 sm:mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#00747a] font-bold bg-[#091113]/80 px-2.5 py-1 rounded border border-[#00747a]/30 backdrop-blur-md">
+              10 / REAL MANUFACTURING · GUELPH, ON
+            </span>
+          </div>
 
-        {/* Giant Hero Overlay Typography matching Screenshot 2 */}
-        <h2 className="font-sans font-black tracking-[-0.04em] uppercase leading-[0.88] sm:leading-[0.85] text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] xl:text-[8rem] text-center mb-8 max-w-5xl">
-          <span className="block text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
-            DESIGNED.
-          </span>
-          <span className="block text-[#a0a6a7] drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
-            BUILT.
-          </span>
-          <span className="block text-[#687072] drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
-            TESTED.
-          </span>
-          <span className="block text-[#00747a] drop-shadow-[0_6px_28px_rgba(0,116,122,0.45)]">
-            HERE.
-          </span>
-        </h2>
+          {/* Typography arranged cleanly on the left with brand highlights */}
+          <h2 className="font-sans font-black tracking-[-0.04em] uppercase leading-[0.88] sm:leading-[0.84] text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-left mb-6">
+            <span className="block text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+              DESIGNED.
+            </span>
+            <span className="block text-[#c5cecf] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+              BUILT.
+            </span>
+            <span className="block text-[#7f888a] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+              TESTED.
+            </span>
+            <span className="block text-[#00747a] drop-shadow-[0_6px_28px_rgba(0,116,122,0.6)]">
+              HERE.
+            </span>
+          </h2>
 
-        {/* Subtitle */}
-        <p className="text-[#c5cecf] text-xs sm:text-sm font-mono tracking-wider mb-8 max-w-md drop-shadow-md">
-          Engineering and manufacturing in Guelph, Ontario
-        </p>
+          {/* Subtitle */}
+          <p className="text-[#e2e8e9] text-xs sm:text-sm font-mono tracking-wider mb-8 max-w-md drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] bg-[#091113]/60 p-3 rounded-lg border border-white/10 backdrop-blur-sm">
+            In-house advanced thermal machining &amp; Friction Stir Welding cell in Guelph, Ontario.
+          </p>
 
-        {/* Link / CTA matching Screenshot 2 */}
-        <div className="flex items-center gap-4">
-          <Link
-            href="/facility"
-            className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.16em] text-white hover:text-[#00747a] transition-colors group cursor-pointer py-2 border-b border-white/20 hover:border-[#00747a]"
-          >
-            <span>INSIDE ITS MANUFACTURING</span>
-            <span className="text-sm font-sans group-hover:translate-x-1 transition-transform">↗</span>
-          </Link>
+          {/* Link / CTA */}
+          <div className="flex items-center gap-4">
+            <Link
+              href="/facility"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#00747a] hover:bg-[#005d62] text-white text-xs font-mono font-bold uppercase tracking-[0.16em] rounded-md transition-all group cursor-pointer shadow-lg shadow-[#00747a]/30"
+            >
+              <span>INSIDE ITS MANUFACTURING</span>
+              <span className="text-sm font-sans group-hover:translate-x-1 transition-transform">↗</span>
+            </Link>
+          </div>
         </div>
 
         {/* Bottom Corner Video Controls */}
@@ -95,14 +98,14 @@ export function ManufacturingStory() {
           <button
             onClick={togglePlay}
             aria-label={isPlaying ? "Pause video" : "Play video"}
-            className="p-2.5 rounded-full bg-black/60 hover:bg-[#00747a] text-white backdrop-blur-md border border-white/15 transition-colors cursor-pointer"
+            className="p-2.5 rounded-full bg-black/75 hover:bg-[#00747a] text-white backdrop-blur-md border border-white/20 transition-colors cursor-pointer shadow-lg"
           >
             {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
           </button>
           <button
             onClick={toggleMute}
             aria-label={isMuted ? "Unmute video" : "Mute video"}
-            className="p-2.5 rounded-full bg-black/60 hover:bg-[#00747a] text-white backdrop-blur-md border border-white/15 transition-colors cursor-pointer"
+            className="p-2.5 rounded-full bg-black/75 hover:bg-[#00747a] text-white backdrop-blur-md border border-white/20 transition-colors cursor-pointer shadow-lg"
           >
             {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
           </button>
