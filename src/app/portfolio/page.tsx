@@ -3,8 +3,23 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { ArrowDown, ArrowUpRight, Search, Plus, Minus, Mail, Phone, SlidersHorizontal, Check } from "lucide-react";
 import { PORTFOLIO_PRODUCTS, PortfolioItem } from "@/data/portfolioData";
+
+// Dynamically import 3D CAD Viewer to ensure client-side WebGL rendering
+const CadViewer = dynamic(
+  () => import("@/components/common/CadViewer").then((mod) => mod.CadViewer),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="w-full h-full flex flex-col items-center justify-center bg-[#0f1719]/90 text-xs font-mono text-[#00747a]">
+        <div className="w-8 h-8 rounded-full border-2 border-[#00747a] border-t-transparent animate-spin mb-2" />
+        <span>INITIALIZING 3D CAD ENVIRONMENT...</span>
+      </div>
+    ),
+  }
+);
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState<"all" | "air" | "liquid" | "electrical">("all");
@@ -89,31 +104,27 @@ export default function PortfolioPage() {
             </a>
           </div>
 
-          {/* Right Product Spotlight Hero Figure */}
+          {/* Right Product Spotlight Hero Figure (Interactive 3D CAD Model) */}
           <div className="lg:col-span-6 xl:col-span-6">
             <div className="relative p-6 sm:p-8 rounded-xl border border-[#233134] bg-gradient-to-br from-[#141f22] to-[#0f1719] shadow-2xl overflow-hidden group">
               {/* Radial glow backdrop */}
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(0,116,122,0.25)_0%,_transparent_70%)] pointer-events-none" />
               
               <div className="flex items-center justify-between text-[11px] font-mono text-[#7f7c7d] uppercase tracking-wider mb-4 relative z-10">
-                <span className="text-[#00747a] font-bold">PRODUCT SPOTLIGHT / AIR COOLING</span>
-                <span>01 / THERMAL HARDWARE</span>
+                <span className="text-[#00747a] font-bold">INTERACTIVE 3D CAD MODEL / COMPLEX PART</span>
+                <span className="px-2 py-0.5 bg-[#00747a]/20 text-[#00747a] rounded border border-[#00747a]/30">
+                  LFA0180 REV.01
+                </span>
               </div>
 
-              <div className="relative w-full h-[280px] sm:h-[360px] flex items-center justify-center p-4 z-10">
-                <Image
-                  src="/images/portfolio/hero-heatsink.webp"
-                  alt="Aluminum heat sink with embedded copper heat pipes"
-                  width={600}
-                  height={420}
-                  priority
-                  className="max-h-full w-auto object-contain drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500"
-                />
+              {/* 3D CAD Model Interactive Canvas */}
+              <div className="relative w-full h-[320px] sm:h-[400px] flex items-center justify-center rounded-lg overflow-hidden border border-[#233134]/60 bg-[#0b1214] z-10">
+                <CadViewer modelUrl="/models/lfa0180-complex-part.glb" className="w-full h-full" />
               </div>
 
               <div className="pt-4 border-t border-[#233134] flex items-center justify-between text-xs font-mono text-[#d8dedf] relative z-10">
-                <span className="font-semibold">Embedded heat pipe assembly</span>
-                <span className="text-[#7f7c7d]">High Heat Flux Spreading</span>
+                <span className="font-semibold">Complex CNC Liquid Cold Plate Geometry</span>
+                <span className="text-[#7f7c7d]">Interactive 3D Orbit &amp; Zoom</span>
               </div>
             </div>
           </div>
