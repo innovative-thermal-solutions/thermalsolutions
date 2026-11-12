@@ -1,189 +1,328 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check, ShieldCheck, Users, MapPin, Award, Building2 } from "lucide-react";
-import { COMPANY_INFO } from "@/data/companyContent";
-import { SubpageCta } from "@/components/common/SubpageCta";
+import {
+  Mail,
+  ArrowRight,
+  FileSpreadsheet,
+  Layers,
+  Thermometer,
+  Cpu,
+  Cog,
+  CheckCircle2,
+} from "lucide-react";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Thermal engineering backed by in-house manufacturing. | ITS Cooling",
+export const metadata: Metadata = {
+  title: "About Us | Innovative Thermal Solutions (ITS Cooling)",
   description:
-    "ITS works with customers to understand the thermal challenge, develop the right architecture and carry the design into controlled manufacturing.",
+    "Innovative Thermal Solutions (ITS) designs and manufactures custom, high-performance thermal management solutions in North America, specializing in Friction Stir Welding (FSW) and advanced cooling technologies.",
 };
+
+const milestones = [
+  {
+    year: "2020",
+    step: "01",
+    title: "ITS Cooling Founded",
+    description: "Started with a vision to engineer high-performance thermal solutions.",
+  },
+  {
+    year: "2021",
+    step: "02",
+    title: "First Facility & Machine",
+    description: "1200 sq ft space with our first CNC machine (Haas VF-5) and FSW.",
+  },
+  {
+    year: "2022",
+    step: "03",
+    title: "Expansion Begins",
+    description: "Added second machine (Haas VF-6) and moved to a 2,300 sq ft facility.",
+  },
+  {
+    year: "2023",
+    step: "04",
+    title: "Tradeshow Expansion Begins",
+    description:
+      "Our 1st tradeshow we exhibited at was the Thermal Management Expo in Michigan. That was the start of expanding our sales at trade shows.",
+  },
+  {
+    year: "2024",
+    step: "05",
+    title: "Scaling Operations",
+    description:
+      "Expanded production capacity and strengthened engineering capabilities. Moved to a 6,000 sq ft facility.",
+  },
+  {
+    year: "2025",
+    step: "06",
+    title: "Advanced Capabilities",
+    description:
+      "Introduced Mazak and UMC-1000, 5-axis machines to expand manufacturing.",
+  },
+  {
+    year: "2026",
+    step: "07",
+    title: "Where We Are Today",
+    description: "Operating from a 6,000 sq ft facility with a growing team of 27.",
+  },
+];
+
+const workflowSteps = [
+  {
+    step: "01",
+    title: "Customer Inputs",
+    description: "Project Requirements (eg. max temperature, heat sink envelope)",
+    icon: Layers,
+  },
+  {
+    step: "02",
+    title: "Thermal",
+    description: "CFD, iterative heat sink design, parametric studies, optimization",
+    icon: Thermometer,
+  },
+  {
+    step: "03",
+    title: "Mechanical",
+    description: "Solid modelling Dwgs, assemble modelling, static structural simulation",
+    icon: Cpu,
+  },
+  {
+    step: "04",
+    title: "Manufacturing",
+    description: "CNC machining, Friction stir welding, programming",
+    icon: Cog,
+  },
+];
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="w-full min-h-screen bg-slate-50 pt-28 pb-20">
-      {/* Detail Hero */}
-      <section className="relative w-full bg-gradient-to-br from-white via-slate-50 to-sky-50 border-b border-slate-200 py-16 lg:py-24 px-6 lg:px-12 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
-        <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-          <div className="lg:col-span-7">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="font-mono text-xs font-bold text-sky-600 px-2 py-0.5 bg-white border border-slate-200 rounded-sm">
-                ITS
-              </span>
-              <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
-                What We Do At ITS Cooling
-              </span>
-            </div>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
-              Custom thermal engineering. <br />
-              <span className="text-sky-600">Zero shelf stock.</span>
-            </h1>
-            <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
-              ITS Cooling designs and manufactures custom heat sinks and liquid cold plates based on our customers&#39; specific requirements. A one-stop solution from initial concept to finished hardware under one roof.
-            </p>
-          </div>
+    <main id="main-content" className="w-full min-h-screen bg-white">
+      {/* 1. Hero Section */}
+      <section className="relative w-full bg-gradient-to-br from-[#00575c] via-[#00747a] to-[#0a8f97] text-white pt-32 pb-20 lg:pt-36 lg:pb-24 px-6 lg:px-12 text-center overflow-hidden">
+        {/* Subtle grid backdrop */}
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
-          <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white flex items-center justify-center p-6">
-            <Image
-              src="/images/manufacturing/precision-manufacturing.png"
-              alt="Inside ITS Manufacturing Facility"
-              width={480}
-              height={360}
-              priority
-              className="object-contain max-h-[300px] drop-shadow-md"
-            />
+        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+          <span className="inline-block text-xs uppercase font-mono tracking-[0.2em] font-semibold bg-white/15 text-white px-4 py-1.5 rounded-full mb-6 border border-white/20 shadow-xs">
+            About Us
+          </span>
+
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
+            About ITS Cooling
+          </h1>
+
+          <div className="text-base sm:text-lg text-emerald-50/95 leading-relaxed font-normal text-left sm:text-center space-y-4">
+            <p>
+              Innovative Thermal Solutions (ITS) designs and manufactures custom, high-performance thermal management solutions in North America, specializing in Friction Stir Welding (FSW) and advanced cooling technologies. Our solutions include air-cooled heat sinks, liquid-cooled cold plates, heat pipe assemblies, custom copper and aluminum bus bars, and complete air and liquid cooling systems engineered for demanding applications.
+            </p>
+            <p>
+              From concept to production, we are your single-source thermal management partner. Our experienced engineering team combines advanced thermal analysis, simulation, design optimization, prototyping, and manufacturing to develop solutions tailored to each customer&apos;s performance, reliability, and application requirements. We serve a broad range of industries, including Power Electronics, Battery and Energy Storage, Aerospace and Defence, RF and Microwave, Satellite Communications, Laser and Photonics, Medical, and Data Centres.
+            </p>
+            <p>
+              Headquartered in Guelph, Ontario, Canada, ITS brings engineering and manufacturing together under one roof. Our in-house capabilities, including Friction Stir Welding, precision CNC machining, brazing, assembly, and thermal testing, provide greater control over product quality, performance, and production. As an ISO 9001:2015 QMS certified company, we are committed to delivering reliable, high-quality thermal solutions while helping our customers simplify their supply chains, reduce development risks, and accelerate time to market. From thermal design to North American manufacturing, ITS delivers integrated cooling solutions built around your application.
+            </p>
+            <p className="pt-2 font-medium">
+              If you have any inquiries about ITS&apos; capabilities or about how ITS can help you in your thermal solution needs, please contact us at:{" "}
+              <a
+                href="mailto:engineering@itscooling.com"
+                className="underline underline-offset-4 decoration-emerald-200 hover:text-white font-semibold transition-colors inline-flex items-center gap-1.5"
+              >
+                <Mail className="w-4 h-4 inline" />
+                engineering@itscooling.com
+              </a>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Detail Content Articles */}
-      <section className="max-w-[1440px] mx-auto px-6 lg:px-12 py-20">
-        <div className="divide-y divide-slate-200 mb-20">
-          {/* 01 What We Do at ITS Cooling */}
-          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-2">
-              <span className="font-mono text-2xl font-bold text-sky-600">01</span>
-              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
-                Identity
-              </span>
-            </div>
-            <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-4">
-                  What We Do at ITS Cooling
-                </h2>
-                <p className="text-slate-600 text-base leading-relaxed font-normal mb-4">
-                  We don’t just sell standard cooling products. We work with customers to develop and manufacture cooling solutions that fit their applications.
-                </p>
-                <p className="text-slate-600 text-base leading-relaxed font-normal mb-6">
-                  The main message is simple: <strong>Customers can come to us with their cooling requirements, and we can take care of the entire process, from concept to finished product, all under one roof.</strong>
-                </p>
-                <div className="p-4 bg-sky-50 rounded-lg border border-sky-200 text-slate-800 text-xs font-mono mb-4 leading-relaxed">
-                  <strong>Zero Shelf Inventory:</strong> There is no product on shelves and nobody can purchase it. Everything is custom for a specific application. Simple idea: there will be different thermal requirements for different projects. Hence the new part all the time.
-                </div>
-                <div className="p-4 bg-slate-100 rounded-lg border-l-4 border-sky-600 italic text-slate-700 text-sm">
-                  &ldquo;{COMPANY_INFO.ceoQuote}&rdquo;
-                  <span className="block mt-2 font-mono text-xs font-bold text-slate-900 not-italic">
-                    — Dr. Ahmed Zaghlol, Founder &amp; CEO
-                  </span>
-                </div>
-              </div>
-              <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-3">
-                <span className="text-xs uppercase font-mono tracking-wider text-slate-400 block font-semibold">
-                  Core Values
-                </span>
-                {COMPANY_INFO.values.map((v) => (
-                  <div key={v.title} className="text-xs font-mono">
-                    <strong className="text-slate-900 block">{v.title}</strong>
-                    <span className="text-slate-500 leading-normal">{v.description}</span>
+      {/* 2. Company Milestones (2020 – 2026) */}
+      <section className="relative w-full py-20 lg:py-28 px-6 lg:px-12 bg-gradient-to-b from-[#0b8d95] via-[#00585d] to-[#003c40] text-white overflow-hidden">
+        {/* Radial grid accent */}
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:22px_22px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-[1400px] mx-auto">
+          <div className="text-center mb-14 lg:mb-20">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-3">
+              Company Milestones
+            </h2>
+            <span className="inline-block text-xs uppercase font-mono tracking-widest font-semibold bg-white/12 border border-white/25 text-[#e6f6f7] px-4 py-1.5 rounded-full">
+              2020 – 2026
+            </span>
+          </div>
+
+          {/* Desktop alternating timeline (>= 1024px) */}
+          <div className="hidden lg:block relative pb-4">
+            {/* Horizontal timeline connecting beam */}
+            <div className="absolute left-[3%] right-[3%] top-1/2 -translate-y-1/2 h-1 bg-gradient-to-r from-white/20 via-[#7fe0e6] to-white/20 shadow-[0_0_16px_rgba(127,224,230,0.6)] z-0 rounded-full" />
+
+            <div className="grid grid-cols-7 gap-4 relative z-10">
+              {milestones.map((item, index) => {
+                const isEven = index % 2 === 1; // 0-based: 1, 3, 5 are even in UI
+                return (
+                  <div
+                    key={item.year}
+                    className="flex flex-col items-center group"
+                  >
+                    {/* Top slot: odd items place card here */}
+                    <div className="h-[230px] w-full flex flex-col justify-end pb-4">
+                      {!isEven && (
+                        <div className="relative bg-white text-slate-900 rounded-xl p-5 shadow-xl border-t-4 border-[#0b8d95] group-hover:-translate-y-1.5 transition-transform duration-300">
+                          {/* Pointer line downwards to center circle */}
+                          <div className="absolute left-1/2 -bottom-4 -translate-x-1/2 w-0.5 h-4 bg-[#7fe0e6]" />
+                          <span className="inline-block bg-[#00747a] text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded-full mb-2">
+                            {item.step}
+                          </span>
+                          <h3 className="text-sm font-bold text-[#00585d] mb-1.5 leading-snug">
+                            {item.title}
+                          </h3>
+                          <p className="text-xs text-slate-600 leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Middle Year Badge */}
+                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-white to-[#d9f3f4] text-[#00585d] font-extrabold text-base flex items-center justify-center shadow-[0_0_0_6px_rgba(255,255,255,0.15),0_0_24px_rgba(127,224,230,0.7)] group-hover:scale-110 transition-transform duration-300 my-2 z-20">
+                      {item.year}
+                    </div>
+
+                    {/* Bottom slot: even items place card here */}
+                    <div className="h-[230px] w-full flex flex-col justify-start pt-4">
+                      {isEven && (
+                        <div className="relative bg-white text-slate-900 rounded-xl p-5 shadow-xl border-t-4 border-[#0b8d95] group-hover:translate-y-1.5 transition-transform duration-300">
+                          {/* Pointer line upwards to center circle */}
+                          <div className="absolute left-1/2 -top-4 -translate-x-1/2 w-0.5 h-4 bg-[#7fe0e6]" />
+                          <span className="inline-block bg-[#00747a] text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded-full mb-2">
+                            {item.step}
+                          </span>
+                          <h3 className="text-sm font-bold text-[#00585d] mb-1.5 leading-snug">
+                            {item.title}
+                          </h3>
+                          <p className="text-xs text-slate-600 leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
+                      )}
+                    </div>
                   </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
-          </article>
+          </div>
 
-          {/* 02 Experience */}
-          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-2">
-              <span className="font-mono text-2xl font-bold text-sky-600">02</span>
-              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
-                Heritage
-              </span>
-            </div>
-            <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-4">
-                  Experience
-                </h2>
-                <p className="text-slate-600 text-base leading-relaxed font-normal mb-6">
-                  The current ITS website states that its engineering team brings more than 75 years of combined thermal-management experience.
-                </p>
-                <Link
-                  href="/team"
-                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-bold text-sky-600 hover:text-sky-800"
-                >
-                  <span>Meet Our Engineering Specialists</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-                  <span className="block font-mono text-3xl font-bold text-slate-950">75+</span>
-                  <span className="text-xs font-mono uppercase text-slate-500">Years Combined Exp</span>
-                </div>
-                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-                  <span className="block font-mono text-3xl font-bold text-sky-600">26</span>
-                  <span className="text-xs font-mono uppercase text-slate-500">CEO Thermal Exp</span>
-                </div>
-                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-                  <span className="block font-mono text-3xl font-bold text-slate-950">2</span>
-                  <span className="text-xs font-mono uppercase text-slate-500">Registered Patents</span>
-                </div>
-                <div className="p-4 bg-white rounded-xl border border-slate-200 shadow-xs">
-                  <span className="block font-mono text-3xl font-bold text-sky-600">27+</span>
-                  <span className="text-xs font-mono uppercase text-slate-500">Engineering Team</span>
-                </div>
-              </div>
-            </div>
-          </article>
+          {/* Mobile / Tablet vertical timeline (< 1024px) */}
+          <div className="lg:hidden relative max-w-xl mx-auto space-y-6">
+            {/* Vertical connector line */}
+            <div className="absolute left-8 top-6 bottom-6 w-1 bg-gradient-to-b from-[#7fe0e6] to-[#00747a] rounded-full z-0" />
 
-          {/* 03 Manufacturing in Ontario */}
-          <article className="py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-2">
-              <span className="font-mono text-2xl font-bold text-sky-600">03</span>
-              <span className="block text-xs uppercase font-mono tracking-widest text-slate-400 mt-1">
-                Facilities
-              </span>
-            </div>
-            <div className="lg:col-span-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h2 className="text-3xl font-bold text-slate-950 uppercase tracking-tight mb-4">
-                  Manufacturing in Ontario
-                </h2>
-                <p className="text-slate-600 text-base leading-relaxed font-normal mb-6">
-                  CNC machining and friction stir welding are operated from the ITS manufacturing facility in Guelph. For high-volume, cost-effective production, ITS also works with trusted manufacturing partners in Asia.
-                </p>
-                <Link
-                  href="/facility"
-                  className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-bold text-sky-600 hover:text-sky-800"
-                >
-                  <span>Tour the 6,000 sq ft Guelph Plant</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-              <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-xs space-y-3 text-xs font-mono text-slate-700">
-                <div className="flex items-center gap-2 text-slate-900 font-bold mb-2">
-                  <MapPin className="w-4 h-4 text-sky-600" />
-                  <span>290 Southgate Drive, Unit #2, Guelph, ON</span>
+            {milestones.map((item) => (
+              <div key={item.year} className="relative flex items-start gap-5 z-10">
+                <div className="shrink-0 w-16 h-16 rounded-full bg-gradient-to-br from-white to-[#d9f3f4] text-[#00585d] font-bold text-sm flex items-center justify-center shadow-[0_0_0_4px_rgba(255,255,255,0.2)]">
+                  {item.year}
                 </div>
-                <p className="text-slate-500 leading-normal">
-                  Strategically situated in Ontario&#39;s advanced manufacturing corridor, offering same-day prototype reviews and resilient North American supply chain security.
-                </p>
+                <div className="flex-1 bg-white text-slate-900 rounded-xl p-5 shadow-xl border-l-4 border-[#00747a]">
+                  <span className="inline-block bg-[#00747a] text-white text-[11px] font-mono font-bold px-2 py-0.5 rounded-full mb-1.5">
+                    {item.step}
+                  </span>
+                  <h3 className="text-base font-bold text-[#00585d] mb-1">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          </article>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Inline CTA */}
-        <SubpageCta
-          eyebrow="Have an application to discuss?"
-          title="Let's engineer the solution."
-          description="Connect directly with our thermal and mechanical engineering team in Guelph, Ontario to explore our in-house manufacturing capabilities."
-          primaryCtaText="Talk to a thermal engineer"
-          primaryCtaHref="/contact"
-        />
+      {/* 3. Workflow at ITS Cooling */}
+      <section className="relative w-full py-20 lg:py-28 px-6 lg:px-12 bg-[#f2f8f8] border-b border-[#d8dedf]">
+        <div className="max-w-[1240px] mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#0d3b3e] mb-3">
+              Workflow at ITS Cooling
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-medium">
+              Customer Inputs → Thermal → Mechanical → Manufacturing
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+            {workflowSteps.map((step, index) => {
+              const Icon = step.icon;
+              return (
+                <div
+                  key={step.step}
+                  className="relative bg-white rounded-2xl p-7 text-center shadow-[0_6px_22px_rgba(0,60,64,0.07)] border border-slate-200/80 hover:shadow-lg transition-shadow flex flex-col items-center"
+                >
+                  {/* Step Icon */}
+                  <div className="w-20 h-20 rounded-full bg-[#00747a] flex items-center justify-center text-white shadow-[0_0_0_7px_#d4eaec] mb-4">
+                    <Icon className="w-9 h-9 stroke-[1.8]" />
+                  </div>
+
+                  <span className="text-xs uppercase font-mono tracking-widest font-bold text-[#00747a] mb-1">
+                    {step.step}
+                  </span>
+
+                  <h3 className="text-xl font-bold text-[#00747a] mb-2">
+                    {step.title}
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {step.description}
+                  </p>
+
+                  {/* Arrow for desktop connecting cards */}
+                  {index < workflowSteps.length - 1 && (
+                    <div className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white border border-[#00747a] text-[#00747a] shadow-xs flex items-center justify-center">
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Have a thermal management project? CTA */}
+      <section className="relative w-full py-16 lg:py-24 px-6 lg:px-12 bg-white text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#0d3b3e] mb-8">
+            Have a thermal management project?
+          </h2>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-[#00747a] text-white font-mono text-xs font-bold uppercase tracking-wider rounded-lg shadow-md hover:bg-[#005d62] transition-colors"
+            >
+              Contact Us
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-transparent border-2 border-[#00747a] text-[#00747a] font-mono text-xs font-bold uppercase tracking-wider rounded-lg hover:bg-[#00747a] hover:text-white transition-colors"
+            >
+              Design Form
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. ERA Logo Section */}
+      <section className="w-full py-10 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-[1240px] mx-auto px-6 text-center flex flex-col items-center justify-center">
+          <div className="p-3 bg-white border border-slate-200 rounded-lg shadow-2xs inline-block">
+            <Image
+              src="/images/certifications/ERA.jpg"
+              alt="ERA Certification Logo"
+              width={160}
+              height={80}
+              className="h-auto w-auto max-h-16 object-contain"
+            />
+          </div>
+        </div>
       </section>
     </main>
   );
