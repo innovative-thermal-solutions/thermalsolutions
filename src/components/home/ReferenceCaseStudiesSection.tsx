@@ -21,7 +21,7 @@ export function ReferenceCaseStudiesSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
-              05 / ENGINEERING IN ACTION
+              04 / ENGINEERING IN ACTION
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight leading-[1.05]">
               Real challenges. <br />
