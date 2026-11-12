@@ -58,7 +58,7 @@ export function ReferenceCustomersSection() {
           {CUSTOMERS.map((customer) => (
             <div
               key={customer.name}
-              className="w-full flex items-center justify-center p-4 transition-all duration-300 filter grayscale contrast-125 opacity-75 hover:grayscale-0 hover:opacity-100"
+              className="w-full flex items-center justify-center p-4 transition-all duration-300 opacity-95 hover:opacity-100 hover:scale-105"
             >
               <Image
                 src={customer.logo}
