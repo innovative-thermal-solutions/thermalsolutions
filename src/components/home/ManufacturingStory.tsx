@@ -76,10 +76,10 @@ export function ManufacturingStory() {
           {/* Link / CTA */}
           <div className="flex items-center gap-4">
             <Link
-              href="/facility"
+              href="/capabilities/friction-stir-welding"
               className="inline-flex items-center gap-2.5 px-6 py-3.5 bg-[#00747a] hover:bg-[#005d62] text-white text-xs font-mono font-bold uppercase tracking-[0.16em] rounded-md transition-all group cursor-pointer shadow-lg shadow-[#00747a]/30"
             >
-              <span>INSIDE ITS MANUFACTURING</span>
+              <span>EXPLORE FSW</span>
               <span className="text-sm font-sans group-hover:translate-x-1 transition-transform">↗</span>
             </Link>
           </div>
