@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import { Navigation } from "@/components/layout/Navigation";
-import { Footer } from "@/components/layout/Footer";
-import { ReferenceInteractiveModals } from "@/components/ui/ReferenceInteractiveModals";
+import { SiteShell } from "@/components/layout/SiteShell";
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
@@ -74,12 +72,8 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#f8faf9] text-[#141f22] selection:bg-[#00747a] selection:text-[#0f1719] min-h-screen flex flex-col relative`}
       >
-        <Navigation />
-        <div className="flex-1 w-full relative z-10">{children}</div>
-        <Footer />
-        <ReferenceInteractiveModals />
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );
 }
-
