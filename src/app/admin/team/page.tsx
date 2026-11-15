@@ -87,8 +87,10 @@ export default function AdminTeamPage() {
       title: 'Senior Thermal Engineer',
       credentials: 'P.Eng, M.Sc.',
       bio: 'Biographical summary...',
-      photo: '/images/team/placeholder.jpg',
-      order: members.length + 1
+      image: '/images/team/placeholder.jpg',
+      order: members.length + 1,
+      status: 'published',
+      updatedAt: new Date().toISOString()
     });
   }
 
@@ -136,8 +138,8 @@ export default function AdminTeamPage() {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-14 h-14 rounded-full bg-neutral-950 border border-neutral-800 overflow-hidden shrink-0">
-                  {member.photo ? (
-                    <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center text-neutral-600">
                       <Users className="w-5 h-5" />
@@ -232,8 +234,8 @@ export default function AdminTeamPage() {
                 <label className="text-xs font-mono uppercase text-neutral-400">Photo URL / Path</label>
                 <input
                   type="text"
-                  value={editingMember.photo}
-                  onChange={e => setEditingMember({ ...editingMember, photo: e.target.value })}
+                  value={editingMember.image}
+                  onChange={e => setEditingMember({ ...editingMember, image: e.target.value })}
                   className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
                 />
               </div>

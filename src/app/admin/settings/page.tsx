@@ -118,13 +118,10 @@ export default function AdminSettingsPage() {
             <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="checkbox"
-                checked={settings.announcementBar?.enabled}
+                checked={settings.announcementVisible}
                 onChange={e => setSettings({
                   ...settings,
-                  announcementBar: {
-                    ...settings.announcementBar,
-                    enabled: e.target.checked
-                  }
+                  announcementVisible: e.target.checked
                 })}
                 className="rounded bg-neutral-950 border-neutral-800 text-[#01747A] focus:ring-0"
               />
@@ -136,13 +133,10 @@ export default function AdminSettingsPage() {
             <label className="text-xs font-mono uppercase text-neutral-400">Announcement Text</label>
             <input
               type="text"
-              value={settings.announcementBar?.text || ''}
+              value={settings.announcementText || ''}
               onChange={e => setSettings({
                 ...settings,
-                announcementBar: {
-                  ...settings.announcementBar,
-                  text: e.target.value
-                }
+                announcementText: e.target.value
               })}
               className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
             />
@@ -161,8 +155,8 @@ export default function AdminSettingsPage() {
               <label className="text-xs font-mono uppercase text-neutral-400">Company Name</label>
               <input
                 type="text"
-                value={settings.siteName}
-                onChange={e => setSettings({ ...settings, siteName: e.target.value })}
+                value={settings.companyName}
+                onChange={e => setSettings({ ...settings, companyName: e.target.value })}
                 className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
               />
             </div>
@@ -171,8 +165,8 @@ export default function AdminSettingsPage() {
               <label className="text-xs font-mono uppercase text-neutral-400">Official Contact Email</label>
               <input
                 type="email"
-                value={settings.contactEmail}
-                onChange={e => setSettings({ ...settings, contactEmail: e.target.value })}
+                value={settings.email}
+                onChange={e => setSettings({ ...settings, email: e.target.value })}
                 className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
               />
             </div>
@@ -181,8 +175,8 @@ export default function AdminSettingsPage() {
               <label className="text-xs font-mono uppercase text-neutral-400">Telephone / Support Line</label>
               <input
                 type="text"
-                value={settings.contactPhone}
-                onChange={e => setSettings({ ...settings, contactPhone: e.target.value })}
+                value={settings.phone}
+                onChange={e => setSettings({ ...settings, phone: e.target.value })}
                 className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
               />
             </div>
@@ -211,29 +205,23 @@ export default function AdminSettingsPage() {
               <label className="text-xs font-mono uppercase text-neutral-400">LinkedIn URL</label>
               <input
                 type="text"
-                value={settings.socialLinks?.linkedin || ''}
+                value={settings.socialLinkedin || ''}
                 onChange={e => setSettings({
                   ...settings,
-                  socialLinks: {
-                    ...settings.socialLinks,
-                    linkedin: e.target.value
-                  }
+                  socialLinkedin: e.target.value
                 })}
                 className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
               />
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-mono uppercase text-neutral-400">YouTube Channel URL</label>
+              <label className="text-xs font-mono uppercase text-neutral-400">Twitter / X URL</label>
               <input
                 type="text"
-                value={settings.socialLinks?.youtube || ''}
+                value={settings.socialTwitter || ''}
                 onChange={e => setSettings({
                   ...settings,
-                  socialLinks: {
-                    ...settings.socialLinks,
-                    youtube: e.target.value
-                  }
+                  socialTwitter: e.target.value
                 })}
                 className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
               />

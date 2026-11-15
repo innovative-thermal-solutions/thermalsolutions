@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { 
-  ShieldCheck, Edit3, Save, RefreshCw, X, Award, CheckCircle2
+  ShieldCheck, Save, RefreshCw, X, Award, CheckCircle2
 } from 'lucide-react';
 import { CMSQualitySection } from '@/lib/cms/types';
 
@@ -118,6 +118,16 @@ export default function AdminQualityPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-1.5 md:col-span-2">
+              <label className="text-xs font-mono uppercase text-neutral-400">Headline</label>
+              <input
+                type="text"
+                value={quality.policyHeadline || ''}
+                onChange={e => setQuality({ ...quality, policyHeadline: e.target.value })}
+                className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
+              />
+            </div>
+
+            <div className="space-y-1.5 md:col-span-2">
               <label className="text-xs font-mono uppercase text-neutral-400">Quality Statement</label>
               <textarea
                 rows={4}
@@ -159,7 +169,7 @@ export default function AdminQualityPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {quality.principles?.map((p, idx) => (
               <div key={idx} className="p-4 bg-neutral-950 border border-neutral-800/80 rounded-lg space-y-3">
-                <div className="text-xs font-mono text-[#01747A]">Pillar {idx + 1}</div>
+                <div className="text-xs font-mono text-[#01747A]">Pillar {p.number}</div>
                 <input
                   type="text"
                   value={p.title}
@@ -185,38 +195,38 @@ export default function AdminQualityPage() {
           </div>
         </div>
 
-        {/* Certifications Section */}
+        {/* Auditor Certificates Section */}
         <div className="bg-neutral-900/60 border border-white/10 rounded-xl p-6 space-y-4">
           <h2 className="text-base font-semibold text-white flex items-center gap-2">
             <Award className="w-4 h-4 text-[#01747A]" />
-            Accreditations & Certificates
+            Auditor Accreditations & Certificates
           </h2>
 
           <div className="space-y-4">
-            {quality.certificates?.map((c, idx) => (
+            {quality.auditorCertificates?.map((c, idx) => (
               <div key={idx} className="p-4 bg-neutral-950 border border-neutral-800/80 rounded-lg grid grid-cols-1 sm:grid-cols-3 gap-3">
                 <div>
-                  <label className="text-[10px] font-mono uppercase text-neutral-500">Standard</label>
+                  <label className="text-[10px] font-mono uppercase text-neutral-500">Auditor Name</label>
                   <input
                     type="text"
                     value={c.name}
                     onChange={e => {
-                      const next = [...quality.certificates];
+                      const next = [...quality.auditorCertificates];
                       next[idx].name = e.target.value;
-                      setQuality({ ...quality, certificates: next });
+                      setQuality({ ...quality, auditorCertificates: next });
                     }}
                     className="w-full px-2.5 py-1.5 bg-neutral-900 border border-neutral-800 rounded text-xs text-white"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] font-mono uppercase text-neutral-500">Issuing Body</label>
+                  <label className="text-[10px] font-mono uppercase text-neutral-500">Certificate / Scope</label>
                   <input
                     type="text"
-                    value={c.issuer}
+                    value={c.certNumber}
                     onChange={e => {
-                      const next = [...quality.certificates];
-                      next[idx].issuer = e.target.value;
-                      setQuality({ ...quality, certificates: next });
+                      const next = [...quality.auditorCertificates];
+                      next[idx].certNumber = e.target.value;
+                      setQuality({ ...quality, auditorCertificates: next });
                     }}
                     className="w-full px-2.5 py-1.5 bg-neutral-900 border border-neutral-800 rounded text-xs text-white"
                   />
@@ -227,9 +237,9 @@ export default function AdminQualityPage() {
                     type="text"
                     value={c.image}
                     onChange={e => {
-                      const next = [...quality.certificates];
+                      const next = [...quality.auditorCertificates];
                       next[idx].image = e.target.value;
-                      setQuality({ ...quality, certificates: next });
+                      setQuality({ ...quality, auditorCertificates: next });
                     }}
                     className="w-full px-2.5 py-1.5 bg-neutral-900 border border-neutral-800 rounded text-xs text-white"
                   />

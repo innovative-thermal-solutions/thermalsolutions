@@ -1,10 +1,9 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { 
-  Package, Plus, Search, Edit3, Trash2, Eye, EyeOff, Check, X,
-  ExternalLink, Image as ImageIcon, Layers, RefreshCw
+  Package, Plus, Search, Edit3, Trash2, Check, X,
+  ExternalLink, Image as ImageIcon, RefreshCw
 } from 'lucide-react';
 import { CMSProduct } from '@/lib/cms/types';
 
@@ -13,7 +12,7 @@ export default function AdminProductsPage() {
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [search, setSearch] = useState('');
-  const [categoryFilter, setCategoryFilter] = useState('All');
+  const [familyFilter, setFamilyFilter] = useState<'all' | 'air' | 'liquid' | 'electrical'>('all');
   const [editingProduct, setEditingProduct] = useState<CMSProduct | null>(null);
   const [notification, setNotification] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
@@ -87,8 +86,8 @@ export default function AdminProductsPage() {
   function handleTogglePublished(id: string) {
     const updated = products.map(p => {
       if (p.id === id) {
-        const next = p.published !== false ? false : true;
-        return { ...p, published: next };
+        const nextStatus = p.status === 'published' ? 'draft' : 'published';
+        return { ...p, status: nextStatus as 'published' | 'draft' };
       }
       return p;
     });
@@ -100,27 +99,27 @@ export default function AdminProductsPage() {
     setEditingProduct({
       id: newId,
       name: 'New Cooling Product',
-      category: 'Air Cooled',
-      shortDescription: 'Product description here...',
+      family: 'air',
+      tag: 'AIR COOLED / CUSTOM',
+      short: 'Product summary description here...',
+      description: 'Full product details...',
       image: '/images/products/air-cooled-heat-sinks.png',
-      galleryImages: [],
       material: 'Aluminum 6063-T5',
-      dimensions: 'Custom specifications',
-      manufacturingProcess: 'CNC Machining / Extrusion',
-      applications: ['Power Electronics', 'Industrial Drives'],
-      specs: { 'Thermal Resistance': '0.12 °C/W' },
-      published: true
+      construction: 'CNC Machining / Extrusion',
+      application: 'Power Electronics and Inverters',
+      considerations: 'Airflow and mounting envelope',
+      order: products.length + 1,
+      status: 'published',
+      updatedAt: new Date().toISOString()
     });
   }
 
-  const categories = ['All', ...Array.from(new Set(products.map(p => p.category).filter(Boolean)))];
-
   const filtered = products.filter(p => {
     const matchesSearch = p.name.toLowerCase().includes(search.toLowerCase()) || 
-                          (p.shortDescription && p.shortDescription.toLowerCase().includes(search.toLowerCase())) ||
-                          (p.category && p.category.toLowerCase().includes(search.toLowerCase()));
-    const matchesCategory = categoryFilter === 'All' || p.category === categoryFilter;
-    return matchesSearch && matchesCategory;
+                          p.short.toLowerCase().includes(search.toLowerCase()) ||
+                          p.material.toLowerCase().includes(search.toLowerCase());
+    const matchesFamily = familyFilter === 'all' || p.family === familyFilter;
+    return matchesSearch && matchesFamily;
   });
 
   return (
@@ -134,7 +133,7 @@ export default function AdminProductsPage() {
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-white">Product & Portfolio Manager</h1>
           <p className="text-sm text-neutral-400 mt-1">
-            Manage all portfolio products, specs, high-resolution CAD images, materials, and categories.
+            Manage all portfolio products, specs, CAD model paths, materials, and cooling categories.
           </p>
         </div>
 
@@ -178,25 +177,25 @@ export default function AdminProductsPage() {
           <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-neutral-500" />
           <input
             type="text"
-            placeholder="Search products by name, category, or description..."
+            placeholder="Search products by name, tag, or material..."
             value={search}
             onChange={e => setSearch(e.target.value)}
             className="w-full pl-9 pr-4 py-2 bg-neutral-900 border border-neutral-800 rounded-lg text-sm text-neutral-200 placeholder-neutral-500 focus:outline-none focus:border-[#01747A]"
           />
         </div>
 
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0">
-          {categories.map(cat => (
+        <div className="flex items-center gap-2">
+          {(['all', 'air', 'liquid', 'electrical'] as const).map(fam => (
             <button
-              key={cat}
-              onClick={() => setCategoryFilter(cat)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition ${
-                categoryFilter === cat
+              key={fam}
+              onClick={() => setFamilyFilter(fam)}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium uppercase tracking-wider transition ${
+                familyFilter === fam
                   ? 'bg-[#01747A] text-white'
                   : 'bg-neutral-900 text-neutral-400 hover:text-white border border-neutral-800'
               }`}
             >
-              {cat}
+              {fam}
             </button>
           ))}
         </div>
@@ -219,8 +218,8 @@ export default function AdminProductsPage() {
               <thead>
                 <tr className="bg-neutral-950/60 border-b border-white/10 text-neutral-400 uppercase font-mono tracking-wider">
                   <th className="py-3 px-4">Product</th>
-                  <th className="py-3 px-4">Category</th>
-                  <th className="py-3 px-4">Material / Specs</th>
+                  <th className="py-3 px-4">Family</th>
+                  <th className="py-3 px-4">Material / Process</th>
                   <th className="py-3 px-4">Status</th>
                   <th className="py-3 px-4 text-right">Actions</th>
                 </tr>
@@ -240,30 +239,30 @@ export default function AdminProductsPage() {
                         <div>
                           <div className="font-semibold text-white text-sm">{product.name}</div>
                           <div className="text-neutral-400 text-xs line-clamp-1 max-w-sm mt-0.5">
-                            {product.shortDescription}
+                            {product.short}
                           </div>
                         </div>
                       </div>
                     </td>
                     <td className="py-3 px-4">
-                      <span className="inline-block px-2 py-0.5 rounded bg-neutral-800 text-neutral-300 font-medium">
-                        {product.category}
+                      <span className="inline-block px-2 py-0.5 rounded bg-neutral-800 text-neutral-300 font-mono uppercase text-[11px]">
+                        {product.family}
                       </span>
                     </td>
                     <td className="py-3 px-4 text-neutral-400">
                       <div>{product.material || 'Standard Alloy'}</div>
-                      <div className="text-[11px] text-neutral-500">{product.dimensions || 'Custom specs'}</div>
+                      <div className="text-[11px] text-neutral-500">{product.construction}</div>
                     </td>
                     <td className="py-3 px-4">
                       <button
                         onClick={() => handleTogglePublished(product.id)}
                         className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[11px] font-medium transition ${
-                          product.published !== false
+                          product.status === 'published'
                             ? 'bg-emerald-950/60 text-emerald-400 border border-emerald-800/40'
                             : 'bg-neutral-800 text-neutral-400 border border-neutral-700'
                         }`}
                       >
-                        {product.published !== false ? (
+                        {product.status === 'published' ? (
                           <>
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                             Published
@@ -336,14 +335,29 @@ export default function AdminProductsPage() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="text-xs font-mono uppercase text-neutral-400">Category</label>
+                  <label className="text-xs font-mono uppercase text-neutral-400">Product Family</label>
+                  <select
+                    value={editingProduct.family}
+                    onChange={e => setEditingProduct({ 
+                      ...editingProduct, 
+                      family: e.target.value as 'air' | 'liquid' | 'electrical' 
+                    })}
+                    className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
+                  >
+                    <option value="air">Air Cooled</option>
+                    <option value="liquid">Liquid Cold Plates</option>
+                    <option value="electrical">Electrical / Busbars</option>
+                  </select>
+                </div>
+
+                <div className="space-y-1.5">
+                  <label className="text-xs font-mono uppercase text-neutral-400">Category Tag</label>
                   <input
                     type="text"
-                    required
-                    value={editingProduct.category}
-                    onChange={e => setEditingProduct({ ...editingProduct, category: e.target.value })}
+                    value={editingProduct.tag}
+                    onChange={e => setEditingProduct({ ...editingProduct, tag: e.target.value })}
                     className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
-                    placeholder="e.g. Air Cooled, Liquid Cold Plates"
+                    placeholder="e.g. AIR COOLED / EXTRUDED"
                   />
                 </div>
 
@@ -358,12 +372,33 @@ export default function AdminProductsPage() {
                   />
                 </div>
 
+                <div className="space-y-1.5">
+                  <label className="text-xs font-mono uppercase text-neutral-400">Construction / Process</label>
+                  <input
+                    type="text"
+                    value={editingProduct.construction || ''}
+                    onChange={e => setEditingProduct({ ...editingProduct, construction: e.target.value })}
+                    className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
+                    placeholder="e.g. Extruded profile with CNC finishing"
+                  />
+                </div>
+
                 <div className="space-y-1.5 md:col-span-2">
-                  <label className="text-xs font-mono uppercase text-neutral-400">Short Description</label>
+                  <label className="text-xs font-mono uppercase text-neutral-400">Short Summary</label>
+                  <input
+                    type="text"
+                    value={editingProduct.short}
+                    onChange={e => setEditingProduct({ ...editingProduct, short: e.target.value })}
+                    className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
+                  />
+                </div>
+
+                <div className="space-y-1.5 md:col-span-2">
+                  <label className="text-xs font-mono uppercase text-neutral-400">Full Description</label>
                   <textarea
-                    rows={2}
-                    value={editingProduct.shortDescription || ''}
-                    onChange={e => setEditingProduct({ ...editingProduct, shortDescription: e.target.value })}
+                    rows={3}
+                    value={editingProduct.description || ''}
+                    onChange={e => setEditingProduct({ ...editingProduct, description: e.target.value })}
                     className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
                   />
                 </div>
@@ -384,44 +419,16 @@ export default function AdminProductsPage() {
                       </div>
                     )}
                   </div>
-                  <p className="text-[11px] text-neutral-500">
-                    Tip: You can upload new images in the Media Library (/admin/media) and paste the path here.
-                  </p>
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-mono uppercase text-neutral-400">Dimensions</label>
-                  <input
-                    type="text"
-                    value={editingProduct.dimensions || ''}
-                    onChange={e => setEditingProduct({ ...editingProduct, dimensions: e.target.value })}
-                    className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
-                    placeholder="e.g. Custom up to 600mm x 400mm"
-                  />
-                </div>
-
-                <div className="space-y-1.5">
-                  <label className="text-xs font-mono uppercase text-neutral-400">Manufacturing Process</label>
-                  <input
-                    type="text"
-                    value={editingProduct.manufacturingProcess || ''}
-                    onChange={e => setEditingProduct({ ...editingProduct, manufacturingProcess: e.target.value })}
-                    className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
-                    placeholder="e.g. Friction Stir Welding & 5-Axis CNC"
-                  />
                 </div>
 
                 <div className="space-y-1.5 md:col-span-2">
-                  <label className="text-xs font-mono uppercase text-neutral-400">Applications (comma-separated)</label>
+                  <label className="text-xs font-mono uppercase text-neutral-400">Application</label>
                   <input
                     type="text"
-                    value={(editingProduct.applications || []).join(', ')}
-                    onChange={e => setEditingProduct({ 
-                      ...editingProduct, 
-                      applications: e.target.value.split(',').map(s => s.trim()).filter(Boolean)
-                    })}
+                    value={editingProduct.application || ''}
+                    onChange={e => setEditingProduct({ ...editingProduct, application: e.target.value })}
                     className="w-full px-3 py-2 bg-neutral-950 border border-neutral-800 rounded-lg text-sm text-white focus:outline-none focus:border-[#01747A]"
-                    placeholder="e.g. EV Inverters, Traction Motors, Grid Energy Storage"
+                    placeholder="e.g. Power electronics and industrial equipment"
                   />
                 </div>
               </div>
@@ -430,8 +437,11 @@ export default function AdminProductsPage() {
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
-                    checked={editingProduct.published !== false}
-                    onChange={e => setEditingProduct({ ...editingProduct, published: e.target.checked })}
+                    checked={editingProduct.status === 'published'}
+                    onChange={e => setEditingProduct({ 
+                      ...editingProduct, 
+                      status: e.target.checked ? 'published' : 'draft' 
+                    })}
                     className="rounded bg-neutral-950 border-neutral-800 text-[#01747A] focus:ring-0"
                   />
                   <span className="text-xs text-neutral-300 font-medium">Published on live website</span>

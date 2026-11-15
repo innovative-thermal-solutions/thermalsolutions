@@ -156,3 +156,4 @@ export interface CMSPageSection {
   status: "published" | "draft";
   updatedAt: string;
 }
+

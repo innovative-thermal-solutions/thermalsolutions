@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { 
-  Cpu, Edit3, Check, X, RefreshCw, Layers, Image as ImageIcon
+  Cpu, Edit3, RefreshCw, X, Image as ImageIcon
 } from 'lucide-react';
 import { CMSCapability } from '@/lib/cms/types';
 
@@ -108,7 +108,7 @@ export default function AdminCapabilitiesPage() {
             <div>
               <div className="flex items-start justify-between gap-2 mb-3">
                 <span className="text-xs font-mono px-2 py-0.5 rounded bg-neutral-800 text-[#01747A] font-semibold">
-                  Chapter {cap.chapter}
+                  Chapter {cap.num}
                 </span>
                 <button
                   onClick={() => setEditingItem({ ...cap })}
@@ -165,7 +165,7 @@ export default function AdminCapabilitiesPage() {
             <form onSubmit={handleSave} className="p-6 space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-white/10">
                 <h3 className="text-base font-bold text-white">
-                  Edit Chapter {editingItem.chapter}: {editingItem.title}
+                  Edit Chapter {editingItem.num}: {editingItem.title}
                 </h3>
                 <button
                   type="button"

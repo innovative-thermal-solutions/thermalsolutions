@@ -108,7 +108,7 @@ export default function AdminMediaPage() {
             <div key={asset.id} className="bg-neutral-900/60 border border-white/10 rounded-xl overflow-hidden group hover:border-[#01747A]/50 transition flex flex-col justify-between">
               <div className="h-32 bg-neutral-950 flex items-center justify-center overflow-hidden relative">
                 {asset.mimeType?.startsWith('image/') ? (
-                  <img src={asset.url} alt={asset.fileName} className="w-full h-full object-cover" />
+                  <img src={asset.url} alt={asset.filename} className="w-full h-full object-cover" />
                 ) : (
                   <FileText className="w-10 h-10 text-neutral-500" />
                 )}
@@ -125,7 +125,7 @@ export default function AdminMediaPage() {
               </div>
 
               <div className="p-2.5">
-                <div className="text-xs text-white truncate font-medium">{asset.fileName}</div>
+                <div className="text-xs text-white truncate font-medium">{asset.filename}</div>
                 <div className="text-[10px] text-neutral-500 font-mono mt-0.5">
                   {(asset.size / 1024).toFixed(1)} KB
                 </div>

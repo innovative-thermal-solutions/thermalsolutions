@@ -108,3 +108,4 @@ export function getCMSMediaAssets(): MediaAsset[] {
 export function saveCMSMediaAssets(assets: MediaAsset[]): boolean {
   return writeJsonFile("media_assets.json", assets);
 }
+
