@@ -1,24 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   LayoutDashboard,
-  FileText,
   Boxes,
   Image as ImageIcon,
   FolderKanban,
   Award,
   Users,
   Settings,
-  HelpCircle,
-  Phone,
-  Compass,
-  Building,
-  CheckCircle2,
   ExternalLink,
   LogOut,
-  Layers
+  Layers,
+  FileCheck
 } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -27,6 +22,7 @@ const NAV_ITEMS = [
   { name: "Product Portfolio", href: "/admin/portfolio", icon: FolderKanban },
   { name: "Capabilities (8 Chapters)", href: "/admin/capabilities", icon: Layers },
   { name: "Quality & Certifications", href: "/admin/quality", icon: Award },
+  { name: "Case Studies CMS", href: "/admin/case-studies", icon: FileCheck },
   { name: "ITS Engineering Team", href: "/admin/team", icon: Users },
   { name: "Media Library", href: "/admin/media", icon: ImageIcon },
   { name: "Global Site Settings", href: "/admin/settings", icon: Settings },
@@ -34,6 +30,21 @@ const NAV_ITEMS = [
 
 export function AdminSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  async function handleLogout() {
+    try {
+      await fetch('/api/admin/auth', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'logout' })
+      });
+      router.push('/admin/login');
+      router.refresh();
+    } catch {
+      router.push('/admin/login');
+    }
+  }
 
   return (
     <aside className="w-64 bg-[#141f22] border-r border-white/10 text-white flex flex-col justify-between shrink-0 min-h-screen">
@@ -89,12 +100,17 @@ export function AdminSidebar() {
           <span className="text-[10px] text-teal-300 bg-teal-900/40 px-1.5 py-0.5 rounded">v1.0</span>
         </a>
 
-        <div className="flex items-center justify-between px-3 py-2 text-[11px] font-mono text-slate-400">
-          <span>Administrator</span>
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Connected" />
-        </div>
+        <button
+          onClick={handleLogout}
+          className="w-full flex items-center justify-between px-3 py-2 rounded-lg bg-rose-950/30 hover:bg-rose-950/60 border border-rose-900/40 text-rose-300 text-xs font-mono transition-colors"
+        >
+          <span className="flex items-center gap-2">
+            <LogOut className="w-3.5 h-3.5" />
+            Sign Out
+          </span>
+          <span className="w-2 h-2 rounded-full bg-emerald-400" title="Active Session" />
+        </button>
       </div>
     </aside>
   );
 }
-

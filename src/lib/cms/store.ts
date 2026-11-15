@@ -7,11 +7,13 @@ import {
   CMSQualitySection,
   CMSSiteSettings,
   MediaAsset,
+  CMSCaseStudy,
+  AdminUser,
 } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data", "cms");
 
-function readJsonFile<T>(filename: string, fallback: T): T {
+export function readJsonFile<T>(filename: string, fallback: T): T {
   try {
     const filePath = path.join(DATA_DIR, filename);
     if (!fs.existsSync(filePath)) {
@@ -25,7 +27,7 @@ function readJsonFile<T>(filename: string, fallback: T): T {
   }
 }
 
-function writeJsonFile<T>(filename: string, data: T): boolean {
+export function writeJsonFile<T>(filename: string, data: T): boolean {
   try {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -37,6 +39,15 @@ function writeJsonFile<T>(filename: string, data: T): boolean {
     console.error(`Error writing ${filename}:`, err);
     return false;
   }
+}
+
+// Generic helpers
+export async function readCMSData<T>(filename: string): Promise<T | null> {
+  return readJsonFile<T | null>(filename, null);
+}
+
+export async function writeCMSData<T>(filename: string, data: T): Promise<boolean> {
+  return writeJsonFile(filename, data);
 }
 
 // Products
@@ -64,6 +75,15 @@ export function getCMSTeam(): CMSTeamMember[] {
 
 export function saveCMSTeam(team: CMSTeamMember[]): boolean {
   return writeJsonFile("team.json", team);
+}
+
+// Case Studies
+export function getCMSCaseStudies(): CMSCaseStudy[] {
+  return readJsonFile<CMSCaseStudy[]>("case_studies.json", []);
+}
+
+export function saveCMSCaseStudies(studies: CMSCaseStudy[]): boolean {
+  return writeJsonFile("case_studies.json", studies);
 }
 
 // Site Settings
@@ -109,3 +129,11 @@ export function saveCMSMediaAssets(assets: MediaAsset[]): boolean {
   return writeJsonFile("media_assets.json", assets);
 }
 
+// Users
+export function getCMSUsers(): AdminUser[] {
+  return readJsonFile<AdminUser[]>("users.json", []);
+}
+
+export function saveCMSUsers(users: AdminUser[]): boolean {
+  return writeJsonFile("users.json", users);
+}

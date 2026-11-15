@@ -1,0 +1,10 @@
+[
+  {
+    "id": "usr-admin-1",
+    "email": "admin@itscooling.com",
+    "name": "ITS Administrator",
+    "role": "super_admin",
+    "passwordHash": "bc5687c778f70756b9f85b05779b2377:3f5f6baa8b5016f7b71e50831189c83f887ebfaf0662a13062f39768cffd90537700ced898eb660706481eba4d4ec3c8c291e5796f41a7751c30df3ddb86cf3b",
+    "createdAt": "2026-11-15T12:00:00Z"
+  }
+]

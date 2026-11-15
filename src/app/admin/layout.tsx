@@ -1,18 +1,32 @@
-import { AdminSidebar } from "@/components/admin/AdminSidebar";
+'use client';
 
-export const metadata = {
-  title: "Admin Dashboard | Innovative Thermal Solutions CMS",
-  description: "Centralized CMS for managing products, capabilities, team, media, and site content.",
-};
+import React from 'react';
+import { usePathname } from 'next/navigation';
+import { AdminSidebar } from '@/components/admin/AdminSidebar';
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const pathname = usePathname();
+  const isLoginPage = pathname === '/admin/login';
+
+  if (isLoginPage) {
+    return <>{children}</>;
+  }
+
   return (
-    <div className="flex min-h-screen bg-[#f8faf9] text-[#141f22]">
+    <div className="min-h-screen bg-[#0a0f11] text-neutral-100 flex">
+      {/* Sidebar Navigation */}
       <AdminSidebar />
-      <div className="flex-1 flex flex-col min-w-0 overflow-auto">
-        {children}
-      </div>
+
+      {/* Main Content Area */}
+      <main className="flex-1 min-w-0 p-8 overflow-y-auto max-h-screen">
+        <div className="max-w-6xl mx-auto">
+          {children}
+        </div>
+      </main>
     </div>
   );
 }
-
