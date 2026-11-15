@@ -1,0 +1,52 @@
+{
+  "policyHeadline": "ITS Quality Policy",
+  "subheadline": "Thermal Engineering Firm in Guelph, Ontario",
+  "policyStatement": "ITS is committed to provide a high degree of value in products and services through dedication to quality, continual improvement and risk based thinking. To achieve these objectives, it is our policy to:",
+  "policyDirectives": [
+    "Understand customer needs and accordingly design products to meet or exceed customer\u2019s requirements for heat sinks and thermal management products for electronics;",
+    "Extend excellent customer support and service at all times; and",
+    "Seek opportunities for development and improvement of products, manufacturing methods and resources."
+  ],
+  "ceoName": "Ahmed Zaghlol",
+  "ceoTitle": "CEO \u00b7 Innovative Thermal Solutions Inc",
+  "principles": [
+    {
+      "number": "01",
+      "title": "Customer Focus",
+      "description": "Understanding customer requirements and delivering solutions that meet or exceed expectations."
+    },
+    {
+      "number": "02",
+      "title": "Continuous Improvement",
+      "description": "Improving our products, manufacturing processes, and operational efficiency."
+    },
+    {
+      "number": "03",
+      "title": "Precision Manufacturing",
+      "description": "Producing high-quality thermal management solutions through controlled manufacturing processes."
+    },
+    {
+      "number": "04",
+      "title": "Engineering Excellence",
+      "description": "Designing innovative thermal solutions for demanding applications across multiple industries."
+    }
+  ],
+  "isoRegistrationNumber": "0181103",
+  "isoScope": "Design, manufacture and delivery of air cooled and liquid cooled heat sinks, and heat pipes, for the electronics industry.",
+  "intertekCertImage": "/images/quality/iso-9001-cert-1.png",
+  "auditorCertificates": [
+    {
+      "name": "Inas Ibrahim Hassan",
+      "title": "Certificate of Competency \u00b7 ISO 9001:2015 Internal Auditor (TPECS)",
+      "certNumber": "30008633-288174",
+      "image": "/images/quality/iso-auditor-badge.png"
+    },
+    {
+      "name": "Bijin Thankachan",
+      "title": "Certificate of Competency \u00b7 ISO 9001:2015 Internal Auditor (TPECS)",
+      "certNumber": "30538528-315237",
+      "image": "/images/quality/bijin-thankachan-auditor-cert.png"
+    }
+  ],
+  "updatedAt": "2026-11-15T12:00:00Z"
+}

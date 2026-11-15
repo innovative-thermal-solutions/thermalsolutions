@@ -1,0 +1,154 @@
+[
+  {
+    "id": "thermal-simulation",
+    "num": "01",
+    "category": "Engineering",
+    "title": "Thermal Simulation",
+    "subtitle": "Understand the thermal challenge before committing to hardware.",
+    "description": "In-house thermal analysis supports evaluation of heat transfer, temperature distribution, coolant strategy and system behaviour throughout development.",
+    "tags": [
+      "Heat-transfer evaluation",
+      "Flow-path development",
+      "Design comparison"
+    ],
+    "image": "/images/capabilities/thermal-simulation.webp",
+    "alt": "Thermal simulation mesh and CFD velocity distribution",
+    "theme": "dark",
+    "order": 1,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "in-house-design",
+    "num": "02",
+    "category": "Engineering",
+    "title": "In-House Design",
+    "subtitle": "Design that understands how it will be built.",
+    "description": "Engineering and design are connected directly with manufacturing so thermal performance, geometry, manufacturability and assembly can be considered together.",
+    "tags": [
+      "Thermal architecture",
+      "Mechanical design",
+      "Design for manufacturing"
+    ],
+    "image": "/images/capabilities/in-house-design.webp",
+    "alt": "In-house CAD engineering and thermal design workstation",
+    "theme": "light",
+    "order": 2,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "friction-stir-welding",
+    "num": "03",
+    "category": "Manufacturing",
+    "title": "Friction Stir Welding",
+    "subtitle": "High-integrity joining without melting the base material.",
+    "description": "In-house friction stir welding enables solid-state joining for aluminium and copper liquid-cooling assemblies with complex internal channels.",
+    "tags": [
+      "Solid-state joining",
+      "Integrated cold-plate production",
+      "Controlled weld path"
+    ],
+    "image": "/images/capabilities/fsw.webp",
+    "alt": "FSW spindle joining liquid cold plate channel plates",
+    "theme": "dark",
+    "order": 3,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "five-axis-cnc",
+    "num": "04",
+    "category": "Manufacturing",
+    "title": "5-Axis CNC Milling",
+    "subtitle": "Complex geometry. Controlled precision.",
+    "description": "In-house machining supports complex aluminium components and thermal-management hardware from prototype development through production.",
+    "tags": [
+      "Complex machining",
+      "Cooling channels",
+      "Prototype to production"
+    ],
+    "image": "/images/capabilities/five-axis.webp",
+    "alt": "5-Axis CNC milling machine fabricating cooling fluid channels",
+    "theme": "light",
+    "order": 4,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "embedded-heat-sink",
+    "num": "05",
+    "category": "Manufacturing",
+    "title": "Embedded Heat-Sink Manufacturing",
+    "subtitle": "Controlled force. Integrated assemblies.",
+    "description": "An in-house hydraulic press supports controlled manufacturing steps for embedded heat-sink and thermal assemblies, keeping critical alignment and assembly close to the engineering team.",
+    "tags": [
+      "Controlled assembly",
+      "Component alignment",
+      "Repeatable process"
+    ],
+    "image": "/images/capabilities/hydraulic-press.webp",
+    "alt": "Hydraulic press integrating heat pipes into heat sink base",
+    "theme": "dark",
+    "order": 5,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "quality-team",
+    "num": "06",
+    "category": "Quality",
+    "title": "In-House Quality Team",
+    "subtitle": "Quality is part of the process.",
+    "description": "A dedicated in-house quality team supports inspection and verification throughout manufacturing against defined engineering and customer requirements.",
+    "tags": [
+      "Inspection",
+      "Verification",
+      "Traceability"
+    ],
+    "image": "/images/capabilities/quality.webp",
+    "alt": "Quality engineer performing coordinate measurement on cold plate",
+    "theme": "light",
+    "order": 6,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "iso-quality",
+    "num": "07",
+    "category": "Quality",
+    "title": "ISO 9001:2015 Certified",
+    "subtitle": "A structured system for controlled manufacturing.",
+    "description": "ITS operates under an ISO 9001:2015 certified Quality Management System supporting consistent quality, customer focus and continuous improvement.",
+    "tags": [
+      "Quality management",
+      "Process control",
+      "Continuous improvement"
+    ],
+    "image": "/images/capabilities/iso-quality.webp",
+    "alt": "ISO 9001:2015 accredited registration document",
+    "theme": "dark",
+    "order": 7,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "north-american-manufacturing",
+    "num": "08",
+    "category": "Location",
+    "title": "North American Manufacturing",
+    "subtitle": "Engineered here. Manufactured here. Guelph, Ontario.",
+    "description": "Engineering and manufacturing in Ontario support closer technical collaboration, production visibility and responsive execution for North American programs.",
+    "tags": [
+      "Engineering proximity",
+      "Manufacturing visibility",
+      "Supply-chain responsiveness"
+    ],
+    "image": "/images/capabilities/guelph-manufacturing.webp",
+    "alt": "Guelph Ontario manufacturing facility exterior and production line",
+    "theme": "light",
+    "order": 8,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  }
+]

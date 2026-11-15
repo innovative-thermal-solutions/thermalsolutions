@@ -1,0 +1,18 @@
+{
+  "companyName": "Innovative Thermal Solutions Inc.",
+  "tagline": "High-Performance Thermal Management & Friction Stir Welding",
+  "phone": "+1 (519) 763-4454",
+  "email": "engineering@itscooling.com",
+  "address": "290 Southgate Drive, Unit 2",
+  "city": "Guelph",
+  "postalCode": "N1G 4P5",
+  "country": "Canada",
+  "announcementText": "ISO 9001:2015 CERTIFIED \u00b7 GUELPH, ONTARIO, CANADA \u00b7 100% CUSTOM \u00b7 ZERO SHELF INVENTORY",
+  "announcementVisible": true,
+  "topBarBadge": "ISO 9001:2015 CERTIFIED",
+  "fswHeroHeadline": "IN-HOUSE FRICTION STIR WELDING",
+  "fswHeroButtonText": "EXPLORE FSW",
+  "fswHeroButtonHref": "/capabilities/friction-stir-welding",
+  "socialLinkedin": "https://www.linkedin.com/company/innovative-thermal-solutions-inc/",
+  "updatedAt": "2026-11-15T12:00:00Z"
+}

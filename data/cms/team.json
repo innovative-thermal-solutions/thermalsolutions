@@ -1,0 +1,70 @@
+[
+  {
+    "id": "ahmed-zaghlol",
+    "name": "Ahmed Zaghlol, PHD, PEng",
+    "title": "Founder and CEO",
+    "credentials": "Ph.D., P.Eng., PEO, ASME, IEEE Fellow",
+    "bio": "Dr. Zaghlol has over 22 years of leadership experience in thermal engineering, advanced metallurgy, and precision manufacturing across aerospace, clean energy, and power electronics.",
+    "quote": "We believe that exceptional thermal engineering begins by working directly as an extension of our clients' design teams\u2014from initial CFD modeling through prototype milling, FSW joining, and leak testing.",
+    "image": "/images/team/ahmed-zaghlol.jpg",
+    "email": "ahmed@itscooling.com",
+    "featured": true,
+    "order": 1,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "cliff-weasner",
+    "name": "Cliff Weasner",
+    "title": "Director of Engineering",
+    "image": "/images/team/cliff-weasner.jpg",
+    "order": 2,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "abdu-zaghlol",
+    "name": "Abdu Zaghlol",
+    "title": "Director of Sales",
+    "image": "/images/team/abdu-zaghlol.jpg",
+    "order": 3,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "nada-zaghlol",
+    "name": "Nada Zaghlol",
+    "title": "Supply Chain Manager",
+    "image": "/images/team/nada-zaghlol.jpg",
+    "order": 4,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "sam-hemming",
+    "name": "Sam Hemming, M.A.Sc.",
+    "title": "Lead Mechanical Engineer",
+    "image": "/images/team/sam-hemming.jpg",
+    "order": 5,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "matt-galvez",
+    "name": "Matt Galvez, B.A.Sc., EIT",
+    "title": "Mechanical Engineer",
+    "image": "/images/team/matt-galvez.jpg",
+    "order": 6,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "david-dawson",
+    "name": "David Dawson, M.A.",
+    "title": "Thermal Engineer",
+    "image": "/images/team/david-dawson.jpg",
+    "order": 7,
+    "status": "published",
+    "updatedAt": "2026-11-15T12:00:00Z"
+  }
+]
