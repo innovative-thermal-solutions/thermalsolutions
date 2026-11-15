@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useState, Suspense } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { Lock, Mail, Eye, EyeOff, ShieldCheck, ArrowRight, RefreshCw, AlertCircle } from 'lucide-react';
 
 function LoginForm() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const redirect = searchParams.get('redirect') || '/admin';
 
@@ -24,19 +23,20 @@ function LoginForm() {
       const res = await fetch('/api/admin/auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'login', email, password })
+        body: JSON.stringify({ action: 'login', email, password }),
+        credentials: 'include'
       });
       const data = await res.json();
 
       if (res.ok && data.success) {
-        router.push(redirect);
-        router.refresh();
+        // Hard navigation ensures browser cookie is cleanly attached to the HTTP request for /admin
+        window.location.href = redirect;
       } else {
         setError(data.error || 'Authentication failed. Please verify credentials.');
+        setLoading(false);
       }
     } catch {
       setError('Network communication failure. Please check connection.');
-    } finally {
       setLoading(false);
     }
   }
@@ -110,7 +110,10 @@ function LoginForm() {
             className="w-full mt-2 py-2.5 px-4 bg-[#01747A] hover:bg-[#015f64] text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-teal-900/30 transition flex items-center justify-center gap-2 disabled:opacity-50"
           >
             {loading ? (
-              <RefreshCw className="w-4 h-4 animate-spin" />
+              <>
+                <RefreshCw className="w-4 h-4 animate-spin" />
+                <span>Redirecting...</span>
+              </>
             ) : (
               <>
                 <span>Authenticate & Enter</span>
