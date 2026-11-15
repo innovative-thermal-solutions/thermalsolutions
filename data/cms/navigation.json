@@ -1,0 +1,60 @@
+[
+  {
+    "id": "nav-1",
+    "label": "Products",
+    "href": "/products",
+    "order": 1,
+    "children": [
+      { "label": "Liquid Cold Plates", "href": "/products/liquid-cold-plates" },
+      { "label": "Air-Cooled Heat Sinks", "href": "/products/air-cooled-heat-sinks" },
+      { "label": "Heat Pipes", "href": "/products/heat-pipes" },
+      { "label": "Busbars", "href": "/products/busbar" }
+    ]
+  },
+  {
+    "id": "nav-2",
+    "label": "Portfolio",
+    "href": "/portfolio",
+    "order": 2
+  },
+  {
+    "id": "nav-3",
+    "label": "Capabilities",
+    "href": "/capabilities",
+    "order": 3
+  },
+  {
+    "id": "nav-4",
+    "label": "Technologies",
+    "href": "/technologies",
+    "order": 4,
+    "children": [
+      { "label": "Friction Stir Welding", "href": "/capabilities/friction-stir-welding" },
+      { "label": "Thermal Engineering & CFD", "href": "/technologies/thermal-engineering" },
+      { "label": "Liquid Cooling", "href": "/technologies/liquid-cooling" },
+      { "label": "Air Cooling", "href": "/technologies/air-cooling" }
+    ]
+  },
+  {
+    "id": "nav-5",
+    "label": "Quality",
+    "href": "/quality",
+    "order": 5
+  },
+  {
+    "id": "nav-6",
+    "label": "Case Studies",
+    "href": "/case-studies",
+    "order": 6
+  },
+  {
+    "id": "nav-7",
+    "label": "About",
+    "href": "/about",
+    "order": 7,
+    "children": [
+      { "label": "Our Engineering Team", "href": "/about/our-design-manufacturing-experts-engineers-team" },
+      { "label": "Guelph Facility", "href": "/facility" }
+    ]
+  }
+]

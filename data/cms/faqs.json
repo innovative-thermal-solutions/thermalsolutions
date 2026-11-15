@@ -1,0 +1,34 @@
+[
+  {
+    "id": "faq-1",
+    "question": "What sets Innovative Thermal Solutions apart from standard heat sink distributors?",
+    "answer": "ITS provides 100% turnkey custom-engineered thermal solutions under one roof in Guelph, Ontario—from CFD thermal simulation and DFM consulting to 5-axis CNC machining, in-house friction stir welding (FSW), and ISO 9001:2015 leak verification. We hold zero shelf inventory; every plate and sink is custom engineered around your exact boundary conditions.",
+    "category": "General",
+    "order": 1,
+    "status": "published"
+  },
+  {
+    "id": "faq-2",
+    "question": "What is Friction Stir Welding (FSW) and why is it preferred for liquid cold plates?",
+    "answer": "FSW is a solid-state joining process that plastically deforms and joins aluminum alloys below their melting point without filler wire or flux. This produces a zero-porosity, hermetically sealed joint with 100% parent-metal thermal conductivity, eliminating coolant leak risks under high pressure and cyclic vibration.",
+    "category": "FSW & Manufacturing",
+    "order": 2,
+    "status": "published"
+  },
+  {
+    "id": "faq-3",
+    "question": "What certifications and quality standards does ITS hold?",
+    "answer": "ITS operates under a certified ISO 9001:2015 Quality Management System registered by Intertek. We perform 100% hydrostatic pressure and helium mass-spectrometer leak testing. We are also actively in progress for AS9100 aerospace certification and Canadian Controlled Goods Program (CGP) / ITAR defense compliance.",
+    "category": "Quality & Compliance",
+    "order": 3,
+    "status": "published"
+  },
+  {
+    "id": "faq-4",
+    "question": "Can you design custom thermal architectures starting from component electrical schematics?",
+    "answer": "Yes. Our engineering team utilizes advanced simulation tools including EATON SmartCFD (Qfin) and SolidWorks to evaluate localized heat flux, flow rate, pressure drop, and junction temperature delta (ΔT), delivering optimized 3D CAD models and prototype parts with rapid turnaround times.",
+    "category": "Engineering",
+    "order": 4,
+    "status": "published"
+  }
+]

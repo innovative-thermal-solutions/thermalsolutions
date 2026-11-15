@@ -1,0 +1,34 @@
+[
+  {
+    "id": "logo-1",
+    "clientName": "Clean Energy Grid Partner",
+    "logoUrl": "/images/logo/partner-clean-energy.svg",
+    "industry": "Clean Energy",
+    "order": 1,
+    "active": true
+  },
+  {
+    "id": "logo-2",
+    "clientName": "Commercial EV Bus Systems",
+    "logoUrl": "/images/logo/partner-ev-systems.svg",
+    "industry": "EV & Battery",
+    "order": 2,
+    "active": true
+  },
+  {
+    "id": "logo-3",
+    "clientName": "Aerospace Avionics OEM",
+    "logoUrl": "/images/logo/partner-aerospace.svg",
+    "industry": "Aerospace",
+    "order": 3,
+    "active": true
+  },
+  {
+    "id": "logo-4",
+    "clientName": "RF Telecommunications Group",
+    "logoUrl": "/images/logo/partner-telecom.svg",
+    "industry": "Telecommunications",
+    "order": 4,
+    "active": true
+  }
+]

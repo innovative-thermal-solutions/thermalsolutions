@@ -13,7 +13,10 @@ import {
   ExternalLink,
   LogOut,
   Layers,
-  FileCheck
+  FileCheck,
+  Factory,
+  HelpCircle,
+  Compass
 } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -23,7 +26,11 @@ const NAV_ITEMS = [
   { name: "Capabilities (8 Chapters)", href: "/admin/capabilities", icon: Layers },
   { name: "Quality & Certifications", href: "/admin/quality", icon: Award },
   { name: "Case Studies CMS", href: "/admin/case-studies", icon: FileCheck },
+  { name: "Industries Manager", href: "/admin/industries", icon: Factory },
   { name: "ITS Engineering Team", href: "/admin/team", icon: Users },
+  { name: "FAQ Manager", href: "/admin/faqs", icon: HelpCircle },
+  { name: "Customer Logos", href: "/admin/logos", icon: Award },
+  { name: "Navigation Manager", href: "/admin/navigation", icon: Compass },
   { name: "Media Library", href: "/admin/media", icon: ImageIcon },
   { name: "Global Site Settings", href: "/admin/settings", icon: Settings },
 ];
@@ -39,10 +46,9 @@ export function AdminSidebar() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'logout' })
       });
-      router.push('/admin/login');
-      router.refresh();
+      window.location.href = '/admin/login';
     } catch {
-      router.push('/admin/login');
+      window.location.href = '/admin/login';
     }
   }
 
@@ -71,7 +77,7 @@ export function AdminSidebar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-xs font-mono tracking-wider transition-all ${
+                className={`flex items-center gap-3 px-3.5 py-2 rounded-lg text-xs font-mono tracking-wider transition-all ${
                   isActive
                     ? "bg-[#01747A] text-white font-bold shadow-sm"
                     : "text-slate-300 hover:bg-white/5 hover:text-white"

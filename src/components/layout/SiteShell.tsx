@@ -22,3 +22,4 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     </>
   );
 }
+
