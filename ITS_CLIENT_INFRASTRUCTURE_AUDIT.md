@@ -68,3 +68,4 @@ The primary objective is to verify that all systems are properly connected and t
    - Verify client has login credentials for the dedicated GitHub user account `innovative-thermal-solutions` or add `itscoolinga@gmail.com` as an outside collaborator / organization owner.
 3. **CMS Sign-In Verification:**
    - Client signs in at `/admin/login` using `itscoolinga@gmail.com` to confirm administrative capabilities.
+
