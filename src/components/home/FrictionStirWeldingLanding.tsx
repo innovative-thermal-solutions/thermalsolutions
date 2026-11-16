@@ -264,8 +264,8 @@ export function FrictionStirWeldingLanding() {
                 03 / INSIDE THE HARDWARE
               </p>
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#141f22] leading-[1.05]">
-                One cold plate. <br />
-                <span className="text-[#00747a]">Two faces.</span>
+                Explore the Stages of <br />
+                <span className="text-[#00747a]">Friction Stir Welding</span>
               </h2>
             </div>
             <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
