@@ -97,6 +97,7 @@ export function Navigation() {
   const mainLinks = [
     { name: "Quality", href: "/quality" },
     { name: "Case Studies", href: "/case-studies" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (
