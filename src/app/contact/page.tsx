@@ -191,11 +191,10 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-2">
-                      Cell Phone <span className="text-red-500">*</span>
+                      Cell Phone
                     </label>
                     <input
                       type="tel"
-                      required
                       placeholder="+1 (xxx) xxx-xxxx"
                       value={formData.phone}
                       onChange={(e) =>
@@ -209,11 +208,10 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-2">
-                      Your Organization (if Any) <span className="text-red-500">*</span>
+                      Your Organization (if Any)
                     </label>
                     <input
                       type="text"
-                      required
                       placeholder="Company or institution"
                       value={formData.organization}
                       onChange={(e) =>
@@ -225,11 +223,10 @@ export default function ContactPage() {
 
                   <div>
                     <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-2">
-                      Organization Address <span className="text-red-500">*</span>
+                      Organization Address
                     </label>
                     <input
                       type="text"
-                      required
                       placeholder="City, State/Province, Country"
                       value={formData.address}
                       onChange={(e) =>
@@ -253,35 +250,6 @@ export default function ContactPage() {
                     }
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-900 focus:outline-none focus:border-[#00747a] focus:bg-white transition-all"
                   />
-                </div>
-
-                {/* Optional CAD / Drawing Upload */}
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-2 flex items-center justify-between">
-                    <span>Attach CAD / Drawings (Optional)</span>
-                    <span className="text-slate-400 font-normal">STEP, IGES, SLDPRT, PDF (10MB max)</span>
-                  </label>
-                  <div className="border-2 border-dashed border-slate-300 rounded-xl p-5 text-center hover:border-[#00747a] transition-colors bg-slate-50/60">
-                    <input
-                      type="file"
-                      id="cad-upload"
-                      className="hidden"
-                      onChange={(e) => {
-                        if (e.target.files && e.target.files[0]) {
-                          setFileName(e.target.files[0].name);
-                        }
-                      }}
-                    />
-                    <label
-                      htmlFor="cad-upload"
-                      className="cursor-pointer flex flex-col items-center"
-                    >
-                      <Upload className="w-6 h-6 text-[#00747a] mb-1.5" />
-                      <span className="text-xs font-semibold text-slate-800">
-                        {fileName ? `Attached: ${fileName}` : "Click to attach 3D model or technical drawings"}
-                      </span>
-                    </label>
-                  </div>
                 </div>
 
                 <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
