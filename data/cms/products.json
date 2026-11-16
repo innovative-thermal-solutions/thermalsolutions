@@ -65,10 +65,10 @@
   },
   {
     "id": "hypercool",
-    "name": "HyperCool cold plates",
+    "name": "FSW Cold Plates",
     "family": "liquid",
     "image": "/images/portfolio/hypercool.webp",
-    "tag": "LIQUID COOLED / HYPERCOOL",
+    "tag": "LIQUID COOLED / FSW",
     "short": "Custom flow paths. Precision thermal management.",
     "description": "Machined or friction stir welded fluid passages direct coolant where it is needed most. ITS designs the flow layout to balance thermal performance with pressure drop across the operating range.",
     "material": "Aluminum or copper",

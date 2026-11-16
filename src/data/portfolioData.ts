@@ -100,13 +100,13 @@ export const PORTFOLIO_PRODUCTS: PortfolioItem[] = [
   // --- LIQUID COOLED ---
   {
     id: "hypercool",
-    name: "HyperCool cold plates",
+    name: "FSW Cold Plates",
     family: "liquid",
     image: "/images/portfolio/hypercool.webp",
-    tag: "LIQUID COOLED / HYPERCOOL",
+    tag: "LIQUID COOLED / FSW",
     short: "Custom flow paths. Precision thermal management.",
     description:
-      "HyperCool cold plates use machined internal flow paths tailored to the heat source layout. Thermal and hydraulic modeling support the design, with friction stir welding available for leak-tight construction.",
+      "FSW cold plates use machined internal flow paths tailored to the heat source layout. Thermal and hydraulic modeling support the design, with friction stir welding available for leak-tight construction.",
     material: "Aluminum",
     construction: "Machined channels and friction stir welding",
     application: "Power electronics and converters",
@@ -142,10 +142,10 @@ export const PORTFOLIO_PRODUCTS: PortfolioItem[] = [
   },
   {
     id: "copper",
-    name: "Copper brazed cold plates",
+    name: "Brazed Cold Plates",
     family: "liquid",
     image: "/images/portfolio/copper-brazed.webp",
-    tag: "LIQUID COOLED / COPPER",
+    tag: "LIQUID COOLED / BRAZED",
     short: "Copper construction for demanding thermal designs.",
     description:
       "Copper vacuum-brazed cold plates are part of the ITS thermal solution portfolio. The appropriate construction is selected around the component layout, material requirements and system operating conditions.",
