@@ -376,38 +376,6 @@ export default function QualityPage() {
         </div>
       </section>
 
-      {/* 6. Industry Affiliation / ERA Member Badge */}
-      <section className="relative w-full py-12 px-6 sm:px-8 lg:px-14 border-b border-[#d8dedf] bg-white">
-        <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 p-6 sm:p-8 rounded-2xl bg-[#f8faf9] border border-[#d8dedf]">
-          <div className="flex items-center gap-6">
-            <div className="relative w-24 h-14 bg-white p-2 rounded-lg border border-[#d8dedf] shrink-0 flex items-center justify-center">
-              <Image
-                src="/images/quality/era-registrar-logo.jpg"
-                alt="Electronics Representatives Association (ERA) Member"
-                fill
-                className="object-contain p-1"
-              />
-            </div>
-            <div>
-              <h4 className="font-serif text-lg font-medium text-slate-900">
-                Electronics Representatives Association (ERA) Member
-              </h4>
-              <p className="text-xs sm:text-sm text-slate-600 font-normal">
-                Connecting professional manufacturers and engineering representatives across North America.
-              </p>
-            </div>
-          </div>
-
-          <Link
-            href="/contact"
-            className="shrink-0 inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider font-semibold text-[#01747A] hover:text-[#004d52]"
-          >
-            <span>Inquire About Representation</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        </div>
-      </section>
-
       {/* 7. Geographic Coverage Footer Banner */}
       <section className="relative w-full py-16 px-6 sm:px-8 lg:px-14 bg-[#141f22] text-white">
         <div className="max-w-5xl mx-auto text-center">
