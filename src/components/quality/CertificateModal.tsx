@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ZoomIn, X, ExternalLink, Download, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { ZoomIn, X, ExternalLink, ShieldCheck, CheckCircle2 } from "lucide-react";
 
 interface CertificateModalProps {
   imageSrc: string;
@@ -122,17 +122,9 @@ export function CertificateCard({
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <a
-                  href={imageSrc}
-                  download
-                  className="p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                  title="Download Certificate"
-                >
-                  <Download className="w-4 h-4" />
-                </a>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="p-2 text-slate-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors cursor-pointer"
                   title="Close"
                 >
                   <X className="w-5 h-5" />
