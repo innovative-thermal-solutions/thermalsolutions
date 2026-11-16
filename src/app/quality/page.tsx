@@ -198,11 +198,6 @@ export default function QualityPage() {
                       {principle.description}
                     </p>
                   </div>
-
-                  <div className="pt-6 mt-6 border-t border-slate-100 flex items-center gap-2 text-xs font-mono text-[#01747A]">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Verified in Practice</span>
-                  </div>
                 </div>
               );
             })}
