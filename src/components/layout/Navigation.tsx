@@ -157,7 +157,7 @@ export function Navigation() {
           </Link>
 
           {/* Desktop Nav Links & Interactive Dropdowns */}
-          <div className="hidden xl:flex items-center gap-6 2xl:gap-8 text-[13px] font-sans">
+          <div className="hidden xl:flex items-center gap-7 2xl:gap-9 text-[15px] font-sans">
             {/* Products Dropdown */}
             <div
               className="relative"
@@ -166,12 +166,12 @@ export function Navigation() {
             >
               <Link
                 href="/products"
-                className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
+                className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors py-2 ${
                   pathname.startsWith("/products") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
                 }`}
               >
                 <span>Products</span>
-                <ChevronDown className="w-3 h-3 text-[#00747a]" />
+                <ChevronDown className="w-3.5 h-3.5 text-[#00747a]" />
               </Link>
 
               <AnimatePresence>
@@ -215,7 +215,7 @@ export function Navigation() {
             {/* Portfolio Link */}
             <Link
               href="/portfolio"
-              className={`text-[13px] font-semibold transition-colors relative py-1 ${
+              className={`text-[15px] font-semibold transition-colors relative py-1 ${
                 pathname.startsWith("/portfolio") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
               }`}
             >
@@ -232,7 +232,7 @@ export function Navigation() {
             {/* Capabilities Link */}
             <Link
               href="/capabilities"
-              className={`text-[13px] font-semibold transition-colors relative py-1 ${
+              className={`text-[15px] font-semibold transition-colors relative py-1 ${
                 pathname.startsWith("/capabilities") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
               }`}
             >
@@ -254,12 +254,12 @@ export function Navigation() {
             >
               <Link
                 href="/technologies"
-                className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
+                className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors py-2 ${
                   pathname.startsWith("/technologies") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
                 }`}
               >
                 <span>Technologies</span>
-                <ChevronDown className="w-3 h-3 text-[#00747a]" />
+                <ChevronDown className="w-3.5 h-3.5 text-[#00747a]" />
               </Link>
 
               <AnimatePresence>
@@ -307,7 +307,7 @@ export function Navigation() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-[13px] font-semibold transition-colors relative py-1 ${
+                  className={`text-[15px] font-semibold transition-colors relative py-1 ${
                     isActive ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
                   }`}
                 >
@@ -331,12 +331,12 @@ export function Navigation() {
             >
               <Link
                 href="/about"
-                className={`flex items-center gap-1 text-[13px] font-semibold transition-colors py-2 ${
+                className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors py-2 ${
                   pathname.startsWith("/about") || pathname.startsWith("/team") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
                 }`}
               >
                 <span>About</span>
-                <ChevronDown className="w-3 h-3 text-[#00747a]" />
+                <ChevronDown className="w-3.5 h-3.5 text-[#00747a]" />
               </Link>
 
               <AnimatePresence>
@@ -382,10 +382,10 @@ export function Navigation() {
           <div className="hidden lg:flex items-center gap-4 shrink-0">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-between gap-3 px-5 py-2.5 bg-[#00747a] hover:bg-[#005d62] text-white text-[13px] font-semibold tracking-normal rounded-[3px] transition-all transform hover:-translate-y-0.5 shadow-sm"
+              className="inline-flex items-center justify-between gap-3 px-6 py-3 bg-[#00747a] hover:bg-[#005d62] text-white text-[15px] font-semibold tracking-normal rounded-[3px] transition-all transform hover:-translate-y-0.5 shadow-sm"
             >
               <span>Talk to an Engineer</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
 
