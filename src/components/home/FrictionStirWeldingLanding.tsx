@@ -286,7 +286,7 @@ export function FrictionStirWeldingLanding() {
                   Body &amp; cover plate
                 </h3>
                 <p className="text-sm text-slate-600 mb-6 leading-relaxed">
-                  The separate cover precisely matches the profile of the open coolant channel, ready for hermetic solid-state stirring.
+                  The cold plate features a precision machined cooling channel and a cover plate, ready for Friction Stir Welding.
                 </p>
 
                 <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#eef2f0] border border-[#d8dedf] flex items-center justify-center p-4">
@@ -298,11 +298,6 @@ export function FrictionStirWeldingLanding() {
                     className="object-contain max-h-full drop-shadow-sm"
                   />
                 </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-600">
-                <span>Direct Open Flow Cavity</span>
-                <span className="text-[#00747a] font-bold">CNC Pre-Milled</span>
               </div>
             </div>
 
@@ -317,7 +312,7 @@ export function FrictionStirWeldingLanding() {
                   Body, cover plate &amp; pin-fin insert
                 </h3>
                 <p className="text-sm text-slate-600 mb-6 leading-relaxed">
-                  This face features an intricate serpentine channel and high surface-area pin-fin insert for extreme heat flux zones.
+                  The cold plate features a precision machined serpentine cooling channel, a pin-fin insert, and a matching cover plate, prepared for Friction Stir Welding.
                 </p>
 
                 <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[#eef2f0] border border-[#d8dedf] flex items-center justify-center p-4">
@@ -329,11 +324,6 @@ export function FrictionStirWeldingLanding() {
                     className="object-contain max-h-full drop-shadow-sm"
                   />
                 </div>
-              </div>
-
-              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-mono text-slate-600">
-                <span>Serpentine Channel + Pin-Fin</span>
-                <span className="text-[#00747a] font-bold">Multi-Component FSW</span>
               </div>
             </div>
           </div>
