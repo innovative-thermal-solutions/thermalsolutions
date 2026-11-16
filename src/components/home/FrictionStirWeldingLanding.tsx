@@ -151,10 +151,9 @@ export function FrictionStirWeldingLanding() {
                   loop
                   muted
                   playsInline
-                  poster="/assets/fsw-demonstration-poster.webp"
                   className="w-full h-full object-cover"
                 >
-                  <source src="/assets/fsw-demonstration.mp4" type="video/mp4" />
+                  <source src="/videos/fsw-loop-25-36.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0f1719]/80 via-transparent to-transparent pointer-events-none" />
               </div>
@@ -339,7 +338,7 @@ export function FrictionStirWeldingLanding() {
             </div>
           </div>
 
-          {/* In-House Friction Stir Welding Video Section (25s - 36s loop) */}
+          {/* In-House Friction Stir Welding Video Section */}
           <div className="rounded-2xl overflow-hidden border border-[#d8dedf] bg-[#091113] shadow-md relative group">
             <div className="relative aspect-video sm:aspect-[21/9] w-full overflow-hidden">
               <video
@@ -348,9 +347,10 @@ export function FrictionStirWeldingLanding() {
                 loop
                 playsInline
                 preload="auto"
+                poster="/assets/fsw-demonstration-poster.webp"
                 className="w-full h-full object-cover filter brightness-[0.9] contrast-[1.08]"
               >
-                <source src="/videos/fsw-loop-25-36.mp4" type="video/mp4" />
+                <source src="/assets/fsw-demonstration.mp4" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
 
