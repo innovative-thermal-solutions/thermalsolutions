@@ -6,6 +6,13 @@
     "role": "super_admin",
     "passwordHash": "bc5687c778f70756b9f85b05779b2377:3f5f6baa8b5016f7b71e50831189c83f887ebfaf0662a13062f39768cffd90537700ced898eb660706481eba4d4ec3c8c291e5796f41a7751c30df3ddb86cf3b",
     "createdAt": "2026-11-15T12:00:00Z"
+  },
+  {
+    "id": "usr-client-admin",
+    "email": "itscoolinga@gmail.com",
+    "name": "ITS Cooling Official Administrator",
+    "role": "super_admin",
+    "passwordHash": "3aa5ddbd84c23211bf338f27ee4150ee:85c3c2d594a798f6d511dc938a866060aa80410de07a43661db37b2b8f0d922970fbb24add1368d9bef32757e5de5536fbe536175ad8f8f45c5fa201aaf5a347",
+    "createdAt": "2026-11-16T09:51:21.431Z"
   }
 ]
-
