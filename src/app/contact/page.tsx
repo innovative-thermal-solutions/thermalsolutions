@@ -75,7 +75,7 @@ export default function ContactPage() {
             Contact ITS Cooling
           </span>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white mb-4 leading-tight">
             Tell us what is getting too hot.
           </h1>
 
@@ -98,7 +98,7 @@ export default function ContactPage() {
               <span className="text-xs font-mono uppercase tracking-widest text-[#00747a] font-bold block mb-2">
                 Turnkey Engineering Inquiry
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-serif font-medium text-[#141f22] tracking-tight">
                 Send Us Your Project Requirements
               </h2>
               <p className="text-sm text-slate-600 mt-2">
@@ -111,7 +111,7 @@ export default function ContactPage() {
                 <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 mx-auto flex items-center justify-center mb-6 border border-emerald-200">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-950 uppercase tracking-tight mb-2">
+                <h3 className="text-2xl font-serif font-medium text-[#141f22] tracking-tight mb-2">
                   Inquiry Received
                 </h3>
                 <p className="text-slate-600 text-sm max-w-md mx-auto mb-6 leading-relaxed">
@@ -275,7 +275,7 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-6">
             {/* Direct Info Card */}
             <div className="bg-white rounded-2xl border border-[#d8dedf] p-8 shadow-sm">
-              <h3 className="text-xl font-bold text-slate-950 mb-6 flex items-center gap-2">
+              <h3 className="text-xl font-serif font-medium text-[#141f22] mb-6 flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-[#00747a]" />
                 <span>Headquarters &amp; Facility</span>
               </h3>
@@ -391,7 +391,7 @@ export default function ContactPage() {
             <span className="text-xs uppercase font-mono tracking-widest text-[#00747a] font-bold block mb-2">
               North American Network
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-950">
+            <h2 className="text-3xl sm:text-4xl font-serif font-medium tracking-tight text-[#141f22]">
               Local Sales Representatives
             </h2>
             <p className="text-slate-600 text-sm max-w-xl mx-auto mt-2">
