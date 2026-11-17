@@ -146,12 +146,12 @@ export function ShowcaseAirCoolingView() {
           {/* Main Visual Image */}
           <div className="relative z-10 w-full max-w-lg aspect-square flex items-center justify-center">
             <Image
-              src="/images/showcase/air-cooling-hero-dsc09561.jpg"
+              src="/images/showcase/air-cooling-hero-dsc09561.png"
               alt="Black finned heat sink with long parallel fins and mounting holes"
               width={640}
               height={640}
               priority
-              className="w-[92%] h-[92%] object-contain drop-shadow-[0_20px_25px_rgba(20,31,34,0.18)] transition-transform duration-700 hover:scale-105 rounded-xl"
+              className="w-[92%] h-[92%] object-contain drop-shadow-[0_20px_25px_rgba(20,31,34,0.18)] transition-transform duration-700 hover:scale-105"
             />
           </div>
 
