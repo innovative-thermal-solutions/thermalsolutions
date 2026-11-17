@@ -263,9 +263,38 @@ export function ShowcaseAirCoolingView() {
             </div>
 
             <div className="w-full relative">
+              <style jsx>{`
+                @keyframes airFlowDash {
+                  from {
+                    stroke-dashoffset: 0;
+                  }
+                  to {
+                    stroke-dashoffset: -126px;
+                  }
+                }
+                @keyframes fanSpin {
+                  from {
+                    transform: rotate(0deg);
+                  }
+                  to {
+                    transform: rotate(360deg);
+                  }
+                }
+                .air-flow-line {
+                  animation: airFlowDash 2.5s linear infinite;
+                }
+                .fan-blade-spin {
+                  transform-origin: 105px 175px;
+                  animation: fanSpin 2.4s linear infinite;
+                }
+                .flow-paused .air-flow-line,
+                .flow-paused .fan-blade-spin {
+                  animation-play-state: paused !important;
+                }
+              `}</style>
               <svg
                 viewBox="0 0 700 380"
-                className={`w-full h-auto ${isFlowPaused ? "showcase-paused" : ""}`}
+                className={`w-full h-auto ${isFlowPaused ? "flow-paused showcase-paused" : ""}`}
                 role="img"
                 aria-label="Air cooling: heat enters the base from a component; fins spread the heat; a fan moves cooler inlet air across fins and warmer air leaves the enclosure."
               >
@@ -297,18 +326,20 @@ export function ShowcaseAirCoolingView() {
                   <rect x="460" y="100" width="12" height="138" rx="2" />
                 </g>
 
-                {/* Fan / Blower */}
+                {/* Fan / Blower Housing & Rotating Blades */}
                 <circle cx="105" cy="175" r="42" fill="#ffffff" stroke="#00747a" strokeWidth="3" />
                 <path
+                  className="fan-blade-spin"
                   d="M105 175 Q58 150 95 140 Q125 138 105 175 Q135 130 145 170 Q145 195 105 175 Q140 215 100 215 Q75 208 105 175 Q60 205 65 165 Q75 145 105 175"
                   fill="#99ced2"
                 />
+                <circle cx="105" cy="175" r="7" fill="#00747a" />
 
                 {/* Airflow Flow Lines */}
                 <g fill="none" stroke="url(#airTempGrad)" strokeWidth="5">
-                  <path className="showcase-flow-stroke" strokeDasharray="3 18" d="M165 135 H620" />
-                  <path className="showcase-flow-stroke" strokeDasharray="3 18" d="M165 175 H620" />
-                  <path className="showcase-flow-stroke" strokeDasharray="3 18" d="M165 215 H620" />
+                  <path className="air-flow-line showcase-flow-stroke" strokeDasharray="4 16" d="M165 135 H620" />
+                  <path className="air-flow-line showcase-flow-stroke" strokeDasharray="4 16" d="M165 175 H620" />
+                  <path className="air-flow-line showcase-flow-stroke" strokeDasharray="4 16" d="M165 215 H620" />
                 </g>
 
                 <text x="105" y="246" textAnchor="middle" fill="#141f22" fontSize="11" fontFamily="var(--font-mono)" fontWeight="700">
