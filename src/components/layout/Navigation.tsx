@@ -375,13 +375,13 @@ export function Navigation() {
 
           {/* Desktop Right CTA matching .btn of reference */}
           <div className="hidden lg:flex items-center gap-4 shrink-0">
-            <Link
-              href="/contact"
+            <a
+              href="mailto:Engineering@itscooling.com?subject=Engineering%20Inquiry%20-%20ITS%20Cooling"
               className="inline-flex items-center justify-between gap-3 px-6 py-3 bg-[#00747a] hover:bg-[#005d62] text-white text-[15px] font-semibold tracking-normal rounded-[3px] transition-all transform hover:-translate-y-0.5 shadow-sm"
             >
-              <span>Talk to an Engineer</span>
+              <span>Email Engineer</span>
               <ArrowUpRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -496,14 +496,14 @@ export function Navigation() {
               </div>
 
               <div className="pt-6 border-t border-slate-200">
-                <Link
-                  href="/contact"
+                <a
+                  href="mailto:Engineering@itscooling.com?subject=Engineering%20Inquiry%20-%20ITS%20Cooling"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 bg-slate-950 text-white font-bold text-xs uppercase tracking-wider rounded-md"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 bg-[#00747a] text-white font-bold text-xs uppercase tracking-wider rounded-md"
                 >
-                  <span>Talk to an Engineer</span>
+                  <span>Email Engineer</span>
                   <ArrowUpRight className="w-4 h-4" />
-                </Link>
+                </a>
               </div>
             </div>
           </motion.div>
