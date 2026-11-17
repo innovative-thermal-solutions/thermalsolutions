@@ -18,6 +18,7 @@ import {
   Send,
   X,
   FileText,
+  Building2,
 } from "lucide-react";
 import { CAREERS_INTRO, JOB_OPENINGS, JobOpportunity } from "@/data/careersData";
 
@@ -103,476 +104,521 @@ export default function CareersClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d1618] text-white pt-28 pb-24 selection:bg-[#00747a] selection:text-white">
-      {/* Background Ambience */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute -top-40 right-1/4 w-[700px] h-[700px] bg-[#00747a]/15 rounded-full blur-[140px]" />
-        <div className="absolute top-1/2 -left-40 w-[600px] h-[600px] bg-[#005256]/15 rounded-full blur-[140px]" />
+    <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
+      {/* 1. Light Theme Hero Section */}
+      <section className="relative w-full pt-36 sm:pt-44 lg:pt-48 pb-16 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden">
+        {/* Subtle grid background */}
         <div
-          className="absolute inset-0 opacity-[0.03]"
+          className="absolute inset-0 pointer-events-none opacity-15"
           style={{
             backgroundImage:
-              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
+              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
         />
-      </div>
+        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        {/* Breadcrumb */}
-        <div className="flex items-center gap-2 text-xs font-mono text-[#9da8a9] mb-8">
-          <Link href="/" className="hover:text-white transition-colors">Home</Link>
-          <span>/</span>
-          <span className="text-[#00747a]">Careers</span>
-        </div>
-
-        {/* Hero Section */}
-        <div className="max-w-4xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#00747a]/20 border border-[#00747a]/40 rounded-full text-xs font-mono text-teal-300 mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#00747a] animate-pulse" />
-            {CAREERS_INTRO.badge}
+        <div className="w-full max-w-[1440px] mx-auto relative z-10">
+          {/* Breadcrumb */}
+          <div className="flex items-center gap-2 text-xs font-mono text-teal-100 mb-8">
+            <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <span>/</span>
+            <span className="text-white font-semibold">Careers</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 font-['Space_Grotesk'] leading-[1.1]">
-            {CAREERS_INTRO.heading}
-          </h1>
-          <p className="text-xl sm:text-2xl text-teal-100 font-medium mb-8 leading-snug">
-            {CAREERS_INTRO.subheading}
-          </p>
 
-          <div className="space-y-4 text-sm sm:text-base text-[#9da8a9] leading-relaxed">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-teal-100 text-xs font-mono tracking-widest uppercase mb-6 backdrop-blur-md">
+              <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+              {CAREERS_INTRO.badge}
+            </div>
+
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium tracking-tight text-white leading-[1.0] mb-6">
+              Join Our Team. <br />
+              <em className="not-italic text-teal-200">Build the future of cooling.</em>
+            </h1>
+
+            <p className="text-teal-50 text-base sm:text-lg max-w-2xl leading-relaxed mb-8 font-normal">
+              {CAREERS_INTRO.subheading}
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="#openings"
+                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all shadow-md shadow-black/10"
+              >
+                <span>Browse Open Positions</span>
+                <ArrowRight className="w-4 h-4 text-[#01747A]" />
+              </a>
+              <a
+                href="#apply-form"
+                className="inline-flex items-center gap-2 px-6 py-3.5 border border-white/30 hover:border-white/60 bg-white/10 text-white font-medium text-xs font-mono uppercase tracking-wider rounded transition-colors"
+              >
+                <span>Direct Application</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Company Capabilities Overview & Stats (Light Theme) */}
+      <section className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-8 space-y-5 text-base sm:text-lg text-slate-700 leading-relaxed">
             {CAREERS_INTRO.descriptionParagraphs.map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
           </div>
 
-          {/* Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
-            {CAREERS_INTRO.facilityStats.map((stat, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-white/[0.03] border border-white/10">
-                <span className="text-[11px] font-mono text-[#00747a] uppercase tracking-wider block mb-1">
-                  {stat.label}
-                </span>
-                <span className="text-sm font-semibold text-white">
-                  {stat.value}
-                </span>
+          <div className="lg:col-span-4 space-y-4">
+            <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-md">
+              <div className="text-xs font-mono uppercase tracking-wider text-[#00747a] font-bold mb-4 flex items-center gap-2">
+                <Building2 className="w-4 h-4" />
+                <span>Guelph Facility At A Glance</span>
               </div>
-            ))}
+              <div className="space-y-4">
+                {CAREERS_INTRO.facilityStats.map((stat, idx) => (
+                  <div key={idx} className="pb-3 border-b border-slate-100 last:border-none last:pb-0">
+                    <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-0.5">
+                      {stat.label}
+                    </span>
+                    <span className="text-sm font-bold text-[#141f22]">
+                      {stat.value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-[#e6f4f5] border border-[#00747a]/20">
+              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-[#00747a] font-bold mb-2">
+                <ShieldCheck className="w-4 h-4 text-[#00747a]" />
+                <span>Direct Inquiries</span>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed mb-3">
+                Questions about joining ITS Cooling or seeking custom role inquiries?
+              </p>
+              <a
+                href="mailto:engineering@itscooling.com"
+                className="text-xs font-mono font-bold text-[#00747a] hover:underline block"
+              >
+                engineering@itscooling.com ↗
+              </a>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Job Listings Section */}
-        <div className="mb-24">
-          <div className="flex items-center justify-between pb-6 mb-8 border-b border-white/10">
-            <div>
-              <h2 className="text-3xl font-bold font-['Space_Grotesk'] text-white">
-                Current Openings
-              </h2>
-              <p className="text-sm text-[#9da8a9] mt-1 font-mono">
-                {JOB_OPENINGS.length} available technical & operations positions in Guelph, ON
-              </p>
-            </div>
-            <button
-              onClick={() => {
-                const allExpanded = Object.keys(expandedJobs).length === JOB_OPENINGS.length;
-                if (allExpanded) {
-                  setExpandedJobs({});
-                } else {
-                  const all: Record<string, boolean> = {};
-                  JOB_OPENINGS.forEach((j) => (all[j.id] = true));
-                  setExpandedJobs(all);
-                }
-              }}
-              className="text-xs font-mono text-teal-300 hover:text-white border border-white/10 px-3 py-1.5 rounded-lg bg-white/5 transition-colors"
-            >
-              {Object.keys(expandedJobs).length === JOB_OPENINGS.length ? "Collapse All" : "Expand All"}
-            </button>
+      {/* 3. Job Listings Section (Light Theme Accordion / Cards) */}
+      <section id="openings" className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 pb-20">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 mb-8 border-b border-slate-200 gap-4">
+          <div>
+            <h2 className="text-3xl font-bold font-['Space_Grotesk'] text-[#141f22]">
+              Current Openings
+            </h2>
+            <p className="text-sm text-slate-500 mt-1 font-mono">
+              {JOB_OPENINGS.length} available technical &amp; operations positions in Guelph, ON
+            </p>
           </div>
+          <button
+            onClick={() => {
+              const allExpanded = Object.keys(expandedJobs).length === JOB_OPENINGS.length;
+              if (allExpanded) {
+                setExpandedJobs({});
+              } else {
+                const all: Record<string, boolean> = {};
+                JOB_OPENINGS.forEach((j) => (all[j.id] = true));
+                setExpandedJobs(all);
+              }
+            }}
+            className="text-xs font-mono font-bold text-[#00747a] hover:text-[#005a5f] border border-slate-200 px-4 py-2 rounded-lg bg-white shadow-xs hover:border-[#00747a] transition-colors"
+          >
+            {Object.keys(expandedJobs).length === JOB_OPENINGS.length ? "Collapse All Positions" : "Expand All Positions"}
+          </button>
+        </div>
 
-          <div className="space-y-6">
-            {JOB_OPENINGS.map((job) => {
-              const isExpanded = !!expandedJobs[job.id];
-              return (
+        <div className="space-y-6">
+          {JOB_OPENINGS.map((job) => {
+            const isExpanded = !!expandedJobs[job.id];
+            return (
+              <div
+                key={job.id}
+                className="rounded-2xl bg-white border border-slate-200 hover:border-[#00747a] transition-all duration-300 overflow-hidden shadow-sm hover:shadow-lg"
+              >
+                {/* Job Header */}
                 <div
-                  key={job.id}
-                  className="rounded-2xl bg-[#141f22]/90 border border-white/10 hover:border-[#00747a]/50 transition-all duration-300 overflow-hidden shadow-lg"
+                  onClick={() => toggleJob(job.id)}
+                  className="p-6 sm:p-8 cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-slate-50/70 transition-colors"
                 >
-                  {/* Job Header */}
-                  <div
-                    onClick={() => toggleJob(job.id)}
-                    className="p-6 sm:p-8 cursor-pointer flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-white/[0.02] transition-colors"
-                  >
-                    <div className="space-y-3">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider bg-[#00747a]/20 text-teal-300 border border-[#00747a]/30">
-                          {job.employmentType}
+                  <div className="space-y-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider bg-[#e6f4f5] text-[#00747a] border border-[#00747a]/20 font-bold">
+                        {job.employmentType}
+                      </span>
+                      <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider bg-slate-100 text-slate-600 border border-slate-200">
+                        {job.workArrangement}
+                      </span>
+                      {job.reportingTo && (
+                        <span className="px-2.5 py-0.5 rounded text-[11px] font-mono text-slate-500">
+                          Reports to: <span className="font-semibold text-slate-700">{job.reportingTo}</span>
                         </span>
-                        <span className="px-2.5 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider bg-white/5 text-[#9da8a9] border border-white/10">
-                          {job.workArrangement}
-                        </span>
-                        {job.reportingTo && (
-                          <span className="px-2.5 py-0.5 rounded text-[11px] font-mono text-xs text-white/70">
-                            Reports to: {job.reportingTo}
-                          </span>
-                        )}
-                      </div>
-                      <h3 className="text-2xl font-bold font-['Space_Grotesk'] text-white">
-                        {job.title}
-                      </h3>
-                      <div className="flex items-center gap-2 text-xs font-mono text-[#9da8a9]">
-                        <MapPin className="w-3.5 h-3.5 text-[#00747a]" />
-                        <span>{job.companyLocation}</span>
-                      </div>
+                      )}
                     </div>
-
-                    <div className="flex items-center gap-3 shrink-0">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleApplyClick(job.title);
-                        }}
-                        className="px-5 py-2.5 rounded-lg bg-[#00747a] hover:bg-[#008f96] text-white text-xs font-mono uppercase tracking-wider font-semibold transition-all shadow-md hover:shadow-[#00747a]/20 flex items-center gap-2"
-                      >
-                        <span>Apply Now</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
-                      </button>
-                      <button
-                        type="button"
-                        className="p-2 rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
-                      >
-                        {isExpanded ? (
-                          <ChevronUp className="w-5 h-5 text-teal-300" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-white/70" />
-                        )}
-                      </button>
+                    <h3 className="text-2xl font-bold font-['Space_Grotesk'] text-[#141f22]">
+                      {job.title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-xs font-mono text-slate-500">
+                      <MapPin className="w-3.5 h-3.5 text-[#00747a]" />
+                      <span>{job.companyLocation}</span>
                     </div>
                   </div>
 
-                  {/* Expanded Content with full verbatim subsections */}
-                  {isExpanded && (
-                    <div className="px-6 sm:px-8 pb-8 pt-2 border-t border-white/10 bg-black/20 space-y-8">
-                      {job.sections.map((section, sIdx) => (
-                        <div key={sIdx} className="space-y-3">
-                          <h4 className="text-lg font-bold font-['Space_Grotesk'] text-teal-200 flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
-                            {section.title}
-                          </h4>
-                          <div className="space-y-3 pl-3.5 border-l-2 border-[#00747a]/30">
-                            {section.content.map((item, cIdx) => {
-                              if (item.type === "p" && item.text) {
-                                return (
-                                  <p key={cIdx} className="text-sm sm:text-base text-[#9da8a9] leading-relaxed">
-                                    {item.text}
-                                  </p>
-                                );
-                              }
-                              if (item.type === "ul" && item.items) {
-                                return (
-                                  <ul key={cIdx} className="space-y-2 list-disc list-inside text-sm sm:text-base text-[#9da8a9]">
-                                    {item.items.map((bullet, bIdx) => (
-                                      <li key={bIdx} className="leading-relaxed">
-                                        <span className="text-[#c8d3d5]">{bullet}</span>
-                                      </li>
-                                    ))}
-                                  </ul>
-                                );
-                              }
-                              return null;
-                            })}
-                          </div>
+                  <div className="flex items-center gap-3 shrink-0">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleApplyClick(job.title);
+                      }}
+                      className="px-5 py-2.5 rounded-lg bg-[#00747a] hover:bg-[#005a5f] text-white text-xs font-mono uppercase tracking-wider font-bold transition-all shadow-md shadow-[#00747a]/20 flex items-center gap-2"
+                    >
+                      <span>Apply Now</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                    <button
+                      type="button"
+                      className="p-2.5 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 hover:bg-slate-200 transition-colors"
+                    >
+                      {isExpanded ? (
+                        <ChevronUp className="w-5 h-5 text-[#00747a]" />
+                      ) : (
+                        <ChevronDown className="w-5 h-5 text-slate-500" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Expanded Content with full verbatim subsections */}
+                {isExpanded && (
+                  <div className="px-6 sm:px-8 pb-8 pt-4 border-t border-slate-200 bg-slate-50/50 space-y-8">
+                    {job.sections.map((section, sIdx) => (
+                      <div key={sIdx} className="space-y-3">
+                        <h4 className="text-lg font-bold font-['Space_Grotesk'] text-[#00747a] flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-[#00747a]" />
+                          {section.title}
+                        </h4>
+                        <div className="space-y-3 pl-4 border-l-2 border-[#00747a]/20">
+                          {section.content.map((item, cIdx) => {
+                            if (item.type === "p" && item.text) {
+                              return (
+                                <p key={cIdx} className="text-sm sm:text-base text-slate-700 leading-relaxed font-normal">
+                                  {item.text}
+                                </p>
+                              );
+                            }
+                            if (item.type === "ul" && item.items) {
+                              return (
+                                <ul key={cIdx} className="space-y-2 list-disc list-inside text-sm sm:text-base text-slate-700">
+                                  {item.items.map((bullet, bIdx) => (
+                                    <li key={bIdx} className="leading-relaxed">
+                                      <span className="text-slate-800">{bullet}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              );
+                            }
+                            return null;
+                          })}
                         </div>
-                      ))}
-
-                      {/* Card bottom Apply Now CTA */}
-                      <div className="pt-4 flex items-center justify-between border-t border-white/10">
-                        <span className="text-xs font-mono text-[#9da8a9]">
-                          Ready to apply for this opening?
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => handleApplyClick(job.title)}
-                          className="px-6 py-2.5 rounded-lg bg-[#00747a] hover:bg-[#008f96] text-white text-xs font-mono uppercase tracking-wider font-semibold transition-all flex items-center gap-2"
-                        >
-                          Apply for {job.title}
-                          <ArrowRight className="w-3.5 h-3.5" />
-                        </button>
                       </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Application Form Section */}
-        <div ref={formRef} className="scroll-mt-32 max-w-3xl mx-auto">
-          <div className="rounded-3xl bg-gradient-to-b from-[#141f22] to-[#0c1618] border border-[#00747a]/40 p-8 sm:p-12 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#00747a]/10 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="mb-8">
-              <span className="text-xs font-mono text-[#00747a] tracking-widest uppercase mb-2 block font-semibold">
-                Direct Candidate Application
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] text-white mb-3">
-                Apply for a Position
-              </h2>
-              <p className="text-sm sm:text-base text-[#9da8a9]">
-                Submit your credentials and documents directly to our talent team at ITS Cooling.
-              </p>
-            </div>
-
-            {submitStatus === "success" && (
-              <div className="mb-8 p-6 rounded-2xl bg-[#00747a]/20 border border-[#00747a]/60 text-white flex items-start gap-4">
-                <CheckCircle2 className="w-6 h-6 text-teal-300 shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-lg mb-1 font-['Space_Grotesk'] text-teal-200">
-                    Application Successfully Submitted!
-                  </h4>
-                  <p className="text-sm text-[#9da8a9] leading-relaxed">
-                    Thank you for applying to ITS Cooling. Your application has been logged and forwarded to our recruiting team. If your background matches our technical needs, we will reach out to arrange an interview.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {submitStatus === "error" && (
-              <div className="mb-8 p-6 rounded-2xl bg-rose-950/40 border border-rose-500/50 text-white flex items-start gap-4">
-                <AlertCircle className="w-6 h-6 text-rose-400 shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-lg mb-1 font-['Space_Grotesk'] text-rose-300">
-                    Submission Error
-                  </h4>
-                  <p className="text-sm text-[#9da8a9] leading-relaxed">
-                    {errorMessage}
-                  </p>
-                  <p className="text-xs text-[#9da8a9] mt-2 font-mono">
-                    Alternatively, please email your resume and cover letter directly to{" "}
-                    <a href="mailto:engineering@itscooling.com" className="text-teal-300 underline">
-                      engineering@itscooling.com
-                    </a>.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Names */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-[#9da8a9] mb-2">
-                    First Name <span className="text-teal-400">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    placeholder="Jane"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00747a] focus:bg-white/[0.08] text-white text-sm outline-none transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-[#9da8a9] mb-2">
-                    Last Name <span className="text-teal-400">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    placeholder="Doe"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00747a] focus:bg-white/[0.08] text-white text-sm outline-none transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Email & Phone */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-[#9da8a9] mb-2">
-                    Email Address <span className="text-teal-400">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="jane.doe@example.com"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00747a] focus:bg-white/[0.08] text-white text-sm outline-none transition-all"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-mono uppercase tracking-wider text-[#9da8a9] mb-2">
-                    Cell Phone <span className="text-[#9da8a9]/60">(Optional)</span>
-                  </label>
-                  <input
-                    type="tel"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+1 (555) 000-0000"
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-[#00747a] focus:bg-white/[0.08] text-white text-sm outline-none transition-all"
-                  />
-                </div>
-              </div>
-
-              {/* Position Select */}
-              <div>
-                <label className="block text-xs font-mono uppercase tracking-wider text-[#9da8a9] mb-2">
-                  Position Applied For <span className="text-teal-400">*</span>
-                </label>
-                <div className="relative">
-                  <select
-                    value={position}
-                    onChange={(e) => setPosition(e.target.value)}
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-[#141f22] border border-white/10 focus:border-[#00747a] text-white text-sm outline-none appearance-none transition-all cursor-pointer"
-                  >
-                    {JOB_OPENINGS.map((job) => (
-                      <option key={job.id} value={job.title} className="bg-[#141f22] text-white">
-                        {job.title} ({job.employmentType})
-                      </option>
                     ))}
-                  </select>
-                  <ChevronDown className="w-4 h-4 text-[#9da8a9] absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-                </div>
-              </div>
 
-              {/* Resume Upload */}
-              <div>
-                <div className="flex items-center justify-between mb-2">
-                  <label className="text-xs font-mono uppercase tracking-wider text-[#9da8a9]">
-                    Resume Upload <span className="text-teal-400">*</span>
-                  </label>
-                  <span className="text-[11px] font-mono text-[#9da8a9]/70">PDF, DOC, DOCX (Max 5MB)</span>
-                </div>
-                <div className="relative border-2 border-dashed border-white/20 hover:border-[#00747a] rounded-2xl p-6 text-center transition-colors bg-white/[0.02]">
-                  <input
-                    type="file"
-                    required={!resumeFile}
-                    accept=".pdf,.doc,.docx"
-                    onChange={(e) => {
-                      if (e.target.files && e.target.files[0]) {
-                        setResumeFile(e.target.files[0]);
-                      }
-                    }}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                  />
-                  {resumeFile ? (
-                    <div className="flex items-center justify-center gap-3">
-                      <FileText className="w-6 h-6 text-teal-300" />
-                      <div className="text-left">
-                        <span className="text-sm font-semibold text-white block">{resumeFile.name}</span>
-                        <span className="text-xs text-[#9da8a9] font-mono">
-                          {(resumeFile.size / (1024 * 1024)).toFixed(2)} MB
-                        </span>
-                      </div>
+                    {/* Card bottom Apply Now CTA */}
+                    <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between border-t border-slate-200 gap-4">
+                      <span className="text-xs font-mono text-slate-500">
+                        Interested in joining our team for this position?
+                      </span>
                       <button
                         type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setResumeFile(null);
-                        }}
-                        className="p-1 rounded-full bg-white/10 hover:bg-white/20 text-white ml-2"
+                        onClick={() => handleApplyClick(job.title)}
+                        className="px-6 py-2.5 rounded-lg bg-[#00747a] hover:bg-[#005a5f] text-white text-xs font-mono uppercase tracking-wider font-bold transition-all flex items-center gap-2 shadow-xs"
                       >
-                        <X className="w-4 h-4" />
+                        Apply for {job.title}
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
-                  ) : (
-                    <div className="space-y-2 pointer-events-none">
-                      <Upload className="w-6 h-6 text-[#00747a] mx-auto" />
-                      <p className="text-xs sm:text-sm text-white font-medium">
-                        Click to upload or drag & drop your resume
-                      </p>
-                      <p className="text-xs text-[#9da8a9]">1 file up to 5MB</p>
-                    </div>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
+            );
+          })}
+        </div>
+      </section>
 
-              {/* Cover Letter Upload */}
+      {/* 4. Application Form Section (Light Theme Clean Form) */}
+      <section id="apply-form" ref={formRef} className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 pb-24 scroll-mt-32">
+        <div className="max-w-3xl mx-auto rounded-3xl bg-white border border-slate-200 p-8 sm:p-12 shadow-xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#00747a]/5 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="mb-8">
+            <span className="text-xs font-mono text-[#00747a] tracking-widest uppercase mb-2 block font-bold">
+              Direct Candidate Application
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold font-['Space_Grotesk'] text-[#141f22] mb-3">
+              Apply for a Position
+            </h2>
+            <p className="text-sm sm:text-base text-slate-600">
+              Submit your credentials and documents directly to our recruitment team at ITS Cooling.
+            </p>
+          </div>
+
+          {submitStatus === "success" && (
+            <div className="mb-8 p-6 rounded-2xl bg-emerald-50 border border-emerald-300 text-emerald-950 flex items-start gap-4">
+              <CheckCircle2 className="w-6 h-6 text-emerald-600 shrink-0 mt-0.5" />
               <div>
-                <div className="flex items-center justify-between mb-2">
-                  <label className="text-xs font-mono uppercase tracking-wider text-[#9da8a9]">
-                    Cover Letter <span className="text-[#9da8a9]/60">(Optional)</span>
-                  </label>
-                  <span className="text-[11px] font-mono text-[#9da8a9]/70">PDF, DOC, DOCX (Max 5MB)</span>
-                </div>
-                <div className="relative border-2 border-dashed border-white/20 hover:border-[#00747a] rounded-2xl p-6 text-center transition-colors bg-white/[0.02]">
-                  <input
-                    type="file"
-                    accept=".pdf,.doc,.docx"
-                    onChange={(e) => {
-                      if (e.target.files && e.target.files[0]) {
-                        setCoverLetterFile(e.target.files[0]);
-                      }
-                    }}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                  />
-                  {coverLetterFile ? (
-                    <div className="flex items-center justify-center gap-3">
-                      <FileText className="w-6 h-6 text-teal-300" />
-                      <div className="text-left">
-                        <span className="text-sm font-semibold text-white block">{coverLetterFile.name}</span>
-                        <span className="text-xs text-[#9da8a9] font-mono">
-                          {(coverLetterFile.size / (1024 * 1024)).toFixed(2)} MB
-                        </span>
-                      </div>
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setCoverLetterFile(null);
-                        }}
-                        className="p-1 rounded-full bg-white/10 hover:bg-white/20 text-white ml-2"
-                      >
-                        <X className="w-4 h-4" />
-                      </button>
-                    </div>
-                  ) : (
-                    <div className="space-y-2 pointer-events-none">
-                      <Upload className="w-6 h-6 text-white/50 mx-auto" />
-                      <p className="text-xs sm:text-sm text-white font-medium">
-                        Click to upload or drag & drop your cover letter
-                      </p>
-                      <p className="text-xs text-[#9da8a9]">1 file up to 5MB</p>
-                    </div>
-                  )}
-                </div>
-              </div>
-
-              {/* Submit Button */}
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="w-full py-4 rounded-xl bg-[#00747a] hover:bg-[#008f96] disabled:bg-gray-700 text-white font-bold font-['Space_Grotesk'] text-base tracking-wide transition-all shadow-xl hover:shadow-[#00747a]/25 flex items-center justify-center gap-2"
-                >
-                  {submitting ? (
-                    <>
-                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      <span>Submitting Application...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      <span>Submit Application</span>
-                    </>
-                  )}
-                </button>
-              </div>
-
-              <div className="text-center">
-                <p className="text-xs text-[#9da8a9] leading-relaxed">
-                  By submitting, you agree to allow Innovative Thermal Solutions to retain and review your information for recruitment purposes.
+                <h4 className="font-bold text-lg mb-1 font-['Space_Grotesk'] text-emerald-900">
+                  Application Successfully Submitted!
+                </h4>
+                <p className="text-sm text-emerald-800 leading-relaxed">
+                  Thank you for applying to ITS Cooling. Your application has been logged and forwarded to our recruiting team. If your background matches our technical needs, we will reach out to arrange an interview.
                 </p>
               </div>
-            </form>
-          </div>
+            </div>
+          )}
+
+          {submitStatus === "error" && (
+            <div className="mb-8 p-6 rounded-2xl bg-rose-50 border border-rose-300 text-rose-950 flex items-start gap-4">
+              <AlertCircle className="w-6 h-6 text-rose-600 shrink-0 mt-0.5" />
+              <div>
+                <h4 className="font-bold text-lg mb-1 font-['Space_Grotesk'] text-rose-900">
+                  Submission Error
+                </h4>
+                <p className="text-sm text-rose-800 leading-relaxed">
+                  {errorMessage}
+                </p>
+                <p className="text-xs text-rose-700 mt-2 font-mono">
+                  Alternatively, please email your resume and cover letter directly to{" "}
+                  <a href="mailto:engineering@itscooling.com" className="text-rose-900 underline font-semibold">
+                    engineering@itscooling.com
+                  </a>.
+                </p>
+              </div>
+            </div>
+          )}
+
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Names */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-2">
+                  First Name <span className="text-[#00747a]">*</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="Jane"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#00747a] focus:bg-white text-slate-900 text-sm outline-none transition-all"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-2">
+                  Last Name <span className="text-[#00747a]">*</span>
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
+                  placeholder="Doe"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#00747a] focus:bg-white text-slate-900 text-sm outline-none transition-all"
+                />
+              </div>
+            </div>
+
+            {/* Email & Phone */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-2">
+                  Email Address <span className="text-[#00747a]">*</span>
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="jane.doe@example.com"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#00747a] focus:bg-white text-slate-900 text-sm outline-none transition-all"
+                />
+              </div>
+              <div>
+                <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-2">
+                  Cell Phone <span className="text-slate-400 font-normal">(Optional)</span>
+                </label>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="+1 (555) 000-0000"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#00747a] focus:bg-white text-slate-900 text-sm outline-none transition-all"
+                />
+              </div>
+            </div>
+
+            {/* Position Select */}
+            <div>
+              <label className="block text-xs font-mono uppercase tracking-wider text-slate-700 font-bold mb-2">
+                Position Applied For <span className="text-[#00747a]">*</span>
+              </label>
+              <div className="relative">
+                <select
+                  value={position}
+                  onChange={(e) => setPosition(e.target.value)}
+                  required
+                  className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#00747a] focus:bg-white text-slate-900 text-sm outline-none appearance-none transition-all cursor-pointer font-medium"
+                >
+                  {JOB_OPENINGS.map((job) => (
+                    <option key={job.id} value={job.title} className="bg-white text-slate-900">
+                      {job.title} ({job.employmentType})
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="w-4 h-4 text-slate-500 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+              </div>
+            </div>
+
+            {/* Resume Upload */}
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <label className="text-xs font-mono uppercase tracking-wider text-slate-700 font-bold">
+                  Resume Upload <span className="text-[#00747a]">*</span>
+                </label>
+                <span className="text-[11px] font-mono text-slate-400">PDF, DOC, DOCX (Max 5MB)</span>
+              </div>
+              <div className="relative border-2 border-dashed border-slate-300 hover:border-[#00747a] rounded-2xl p-6 text-center transition-colors bg-slate-50/70">
+                <input
+                  type="file"
+                  required={!resumeFile}
+                  accept=".pdf,.doc,.docx"
+                  onChange={(e) => {
+                    if (e.target.files && e.target.files[0]) {
+                      setResumeFile(e.target.files[0]);
+                    }
+                  }}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                />
+                {resumeFile ? (
+                  <div className="flex items-center justify-center gap-3">
+                    <FileText className="w-6 h-6 text-[#00747a]" />
+                    <div className="text-left">
+                      <span className="text-sm font-semibold text-slate-900 block">{resumeFile.name}</span>
+                      <span className="text-xs text-slate-500 font-mono">
+                        {(resumeFile.size / (1024 * 1024)).toFixed(2)} MB
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setResumeFile(null);
+                      }}
+                      className="p-1 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 ml-2"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                ) : (
+                  <div className="space-y-2 pointer-events-none">
+                    <Upload className="w-6 h-6 text-[#00747a] mx-auto" />
+                    <p className="text-xs sm:text-sm text-slate-800 font-medium">
+                      Click to upload or drag &amp; drop your resume
+                    </p>
+                    <p className="text-xs text-slate-400">1 file up to 5MB</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Cover Letter Upload */}
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <label className="text-xs font-mono uppercase tracking-wider text-slate-700 font-bold">
+                  Cover Letter <span className="text-slate-400 font-normal">(Optional)</span>
+                </label>
+                <span className="text-[11px] font-mono text-slate-400">PDF, DOC, DOCX (Max 5MB)</span>
+              </div>
+              <div className="relative border-2 border-dashed border-slate-300 hover:border-[#00747a] rounded-2xl p-6 text-center transition-colors bg-slate-50/70">
+                <input
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  onChange={(e) => {
+                    if (e.target.files && e.target.files[0]) {
+                      setCoverLetterFile(e.target.files[0]);
+                    }
+                  }}
+                  className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                />
+                {coverLetterFile ? (
+                  <div className="flex items-center justify-center gap-3">
+                    <FileText className="w-6 h-6 text-[#00747a]" />
+                    <div className="text-left">
+                      <span className="text-sm font-semibold text-slate-900 block">{coverLetterFile.name}</span>
+                      <span className="text-xs text-slate-500 font-mono">
+                        {(coverLetterFile.size / (1024 * 1024)).toFixed(2)} MB
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setCoverLetterFile(null);
+                      }}
+                      className="p-1 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-700 ml-2"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                  </div>
+                ) : (
+                  <div className="space-y-2 pointer-events-none">
+                    <Upload className="w-6 h-6 text-slate-400 mx-auto" />
+                    <p className="text-xs sm:text-sm text-slate-800 font-medium">
+                      Click to upload or drag &amp; drop your cover letter
+                    </p>
+                    <p className="text-xs text-slate-400">1 file up to 5MB</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Submit Button */}
+            <div className="pt-4">
+              <button
+                type="submit"
+                disabled={submitting}
+                className="w-full py-4 rounded-xl bg-[#00747a] hover:bg-[#005a5f] disabled:bg-slate-300 text-white font-bold font-['Space_Grotesk'] text-base tracking-wide transition-all shadow-md shadow-[#00747a]/20 flex items-center justify-center gap-2"
+              >
+                {submitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <span>Submitting Application...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>Submit Application</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+            <div className="text-center">
+              <p className="text-xs text-slate-500 leading-relaxed">
+                By submitting, you agree to allow Innovative Thermal Solutions to retain and review your information for recruitment purposes.
+              </p>
+            </div>
+          </form>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
-
