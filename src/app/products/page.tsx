@@ -151,13 +151,6 @@ export default function ProductsPage() {
                     <span>Laminated Busbars</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
-                  <Link
-                    href="/products/heat-pipes"
-                    className="inline-flex items-center gap-2 px-4 py-2 border border-slate-300 hover:border-slate-400 text-slate-800 text-xs font-mono uppercase tracking-wider rounded-sm transition-colors bg-white"
-                  >
-                    <span>Embedded Heat Pipes</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </Link>
                 </div>
               </div>
 

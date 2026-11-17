@@ -132,11 +132,6 @@ export function Footer() {
                   Busbars &amp; Interconnects
                 </Link>
               </li>
-              <li>
-                <Link href="/products/heat-pipes" className="hover:text-white font-medium transition-colors">
-                  Embedded Heat Pipes
-                </Link>
-              </li>
             </ul>
           </div>
 

@@ -71,12 +71,6 @@ export function Navigation() {
       desc: "Laminated low-inductance bus conductors",
       icon: Cpu,
     },
-    {
-      name: "Embedded Heat Pipes",
-      href: "/products/heat-pipes",
-      desc: "Two-phase isothermal spreading assemblies",
-      icon: Flame,
-    },
   ];
 
   const aboutMenu = [
