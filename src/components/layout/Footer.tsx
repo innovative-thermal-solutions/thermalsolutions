@@ -198,6 +198,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/events" className="hover:text-white font-medium transition-colors">
+                  Events & Trade Shows
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers" className="hover:text-white font-medium transition-colors">
+                  Careers & Openings
+                </Link>
+              </li>
+              <li>
                 <Link href="/case-studies" className="hover:text-white font-medium transition-colors">
                   Case Studies & Proof
                 </Link>

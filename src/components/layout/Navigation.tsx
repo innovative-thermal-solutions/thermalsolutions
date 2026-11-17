@@ -21,6 +21,8 @@ import {
   Factory,
   Users,
   Building2,
+  Calendar,
+  Briefcase,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY_INFO } from "@/data/companyContent";
@@ -85,6 +87,18 @@ export function Navigation() {
       href: "/about/our-design-manufacturing-experts-engineers-team",
       desc: "Meet our leadership, design & manufacturing engineering experts",
       icon: Users,
+    },
+    {
+      name: "Events & Trade Shows",
+      href: "/events",
+      desc: "Upcoming industry expos, conferences & technical showcases",
+      icon: Calendar,
+    },
+    {
+      name: "Careers & Openings",
+      href: "/careers",
+      desc: "Join our Guelph engineering, machining & operations team",
+      icon: Briefcase,
     },
   ];
 
