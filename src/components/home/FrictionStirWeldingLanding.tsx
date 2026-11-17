@@ -330,7 +330,7 @@ export function FrictionStirWeldingLanding() {
 
           {/* In-House Friction Stir Welding Video Section */}
           <div className="rounded-2xl overflow-hidden border border-[#d8dedf] bg-[#091113] shadow-md relative group">
-            <div className="relative aspect-video sm:aspect-[21/9] w-full overflow-hidden">
+            <div className="relative aspect-[16/10] sm:aspect-[16/9] md:aspect-[18/9] w-full overflow-hidden">
               <video
                 autoPlay
                 muted
@@ -338,29 +338,29 @@ export function FrictionStirWeldingLanding() {
                 playsInline
                 preload="auto"
                 poster="/assets/fsw-demonstration-poster.webp"
-                className="w-full h-full object-cover filter brightness-[0.9] contrast-[1.08]"
+                className="w-full h-full object-cover object-[center_92%] filter brightness-[1.04] contrast-[1.12]"
               >
                 <source src="/assets/fsw-demonstration.mp4" type="video/mp4" />
                 Your browser does not support video playback.
               </video>
 
               {/* Gradient overlays for industrial edge */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0f1719]/80 via-transparent to-[#0f1719]/40 pointer-events-none" />
 
               {/* Top Telemetry Overlay */}
               <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-white text-[11px] font-mono z-10 pointer-events-none">
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-black/75 backdrop-blur-md rounded-md border border-white/20">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="font-bold tracking-wider">IN-HOUSE FSW PROCESS CELL IN ACTION</span>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-[#0f1719]/85 backdrop-blur-md rounded-md border border-[#00747a]/30">
+                  <span className="w-2 h-2 rounded-full bg-[#00747a] animate-pulse" />
+                  <span className="font-bold tracking-wider text-teal-100">IN-HOUSE FSW PROCESS CELL IN ACTION</span>
                 </div>
-                <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-black/75 backdrop-blur-md rounded-md border border-white/20 text-[#c5cecf]">
+                <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-[#0f1719]/85 backdrop-blur-md rounded-md border border-white/10 text-[#c5cecf]">
                   <span>SOLID-STATE HERMETIC JOINING · GUELPH, ON</span>
                 </div>
               </div>
 
               {/* Bottom Subtitle / Info */}
               <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between z-10 pointer-events-none">
-                <div className="px-3.5 py-2 bg-black/70 backdrop-blur-md rounded-lg border border-white/15 max-w-lg">
+                <div className="px-3.5 py-2 bg-[#0f1719]/85 backdrop-blur-md rounded-lg border border-[#00747a]/25 max-w-lg">
                   <p className="text-white text-xs font-mono font-medium">
                     Continuous rotating FSW tool generating frictional heat &amp; plastic deformation to produce void-free joints.
                   </p>
