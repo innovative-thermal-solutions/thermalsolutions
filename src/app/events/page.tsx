@@ -169,3 +169,4 @@ function EventCard({ event }: { event: typeof TRADE_SHOW_EVENTS[number] }) {
     </div>
   );
 }
+
