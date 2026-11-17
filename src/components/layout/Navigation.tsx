@@ -96,40 +96,6 @@ export function Navigation() {
 
   return (
     <header className="fixed top-0 w-full z-50 transition-all duration-300">
-      {/* Top Status & Telemetry Bar */}
-      <div className="hidden lg:block bg-[#0f1719] text-[#00747a] py-2 px-6 lg:px-12 text-[11px] font-mono border-b border-[#ffffff16]">
-        <div className="max-w-[1450px] mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 text-[#00747a] font-semibold">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#00747a]" />
-              <span>ISO 9001:2015 CERTIFIED</span>
-            </span>
-            <span className="text-[#00747a]/60">•</span>
-            <span className="text-[#00747a] font-medium">GUELPH, ONTARIO, CANADA</span>
-            <span className="text-[#00747a]/60">•</span>
-            <span className="text-[#00747a] font-semibold">100% CUSTOM · ZERO SHELF INVENTORY</span>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <a
-              href={`tel:${COMPANY_INFO.phone}`}
-              className="flex items-center gap-1.5 text-[#00747a] hover:text-white transition-colors font-medium"
-            >
-              <Phone className="w-3 h-3 text-[#00747a]" />
-              <span>{COMPANY_INFO.phone}</span>
-            </a>
-            <span className="text-[#00747a]/60">•</span>
-            <a
-              href={`mailto:${COMPANY_INFO.salesEmail}`}
-              className="flex items-center gap-1.5 text-[#00747a] hover:text-white transition-colors font-medium"
-            >
-              <Mail className="w-3 h-3 text-[#00747a]" />
-              <span>Sales: {COMPANY_INFO.salesEmail}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Reference Themed Navigation Bar */}
       <nav
         className={`w-full transition-all duration-300 ${
