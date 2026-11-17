@@ -29,8 +29,8 @@ export function CadViewer({ modelUrl, className = "" }: CadViewerProps) {
     const scene = new THREE.Scene();
 
     // Camera
-    const camera = new THREE.PerspectiveCamera(42, width / height, 0.05, 100);
-    camera.position.set(2.2, 1.8, 2.5);
+    const camera = new THREE.PerspectiveCamera(38, width / height, 0.05, 100);
+    camera.position.set(1.4, 1.1, 1.5);
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -93,11 +93,11 @@ export function CadViewer({ modelUrl, className = "" }: CadViewerProps) {
         const center = box.getCenter(new THREE.Vector3());
         const size = box.getSize(new THREE.Vector3());
         const maxDim = Math.max(size.x, size.y, size.z);
-        const scale = 1.5 / (maxDim || 1);
+        const scale = 2.1 / (maxDim || 1);
 
         loadedObject.scale.setScalar(scale);
         loadedObject.position.sub(center.multiplyScalar(scale));
-        loadedObject.position.y += 0.05;
+        loadedObject.position.y += 0.02;
 
         // Industrial brushed metallic styling for meshes
         loadedObject.traverse((child) => {
