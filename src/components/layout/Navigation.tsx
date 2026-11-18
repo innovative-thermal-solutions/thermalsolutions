@@ -382,26 +382,26 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="xl:hidden bg-[#182427] border-b border-[#ffffff22] px-6 py-8 overflow-y-auto max-h-[85vh] shadow-2xl text-[#e9f0ef]"
+            className="xl:hidden bg-[#0d1618] border-b border-white/15 px-6 py-8 overflow-y-auto max-h-[85vh] shadow-2xl text-white"
           >
             <div className="flex flex-col space-y-4">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-slate-400 font-bold">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-[#00747a] font-bold">
                 Navigation
               </span>
               <Link
                 href="/products"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-bold text-slate-900 hover:text-sky-600"
+                className="text-base font-bold text-white hover:text-teal-300 transition-colors"
               >
                 Products
               </Link>
-              <div className="pl-4 space-y-2 border-l border-slate-200">
+              <div className="pl-4 space-y-2.5 border-l border-white/15">
                 {productsMenu.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-xs text-slate-600 hover:text-sky-600"
+                    className="block text-sm text-[#c4d1cf] hover:text-white transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -411,7 +411,7 @@ export function Navigation() {
               <Link
                 href="/portfolio"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-bold text-slate-900 hover:text-sky-600 pt-1"
+                className="text-base font-bold text-white hover:text-teal-300 transition-colors pt-1"
               >
                 Portfolio
               </Link>
@@ -419,7 +419,7 @@ export function Navigation() {
               <Link
                 href="/capabilities"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-bold text-slate-900 hover:text-sky-600 pt-1"
+                className="text-base font-bold text-white hover:text-teal-300 transition-colors pt-1"
               >
                 Capabilities
               </Link>
@@ -427,17 +427,17 @@ export function Navigation() {
               <Link
                 href="/technologies"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-bold text-slate-900 hover:text-sky-600 pt-1"
+                className="text-base font-bold text-white hover:text-teal-300 transition-colors pt-1"
               >
                 Technologies
               </Link>
-              <div className="pl-4 space-y-2 border-l border-slate-200">
+              <div className="pl-4 space-y-2.5 border-l border-white/15">
                 {technologiesMenu.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-xs text-slate-600 hover:text-sky-600"
+                    className="block text-sm text-[#c4d1cf] hover:text-white transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -449,7 +449,7 @@ export function Navigation() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-bold text-slate-900 hover:text-sky-600 pt-1"
+                  className="text-base font-bold text-white hover:text-teal-300 transition-colors pt-1"
                 >
                   {link.name}
                 </Link>
@@ -458,28 +458,28 @@ export function Navigation() {
               <Link
                 href="/about"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-bold text-slate-900 hover:text-sky-600 pt-1"
+                className="text-base font-bold text-white hover:text-teal-300 transition-colors pt-1"
               >
                 About
               </Link>
-              <div className="pl-4 space-y-2 border-l border-slate-200">
+              <div className="pl-4 space-y-2.5 border-l border-white/15">
                 {aboutMenu.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block text-xs text-slate-600 hover:text-sky-600"
+                    className="block text-sm text-[#c4d1cf] hover:text-white transition-colors"
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
 
-              <div className="pt-6 border-t border-slate-200">
+              <div className="pt-6 border-t border-white/15">
                 <a
                   href="mailto:Engineering@itscooling.com?subject=Engineering%20Inquiry%20-%20ITS%20Cooling"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 py-3.5 bg-[#00747a] text-white font-bold text-xs uppercase tracking-wider rounded-md"
+                  className="w-full flex items-center justify-center gap-2 py-3.5 bg-[#00747a] hover:bg-[#008f96] text-white font-bold text-xs uppercase tracking-wider rounded-md shadow-md transition-colors"
                 >
                   <span>Email Engineer</span>
                   <ArrowUpRight className="w-4 h-4" />
