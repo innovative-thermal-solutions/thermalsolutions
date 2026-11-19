@@ -76,12 +76,6 @@ export default function ThermalSimulationClient() {
                 <span>Discuss your thermal challenge</span>
                 <ArrowRight className="w-4 h-4 text-[#01747A]" />
               </a>
-              <a
-                href="#simulation"
-                className="inline-flex items-center gap-2 px-6 py-4 border border-white/30 hover:border-white/60 bg-white/10 text-white font-medium text-xs font-mono uppercase tracking-wider rounded transition-colors"
-              >
-                <span>See the vector plot</span>
-              </a>
             </div>
 
             <div className="pt-6 border-t border-white/20 flex flex-wrap gap-8 text-[11px] font-mono tracking-wider text-teal-100 uppercase font-bold">
@@ -160,15 +154,6 @@ export default function ThermalSimulationClient() {
             THERMAL SIMULATION
           </span>
           <div className="flex items-center gap-6 sm:gap-8">
-            <a href="#approach" className="text-slate-300 hover:text-white transition-colors">
-              What is CFD?
-            </a>
-            <a href="#simulation" className="text-slate-300 hover:text-white transition-colors">
-              See the flow
-            </a>
-            <a href="#process" className="text-slate-300 hover:text-white transition-colors">
-              Our process
-            </a>
             <a href="#start" className="text-slate-300 hover:text-white transition-colors">
               Get started
             </a>
@@ -410,17 +395,6 @@ export default function ThermalSimulationClient() {
                 </div>
               </li>
             </ul>
-
-            <div className="pt-4 border-t border-slate-200">
-              <a
-                href="/project-checklist.txt"
-                download
-                className="inline-flex items-center gap-2 text-xs font-mono font-bold text-[#00747a] hover:underline"
-              >
-                <Download className="w-4 h-4" />
-                <span>Download the project checklist</span>
-              </a>
-            </div>
           </div>
         </div>
       </section>
