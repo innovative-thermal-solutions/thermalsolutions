@@ -1,0 +1,17 @@
+ITS COOLING — THERMAL SIMULATION PROJECT CHECKLIST
+
+Project / company:
+Contact name:
+Project goals and timeline:
+
+1. Geometry: CAD files, drawings, available space and mounting constraints.
+2. Heat sources: component power dissipation, locations and duty cycles.
+3. Temperature limits: component limits and target operating temperatures.
+4. Environment: ambient temperature, altitude and enclosure conditions.
+5. Cooling: airflow or coolant type, inlet temperature, flow rate and pressure constraints, where known.
+6. Materials and interfaces: materials, interface layers and contact details.
+7. Existing evidence: test measurements, operating observations and previous analysis.
+8. Production: manufacturing preferences, quantities and project milestones.
+
+Share available information with Engineering@itscooling.com.
+Call +1 (519) 763-4454 to discuss missing inputs and define a study scope.
