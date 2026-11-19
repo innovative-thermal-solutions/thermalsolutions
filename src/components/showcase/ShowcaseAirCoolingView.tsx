@@ -269,10 +269,10 @@ export function ShowcaseAirCoolingView() {
                     stroke-dashoffset: 0;
                   }
                   to {
-                    stroke-dashoffset: -126px;
+                    stroke-dashoffset: -120px;
                   }
                 }
-                @keyframes fanSpin {
+                @keyframes fanSpinAnimation {
                   from {
                     transform: rotate(0deg);
                   }
@@ -281,11 +281,13 @@ export function ShowcaseAirCoolingView() {
                   }
                 }
                 .air-flow-line {
-                  animation: airFlowDash 2.5s linear infinite;
+                  stroke-dasharray: 6 14;
+                  animation: airFlowDash 1.8s linear infinite !important;
                 }
                 .fan-blade-spin {
                   transform-origin: 105px 175px;
-                  animation: fanSpin 2.4s linear infinite;
+                  transform-box: view-box;
+                  animation: fanSpinAnimation 2s linear infinite !important;
                 }
                 .flow-paused .air-flow-line,
                 .flow-paused .fan-blade-spin {
@@ -326,20 +328,32 @@ export function ShowcaseAirCoolingView() {
                   <rect x="460" y="100" width="12" height="138" rx="2" />
                 </g>
 
-                {/* Fan / Blower Housing & Rotating Blades */}
-                <circle cx="105" cy="175" r="42" fill="#ffffff" stroke="#00747a" strokeWidth="3" />
-                <path
-                  className="fan-blade-spin"
-                  d="M105 175 Q58 150 95 140 Q125 138 105 175 Q135 130 145 170 Q145 195 105 175 Q140 215 100 215 Q75 208 105 175 Q60 205 65 165 Q75 145 105 175"
-                  fill="#99ced2"
-                />
-                <circle cx="105" cy="175" r="7" fill="#00747a" />
+                {/* Fan / Blower Housing Outer Ring */}
+                <circle cx="105" cy="175" r="44" fill="#ffffff" stroke="#00747a" strokeWidth="3" />
+
+                {/* Rotating Symmetric Fan Impeller Group */}
+                <g className="fan-blade-spin" style={{ transformOrigin: "105px 175px" }}>
+                  {/* 4 Aerodynamic Axial Fan Blades */}
+                  <g fill="#7ec4c9" stroke="#00747a" strokeWidth="0.8">
+                    {/* Top Blade */}
+                    <path d="M 105 175 C 93 160 88 142 101 135 C 114 128 122 144 105 175 Z" />
+                    {/* Right Blade */}
+                    <path d="M 105 175 C 120 163 138 158 145 171 C 152 184 136 192 105 175 Z" />
+                    {/* Bottom Blade */}
+                    <path d="M 105 175 C 117 190 122 208 109 215 C 96 222 88 206 105 175 Z" />
+                    {/* Left Blade */}
+                    <path d="M 105 175 C 90 187 72 192 65 179 C 58 166 74 158 105 175 Z" />
+                  </g>
+                  {/* Center Hub and Axle */}
+                  <circle cx="105" cy="175" r="8.5" fill="#00747a" />
+                  <circle cx="105" cy="175" r="3.5" fill="#ffffff" />
+                </g>
 
                 {/* Airflow Flow Lines */}
                 <g fill="none" stroke="url(#airTempGrad)" strokeWidth="5">
-                  <path className="air-flow-line showcase-flow-stroke" strokeDasharray="4 16" d="M165 135 H620" />
-                  <path className="air-flow-line showcase-flow-stroke" strokeDasharray="4 16" d="M165 175 H620" />
-                  <path className="air-flow-line showcase-flow-stroke" strokeDasharray="4 16" d="M165 215 H620" />
+                  <path className="air-flow-line" strokeDasharray="6 14" d="M160 135 H620" />
+                  <path className="air-flow-line" strokeDasharray="6 14" d="M160 175 H620" />
+                  <path className="air-flow-line" strokeDasharray="6 14" d="M160 215 H620" />
                 </g>
 
                 <text x="105" y="246" textAnchor="middle" fill="#141f22" fontSize="11" fontFamily="var(--font-mono)" fontWeight="700">
