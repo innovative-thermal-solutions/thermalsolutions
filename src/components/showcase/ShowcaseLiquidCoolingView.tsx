@@ -137,7 +137,7 @@ export function ShowcaseLiquidCoolingView() {
               width={640}
               height={640}
               priority
-              className="w-[92%] h-[92%] object-contain drop-shadow-[0_20px_25px_rgba(20,31,34,0.18)] transition-transform duration-700 hover:scale-105"
+              className="w-[92%] h-[92%] object-contain mix-blend-multiply drop-shadow-[0_20px_25px_rgba(20,31,34,0.18)] transition-transform duration-700 hover:scale-105"
             />
           </div>
 
