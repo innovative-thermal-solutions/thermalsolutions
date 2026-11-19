@@ -38,8 +38,8 @@ const ROUTE_DATA: Record<"new" | "existing", RouteInfo> = {
     bring:
       "Revision-controlled CAD and drawings, critical requirements, existing test data, and a clear list of what is fixed versus open to change.",
     work: "Design and manufacturability review, agreed improvements where needed, and planning for fabrication and project-specific verification.",
-    image: "/images/showcase/assembly.png",
-    alt: "Existing forced-air heat sink assembly",
+    image: "/images/showcase/existing-design-blueprint.jpg",
+    alt: "Technical engineering CAD blueprint drawing of cold plate heat sink assembly",
     label: "FROM YOUR DRAWINGS TO THE NEXT ENGINEERING STEP",
     cta: "Discuss your existing design",
   },
