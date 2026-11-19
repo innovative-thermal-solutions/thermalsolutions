@@ -114,8 +114,8 @@ export function Navigation() {
       <nav
         className={`w-full transition-all duration-300 ${
           scrolled
-            ? "bg-[#0f1719]/98 backdrop-blur-xl py-3 border-b border-[#ffffff19] shadow-md text-[#e9f0ef]"
-            : "bg-[#0f1719] py-4 border-b border-[#ffffff16] text-[#e9f0ef]"
+            ? "bg-[#0f1719]/98 backdrop-blur-xl py-2.5 sm:py-3 border-b border-[#ffffff19] shadow-md text-[#e9f0ef]"
+            : "bg-[#0f1719] py-3.5 sm:py-4 border-b border-[#ffffff16] text-[#e9f0ef]"
         }`}
       >
         <div className="max-w-[1450px] mx-auto px-6 lg:px-10 flex justify-between items-center gap-4">
@@ -124,10 +124,10 @@ export function Navigation() {
             <Image
               src="/images/logo/its-logo-navbar.svg"
               alt="Innovative Thermal Solutions - ITS Cooling Logo"
-              width={340}
-              height={100}
+              width={400}
+              height={120}
               priority
-              className="h-16 sm:h-20 lg:h-20 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
+              className="h-20 sm:h-24 lg:h-28 w-auto object-contain transition-transform group-hover:scale-105 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]"
             />
           </Link>
 
