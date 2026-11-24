@@ -2,8 +2,13 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { CMSHomePageContent } from "@/lib/cms/types";
 
-const PROCESS_STEPS = [
+interface Props {
+  content?: CMSHomePageContent["workflow"];
+}
+
+const DEFAULT_STEPS = [
   {
     step: "01",
     title: "Define & discover",
@@ -42,9 +47,11 @@ const PROCESS_STEPS = [
   },
 ];
 
-export function ReferenceEngineeringProcess() {
+export function ReferenceEngineeringProcess({ content }: Props) {
   const [activeStep, setActiveStep] = useState(0);
-  const current = PROCESS_STEPS[activeStep];
+
+  const steps = content?.steps?.length ? content.steps : DEFAULT_STEPS;
+  const current = steps[activeStep] || steps[0] || DEFAULT_STEPS[0];
 
   return (
     <section id="engineering" className="relative w-full py-24 px-6 sm:px-8 lg:px-12 bg-[#f8faf9] text-[#141f22] border-b border-[#d8dedf]">
@@ -53,16 +60,15 @@ export function ReferenceEngineeringProcess() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
-              02 / WORK FLOW AT ITS
+              {content?.badge || "02 / WORK FLOW AT ITS"}
             </p>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#00747a] leading-[1.05]">
-              From “what if” <br />
-              <span className="text-[#141f22]">to working hardware.</span>
+              {content?.headline || "From “what if”"} <br />
+              <span className="text-[#141f22]">{content?.headlineHighlight || "to working hardware."}</span>
             </h2>
           </div>
           <p className="text-slate-600 text-sm sm:text-base max-w-md leading-relaxed">
-            Thermal and mechanical design, simulation, manufacturing and testing. <br />
-            Connected from the very first conversation.
+            {content?.description || "Thermal and mechanical design, simulation, manufacturing and testing. Connected from the very first conversation."}
           </p>
         </div>
 
@@ -72,7 +78,7 @@ export function ReferenceEngineeringProcess() {
           <div className="lg:col-span-6 bg-white border border-[#d8dedf] rounded-lg p-6 flex flex-col justify-between shadow-sm min-h-[380px]">
             <div className="flex items-center justify-between text-xs font-mono text-slate-400 mb-4 pb-3 border-b border-slate-100">
               <span className="text-[#00747a] font-bold">
-                0{activeStep + 1} — 04 / PROCESS MILESTONE
+                0{activeStep + 1} — 0{steps.length} / PROCESS MILESTONE
               </span>
               <span>IN-HOUSE FACILITY GUELPH</span>
             </div>
@@ -80,7 +86,7 @@ export function ReferenceEngineeringProcess() {
             <div className="relative w-full h-64 sm:h-72 flex items-center justify-center p-2 overflow-hidden rounded">
               <Image
                 src={current.image}
-                alt={current.alt}
+                alt={current.title}
                 width={500}
                 height={320}
                 className="object-contain max-h-full transition-all duration-300 drop-shadow-sm"
@@ -99,11 +105,11 @@ export function ReferenceEngineeringProcess() {
 
           {/* Right Column: 4 Expandable / Selectable Stages */}
           <div className="lg:col-span-6 space-y-3">
-            {PROCESS_STEPS.map((step, idx) => {
+            {steps.map((step, idx) => {
               const isActive = activeStep === idx;
               return (
                 <div
-                  key={step.step}
+                  key={step.step || idx}
                   onClick={() => setActiveStep(idx)}
                   className={`p-5 rounded-lg border transition-all cursor-pointer ${
                     isActive

@@ -1,8 +1,24 @@
 "use client";
 
 import React from "react";
+import { CMSHomePageContent } from "@/lib/cms/types";
 
-export function ReferenceContactSection() {
+interface Props {
+  content?: CMSHomePageContent["contact"];
+}
+
+export function ReferenceContactSection({ content }: Props) {
+  const contactData = content || {
+    badge: "YOUR NEXT BREAKTHROUGH STARTS HERE",
+    headline: "Tell us what’s getting too hot.",
+    subtitle: "Bring us the challenge. Let’s engineer the solution.",
+    ctaText: "Start your project",
+    email: "Engineering@itscooling.com",
+    phone: "+1 (519) 763-4454",
+    address: "290 Southgate Drive, Unit #2, Guelph, ON N1G 4P5, Canada",
+    hours: "MON–FRI / 8:30 AM–5:00 PM EASTERN",
+  };
+
   const openInquiry = () => {
     window.dispatchEvent(
       new CustomEvent("its-reference-modal", {
@@ -18,20 +34,19 @@ export function ReferenceContactSection() {
         <div className="lg:col-span-7">
           <p className="text-[11px] font-mono tracking-widest text-teal-200 uppercase mb-4 flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-            YOUR NEXT BREAKTHROUGH STARTS HERE
+            {contactData.badge}
           </p>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-medium tracking-tight leading-[0.98] mb-6 text-white">
-            Tell us what’s <br />
-            getting <em className="not-italic text-teal-200">too hot.</em>
+            {contactData.headline}
           </h2>
           <p className="text-teal-50 text-base sm:text-lg mb-8 max-w-lg font-normal">
-            Bring us the challenge. Let’s engineer the solution.
+            {contactData.subtitle}
           </p>
           <button
             onClick={openInquiry}
             className="px-8 py-4 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-4 cursor-pointer shadow-lg shadow-black/10"
           >
-            <span>Start your project</span>
+            <span>{contactData.ctaText}</span>
             <span className="text-lg">↗</span>
           </button>
         </div>
@@ -43,26 +58,25 @@ export function ReferenceContactSection() {
               ENGINEERING &amp; SALES
             </span>
             <a
-              href="mailto:Engineering@itscooling.com"
+              href={`mailto:${contactData.email}`}
               className="text-xl sm:text-2xl font-serif font-bold text-white hover:text-teal-200 transition-colors block mb-2"
             >
-              Engineering@itscooling.com ↗
+              {contactData.email} ↗
             </a>
             <a
-              href="tel:+15197634454"
+              href={`tel:${contactData.phone.replace(/[^0-9+]/g, '')}`}
               className="text-lg font-mono text-teal-50 hover:text-white transition-colors block"
             >
-              +1 (519) 763-4454 ↗
+              {contactData.phone} ↗
             </a>
           </div>
 
           <div className="border-t border-white/20 pt-6">
-            <p className="text-teal-50 text-sm font-sans leading-relaxed mb-3">
-              290 Southgate Drive, Unit #2 <br />
-              Guelph, ON N1G 4P5, Canada
+            <p className="text-teal-50 text-sm font-sans leading-relaxed mb-3 whitespace-pre-line">
+              {contactData.address}
             </p>
             <span className="text-[11px] text-teal-200/80 tracking-wider">
-              MON–FRI / 8:30 AM–5:00 PM EASTERN
+              {contactData.hours}
             </span>
           </div>
         </div>

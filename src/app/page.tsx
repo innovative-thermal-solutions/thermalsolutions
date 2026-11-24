@@ -10,6 +10,7 @@ import { ReferenceCaseStudiesSection } from "@/components/home/ReferenceCaseStud
 import { ReferenceFaqSection } from "@/components/home/ReferenceFaqSection";
 import { ReferenceCustomersSection } from "@/components/home/ReferenceCustomersSection";
 import { ReferenceContactSection } from "@/components/home/ReferenceContactSection";
+import { getCMSHomepage } from "@/lib/cms/store";
 
 export const metadata = {
   title: "ITS Cooling — Engineered for the heat ahead. | Innovative Thermal Solutions",
@@ -18,25 +19,27 @@ export const metadata = {
 };
 
 export default function HomePage() {
+  const homeData = getCMSHomepage();
+
   return (
     <main id="main-content" className="relative w-full min-h-screen bg-slate-50">
       {/* 01 REFERENCE HERO WITH WORKSHOP BACKGROUND VIDEO & TRUST STRIP */}
-      <ReferenceHeroSection />
+      <ReferenceHeroSection content={homeData.hero} />
 
       {/* 02 COMPLETE REFERENCE COOLING SOLUTIONS (8 Products, Filters, Search, Compare, Finder) */}
       <ReferenceSolutionsSection />
 
       {/* 03 WHO WE ARE */}
-      <WhoWeAreSection />
+      <WhoWeAreSection content={homeData.whoWeAre} />
 
       {/* 04 WORK FLOW AT ITS (4-Stage Engineering Process) */}
-      <ReferenceEngineeringProcess />
+      <ReferenceEngineeringProcess content={homeData.workflow} />
 
       {/* 05 COMPLETE REFERENCE INDUSTRIES EXPLORER (5 Primary Sectors) */}
       <ReferenceIndustriesSection />
 
       {/* 05 IN-HOUSE PRECISION MANUFACTURING & CNC VIDEO HUD */}
-      <ManufacturingStory />
+      <ManufacturingStory content={homeData.manufacturing} />
 
       {/* 06 COMPLETE REFERENCE CASE STUDIES & BEFORE/AFTER THERMAL COMPARISON SLIDER */}
       <ReferenceCaseStudiesSection />
@@ -51,7 +54,7 @@ export default function HomePage() {
       <ReferenceCustomersSection />
 
       {/* 13 COMPLETE REFERENCE CONTACT & PROJECT BRIEF SECTION */}
-      <ReferenceContactSection />
+      <ReferenceContactSection content={homeData.contact} />
     </main>
   );
 }

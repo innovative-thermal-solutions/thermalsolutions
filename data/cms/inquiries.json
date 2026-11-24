@@ -1,0 +1,13 @@
+[
+  {
+    "id": "inq-initial-sample",
+    "name": "Defence Systems Prime Contractor",
+    "email": "procurement@defensesystems-example.com",
+    "phone": "+1 (416) 555-0199",
+    "company": "Aerospace & Defence Systems",
+    "subject": "Custom FSW Liquid Cold Plate Specification (800V GaN Inverter)",
+    "message": "Requesting technical consultation and thermal simulation review for a dual-sided micro-channel cold plate operating at 40 PSI proof pressure.",
+    "status": "reviewed",
+    "submittedAt": "2026-11-16T15:20:00Z"
+  }
+]

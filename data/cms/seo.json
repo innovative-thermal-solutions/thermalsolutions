@@ -1,0 +1,46 @@
+[
+  {
+    "pagePath": "/",
+    "pageTitle": "Innovative Thermal Solutions | Friction Stir Welding & Liquid Cold Plates",
+    "metaDescription": "Turnkey custom liquid cold plates, friction stir welding (FSW), air-cooled heat sinks, and laminated busbars manufactured in Guelph, Ontario, Canada.",
+    "metaKeywords": "liquid cold plates, friction stir welding, heat sinks, busbars, thermal management, Guelph, Ontario",
+    "ogTitle": "ITS Cooling | Engineered to Control Heat",
+    "ogDescription": "Turnkey custom liquid cold plates and heat sinks engineered under one roof.",
+    "ogImage": "/images/home/fsw-machine.jpg",
+    "canonicalUrl": "https://innovative-thermal-solutions-one.vercel.app/",
+    "updatedAt": "2026-11-17T10:00:00Z"
+  },
+  {
+    "pagePath": "/products/cold-plates",
+    "pageTitle": "Liquid Cold Plates | FSW & Vacuum Brazed | ITS Cooling",
+    "metaDescription": "High-power liquid cold plates with internal micro-channels, solid-state friction stir welding, and vacuum brazing.",
+    "metaKeywords": "liquid cold plates, micro-channel, FSW, vacuum brazing, liquid cooling",
+    "ogTitle": "Liquid Cold Plates | ITS Cooling",
+    "ogDescription": "Precision custom liquid cold plates for power electronics.",
+    "ogImage": "/images/portfolio/hypercool.webp",
+    "canonicalUrl": "https://innovative-thermal-solutions-one.vercel.app/products/cold-plates",
+    "updatedAt": "2026-11-17T10:00:00Z"
+  },
+  {
+    "pagePath": "/events",
+    "pageTitle": "Upcoming Trade Shows & Events | ITS Cooling",
+    "metaDescription": "Connect with Innovative Thermal Solutions at upcoming industry expos including Electronica 2026, SPIE Photonics West, and PCIM Expo.",
+    "metaKeywords": "trade shows, electronica, spie photonics west, apec, pcim, ims, its cooling",
+    "ogTitle": "Upcoming Trade Shows & Events | ITS Cooling",
+    "ogDescription": "Meet our engineering and technical sales leaders in Munich, San Francisco, and Nuremberg.",
+    "ogImage": "/images/events/electronica-2026.png",
+    "canonicalUrl": "https://innovative-thermal-solutions-one.vercel.app/events",
+    "updatedAt": "2026-11-17T10:00:00Z"
+  },
+  {
+    "pagePath": "/careers",
+    "pageTitle": "Careers & Engineering Opportunities | ITS Cooling",
+    "metaDescription": "Join the team at Innovative Thermal Solutions in Guelph, Ontario. Explore open roles across mechanical engineering, CNC machining, and quality assurance.",
+    "metaKeywords": "careers, thermal engineering, cnc operator, machinist, guelph jobs",
+    "ogTitle": "Careers at ITS Cooling",
+    "ogDescription": "Build the next generation of advanced thermal management solutions.",
+    "ogImage": "/images/facility/guelph-facility.jpg",
+    "canonicalUrl": "https://innovative-thermal-solutions-one.vercel.app/careers",
+    "updatedAt": "2026-11-17T10:00:00Z"
+  }
+]

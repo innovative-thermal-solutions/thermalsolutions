@@ -4,9 +4,25 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, RotateCw, Check } from "lucide-react";
+import { CMSHomePageContent } from "@/lib/cms/types";
 
-export function ReferenceHeroSection() {
+interface Props {
+  content?: CMSHomePageContent["hero"];
+}
+
+export function ReferenceHeroSection({ content }: Props) {
   const [liquidHero, setLiquidHero] = useState(false);
+
+  const heroData = content || {
+    badge: "THERMAL ENGINEERING. WITHOUT LIMITS.",
+    titleLine1: "THERMAL MANAGEMENT",
+    titleLine2: "SOLUTIONS",
+    subtitle: "From Thermal Design to Manufacturing",
+    primaryCtaText: "Explore our solutions",
+    primaryCtaHref: "#solutions",
+    secondaryCtaText: "Talk to an engineer",
+    videoUrl: "/videos/hero-sequence-loop.mp4",
+  };
 
   const openInquiry = (cooling?: string) => {
     window.dispatchEvent(
@@ -28,7 +44,7 @@ export function ReferenceHeroSection() {
           preload="auto"
           className="w-full h-full object-cover object-center opacity-85 brightness-105 scale-105"
         >
-          <source src="/videos/hero-sequence-loop.mp4" type="video/mp4" />
+          <source src={heroData.videoUrl || "/videos/hero-sequence-loop.mp4"} type="video/mp4" />
         </video>
         {/* Soft gradient overlay for text readability without washing out the video */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f1719]/85 via-[#0f1719]/45 to-transparent z-10" />
@@ -53,26 +69,26 @@ export function ReferenceHeroSection() {
           <div className="flex items-center gap-2 mb-6">
             <span className="w-2 h-2 rounded-full bg-[#00747a] shadow-[0_0_8px_#00747a]" />
             <span className="font-mono text-xs uppercase tracking-[0.2em] text-[#9da8a9] font-semibold">
-              THERMAL ENGINEERING. WITHOUT LIMITS.
+              {heroData.badge}
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl lg:text-[76px] font-bold tracking-tight text-white leading-[1.05] mb-6 uppercase">
-            THERMAL MANAGEMENT <br className="hidden sm:inline" />
-            <span className="text-[#00747a]">SOLUTIONS</span>
+            {heroData.titleLine1} <br className="hidden sm:inline" />
+            <span className="text-[#00747a]">{heroData.titleLine2}</span>
           </h1>
 
           <p className="text-slate-200 text-lg sm:text-2xl font-medium leading-relaxed max-w-2xl mb-8">
-            From Thermal Design to Manufacturing
+            {heroData.subtitle}
           </p>
 
           {/* CTAs */}
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
             <a
-              href="#solutions"
+              href={heroData.primaryCtaHref || "#solutions"}
               className="inline-flex items-center justify-between gap-6 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-bold text-xs uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-md shadow-[#00747a]/20"
             >
-              <span>Explore our solutions</span>
+              <span>{heroData.primaryCtaText || "Explore our solutions"}</span>
               <span className="text-lg">↗</span>
             </a>
 
@@ -80,7 +96,7 @@ export function ReferenceHeroSection() {
               onClick={() => openInquiry()}
               className="inline-flex items-center gap-3 text-sm font-medium text-white hover:text-[#00747a] transition-colors cursor-pointer"
             >
-              <span>Talk to an engineer</span>
+              <span>{heroData.secondaryCtaText || "Talk to an engineer"}</span>
               <span className="text-lg">↗</span>
             </button>
           </div>

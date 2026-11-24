@@ -1,9 +1,25 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { ArrowUpRight, Globe2 } from "lucide-react";
+import { CMSHomePageContent } from "@/lib/cms/types";
 
-export function WhoWeAreSection() {
+interface Props {
+  content?: CMSHomePageContent["whoWeAre"];
+}
+
+export function WhoWeAreSection({ content }: Props) {
+  const whoWeAreData = content || {
+    badge: "ABOUT ITS COOLING",
+    headline: "Who We Are",
+    locationBadge: "ONTARIO, CANADA & GLOBAL PARTNERS",
+    paragraph1: "Innovative Thermal Solutions is a leading turnkey engineering firm specializing in the design and manufacture of air-cooled heat sinks and liquid cold plates for power electronics, RF generators, and battery packs.",
+    paragraph2: "We combine in-house CFD thermal simulation, 5-axis CNC machining, and production-scale friction stir welding under one roof in Guelph, Ontario to take assemblies from concept to volume production.",
+    ctaText: "Connect With Our Team",
+    ctaHref: "/capabilities",
+  };
+
   const openInquiry = () => {
     window.dispatchEvent(
       new CustomEvent("its-reference-modal", {
@@ -30,7 +46,7 @@ export function WhoWeAreSection() {
         <div className="flex items-center gap-3 mb-4">
           <span className="w-2 h-2 rounded-full bg-[#00747a]" />
           <p className="text-[12px] font-mono tracking-[0.2em] text-[#00747a] uppercase font-bold">
-            ABOUT ITS COOLING
+            {whoWeAreData.badge}
           </p>
         </div>
 
@@ -38,13 +54,13 @@ export function WhoWeAreSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
           <div className="lg:col-span-7">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-[#00747a] leading-[1.08]">
-              Who We Are
+              {whoWeAreData.headline}
             </h2>
           </div>
           <div className="lg:col-span-5 flex items-center lg:justify-end">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-[#d8dedf] bg-white/90 backdrop-blur-sm text-xs font-mono text-[#00747a] shadow-xs">
               <span className="w-2 h-2 rounded-full bg-[#00747a] animate-pulse" />
-              <span className="font-semibold">ONTARIO, CANADA & GLOBAL PARTNERS</span>
+              <span className="font-semibold">{whoWeAreData.locationBadge}</span>
             </div>
           </div>
         </div>
@@ -55,7 +71,7 @@ export function WhoWeAreSection() {
           <div className="lg:col-span-6 p-8 sm:p-10 rounded-xl bg-white border border-[#d8dedf] flex flex-col justify-between shadow-xs">
             <div>
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal mb-6">
-                Innovative Thermal Solutions is a leading turnkey engineering firm specializing in the design and manufacture of air-cooled heat sinks and liquid cold plates for power electronics, RF generators, and battery packs.
+                {whoWeAreData.paragraph1}
               </p>
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
                 Our team of seasoned engineers brings over 75 years of combined experience, working closely with clients to deliver tailored thermal management solutions.
@@ -78,7 +94,7 @@ export function WhoWeAreSection() {
           <div className="lg:col-span-6 p-8 sm:p-10 rounded-xl bg-white border border-[#d8dedf] flex flex-col justify-between shadow-xs">
             <div>
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal mb-6">
-                Operating from our state-of-the-art manufacturing facility in Ontario, Canada, we employ cutting-edge Haas CNC milling machines to produce high-quality products.
+                {whoWeAreData.paragraph2}
               </p>
               <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-normal mb-6">
                 Our advanced Friction Stir Welding (FSW) technology ensures the creation of leak-proof aluminum and copper liquid cold plates, setting us apart as one of the few North American companies utilizing this innovative technique for cooling battery systems and power electronics.
@@ -93,13 +109,23 @@ export function WhoWeAreSection() {
                 <Globe2 className="w-4 h-4 flex-shrink-0" />
                 <span>North American FSW Leaders & Global Volume Partners</span>
               </div>
-              <button
-                onClick={openInquiry}
-                className="group inline-flex items-center gap-2 text-xs font-mono font-bold text-[#141f22] uppercase tracking-wider hover:text-[#00747a] transition-colors cursor-pointer"
-              >
-                <span>Connect With Our Team</span>
-                <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </button>
+              {whoWeAreData.ctaHref && whoWeAreData.ctaHref.startsWith("/") ? (
+                <Link
+                  href={whoWeAreData.ctaHref}
+                  className="group inline-flex items-center gap-2 text-xs font-mono font-bold text-[#141f22] uppercase tracking-wider hover:text-[#00747a] transition-colors"
+                >
+                  <span>{whoWeAreData.ctaText}</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </Link>
+              ) : (
+                <button
+                  onClick={openInquiry}
+                  className="group inline-flex items-center gap-2 text-xs font-mono font-bold text-[#141f22] uppercase tracking-wider hover:text-[#00747a] transition-colors cursor-pointer"
+                >
+                  <span>{whoWeAreData.ctaText}</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </button>
+              )}
             </div>
           </div>
         </div>

@@ -16,11 +16,13 @@ import {
   FileCheck,
   Factory,
   HelpCircle,
-  Compass
+  Compass,
+  Home,
 } from "lucide-react";
 
 const NAV_ITEMS = [
   { name: "Dashboard Overview", href: "/admin", icon: LayoutDashboard },
+  { name: "Homepage CMS", href: "/admin/homepage", icon: Home },
   { name: "Products & Catalog", href: "/admin/products", icon: Boxes },
   { name: "Product Portfolio", href: "/admin/portfolio", icon: FolderKanban },
   { name: "Capabilities (8 Chapters)", href: "/admin/capabilities", icon: Layers },

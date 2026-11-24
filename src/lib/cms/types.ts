@@ -137,6 +137,62 @@ export interface CMSSiteSettings {
   updatedAt: string;
 }
 
+export interface CMSHomePageContent {
+  hero: {
+    badge: string;
+    titleLine1: string;
+    titleLine2: string;
+    subtitle: string;
+    primaryCtaText: string;
+    primaryCtaHref: string;
+    secondaryCtaText: string;
+    videoUrl?: string;
+  };
+  whoWeAre: {
+    badge: string;
+    headline: string;
+    locationBadge: string;
+    paragraph1: string;
+    paragraph2: string;
+    ctaText: string;
+    ctaHref: string;
+  };
+  workflow: {
+    badge: string;
+    headline: string;
+    headlineHighlight: string;
+    description: string;
+    steps: {
+      step: string;
+      title: string;
+      description: string;
+      image: string;
+      caption: string;
+    }[];
+  };
+  manufacturing: {
+    line1: string;
+    line2: string;
+    line3: string;
+    line4: string;
+    subtitle: string;
+    ctaText: string;
+    ctaHref: string;
+    videoUrl?: string;
+  };
+  contact: {
+    badge: string;
+    headline: string;
+    subtitle: string;
+    ctaText: string;
+    email: string;
+    phone: string;
+    address: string;
+    hours: string;
+  };
+  updatedAt?: string;
+}
+
 export interface CMSPageSection {
   id: string;
   pageId: string;

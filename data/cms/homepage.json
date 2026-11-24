@@ -1,0 +1,78 @@
+{
+  "hero": {
+    "badge": "THERMAL ENGINEERING. WITHOUT LIMITS.",
+    "titleLine1": "THERMAL MANAGEMENT",
+    "titleLine2": "SOLUTIONS",
+    "subtitle": "From Thermal Design to Manufacturing",
+    "primaryCtaText": "Explore our solutions",
+    "primaryCtaHref": "#solutions",
+    "secondaryCtaText": "Start a project brief",
+    "videoUrl": "/videos/hero-sequence-loop.mp4"
+  },
+  "whoWeAre": {
+    "badge": "ABOUT ITS COOLING",
+    "headline": "Who We Are",
+    "locationBadge": "ONTARIO, CANADA & GLOBAL PARTNERS",
+    "paragraph1": "Innovative Thermal Solutions is a leading turnkey engineering firm specializing in the design and manufacture of air-cooled heat sinks and liquid cold plates for power electronics, RF generators, and battery packs.",
+    "paragraph2": "We combine in-house CFD thermal simulation, 5-axis CNC machining, and production-scale friction stir welding under one roof in Guelph, Ontario to take assemblies from concept to volume production.",
+    "ctaText": "Our In-House Capabilities",
+    "ctaHref": "/capabilities"
+  },
+  "workflow": {
+    "badge": "02 / WORK FLOW AT ITS",
+    "headline": "From “what if”",
+    "headlineHighlight": "to working hardware.",
+    "description": "Thermal and mechanical design, simulation, manufacturing and testing. Connected from the very first conversation.",
+    "steps": [
+      {
+        "step": "01",
+        "title": "Define & discover",
+        "description": "Start with your heat load, temperature targets, available space and production goals. We turn the constraints into a clear design brief.",
+        "image": "/images/process/define-and-discover-blended.webp",
+        "caption": "DEFINE REQUIREMENTS & CONSTRAINTS."
+      },
+      {
+        "step": "02",
+        "title": "Design & simulate",
+        "description": "CFD, parametric studies and iterative optimization explore the thermal design. SolidWorks supports mechanical design and integration.",
+        "image": "/images/process/design-and-simulate.png",
+        "caption": "THERMAL & HYDRAULIC ANALYSIS."
+      },
+      {
+        "step": "03",
+        "title": "Machine & manufacture",
+        "description": "Five-axis CNC machining and friction stir welding bring the design to life at our Ontario facility, with trusted partners for high-volume production.",
+        "image": "/images/process/machine-and-manufacture.png",
+        "caption": "PRECISION MANUFACTURING. IN HOUSE."
+      },
+      {
+        "step": "04",
+        "title": "Test & deliver",
+        "description": "Experiments and prototype evaluation check thermal performance against your project requirements before moving toward production.",
+        "image": "/assets/liquid-assembly.webp",
+        "caption": "FROM PROTOTYPE TO PRODUCTION."
+      }
+    ]
+  },
+  "manufacturing": {
+    "line1": "IN-HOUSE",
+    "line2": "FRICTION",
+    "line3": "STIR",
+    "line4": "WELDING.",
+    "subtitle": "Hermetic solid-state joining and precision thermal manufacturing under one roof in Guelph, Ontario.",
+    "ctaText": "EXPLORE FSW",
+    "ctaHref": "/capabilities/friction-stir-welding",
+    "videoUrl": "/videos/designed-built-tested-loop.mp4"
+  },
+  "contact": {
+    "badge": "YOUR NEXT BREAKTHROUGH STARTS HERE",
+    "headline": "Tell us what’s getting too hot.",
+    "subtitle": "Bring us the challenge. Let’s engineer the solution.",
+    "ctaText": "Start your project",
+    "email": "Engineering@itscooling.com",
+    "phone": "+1 (519) 763-4454",
+    "address": "290 Southgate Drive, Unit #2, Guelph, ON N1G 4P5, Canada",
+    "hours": "MON–FRI / 8:30 AM–5:00 PM EASTERN"
+  },
+  "updatedAt": "2026-11-24T18:00:00Z"
+}
