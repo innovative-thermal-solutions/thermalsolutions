@@ -151,7 +151,7 @@ export default function CapabilitiesPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22] overflow-hidden">
       {/* 01 PAGE HERO */}
-      <section className="relative w-full min-h-[85vh] lg:min-h-[90vh] pt-36 sm:pt-44 lg:pt-52 pb-20 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] flex flex-col justify-end overflow-hidden">
+      <section className="relative w-full pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] flex flex-col justify-end overflow-hidden">
         {/* Subtle grid background */}
         <div
           className="absolute inset-0 pointer-events-none opacity-15"
@@ -164,15 +164,15 @@ export default function CapabilitiesPage() {
         <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="w-full max-w-[1440px] mx-auto relative z-10 flex-1 flex flex-col justify-end">
-          <p className="text-[12px] font-mono tracking-[0.25em] text-teal-200 uppercase font-bold mb-6">
+          <p className="text-[12px] font-mono tracking-[0.25em] text-teal-200 uppercase font-bold mb-4">
             ENGINEERING + MANUFACTURING
           </p>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.2rem] font-serif font-medium tracking-tight text-white leading-[0.98] sm:leading-[0.94] max-w-5xl mb-12">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] font-serif font-medium tracking-tight text-white leading-[1.02] sm:leading-[0.98] max-w-5xl mb-8">
             FROM THERMAL CONCEPT TO FINISHED HARDWARE.
           </h1>
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pt-8 border-t border-white/20">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pt-6 border-t border-white/20">
             <p className="text-teal-50 text-base sm:text-lg max-w-xl leading-relaxed font-normal">
               Engineering, design, advanced manufacturing and quality—connected to develop thermal solutions for demanding applications.
             </p>
