@@ -137,56 +137,36 @@ export default function OurTeamPage() {
       </section>
 
       {/* 3. Our Team Grid */}
-      <section className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-14 bg-[#f8faf9] border-b border-[#d8dedf]">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-xs font-mono tracking-widest text-[#00747a] uppercase font-bold block mb-2">
-              DEDICATED SPECIALISTS
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-serif font-medium tracking-tight text-slate-900">
-              Our Team
+      <section className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-14 bg-white border-b border-[#d8dedf]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-2xl sm:text-3xl font-serif font-bold tracking-tight text-slate-900 uppercase">
+              OUR TEAM
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto mt-3">
-              Specialized engineering, sales, and supply chain experts in Guelph, Ontario.
-            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
-                className="bg-white rounded-2xl border border-[#d8dedf] overflow-hidden shadow-sm hover:shadow-xl transition-all group flex flex-col justify-between"
+                className="flex flex-col items-center text-center group"
               >
-                <div>
-                  <div className="relative aspect-[4/3] w-full bg-[#f2f6f6] overflow-hidden border-b border-[#d8dedf]">
-                    <Image
-                      src={member.image}
-                      alt={`${member.name} - ${member.title}`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-
-                  <div className="p-6">
-                    <span className="text-[11px] font-mono tracking-widest text-[#01747A] uppercase font-bold block mb-1">
-                      {member.title}
-                    </span>
-                    <h3 className="text-xl font-bold font-serif text-slate-900 group-hover:text-[#01747A] transition-colors">
-                      {member.name}
-                    </h3>
-                  </div>
+                <div className="relative aspect-[3/4] w-full max-w-[260px] rounded-2xl overflow-hidden bg-slate-100 mb-4 transition-transform duration-300 group-hover:scale-[1.02]">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.title}`}
+                    fill
+                    sizes="(max-width: 640px) 260px, (max-width: 1024px) 260px, 260px"
+                    className="object-cover object-top"
+                  />
                 </div>
 
-                <div className="px-6 pb-6 pt-0">
-                  <a
-                    href="mailto:engineering@itscooling.com"
-                    className="inline-flex items-center gap-1.5 text-xs font-mono text-slate-600 hover:text-[#01747A] transition-colors"
-                  >
-                    <Mail className="w-3.5 h-3.5 text-[#01747A]" />
-                    <span>Contact via Engineering</span>
-                  </a>
-                </div>
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">
+                  {member.name}
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 mt-1">
+                  {member.title}
+                </p>
               </div>
             ))}
           </div>
