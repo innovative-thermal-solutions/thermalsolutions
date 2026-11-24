@@ -4,7 +4,7 @@ import { CMSTeamMember } from "@/lib/cms/types";
 
 export async function GET() {
   const team = getCMSTeam();
-  return NextResponse.json({ success: true, team });
+  return NextResponse.json({ success: true, team, members: team });
 }
 
 export async function POST(req: NextRequest) {

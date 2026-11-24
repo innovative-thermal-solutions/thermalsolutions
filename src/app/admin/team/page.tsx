@@ -22,8 +22,8 @@ export default function AdminTeamPage() {
       setLoading(true);
       const res = await fetch('/api/admin/team');
       const data = await res.json();
-      if (data.members) {
-        setMembers(data.members);
+      if (data.members || data.team) {
+        setMembers(data.members || data.team);
       }
     } catch (err) {
       console.error('Failed to load team', err);

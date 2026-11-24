@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone, ArrowRight, ShieldCheck, Award, MapPin } from "lucide-react";
 import type { Metadata } from "next";
+import { getCMSTeam } from "@/lib/cms/store";
 
 export const metadata: Metadata = {
   title: "Our Team | Manufacturing Experts & Engineers | ITS Cooling",
@@ -9,33 +10,39 @@ export const metadata: Metadata = {
     "Meet the leadership, thermal experts, mechanical engineers, and supply chain specialists at Innovative Thermal Solutions in Guelph, Ontario.",
 };
 
-const teamMembers = [
+const DEFAULT_TEAM_MEMBERS = [
   {
+    id: "cliff-weasner",
     name: "Cliff Weasner",
     title: "Director of Engineering",
     image: "/images/team/cliff-weasner.jpg",
   },
   {
+    id: "abdu-zaghlol",
     name: "Abdu Zaghlol",
     title: "Director of Sales",
     image: "/images/team/abdu-zaghlol.jpg",
   },
   {
+    id: "nada-zaghlol",
     name: "Nada Zaghlol",
     title: "Supply Chain Manager",
     image: "/images/team/nada-zaghlol.jpg",
   },
   {
+    id: "sam-hemming",
     name: "Sam Hemming, M.A.Sc.",
     title: "Lead Mechanical Engineer",
     image: "/images/team/sam-hemming.jpg",
   },
   {
+    id: "matt-galvez",
     name: "Matt Galvez, B.A.Sc., EIT",
     title: "Mechanical Engineer",
     image: "/images/team/matt-galvez.jpg",
   },
   {
+    id: "david-dawson",
     name: "David Dawson, M.A.",
     title: "Thermal Engineer",
     image: "/images/team/david-dawson.jpg",
@@ -43,6 +50,16 @@ const teamMembers = [
 ];
 
 export default function OurTeamPage() {
+  const cmsTeam = getCMSTeam();
+  const leader = cmsTeam.find((m) => m.featured || m.id === "ahmed-zaghlol") || {
+    name: "Ahmed Zaghlol, PHD, PEng",
+    title: "Founder and CEO",
+    image: "/images/team/ahmed-zaghlol.jpg",
+    bio: "Ahmed received his Ph.D. in Engineering Science from the University of Western Ontario, then he joined the Microelectronic Heat Transfer Laboratory (MHTL) at the University of Waterloo as a postdoctoral fellow.",
+  };
+
+  const otherMembers = cmsTeam.filter((m) => m.id !== "ahmed-zaghlol" && !m.featured);
+  const activeMembers = otherMembers.length > 0 ? otherMembers : DEFAULT_TEAM_MEMBERS;
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22] pt-28">
       {/* 2. Founder & CEO Section */}
@@ -146,9 +163,9 @@ export default function OurTeamPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12">
-            {teamMembers.map((member) => (
+            {activeMembers.map((member) => (
               <div
-                key={member.name}
+                key={member.id || member.name}
                 className="flex flex-col items-center text-center group"
               >
                 <div className="relative aspect-[3/4] w-full max-w-[260px] rounded-2xl overflow-hidden bg-slate-100 mb-4 transition-transform duration-300 group-hover:scale-[1.02]">
