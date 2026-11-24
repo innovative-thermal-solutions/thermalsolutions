@@ -146,12 +146,12 @@ export function ShowcaseAirCoolingView() {
           {/* Main Visual Image */}
           <div className="relative z-10 w-full max-w-lg aspect-square flex items-center justify-center">
             <Image
-              src="/images/showcase/air-cooling-hero-dsc09561.jpg"
+              src="/images/showcase/air-cooling-hero-dsc09561-clean.png"
               alt="Black finned heat sink with long parallel fins and mounting holes"
               width={640}
               height={640}
               priority
-              className="w-[92%] h-[92%] object-contain mix-blend-multiply drop-shadow-[0_20px_25px_rgba(20,31,34,0.18)] transition-transform duration-700 hover:scale-105"
+              className="w-[92%] h-[92%] object-contain drop-shadow-[0_20px_25px_rgba(20,31,34,0.18)] transition-transform duration-700 hover:scale-105"
             />
           </div>
 
@@ -415,11 +415,10 @@ export function ShowcaseAirCoolingView() {
                 role="tab"
                 aria-selected={activeRoute === "new"}
                 onClick={() => setActiveRoute("new")}
-                className={`px-5 sm:px-8 py-3 rounded-lg text-xs font-mono uppercase tracking-wider font-bold transition-all cursor-pointer flex items-center gap-2 ${
-                  activeRoute === "new"
-                    ? "bg-[#00747a] text-white shadow-sm"
-                    : "text-slate-700 hover:text-[#00747a]"
-                }`}
+                className={`px-5 sm:px-8 py-3 rounded-lg text-xs font-mono uppercase tracking-wider font-bold transition-all cursor-pointer flex items-center gap-2 ${activeRoute === "new"
+                  ? "bg-[#00747a] text-white shadow-sm"
+                  : "text-slate-700 hover:text-[#00747a]"
+                  }`}
               >
                 <span>01 / I need a new design</span>
                 <span>↗</span>
@@ -430,11 +429,10 @@ export function ShowcaseAirCoolingView() {
                 role="tab"
                 aria-selected={activeRoute === "existing"}
                 onClick={() => setActiveRoute("existing")}
-                className={`px-5 sm:px-8 py-3 rounded-lg text-xs font-mono uppercase tracking-wider font-bold transition-all cursor-pointer flex items-center gap-2 ${
-                  activeRoute === "existing"
-                    ? "bg-[#00747a] text-white shadow-sm"
-                    : "text-slate-700 hover:text-[#00747a]"
-                }`}
+                className={`px-5 sm:px-8 py-3 rounded-lg text-xs font-mono uppercase tracking-wider font-bold transition-all cursor-pointer flex items-center gap-2 ${activeRoute === "existing"
+                  ? "bg-[#00747a] text-white shadow-sm"
+                  : "text-slate-700 hover:text-[#00747a]"
+                  }`}
               >
                 <span>02 / I have an existing design</span>
                 <span>↗</span>
@@ -544,11 +542,10 @@ export function ShowcaseAirCoolingView() {
                   key={prod.name}
                   type="button"
                   onClick={() => setActiveArchIndex(idx)}
-                  className={`w-full p-6 rounded-xl border text-left transition-all flex items-start gap-4 cursor-pointer ${
-                    active
-                      ? "bg-[#00747a] text-white border-[#00747a] shadow-md"
-                      : "bg-white text-slate-900 border-[#d8dedf] hover:border-[#00747a] hover:bg-[#f8faf9]"
-                  }`}
+                  className={`w-full p-6 rounded-xl border text-left transition-all flex items-start gap-4 cursor-pointer ${active
+                    ? "bg-[#00747a] text-white border-[#00747a] shadow-md"
+                    : "bg-white text-slate-900 border-[#d8dedf] hover:border-[#00747a] hover:bg-[#f8faf9]"
+                    }`}
                 >
                   <span className={`font-mono text-xs font-bold ${active ? "text-teal-200" : "text-[#00747a]"}`}>
                     0{idx + 1}

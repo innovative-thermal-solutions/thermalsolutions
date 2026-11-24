@@ -132,12 +132,12 @@ export function ShowcaseLiquidCoolingView() {
           {/* Main Visual Image */}
           <div className="relative z-10 w-full max-w-lg aspect-square flex items-center justify-center">
             <Image
-              src="/images/showcase/cnc-machined-aluminum-compartment-tray.png"
+              src="/images/showcase/cnc-machined-aluminum-compartment-tray-clean.png"
               alt="CNC-machined aluminium compartment tray with partition walls and twin fluid ports"
               width={640}
               height={640}
               priority
-              className="w-[92%] h-[92%] object-contain mix-blend-multiply drop-shadow-[0_20px_25px_rgba(20,31,34,0.18)] transition-transform duration-700 hover:scale-105"
+              className="w-[92%] h-[92%] object-contain drop-shadow-[0_20px_25px_rgba(20,31,34,0.18)] transition-transform duration-700 hover:scale-105"
             />
           </div>
 
