@@ -151,7 +151,7 @@ export default function CapabilitiesPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22] overflow-hidden">
       {/* 01 PAGE HERO */}
-      <section className="relative w-full pt-32 sm:pt-36 lg:pt-40 pb-12 sm:pb-16 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] flex flex-col justify-end overflow-hidden">
+      <section className="relative w-full pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] flex flex-col justify-end overflow-hidden">
         {/* Subtle grid background */}
         <div
           className="absolute inset-0 pointer-events-none opacity-15"
@@ -161,33 +161,33 @@ export default function CapabilitiesPage() {
             backgroundSize: "64px 64px",
           }}
         />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-white/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="w-full max-w-[1440px] mx-auto relative z-10 flex-1 flex flex-col justify-end">
-          <p className="text-[12px] font-mono tracking-[0.25em] text-teal-200 uppercase font-bold mb-4">
+          <p className="text-[11px] sm:text-[12px] font-mono tracking-[0.25em] text-teal-200 uppercase font-bold mb-2 sm:mb-3">
             ENGINEERING + MANUFACTURING
           </p>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[4.2rem] xl:text-[4.8rem] font-serif font-medium tracking-tight text-white leading-[1.02] sm:leading-[0.98] max-w-5xl mb-8">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.4rem] xl:text-[3.8rem] font-serif font-medium tracking-tight text-white leading-[1.05] sm:leading-[1] max-w-4xl mb-5 sm:mb-6">
             FROM THERMAL CONCEPT TO FINISHED HARDWARE.
           </h1>
 
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pt-6 border-t border-white/20">
-            <p className="text-teal-50 text-base sm:text-lg max-w-xl leading-relaxed font-normal">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-4 sm:pt-5 border-t border-white/20">
+            <p className="text-teal-50 text-sm sm:text-base max-w-xl leading-relaxed font-normal">
               Engineering, design, advanced manufacturing and quality—connected to develop thermal solutions for demanding applications.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
               <Link
                 href="/contact"
-                className="px-6 sm:px-8 py-3.5 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-lg shadow-black/10"
+                className="px-5 sm:px-6 py-2.5 sm:py-3 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-md shadow-black/10"
               >
                 <span>Discuss your application</span>
                 <ArrowUpRight className="w-4 h-4 text-[#01747A]" />
               </Link>
               <a
                 href="#capability-process"
-                className="text-xs sm:text-sm font-mono text-teal-100 hover:text-white uppercase tracking-wider inline-flex items-center gap-2 py-3.5 px-4 transition-colors"
+                className="text-xs sm:text-sm font-mono text-teal-100 hover:text-white uppercase tracking-wider inline-flex items-center gap-2 py-2.5 px-3 transition-colors"
               >
                 <span>Explore the process</span>
                 <ArrowDown className="w-4 h-4 text-teal-200" />
