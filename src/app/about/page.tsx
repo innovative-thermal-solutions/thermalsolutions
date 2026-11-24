@@ -4,10 +4,6 @@ import {
   Mail,
   ArrowRight,
   FileSpreadsheet,
-  Layers,
-  Thermometer,
-  Cpu,
-  Cog,
   CheckCircle2,
 } from "lucide-react";
 import type { Metadata } from "next";
@@ -63,33 +59,6 @@ const milestones = [
     step: "07",
     title: "Where We Are Today",
     description: "Operating from a 6,000 sq ft facility with a growing team of 27.",
-  },
-];
-
-const workflowSteps = [
-  {
-    step: "01",
-    title: "Customer Inputs",
-    description: "Project Requirements (eg. max temperature, heat sink envelope)",
-    icon: Layers,
-  },
-  {
-    step: "02",
-    title: "Thermal",
-    description: "CFD, iterative heat sink design, parametric studies, optimization",
-    icon: Thermometer,
-  },
-  {
-    step: "03",
-    title: "Mechanical",
-    description: "Solid modelling Dwgs, assemble modelling, static structural simulation",
-    icon: Cpu,
-  },
-  {
-    step: "04",
-    title: "Manufacturing",
-    description: "CNC machining, Friction stir welding, programming",
-    icon: Cog,
   },
 ];
 
@@ -378,60 +347,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. Workflow at ITS Cooling */}
-      <section className="relative w-full py-20 lg:py-28 px-6 lg:px-12 bg-[#f8faf9] border-b border-[#d8dedf]">
-        <div className="max-w-[1240px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[11px] font-mono tracking-widest text-[#00747a] uppercase mb-2 font-bold">
-              SYSTEMATIC EXECUTION
-            </p>
-            <h2 className="text-3xl sm:text-5xl font-serif font-medium tracking-tight text-slate-900 mb-3">
-              Workflow at ITS Cooling
-            </h2>
-            <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-normal">
-              Customer Inputs → Thermal Analysis → Mechanical Modeling → Manufacturing
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {workflowSteps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                <div
-                  key={step.step}
-                  className="relative bg-white rounded-2xl p-8 text-center shadow-sm border border-[#d8dedf] hover:shadow-lg transition-all flex flex-col items-center"
-                >
-                  {/* Step Icon */}
-                  <div className="w-16 h-16 rounded-full bg-[#01747A]/10 text-[#01747A] flex items-center justify-center mb-5">
-                    <Icon className="w-8 h-8 stroke-[1.8]" />
-                  </div>
-
-                  <span className="text-xs uppercase font-mono tracking-widest font-bold text-[#01747A] mb-1">
-                    STEP {step.step}
-                  </span>
-
-                  <h3 className="text-lg font-bold font-serif text-slate-900 mb-2">
-                    {step.title}
-                  </h3>
-
-                  <p className="text-xs text-slate-600 leading-relaxed font-sans">
-                    {step.description}
-                  </p>
-
-                  {/* Arrow for desktop connecting cards */}
-                  {index < workflowSteps.length - 1 && (
-                    <div className="hidden lg:block absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white border border-[#d8dedf] text-[#01747A] shadow-xs flex items-center justify-center font-bold text-xs">
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Have a thermal management project? CTA */}
+      {/* 3. Have a thermal management project? CTA */}
       <section className="relative w-full py-20 lg:py-28 px-6 lg:px-12 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white text-center border-b border-[#015e63]">
         <div className="max-w-3xl mx-auto">
           <p className="text-[11px] font-mono tracking-widest text-teal-200 uppercase mb-3 font-bold">
