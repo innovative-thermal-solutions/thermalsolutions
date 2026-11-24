@@ -66,7 +66,7 @@ export default function AboutPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
       {/* 1. Hero Section - Styled consistently with Portfolio & Capabilities */}
-      <section className="relative w-full pt-36 sm:pt-44 lg:pt-48 pb-20 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden">
+      <section className="relative w-full pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden">
         {/* Subtle grid background */}
         <div
           className="absolute inset-0 pointer-events-none opacity-15"
@@ -76,64 +76,39 @@ export default function AboutPage() {
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-white/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="w-full max-w-[1440px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Intro Column */}
-          <div className="lg:col-span-7">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-              <span className="text-[12px] font-mono tracking-[0.25em] text-teal-100 uppercase font-bold">
-                ABOUT INNOVATIVE THERMAL SOLUTIONS
-              </span>
-            </div>
-
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium tracking-tight text-white leading-[0.98] sm:leading-[0.95] mb-8">
-              Engineering <br />
-              <em className="not-italic text-teal-200">from the core.</em>
-            </h1>
-
-            <p className="text-teal-50 text-base sm:text-lg max-w-xl leading-relaxed mb-10 font-normal">
-              Innovative Thermal Solutions (ITS) designs and manufactures custom, high-performance thermal management solutions under one roof in Guelph, Ontario—specializing in in-house Friction Stir Welding (FSW), precision CNC machining, and advanced liquid cooling.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-3 px-7 py-4 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-lg shadow-black/10 cursor-pointer"
-              >
-                <span>Talk to an Engineer</span>
-                <ArrowRight className="w-4 h-4 text-[#01747A]" />
-              </Link>
-              <a
-                href="#story"
-                className="inline-flex items-center gap-2 px-6 py-4 border border-white/30 hover:border-white/60 bg-white/10 text-white font-medium text-xs font-mono uppercase tracking-wider rounded transition-colors"
-              >
-                <span>Our Story</span>
-              </a>
-            </div>
+        <div className="w-full max-w-[1440px] mx-auto relative z-10 max-w-4xl">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+            <span className="text-[11px] sm:text-[12px] font-mono tracking-[0.25em] text-teal-100 uppercase font-bold">
+              ABOUT INNOVATIVE THERMAL SOLUTIONS
+            </span>
           </div>
 
-          {/* Right Spotlight: Guelph Facility Photo Card */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-2xl overflow-hidden border border-white/20 bg-[#003b3e]/90 shadow-2xl group">
-              <div className="relative aspect-[4/3] w-full overflow-hidden">
-                <Image
-                  src="/assets/workshop.webp"
-                  alt="ITS Cooling manufacturing facility in Guelph, Ontario"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#003b3e] via-transparent to-transparent opacity-80" />
-                <span className="absolute top-4 left-4 z-10 text-[10px] font-mono tracking-widest text-teal-200 uppercase font-bold bg-black/60 px-3 py-1 rounded backdrop-blur-md border border-white/15">
-                  GUELPH, ONTARIO · HQ &amp; MANUFACTURING
-                </span>
-              </div>
-              <div className="p-6 text-xs font-mono text-teal-50 border-t border-white/15 flex items-center justify-between">
-                <span>6,000 SQ FT IN-HOUSE FACILITY</span>
-                <span className="text-teal-200">ISO 9001:2015</span>
-              </div>
-            </div>
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium tracking-tight text-white leading-[1.02] sm:leading-[0.98] mb-5">
+            Engineering <br />
+            <em className="not-italic text-teal-200">from the core.</em>
+          </h1>
+
+          <p className="text-teal-50 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed mb-6 font-normal">
+            Innovative Thermal Solutions (ITS) designs and manufactures custom, high-performance thermal management solutions under one roof in Guelph, Ontario—specializing in in-house Friction Stir Welding (FSW), precision CNC machining, and advanced liquid cooling.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-3 px-6 py-3 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-md shadow-black/10 cursor-pointer"
+            >
+              <span>Talk to an Engineer</span>
+              <ArrowRight className="w-4 h-4 text-[#01747A]" />
+            </Link>
+            <a
+              href="#story"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-white/30 hover:border-white/60 bg-white/10 text-white font-medium text-xs font-mono uppercase tracking-wider rounded transition-colors"
+            >
+              <span>Our Story</span>
+            </a>
           </div>
         </div>
       </section>
