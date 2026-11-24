@@ -44,41 +44,9 @@ const teamMembers = [
 
 export default function OurTeamPage() {
   return (
-    <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
-      {/* 1. Header Banner */}
-      <section className="relative w-full pt-36 sm:pt-44 lg:pt-48 pb-20 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden text-center">
-        {/* Subtle grid background */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-15"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-          <span className="inline-block text-xs uppercase font-mono tracking-[0.2em] font-semibold bg-white/15 text-white px-4 py-1.5 rounded-full mb-6 border border-white/20 shadow-xs">
-            About ITS Team
-          </span>
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white mb-4 leading-tight">
-            Design, Manufacturing Experts, &amp; Engineers in Guelph, Ontario
-          </h1>
-
-          <p className="text-teal-100 font-mono text-xs sm:text-sm tracking-widest uppercase mb-6 font-semibold">
-            INNOVATIVE THERMAL SOLUTIONS · Engineered for Success
-          </p>
-
-          <p className="text-teal-50 text-base sm:text-lg max-w-3xl leading-relaxed font-normal">
-            Innovative Thermal Solutions brings together the combined experience of a specialized team of professionals. Together, we excel at solving thermal management challenges on an industrial scale. We pair the optimal technical solution with carefully managed manufacturing to develop an action plan that allows your company to overcome challenges and continue to grow.
-          </p>
-        </div>
-      </section>
-
+    <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22] pt-28">
       {/* 2. Founder & CEO Section */}
-      <section className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-14 border-b border-[#d8dedf] bg-white">
+      <section className="relative w-full py-16 lg:py-24 px-6 sm:px-8 lg:px-14 border-b border-[#d8dedf] bg-white">
         <div className="max-w-[1440px] mx-auto">
           <div className="text-center mb-12">
             <span className="text-xs font-mono tracking-widest text-[#00747a] uppercase font-bold block mb-2">
