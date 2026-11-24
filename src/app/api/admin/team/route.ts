@@ -10,14 +10,24 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const team = getCMSTeam();
+    let team = getCMSTeam();
+
+    // Support both direct array payload { members: [...] } / { team: [...] } and action-based payloads
+    if (Array.isArray(body.members)) {
+      saveCMSTeam(body.members);
+      return NextResponse.json({ success: true, count: body.members.length });
+    }
+    if (Array.isArray(body.team)) {
+      saveCMSTeam(body.team);
+      return NextResponse.json({ success: true, count: body.team.length });
+    }
 
     if (body.action === "save_all") {
-      saveCMSTeam(body.team);
+      saveCMSTeam(body.team || body.members);
       return NextResponse.json({ success: true });
     }
 
-    if (body.action === "update") {
+    if (body.action === "update" || body.member) {
       const updatedMember: CMSTeamMember = body.member;
       const index = team.findIndex((m) => m.id === updatedMember.id);
       if (index !== -1) {

@@ -10,14 +10,20 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const products = getCMSProducts();
+    let products = getCMSProducts();
+
+    // Support both direct array payload { products: [...] } and action-based payloads
+    if (Array.isArray(body.products)) {
+      saveCMSProducts(body.products);
+      return NextResponse.json({ success: true, count: body.products.length });
+    }
 
     if (body.action === "save_all") {
       saveCMSProducts(body.products);
       return NextResponse.json({ success: true });
     }
 
-    if (body.action === "update") {
+    if (body.action === "update" || body.product) {
       const updatedProduct: CMSProduct = body.product;
       const index = products.findIndex((p) => p.id === updatedProduct.id);
       if (index !== -1) {

@@ -10,14 +10,20 @@ export async function GET() {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const capabilities = getCMSCapabilities();
+    let capabilities = getCMSCapabilities();
+
+    // Support both direct array payload { capabilities: [...] } and action-based payloads
+    if (Array.isArray(body.capabilities)) {
+      saveCMSCapabilities(body.capabilities);
+      return NextResponse.json({ success: true, count: body.capabilities.length });
+    }
 
     if (body.action === "save_all") {
       saveCMSCapabilities(body.capabilities);
       return NextResponse.json({ success: true });
     }
 
-    if (body.action === "update") {
+    if (body.action === "update" || body.capability) {
       const updatedItem: CMSCapability = body.capability;
       const index = capabilities.findIndex((c) => c.id === updatedItem.id);
       if (index !== -1) {
