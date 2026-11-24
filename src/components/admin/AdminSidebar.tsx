@@ -18,6 +18,7 @@ import {
   HelpCircle,
   Compass,
   Home,
+  Calendar,
 } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -25,6 +26,7 @@ const NAV_ITEMS = [
   { name: "Homepage CMS", href: "/admin/homepage", icon: Home },
   { name: "Products & Catalog", href: "/admin/products", icon: Boxes },
   { name: "Product Portfolio", href: "/admin/portfolio", icon: FolderKanban },
+  { name: "Trade Shows & Events", href: "/admin/events", icon: Calendar },
   { name: "Capabilities (8 Chapters)", href: "/admin/capabilities", icon: Layers },
   { name: "Quality & Certifications", href: "/admin/quality", icon: Award },
   { name: "Case Studies CMS", href: "/admin/case-studies", icon: FileCheck },

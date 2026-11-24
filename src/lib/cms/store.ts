@@ -10,6 +10,7 @@ import {
   CMSCaseStudy,
   AdminUser,
   CMSHomePageContent,
+  CMSEvent,
 } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data", "cms");
@@ -222,6 +223,15 @@ export function getCMSHomepage(): CMSHomePageContent {
 
 export function saveCMSHomepage(data: CMSHomePageContent): boolean {
   return writeJsonFile("homepage.json", data);
+}
+
+// Events
+export function getCMSEvents(): CMSEvent[] {
+  return readJsonFile<CMSEvent[]>("events.json", []);
+}
+
+export function saveCMSEvents(events: CMSEvent[]): boolean {
+  return writeJsonFile("events.json", events);
 }
 
 // Users

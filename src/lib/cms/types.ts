@@ -137,6 +137,21 @@ export interface CMSSiteSettings {
   updatedAt: string;
 }
 
+export interface CMSEvent {
+  id: string;
+  year: number;
+  name: string;
+  dates: string;
+  location: string;
+  logo: string;
+  detailsUrl: string;
+  booth?: string;
+  description?: string;
+  order: number;
+  status: "published" | "draft";
+  updatedAt: string;
+}
+
 export interface CMSHomePageContent {
   hero: {
     badge: string;

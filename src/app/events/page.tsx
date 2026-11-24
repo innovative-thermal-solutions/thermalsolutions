@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, MapPin, ArrowRight, ShieldCheck, Sparkles, Building2 } from "lucide-react";
-import { TRADE_SHOW_EVENTS } from "@/data/eventsData";
+import { TRADE_SHOW_EVENTS, TradeShowEvent } from "@/data/eventsData";
+import { getCMSEvents } from "@/lib/cms/store";
 
 export const metadata: Metadata = {
   title: "Upcoming Trade Shows & Events | Innovative Thermal Solutions (ITS Cooling)",
@@ -11,8 +12,12 @@ export const metadata: Metadata = {
 };
 
 export default function EventsPage() {
-  const events2026 = TRADE_SHOW_EVENTS.filter((e) => e.year === 2026);
-  const events2027 = TRADE_SHOW_EVENTS.filter((e) => e.year === 2027);
+  const cmsEvents = getCMSEvents();
+  const allEvents = cmsEvents.length > 0 ? cmsEvents : TRADE_SHOW_EVENTS;
+
+  const events2026 = allEvents.filter((e) => e.year === 2026);
+  const events2027 = allEvents.filter((e) => e.year === 2027);
+  const otherYears = allEvents.filter((e) => e.year !== 2026 && e.year !== 2027);
 
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
