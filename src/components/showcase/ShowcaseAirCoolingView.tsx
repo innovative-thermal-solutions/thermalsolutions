@@ -263,37 +263,6 @@ export function ShowcaseAirCoolingView() {
             </div>
 
             <div className="w-full relative">
-              <style jsx>{`
-                @keyframes airFlowDash {
-                  from {
-                    stroke-dashoffset: 0;
-                  }
-                  to {
-                    stroke-dashoffset: -120px;
-                  }
-                }
-                @keyframes fanSpinAnimation {
-                  from {
-                    transform: rotate(0deg);
-                  }
-                  to {
-                    transform: rotate(360deg);
-                  }
-                }
-                .air-flow-line {
-                  stroke-dasharray: 6 14;
-                  animation: airFlowDash 1.8s linear infinite !important;
-                }
-                .fan-blade-spin {
-                  transform-origin: 105px 175px;
-                  transform-box: view-box;
-                  animation: fanSpinAnimation 2s linear infinite !important;
-                }
-                .flow-paused .air-flow-line,
-                .flow-paused .fan-blade-spin {
-                  animation-play-state: paused !important;
-                }
-              `}</style>
               <svg
                 viewBox="0 0 700 380"
                 className={`w-full h-auto ${isFlowPaused ? "flow-paused showcase-paused" : ""}`}
@@ -303,6 +272,7 @@ export function ShowcaseAirCoolingView() {
                 <defs>
                   <linearGradient id="airTempGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor="#00747a" />
+                    <stop offset="50%" stopColor="#3a81ab" />
                     <stop offset="100%" stopColor="#e85d38" />
                   </linearGradient>
                 </defs>
@@ -328,32 +298,30 @@ export function ShowcaseAirCoolingView() {
                   <rect x="460" y="100" width="12" height="138" rx="2" />
                 </g>
 
+                {/* Airflow Flow Lines - Dotted stream entering from left, passing through fins, exiting warm to the right */}
+                <g fill="none" stroke="url(#airTempGrad)" strokeWidth="5" strokeLinecap="round">
+                  <path className="showcase-flow-stroke" strokeDasharray="4 16" d="M160 135 H620" />
+                  <path className="showcase-flow-stroke" strokeDasharray="4 16" d="M160 175 H620" />
+                  <path className="showcase-flow-stroke" strokeDasharray="4 16" d="M160 215 H620" />
+                </g>
+
                 {/* Fan / Blower Housing Outer Ring */}
                 <circle cx="105" cy="175" r="44" fill="#ffffff" stroke="#00747a" strokeWidth="3" />
 
-                {/* Rotating Symmetric Fan Impeller Group */}
-                <g className="fan-blade-spin" style={{ transformOrigin: "105px 175px" }}>
-                  {/* 4 Aerodynamic Axial Fan Blades */}
-                  <g fill="#7ec4c9" stroke="#00747a" strokeWidth="0.8">
-                    {/* Top Blade */}
-                    <path d="M 105 175 C 93 160 88 142 101 135 C 114 128 122 144 105 175 Z" />
-                    {/* Right Blade */}
-                    <path d="M 105 175 C 120 163 138 158 145 171 C 152 184 136 192 105 175 Z" />
-                    {/* Bottom Blade */}
-                    <path d="M 105 175 C 117 190 122 208 109 215 C 96 222 88 206 105 175 Z" />
-                    {/* Left Blade */}
-                    <path d="M 105 175 C 90 187 72 192 65 179 C 58 166 74 158 105 175 Z" />
+                {/* 3-Blade Aerodynamic Symmetrical Fan Impeller */}
+                <g transform="translate(105, 175)">
+                  <g className="fan-spin-active" style={{ transformOrigin: "0px 0px" }}>
+                    <g fill="#8fcad0" stroke="#00747a" strokeWidth="1">
+                      {/* Blade 1 */}
+                      <path d="M 0 0 C -12 -6, -26 -16, -22 -30 C -18 -40, 8 -40, 18 -30 C 26 -20, 12 -6, 0 0 Z" transform="rotate(60)" />
+                      {/* Blade 2 */}
+                      <path d="M 0 0 C -12 -6, -26 -16, -22 -30 C -18 -40, 8 -40, 18 -30 C 26 -20, 12 -6, 0 0 Z" transform="rotate(180)" />
+                      {/* Blade 3 */}
+                      <path d="M 0 0 C -12 -6, -26 -16, -22 -30 C -18 -40, 8 -40, 18 -30 C 26 -20, 12 -6, 0 0 Z" transform="rotate(300)" />
+                    </g>
+                    {/* Seamless Center Hub */}
+                    <circle cx="0" cy="0" r="4.5" fill="#00747a" />
                   </g>
-                  {/* Center Hub and Axle */}
-                  <circle cx="105" cy="175" r="8.5" fill="#00747a" />
-                  <circle cx="105" cy="175" r="3.5" fill="#ffffff" />
-                </g>
-
-                {/* Airflow Flow Lines */}
-                <g fill="none" stroke="url(#airTempGrad)" strokeWidth="5">
-                  <path className="air-flow-line" strokeDasharray="6 14" d="M160 135 H620" />
-                  <path className="air-flow-line" strokeDasharray="6 14" d="M160 175 H620" />
-                  <path className="air-flow-line" strokeDasharray="6 14" d="M160 215 H620" />
                 </g>
 
                 <text x="105" y="246" textAnchor="middle" fill="#141f22" fontSize="11" fontFamily="var(--font-mono)" fontWeight="700">

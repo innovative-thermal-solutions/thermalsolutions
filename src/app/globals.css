@@ -353,16 +353,37 @@
 
   /* Reference showcase interactive flow animations */
   @keyframes showcase-flow {
+    from {
+      stroke-dashoffset: 0;
+    }
     to {
-      stroke-dashoffset: -126px;
+      stroke-dashoffset: -120px;
     }
   }
 
   .showcase-flow-stroke {
-    animation: showcase-flow 3s linear infinite;
+    animation: showcase-flow 2.2s linear infinite;
   }
 
   .showcase-paused .showcase-flow-stroke {
+    animation-play-state: paused !important;
+  }
+
+  @keyframes fan-spin-clockwise {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .fan-spin-active {
+    animation: fan-spin-clockwise 2s linear infinite;
+  }
+
+  .showcase-paused .fan-spin-active,
+  .flow-paused .fan-spin-active {
     animation-play-state: paused !important;
   }
 
