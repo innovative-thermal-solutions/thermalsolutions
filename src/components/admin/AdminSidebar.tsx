@@ -17,6 +17,7 @@ import {
   Factory,
   HelpCircle,
   Compass,
+  Briefcase,
   Home,
   Calendar,
 } from "lucide-react";
@@ -24,6 +25,7 @@ import {
 const NAV_ITEMS = [
   { name: "Dashboard Overview", href: "/admin", icon: LayoutDashboard },
   { name: "Homepage CMS", href: "/admin/homepage", icon: Home },
+  { name: "Careers & Jobs CMS", href: "/admin/careers", icon: Briefcase },
   { name: "Products & Catalog", href: "/admin/products", icon: Boxes },
   { name: "Product Portfolio", href: "/admin/portfolio", icon: FolderKanban },
   { name: "Trade Shows & Events", href: "/admin/events", icon: Calendar },

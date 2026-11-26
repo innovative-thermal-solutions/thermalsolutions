@@ -11,6 +11,7 @@ import {
   AdminUser,
   CMSHomePageContent,
   CMSEvent,
+  CMSCareersContent,
 } from "./types";
 
 const DATA_DIR = path.join(process.cwd(), "data", "cms");
@@ -232,6 +233,28 @@ export function getCMSEvents(): CMSEvent[] {
 
 export function saveCMSEvents(events: CMSEvent[]): boolean {
   return writeJsonFile("events.json", events);
+}
+
+// Careers
+export function getCMSCareers(): CMSCareersContent {
+  return readJsonFile<CMSCareersContent>("careers.json", {
+    intro: {
+      badge: "CAREERS AT ITS COOLING",
+      heading: "Join Our Team",
+      subheading: "Build the next generation of advanced thermal management solutions.",
+      descriptionParagraphs: [],
+      facilityStats: []
+    },
+    openings: [],
+    updatedAt: new Date().toISOString()
+  });
+}
+
+export function saveCMSCareers(careers: CMSCareersContent): boolean {
+  return writeJsonFile("careers.json", {
+    ...careers,
+    updatedAt: new Date().toISOString()
+  });
 }
 
 // Users

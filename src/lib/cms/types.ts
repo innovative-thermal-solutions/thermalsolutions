@@ -208,6 +208,44 @@ export interface CMSHomePageContent {
   updatedAt?: string;
 }
 
+export interface CMSJobSectionItem {
+  type: 'p' | 'ul';
+  text?: string;
+  items?: string[];
+}
+
+export interface CMSJobSection {
+  title: string;
+  content: CMSJobSectionItem[];
+}
+
+export interface CMSJobOpportunity {
+  id: string;
+  title: string;
+  companyLocation?: string;
+  employmentType?: string;
+  workArrangement?: string;
+  reportingTo?: string;
+  status?: "published" | "draft" | "closed";
+  sections: CMSJobSection[];
+  updatedAt?: string;
+}
+
+export interface CMSCareersContent {
+  intro: {
+    badge: string;
+    heading: string;
+    subheading: string;
+    descriptionParagraphs: string[];
+    facilityStats: {
+      label: string;
+      value: string;
+    }[];
+  };
+  openings: CMSJobOpportunity[];
+  updatedAt?: string;
+}
+
 export interface CMSPageSection {
   id: string;
   pageId: string;

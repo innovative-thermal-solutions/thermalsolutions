@@ -20,12 +20,22 @@ import {
   FileText,
   Building2,
 } from "lucide-react";
-import { CAREERS_INTRO, JOB_OPENINGS, JobOpportunity } from "@/data/careersData";
+import { CAREERS_INTRO as FALLBACK_INTRO, JOB_OPENINGS as FALLBACK_OPENINGS } from "@/data/careersData";
+import { CMSCareersContent, CMSJobOpportunity } from "@/lib/cms/types";
 
-export default function CareersClient() {
-  const [selectedJob, setSelectedJob] = useState<string>(JOB_OPENINGS[0]?.title || "");
+interface CareersClientProps {
+  initialCareers?: CMSCareersContent;
+}
+
+export default function CareersClient({ initialCareers }: CareersClientProps) {
+  const intro = initialCareers?.intro || FALLBACK_INTRO;
+  const openings: CMSJobOpportunity[] = (initialCareers?.openings && initialCareers.openings.length > 0)
+    ? initialCareers.openings
+    : (FALLBACK_OPENINGS as any);
+
+  const [selectedJob, setSelectedJob] = useState<string>(openings[0]?.title || "");
   const [expandedJobs, setExpandedJobs] = useState<Record<string, boolean>>({
-    [JOB_OPENINGS[0]?.id || ""]: true,
+    [openings[0]?.id || ""]: true,
   });
 
   // Form State
@@ -34,7 +44,7 @@ export default function CareersClient() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [position, setPosition] = useState(JOB_OPENINGS[0]?.title || "");
+  const [position, setPosition] = useState(openings[0]?.title || "");
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [coverLetterFile, setCoverLetterFile] = useState<File | null>(null);
 
@@ -129,7 +139,7 @@ export default function CareersClient() {
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-teal-100 text-xs font-mono tracking-widest uppercase mb-6 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-              {CAREERS_INTRO.badge}
+              {intro.badge}
             </div>
 
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium tracking-tight text-white leading-[1.0] mb-6">
@@ -138,7 +148,7 @@ export default function CareersClient() {
             </h1>
 
             <p className="text-teal-50 text-base sm:text-lg max-w-2xl leading-relaxed mb-8 font-normal">
-              {CAREERS_INTRO.subheading}
+              {intro.subheading}
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
@@ -164,7 +174,7 @@ export default function CareersClient() {
       <section className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-8 space-y-5 text-base sm:text-lg text-slate-700 leading-relaxed">
-            {CAREERS_INTRO.descriptionParagraphs.map((paragraph, idx) => (
+            {intro.descriptionParagraphs.map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
           </div>
@@ -176,7 +186,7 @@ export default function CareersClient() {
                 <span>Guelph Facility At A Glance</span>
               </div>
               <div className="space-y-4">
-                {CAREERS_INTRO.facilityStats.map((stat, idx) => (
+                {intro.facilityStats.map((stat, idx) => (
                   <div key={idx} className="pb-3 border-b border-slate-100 last:border-none last:pb-0">
                     <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-0.5">
                       {stat.label}
@@ -216,28 +226,28 @@ export default function CareersClient() {
               Current Openings
             </h2>
             <p className="text-sm text-slate-500 mt-1 font-mono">
-              {JOB_OPENINGS.length} available technical &amp; operations positions in Guelph, ON
+              {openings.length} available technical &amp; operations positions in Guelph, ON
             </p>
           </div>
           <button
             onClick={() => {
-              const allExpanded = Object.keys(expandedJobs).length === JOB_OPENINGS.length;
+              const allExpanded = Object.keys(expandedJobs).length === openings.length;
               if (allExpanded) {
                 setExpandedJobs({});
               } else {
                 const all: Record<string, boolean> = {};
-                JOB_OPENINGS.forEach((j) => (all[j.id] = true));
+                openings.forEach((j) => (all[j.id] = true));
                 setExpandedJobs(all);
               }
             }}
             className="text-xs font-mono font-bold text-[#00747a] hover:text-[#005a5f] border border-slate-200 px-4 py-2 rounded-lg bg-white shadow-xs hover:border-[#00747a] transition-colors"
           >
-            {Object.keys(expandedJobs).length === JOB_OPENINGS.length ? "Collapse All Positions" : "Expand All Positions"}
+            {Object.keys(expandedJobs).length === openings.length ? "Collapse All Positions" : "Expand All Positions"}
           </button>
         </div>
 
         <div className="space-y-6">
-          {JOB_OPENINGS.map((job) => {
+          {openings.map((job) => {
             const isExpanded = !!expandedJobs[job.id];
             return (
               <div
@@ -477,9 +487,9 @@ export default function CareersClient() {
                   required
                   className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-[#00747a] focus:bg-white text-slate-900 text-sm outline-none appearance-none transition-all cursor-pointer font-medium"
                 >
-                  {JOB_OPENINGS.map((job) => (
+                  {openings.map((job) => (
                     <option key={job.id} value={job.title} className="bg-white text-slate-900">
-                      {job.title} ({job.employmentType})
+                      {job.title} {job.employmentType ? `(${job.employmentType})` : ''}
                     </option>
                   ))}
                 </select>
