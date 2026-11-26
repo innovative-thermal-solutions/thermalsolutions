@@ -29,10 +29,10 @@ export function FacilityPreview() {
           </div>
 
           <Link
-            href="/facility"
+            href="/contact"
             className="inline-flex items-center gap-3 bg-transparent border border-white text-white px-8 py-4 font-medium uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-colors"
           >
-            Tour The Facility
+            Contact Our Team
           </Link>
         </div>
 

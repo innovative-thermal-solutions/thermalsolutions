@@ -307,7 +307,7 @@ export function Navigation() {
               <Link
                 href="/about"
                 className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors py-2 ${
-                  pathname.startsWith("/about") || pathname.startsWith("/team") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+                  pathname.startsWith("/about") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
                 }`}
               >
                 <span>About</span>

@@ -16,7 +16,7 @@ const industries = [
     tagline: "SiC & GaN High Heat-Flux Cooling",
     description: "Managing extreme, concentrated heat loads in compact power-conversion architectures, 800V silicon-carbide inverters, and high-frequency IGBT switches.",
     image: "/images/industries/power-electronics.webp",
-    href: "/industries/power-electronics",
+    href: "#industries",
     metrics: "Up to 120 W/cm² heat flux",
     applications: "SiC & GaN motor drives, DC-DC buck/boost converters, solid-state transformers",
     achievements: ["< 0.02 °C/W thermal resistance", "Uniform junction temperature across all 6 switches", "Integrated laminated busbars"],
@@ -30,7 +30,7 @@ const industries = [
     tagline: "High-Rate Automotive & Heavy-Duty Traction",
     description: "Uniform thermal regulation for ultra-fast DC charging stations, automotive battery module ribbon chillers, and high-performance electric bus traction drives.",
     image: "/images/industries/ev-battery.webp",
-    href: "/industries/ev-battery",
+    href: "#industries",
     metrics: "Uniform ΔT < 2.5°C across pack",
     applications: "Battery pack liquid cold plates, charging cable chillers, onboard traction inverters",
     achievements: ["Zero leak rate over 15-year lifecycle", "Corrosion-resistant Al-3003/6061 alloy", "Shock & vibration validated"],
@@ -44,7 +44,7 @@ const industries = [
     tagline: "Utility-Scale Solar & Grid Energy Storage",
     description: "Rugged cooling hardware engineered for utility-scale solar central inverters, wind turbine megawatt converters, and continuous BESS battery storage modules.",
     image: "/images/industries/clean-energy.webp",
-    href: "/industries/clean-energy",
+    href: "#industries",
     metrics: "25+ Year operating reliability",
     applications: "Utility solar inverters, grid BESS cold plates, megawatt wind power converters",
     achievements: ["IP67 hermetically sealed FSW seams", "Direct glycol-water or dielectric fluid", "Zero maintenance continuous duty"],
@@ -58,7 +58,7 @@ const industries = [
     tagline: "Mission-Critical Severe Harsh Environments",
     description: "Engineered thermal hardware meeting stringent size, weight, power (SWaP) constraints for airborne radar, naval propulsion, and avionics flight enclosures.",
     image: "/images/industries/aerospace.webp",
-    href: "/industries/aerospace",
+    href: "#industries",
     metrics: "DO-160 & MIL-STD validated joints",
     applications: "Active phased array radar chassis, avionics cold plates, missile guidance pods",
     achievements: ["Helium mass-spec tested < 1e-8 mbar·L/s", "5-axis micro-milled monolithic chassis", "High-altitude burst pressure certified"],
@@ -72,7 +72,7 @@ const industries = [
     tagline: "Zero-Gravity Spreading & Space Radiators",
     description: "High-conductance thermal spreading for high-power RF solid-state power amplifiers, LEO satellite transponders, and phased-array communication terminals.",
     image: "/images/industries/satellite.webp",
-    href: "/industries/satellite",
+    href: "#industries",
     metrics: "Embedded two-phase heat pipe arrays",
     applications: "LEO satellite payload radiators, ground earth station amplifiers, Ka-band arrays",
     achievements: ["Zero gravity heat spreading", "Outgassing compliant NASA SP-R-0022A", "Monolithic diffusion bonded cold walls"],
@@ -86,7 +86,7 @@ const industries = [
     tagline: "Variable Frequency Drives & Motion Systems",
     description: "Durable, high-uptime cooling for industrial variable-frequency drives (VFD), CNC spindle motor drives, laser power supplies, and automated plant equipment.",
     image: "/images/manufacturing/precision-manufacturing.png",
-    href: "/industries/industrial",
+    href: "#industries",
     metrics: "Continuous 24/7/365 production duty",
     applications: "Multi-axis servo drives, fiber laser chillers, robotics power enclosures",
     achievements: ["Compact extruded & bonded fin profiles", "High flow capacity with minimal backpressure", "Standard SAE/NPT port interfaces"],
@@ -236,13 +236,13 @@ export function IndustriesStory() {
                 <span className="text-white font-medium">{current.applications}</span>
               </div>
 
-              <Link
-                href={current.href}
-                className="shine-sweep inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-950 hover:bg-sky-400 font-bold text-xs uppercase tracking-wider rounded-md transition-all whitespace-nowrap shadow-md group"
+              <a
+                href="#industries"
+                className="shine-sweep inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-950 hover:bg-sky-400 font-bold text-xs uppercase tracking-wider rounded-md transition-all whitespace-nowrap shadow-md group cursor-pointer"
               >
-                <span>View {current.name} Solutions</span>
+                <span>View {current.name} Overview</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

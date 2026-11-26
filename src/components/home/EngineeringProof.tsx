@@ -17,7 +17,7 @@ const capabilities = [
     index: "02",
     title: "In-House Precision CNC Machining",
     detail: "5-axis high-speed CNC milling of complex internal micro-fin arrays, fluid manifolds, and tight geometric tolerances.",
-    href: "/capabilities/cnc-machining",
+    href: "/capabilities/friction-stir-welding",
     badge: "± 0.025 mm Tolerances",
   },
   {

@@ -5,6 +5,8 @@ import {
   ArrowRight,
   FileSpreadsheet,
   CheckCircle2,
+  Eye,
+  Target,
 } from "lucide-react";
 import type { Metadata } from "next";
 
@@ -113,7 +115,40 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2. Detailed Company Overview & Value Proposition (Structured Editorial Cards) */}
+      {/* 2. Vision and Mission Cards */}
+      <section className="relative w-full py-12 sm:py-16 px-6 sm:px-8 lg:px-14 bg-gradient-to-b from-[#f0f6f6] to-[#f8faf9] border-b border-[#d8dedf]">
+        <div className="max-w-[1440px] mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+            {/* Vision Card */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 sm:p-10 border border-[#cbe4e6] shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+              <div className="w-16 h-16 rounded-full bg-[#00747a] flex items-center justify-center text-white mb-6 shadow-md shadow-[#00747a]/20 group-hover:scale-105 transition-transform">
+                <Eye className="w-8 h-8 text-white" strokeWidth={2.2} />
+              </div>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#00747a] mb-4">
+                Vision
+              </h2>
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-sans font-normal">
+                To be the leader in designing, manufacturing and testing quality heat sink products for the electronics industries.
+              </p>
+            </div>
+
+            {/* Mission Card */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 sm:p-10 border border-[#cbe4e6] shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+              <div className="w-16 h-16 rounded-full bg-[#00747a] flex items-center justify-center text-white mb-6 shadow-md shadow-[#00747a]/20 group-hover:scale-105 transition-transform">
+                <Target className="w-8 h-8 text-white" strokeWidth={2.2} />
+              </div>
+              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-[#00747a] mb-4">
+                Mission
+              </h2>
+              <p className="text-base sm:text-lg text-slate-700 leading-relaxed font-sans font-normal">
+                We pride ourselves in delivering innovative solutions through designing and manufacturing quality heat sink products on time for the electronics industries.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Detailed Company Overview & Value Proposition (Structured Editorial Cards) */}
       <section id="story" className="relative w-full py-20 lg:py-28 px-6 sm:px-8 lg:px-14 border-b border-[#d8dedf]">
         <div className="max-w-[1440px] mx-auto">
           {/* Top section headline */}

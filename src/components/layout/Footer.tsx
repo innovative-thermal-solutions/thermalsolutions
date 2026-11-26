@@ -91,11 +91,6 @@ export function Footer() {
                   CFD Thermal Simulator
                 </Link>
               </li>
-              <li>
-                <Link href="/capabilities/cnc-machining" className="hover:text-white font-medium transition-colors">
-                  5-Axis CNC Machining
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -139,34 +134,14 @@ export function Footer() {
           <div>
             <h4 className="text-xs uppercase font-mono tracking-[0.18em] text-white mb-5 font-bold flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
-              Industries
+              Industries Served
             </h4>
             <ul className="space-y-3 flex flex-col text-sm text-[#9da8a9]">
-              <li>
-                <Link href="/industries/power-electronics" className="hover:text-white font-medium transition-colors">
-                  Power Electronics
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/ev-battery" className="hover:text-white font-medium transition-colors">
-                  EV & Battery Systems
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/clean-energy" className="hover:text-white font-medium transition-colors">
-                  Clean Energy & BESS
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/aerospace" className="hover:text-white font-medium transition-colors">
-                  Aerospace & Defence
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/satellite" className="hover:text-white font-medium transition-colors">
-                  Satellite Communications
-                </Link>
-              </li>
+              <li className="text-slate-400 font-medium">Power Electronics</li>
+              <li className="text-slate-400 font-medium">EV & Battery Systems</li>
+              <li className="text-slate-400 font-medium">Clean Energy & BESS</li>
+              <li className="text-slate-400 font-medium">Aerospace & Defence</li>
+              <li className="text-slate-400 font-medium">Satellite Communications</li>
             </ul>
           </div>
 
@@ -180,16 +155,6 @@ export function Footer() {
               <li>
                 <Link href="/about" className="hover:text-white font-medium transition-colors">
                   About ITS
-                </Link>
-              </li>
-              <li>
-                <Link href="/team" className="hover:text-white font-medium transition-colors">
-                  Engineering Team
-                </Link>
-              </li>
-              <li>
-                <Link href="/facility" className="hover:text-white font-medium transition-colors">
-                  Guelph Facility
                 </Link>
               </li>
               <li>
