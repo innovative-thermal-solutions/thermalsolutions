@@ -230,30 +230,9 @@ export function Footer() {
           </div>
 
           <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
-            <button
-              onClick={() => {
-                if (typeof window !== "undefined") {
-                  window.dispatchEvent(
-                    new CustomEvent("its-reference-modal", {
-                      detail: { type: "open-sources-detail" },
-                    })
-                  );
-                }
-              }}
-              className="text-[#00747a] hover:text-white hover:underline font-bold cursor-pointer"
-            >
-              Content sources ↗
-            </button>
-            <span className="text-slate-700">•</span>
-            <a href="https://www.itscooling.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-              itscooling.com ↗
-            </a>
-            <span className="text-slate-700">•</span>
             <a href="#home" className="hover:text-white transition-colors">
               Back to top ↑
             </a>
-            <span className="text-slate-700 hidden sm:inline">•</span>
-            <span className="text-[#9da8a9] font-mono hidden sm:inline">43.51° N / 80.21° W</span>
           </div>
         </div>
       </div>
