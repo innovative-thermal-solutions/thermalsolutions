@@ -68,46 +68,42 @@ export default function AboutPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
       {/* 1. Hero Section - Styled consistently with Portfolio & Capabilities */}
-      <section className="relative w-full pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-12 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden">
+      <section className="relative w-full min-h-[540px] lg:min-h-[620px] border-b border-[#d8dedf] bg-[#f8faf9] overflow-hidden pt-28 lg:pt-32 flex flex-col justify-end">
         {/* Subtle grid background */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-15"
+          className="absolute inset-0 pointer-events-none opacity-40"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,116,122,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.12) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-white/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="w-full max-w-[1440px] mx-auto relative z-10 max-w-4xl">
-          <div className="flex items-center gap-2 mb-4">
-            <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-            <span className="text-[11px] sm:text-[12px] font-mono tracking-[0.25em] text-teal-100 uppercase font-bold">
-              ABOUT INNOVATIVE THERMAL SOLUTIONS
-            </span>
-          </div>
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-12 lg:py-16 relative z-10 flex-1 flex flex-col justify-end">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+            ABOUT INNOVATIVE THERMAL SOLUTIONS · GUELPH, ONTARIO
+          </p>
 
-          <h1 className="text-3xl sm:text-5xl md:text-6xl font-serif font-medium tracking-tight text-white leading-[1.02] sm:leading-[0.98] mb-5">
-            Engineering <br />
-            <em className="not-italic text-teal-200">from the core.</em>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.96] max-w-4xl mb-6">
+            Engineering.<br />
+            <span className="text-[#00747a]">From the core.</span>
           </h1>
 
-          <p className="text-teal-50 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed mb-6 font-normal">
+          <p className="text-slate-600 text-base sm:text-lg md:text-xl max-w-2xl leading-relaxed mb-8 font-normal">
             Innovative Thermal Solutions (ITS) designs and manufactures custom, high-performance thermal management solutions under one roof in Guelph, Ontario—specializing in in-house Friction Stir Welding (FSW), precision CNC machining, and advanced liquid cooling.
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 px-6 py-3 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-md shadow-black/10 cursor-pointer"
+              className="inline-flex items-center gap-3 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-mono text-xs uppercase tracking-wider font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
             >
               <span>Talk to an Engineer</span>
-              <ArrowRight className="w-4 h-4 text-[#01747A]" />
+              <ArrowRight className="w-4 h-4 text-white" />
             </Link>
             <a
               href="#story"
-              className="inline-flex items-center gap-2 px-5 py-3 border border-white/30 hover:border-white/60 bg-white/10 text-white font-medium text-xs font-mono uppercase tracking-wider rounded transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-4 border border-slate-300 hover:border-slate-400 bg-white text-slate-800 font-mono text-xs uppercase tracking-wider font-bold rounded transition-colors shadow-2xs"
             >
               <span>Our Story</span>
             </a>

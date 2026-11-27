@@ -151,46 +151,46 @@ export default function CapabilitiesPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22] overflow-hidden">
       {/* 01 PAGE HERO */}
-      <section className="relative w-full pt-24 sm:pt-28 lg:pt-32 pb-8 sm:pb-10 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] flex flex-col justify-end overflow-hidden">
+      <section className="relative w-full min-h-[580px] lg:min-h-[660px] border-b border-[#d8dedf] bg-[#f8faf9] overflow-hidden pt-28 lg:pt-32 flex flex-col justify-end">
         {/* Subtle grid background */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-15"
+          className="absolute inset-0 pointer-events-none opacity-40"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
+              "linear-gradient(rgba(0,116,122,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.12) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute right-0 top-1/4 w-[500px] h-[500px] bg-white/10 rounded-full blur-[120px] pointer-events-none" />
 
-        <div className="w-full max-w-[1440px] mx-auto relative z-10 flex-1 flex flex-col justify-end">
-          <p className="text-[11px] sm:text-[12px] font-mono tracking-[0.25em] text-teal-200 uppercase font-bold mb-2 sm:mb-3">
-            ENGINEERING + MANUFACTURING
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-12 lg:py-16 relative z-10 flex-1 flex flex-col justify-end">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+            ENGINEERING + MANUFACTURING · GUELPH, ONTARIO
           </p>
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.4rem] xl:text-[3.8rem] font-serif font-medium tracking-tight text-white leading-[1.05] sm:leading-[1] max-w-4xl mb-5 sm:mb-6">
-            FROM THERMAL CONCEPT TO FINISHED HARDWARE.
+          <h1 className="text-4xl sm:text-6xl lg:text-[72px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.96] max-w-5xl mb-6">
+            From thermal concept.<br />
+            <span className="text-[#00747a]">To finished hardware.</span>
           </h1>
 
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pt-4 sm:pt-5 border-t border-white/20">
-            <p className="text-teal-50 text-sm sm:text-base max-w-xl leading-relaxed font-normal">
-              Engineering, design, advanced manufacturing and quality—connected to develop thermal solutions for demanding applications.
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pt-6 border-t border-[#d8dedf]">
+            <p className="text-slate-600 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+              Engineering, design, advanced manufacturing and quality—connected under one roof to develop thermal solutions for demanding applications.
             </p>
 
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
-                className="px-5 sm:px-6 py-2.5 sm:py-3 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs sm:text-sm font-mono uppercase tracking-wider rounded transition-colors inline-flex items-center gap-2 cursor-pointer shadow-md shadow-black/10"
+                className="inline-flex items-center gap-3 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-mono text-xs uppercase tracking-wider font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
               >
                 <span>Discuss your application</span>
-                <ArrowUpRight className="w-4 h-4 text-[#01747A]" />
+                <ArrowUpRight className="w-4 h-4 text-white" />
               </Link>
               <a
                 href="#capability-process"
-                className="text-xs sm:text-sm font-mono text-teal-100 hover:text-white uppercase tracking-wider inline-flex items-center gap-2 py-2.5 px-3 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-4 border border-slate-300 hover:border-slate-400 bg-white text-slate-800 font-mono text-xs uppercase tracking-wider font-bold rounded transition-colors shadow-2xs"
               >
                 <span>Explore the process</span>
-                <ArrowDown className="w-4 h-4 text-teal-200" />
+                <ArrowDown className="w-4 h-4 text-[#00747a]" />
               </a>
             </div>
           </div>

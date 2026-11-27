@@ -21,57 +21,46 @@ export default function EventsPage() {
 
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
-      {/* 1. Light Theme Hero Section */}
-      <section className="relative w-full pt-36 sm:pt-44 lg:pt-48 pb-16 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden">
+      {/* 1. Standard Pattern Hero Section */}
+      <section className="relative w-full min-h-[580px] lg:min-h-[660px] border-b border-[#d8dedf] bg-[#f8faf9] overflow-hidden pt-28 lg:pt-32 flex flex-col justify-end">
         {/* Subtle grid background */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-15"
+          className="absolute inset-0 pointer-events-none opacity-40"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,116,122,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.12) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
 
-        <div className="w-full max-w-[1440px] mx-auto relative z-10">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs font-mono text-teal-100 mb-8">
-            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-white font-semibold">Events</span>
-          </div>
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-12 lg:py-16 relative z-10 flex-1 flex flex-col justify-end">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+            INDUSTRY ENGAGEMENT &amp; TRADE SHOWS · GLOBAL OUTREACH
+          </p>
 
-          <div className="max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-teal-100 text-xs font-mono tracking-widest uppercase mb-6 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-              INDUSTRY ENGAGEMENT & TRADE SHOWS
-            </div>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.96] max-w-4xl mb-6">
+            Upcoming trade shows.<br />
+            <span className="text-[#00747a]">&amp; industry events.</span>
+          </h1>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium tracking-tight text-white leading-[1.0] mb-6">
-              Upcoming Trade Shows <br />
-              <em className="not-italic text-teal-200">&amp; Industry Events.</em>
-            </h1>
+          <p className="text-slate-600 text-base sm:text-lg max-w-2xl leading-relaxed mb-8 font-normal">
+            Connect with the Innovative Thermal Solutions team at upcoming industry expos. Discover our latest advancements in Friction Stir Welding, micro-channel liquid cold plates, skived &amp; bonded air heat sinks, and custom power distribution busbars.
+          </p>
 
-            <p className="text-teal-50 text-base sm:text-lg max-w-2xl leading-relaxed mb-8 font-normal">
-              Connect with the Innovative Thermal Solutions team at upcoming industry expos. Discover our latest advancements in Friction Stir Welding, micro-channel liquid cold plates, skived &amp; bonded air heat sinks, and custom power distribution busbars.
-            </p>
-
-            <div className="flex flex-wrap items-center gap-4">
-              <a
-                href="#events-list"
-                className="inline-flex items-center gap-2 px-6 py-3.5 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all shadow-md shadow-black/10"
-              >
-                <span>View Event Calendar</span>
-                <ArrowRight className="w-4 h-4 text-[#01747A]" />
-              </a>
-              <a
-                href="mailto:engineering@itscooling.com?subject=Trade%20Show%20Meeting%20Request"
-                className="inline-flex items-center gap-2 px-6 py-3.5 border border-white/30 hover:border-white/60 bg-white/10 text-white font-medium text-xs font-mono uppercase tracking-wider rounded transition-colors"
-              >
-                <span>Pre-Book Consultation</span>
-              </a>
-            </div>
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="#events-list"
+              className="inline-flex items-center gap-2 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-mono text-xs uppercase tracking-wider font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+            >
+              <span>View Event Calendar</span>
+              <ArrowRight className="w-4 h-4 text-white" />
+            </a>
+            <a
+              href="mailto:engineering@itscooling.com?subject=Trade%20Show%20Meeting%20Request"
+              className="inline-flex items-center gap-2 px-6 py-4 border border-slate-300 hover:border-slate-400 bg-white text-slate-800 font-mono text-xs uppercase tracking-wider font-bold rounded transition-colors shadow-2xs"
+            >
+              <span>Pre-Book Consultation</span>
+            </a>
           </div>
         </div>
       </section>

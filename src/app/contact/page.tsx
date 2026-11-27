@@ -67,25 +67,38 @@ export default function ContactPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9]">
       {/* 1. Header Banner */}
-      <section className="relative w-full bg-gradient-to-br from-[#00575c] via-[#00747a] to-[#0a8f97] text-white pt-32 pb-20 lg:pt-36 lg:pb-24 px-6 lg:px-12 overflow-hidden text-center">
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+      <section className="relative w-full min-h-[540px] lg:min-h-[620px] border-b border-[#d8dedf] bg-[#f8faf9] overflow-hidden pt-28 lg:pt-32 flex flex-col justify-end text-center">
+        {/* Subtle grid background */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,116,122,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.12) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
 
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <span className="inline-block text-xs uppercase font-mono tracking-[0.2em] font-semibold bg-white/15 text-white px-4 py-1.5 rounded-full mb-6 border border-white/20 shadow-xs">
-            Contact ITS Cooling
-          </span>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 py-12 lg:py-16 flex flex-col items-center">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+            CONTACT ITS COOLING · GUELPH, ONTARIO
+          </p>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white mb-4 leading-tight">
-            Tell us what is getting too hot.
+          <h1 className="text-4xl sm:text-6xl lg:text-[72px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.96] mb-6">
+            Tell us what is.<br />
+            <span className="text-[#00747a]">Getting too hot.</span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-teal-50 font-medium max-w-3xl mx-auto mb-3">
-            Heat Sink &amp; Cold Plate Manufacturers &amp; Engineers in Guelph, Ontario
+          <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed mb-6 font-normal">
+            Custom heat sinks and liquid cold plate manufacturers &amp; engineers in Guelph, Ontario. Designing and manufacturing for demanding thermal challenges.
           </p>
 
-          <p className="text-sm sm:text-base text-teal-100/90 max-w-2xl mx-auto font-normal">
-            Designing, engineering, testing, and manufacturing custom heat sinks and liquid cold plates for a wide spectrum of simple to complex thermal challenges.
-          </p>
+          <a
+            href="#inquiry"
+            className="inline-flex items-center gap-3 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-mono text-xs uppercase tracking-wider font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
+          >
+            <span>Submit Engineering Inquiry</span>
+            <span className="text-sm">↘</span>
+          </a>
         </div>
       </section>
 

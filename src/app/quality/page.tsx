@@ -59,35 +59,43 @@ export default function QualityPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
       {/* 1. Header Banner */}
-      <section className="relative w-full pt-36 sm:pt-44 lg:pt-48 pb-20 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden text-center">
+      <section className="relative w-full min-h-[540px] lg:min-h-[620px] border-b border-[#d8dedf] bg-[#f8faf9] overflow-hidden pt-28 lg:pt-32 flex flex-col justify-end text-center">
         {/* Subtle grid background */}
         <div
-          className="absolute inset-0 pointer-events-none opacity-15"
+          className="absolute inset-0 pointer-events-none opacity-40"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
+              "linear-gradient(rgba(0,116,122,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.12) 1px, transparent 1px)",
             backgroundSize: "60px 60px",
           }}
         />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
 
-        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-          <span className="inline-flex items-center gap-2 text-xs uppercase font-mono tracking-[0.2em] font-semibold bg-white/15 text-white px-4 py-1.5 rounded-full mb-6 border border-white/20 shadow-xs">
-            <ShieldCheck className="w-4 h-4 text-teal-200" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 py-12 lg:py-16 flex flex-col items-center">
+          <span className="inline-flex items-center gap-2 text-xs uppercase font-mono tracking-[0.2em] font-bold bg-[#e6f4f5] text-[#00747a] px-4 py-1.5 rounded-full mb-6 border border-[#00747a]/20 shadow-2xs">
+            <ShieldCheck className="w-4 h-4 text-[#00747a]" />
             ISO 9001:2015 CERTIFIED QMS
           </span>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-medium tracking-tight text-white mb-4 leading-tight">
-            ITS Quality Policy
+          <h1 className="text-4xl sm:text-6xl lg:text-[72px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.96] mb-6">
+            ITS Quality.<br />
+            <span className="text-[#00747a]">Engineered with precision.</span>
           </h1>
 
-          <p className="text-teal-100 font-mono text-xs sm:text-sm tracking-widest uppercase mb-6 font-semibold">
-            Thermal Engineering Firm in Guelph, Ontario
+          <p className="text-[#00747a] font-mono text-xs sm:text-sm tracking-widest uppercase mb-6 font-bold">
+            THERMAL ENGINEERING FIRM IN GUELPH, ONTARIO
           </p>
 
-          <p className="text-teal-50 text-base sm:text-lg max-w-3xl leading-relaxed font-normal">
+          <p className="text-slate-600 text-base sm:text-lg max-w-3xl leading-relaxed font-normal mb-8">
             Innovative Thermal Solutions is dedicated to delivering superior value in products and engineering services through uncompromising quality, systematic continual improvement, and risk-based engineering discipline.
           </p>
+
+          <a
+            href="#certifications"
+            className="inline-flex items-center gap-3 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-mono text-xs uppercase tracking-wider font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
+          >
+            <span>View Quality Standards &amp; Certifications</span>
+            <span className="text-sm">↘</span>
+          </a>
         </div>
       </section>
 

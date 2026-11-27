@@ -14,20 +14,23 @@ export default function CaseStudiesPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-slate-50 pt-28 pb-24">
       {/* Header */}
-      <section className="relative w-full bg-gradient-to-br from-white via-slate-50 to-sky-50 border-b border-slate-200 py-16 lg:py-24 px-6 lg:px-12 overflow-hidden mb-16">
-        <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
+      <section className="relative w-full bg-[#f8faf9] border-b border-[#d8dedf] py-16 lg:py-24 px-6 lg:px-14 overflow-hidden mb-16">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,116,122,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.12) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
         <div className="max-w-[1440px] mx-auto relative z-10">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="font-mono text-xs font-bold text-sky-600 px-2 py-0.5 bg-white border border-slate-200 rounded-sm">
-              ITS
-            </span>
-            <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
-              Validated Engineering Deployments
-            </span>
-          </div>
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+            VALIDATED ENGINEERING DEPLOYMENTS · REAL TELEMETRY
+          </p>
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6 max-w-4xl">
-            Proven thermal engineering results.
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.96] mb-6 max-w-4xl">
+            Proven thermal.<br />
+            <span className="text-[#00747a]">Engineering results.</span>
           </h1>
 
           <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-3xl font-normal mb-8">
@@ -35,18 +38,18 @@ export default function CaseStudiesPage() {
           </p>
 
           {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white border border-slate-200 rounded-xl shadow-xs font-mono text-xs max-w-4xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-white border border-[#d8dedf] rounded-xl shadow-xs font-mono text-xs max-w-4xl">
             <div>
-              <span className="text-slate-400 block uppercase mb-1">Peak Temp Reduction</span>
-              <span className="text-sky-600 font-bold text-lg md:text-xl">-20°C</span>
+              <span className="text-slate-500 block uppercase mb-1">Peak Temp Reduction</span>
+              <span className="text-[#00747a] font-bold text-lg md:text-xl">-20°C</span>
             </div>
             <div>
-              <span className="text-slate-400 block uppercase mb-1">Max Plate Span</span>
-              <span className="text-slate-950 font-bold text-lg md:text-xl">57″ (1450 mm)</span>
+              <span className="text-slate-500 block uppercase mb-1">Max Plate Span</span>
+              <span className="text-[#141f22] font-bold text-lg md:text-xl">57″ (1450 mm)</span>
             </div>
             <div>
-              <span className="text-slate-400 block uppercase mb-1">Handled AC Load</span>
-              <span className="text-sky-600 font-bold text-lg md:text-xl">82.3W (6X)</span>
+              <span className="text-slate-500 block uppercase mb-1">Handled AC Load</span>
+              <span className="text-[#00747a] font-bold text-lg md:text-xl">82.3W (6X)</span>
             </div>
             <div>
               <span className="text-slate-400 block uppercase mb-1">Joint Leak Tightness</span>

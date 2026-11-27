@@ -37,54 +37,40 @@ export default function ThermalSimulationClient() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full pt-32 sm:pt-40 lg:pt-44 pb-16 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden">
-        {/* Subtle grid background */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-15"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="w-full max-w-[1440px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="relative w-full min-h-[640px] lg:min-h-[700px] border-b border-[#d8dedf] bg-[#f8faf9] overflow-hidden pt-28 lg:pt-32">
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Hero Copy */}
           <div className="lg:col-span-6">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-              <span className="text-[11px] font-mono tracking-[0.25em] text-teal-100 uppercase font-bold">
-                IN-HOUSE THERMAL SIMULATION
-              </span>
-            </div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+              IN-HOUSE THERMAL SIMULATION · ADVANCED CFD MODELING
+            </p>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium tracking-tight text-white leading-[0.98] sm:leading-[0.95] mb-8">
-              See the heat. <br />
-              <em className="not-italic text-teal-200">Shape the solution.</em>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.95] mb-6">
+              See the heat.<br />
+              <span className="text-[#00747a]">Shape the solution.</span>
             </h1>
 
-            <p className="text-teal-50 text-base sm:text-lg max-w-xl leading-relaxed mb-10 font-normal">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl mb-8 font-normal">
               At ITS, we perform CFD simulations in-house on both the cooling solutions we design and designs supplied by our customers. By seeing how air or liquid moves and carries heat away, we can spot cooling problems and improve a design before it is built.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-12">
+            <div className="flex flex-wrap items-center gap-4 mb-10">
               <a
                 href="#start"
-                className="inline-flex items-center gap-3 px-7 py-4 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-lg shadow-black/10 cursor-pointer"
+                className="inline-flex items-center gap-3 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-mono text-xs uppercase tracking-wider font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
               >
                 <span>Discuss your thermal challenge</span>
-                <ArrowRight className="w-4 h-4 text-[#01747A]" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </a>
             </div>
 
-            <div className="pt-6 border-t border-white/20 flex flex-wrap gap-8 text-[11px] font-mono tracking-wider text-teal-100 uppercase font-bold">
+            <div className="pt-6 border-t border-[#d8dedf] flex flex-wrap gap-8 text-[11px] font-mono tracking-wider text-[#00747a] uppercase font-bold">
               <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal-200" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
                 SIMULATIONS DONE IN-HOUSE
               </span>
               <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-teal-200" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#00747a]" />
                 DESIGNED AROUND YOUR PRODUCT
               </span>
             </div>

@@ -61,7 +61,33 @@ export default function OurTeamPage() {
   const otherMembers = cmsTeam.filter((m) => m.id !== "ahmed-zaghlol" && !m.featured);
   const activeMembers = otherMembers.length > 0 ? otherMembers : DEFAULT_TEAM_MEMBERS;
   return (
-    <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22] pt-28">
+    <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
+      {/* 1. Standard Hero Banner */}
+      <section className="relative w-full min-h-[500px] lg:min-h-[580px] border-b border-[#d8dedf] bg-[#f8faf9] overflow-hidden pt-28 lg:pt-32 flex flex-col justify-end">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,116,122,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.12) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-12 lg:py-16 relative z-10 flex-1 flex flex-col justify-end">
+          <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+            PERSONNEL &amp; LEADERSHIP · GUELPH, ONTARIO
+          </p>
+
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.96] mb-6">
+            Engineering team.<br />
+            <span className="text-[#00747a]">&amp; technical experts.</span>
+          </h1>
+
+          <p className="text-slate-600 text-base sm:text-lg max-w-2xl leading-relaxed font-normal">
+            Meet the experienced engineers, CFD specialists, and advanced manufacturing leaders behind Innovative Thermal Solutions.
+          </p>
+        </div>
+      </section>
+
       {/* 2. Founder & CEO Section */}
       <section className="relative w-full py-16 lg:py-24 px-6 sm:px-8 lg:px-14 border-b border-[#d8dedf] bg-white">
         <div className="max-w-[1440px] mx-auto">

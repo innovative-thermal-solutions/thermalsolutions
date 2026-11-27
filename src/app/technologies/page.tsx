@@ -13,27 +13,30 @@ export default function TechnologiesPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-slate-50 pt-28 pb-20">
       {/* Detail Hero */}
-      <section className="relative w-full bg-gradient-to-br from-white via-slate-50 to-sky-50 border-b border-slate-200 py-16 lg:py-24 px-6 lg:px-12 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-blueprint opacity-60 pointer-events-none" />
+      <section className="relative w-full bg-[#f8faf9] border-b border-[#d8dedf] py-16 lg:py-24 px-6 lg:px-14 overflow-hidden">
+        <div
+          className="absolute inset-0 pointer-events-none opacity-40"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(0,116,122,0.12) 1px, transparent 1px), linear-gradient(90deg, rgba(0,116,122,0.12) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           <div className="lg:col-span-7">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="font-mono text-xs font-bold text-sky-600 px-2 py-0.5 bg-white border border-slate-200 rounded-sm">
-                ITS
-              </span>
-              <span className="text-xs uppercase font-mono tracking-[0.2em] text-slate-500 font-semibold">
-                Cooling Technologies
-              </span>
-            </div>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-slate-950 uppercase leading-[0.92] mb-6">
-              Thermal architecture starts with the application.
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+              COOLING TECHNOLOGIES · APPLICATION-FIRST ENGINEERING
+            </p>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.96] mb-6">
+              Thermal architecture.<br />
+              <span className="text-[#00747a]">Starts with the application.</span>
             </h1>
             <p className="text-slate-600 text-lg sm:text-xl leading-relaxed max-w-2xl font-normal">
               ITS develops air-cooled and liquid-cooled solutions around heat load, geometry, operating environment and manufacturing requirements.
             </p>
           </div>
 
-          <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+          <div className="lg:col-span-5 relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#d8dedf] shadow-lg bg-white">
             <Image
               src="/images/manufacturing/thermal-engineering.png"
               alt="Cooling technologies at Innovative Thermal Solutions"

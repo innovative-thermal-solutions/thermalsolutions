@@ -64,67 +64,50 @@ export default function PortfolioPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
       {/* 01 PORTFOLIO HERO */}
-      <section className="relative w-full pt-36 sm:pt-44 lg:pt-48 pb-20 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden">
-        {/* Subtle grid background */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-15"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="w-full max-w-[1440px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="relative w-full min-h-[640px] lg:min-h-[700px] border-b border-[#d8dedf] bg-[#f8faf9] overflow-hidden pt-28 lg:pt-32">
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Intro Column */}
           <div className="lg:col-span-6 xl:col-span-6">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-              <span className="text-[12px] font-mono tracking-[0.25em] text-teal-100 uppercase font-bold">
-                THE ITS COOLING COLLECTION
-              </span>
-            </div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+              THE ITS COOLING COLLECTION · NORTH AMERICAN PRODUCTION
+            </p>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-serif font-medium tracking-tight text-white leading-[0.95] mb-8">
-              Product <br />
-              <em className="not-italic text-teal-200">portfolio.</em>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[76px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.95] mb-6">
+              Product.<br />
+              <span className="text-[#00747a]">Portfolio.</span>
             </h1>
 
-            <p className="text-teal-50 text-base sm:text-lg max-w-lg leading-relaxed mb-10 font-normal">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-lg mb-8 font-normal">
               From finned heat sinks to liquid cold plates and custom busbars. Find the construction, material and dimensions that fit your next design.
             </p>
 
             <a
               href="#catalog"
-              className="inline-flex items-center gap-3 px-7 py-4 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-lg shadow-black/10 cursor-pointer"
+              className="inline-flex items-center gap-3 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-mono text-xs uppercase tracking-wider font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
             >
               <span>Browse products</span>
-              <ArrowDown className="w-4 h-4 text-[#01747A]" />
+              <ArrowDown className="w-4 h-4 text-white" />
             </a>
           </div>
 
           {/* Right Product Spotlight Hero Figure (Interactive 3D CAD Model) */}
           <div className="lg:col-span-6 xl:col-span-6">
-            <div className="relative p-6 sm:p-8 rounded-xl border border-white/20 bg-[#003b3e]/90 shadow-2xl overflow-hidden group">
-              {/* Radial glow backdrop */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.12)_0%,_transparent_70%)] pointer-events-none" />
-              
-              <div className="flex items-center justify-between text-[11px] font-mono text-teal-100 uppercase tracking-wider mb-4 relative z-10">
-                <span className="text-teal-200 font-bold">INTERACTIVE 3D CAD MODEL / COMPLEX PART</span>
-                <span className="px-2 py-0.5 bg-white/15 text-white rounded border border-white/25">
+            <div className="relative p-6 sm:p-8 rounded-2xl border border-[#d8dedf] bg-white shadow-xl overflow-hidden group">
+              <div className="flex items-center justify-between text-[11px] font-mono text-[#00747a] uppercase tracking-wider mb-4 relative z-10 font-bold">
+                <span>INTERACTIVE 3D CAD MODEL / COMPLEX PART</span>
+                <span className="px-2 py-0.5 bg-slate-100 text-slate-700 rounded border border-slate-200">
                   LFA0180 REV.01
                 </span>
               </div>
 
               {/* 3D CAD Model Interactive Canvas */}
-              <div className="relative w-full h-[320px] sm:h-[400px] flex items-center justify-center rounded-lg overflow-hidden border border-white/15 bg-[#00272a] z-10">
+              <div className="relative w-full h-[320px] sm:h-[400px] flex items-center justify-center rounded-xl overflow-hidden border border-[#d8dedf] bg-[#0c181a] z-10">
                 <CadViewer modelUrl="/models/lfa0180-complex-part.glb" className="w-full h-full" />
               </div>
 
-              <div className="pt-4 border-t border-white/15 flex items-center justify-between text-xs font-mono text-teal-50 relative z-10">
-                <span className="font-semibold text-white">Complex CNC Liquid Cold Plate Geometry</span>
-                <span className="text-teal-200">Interactive 3D Orbit &amp; Zoom</span>
+              <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs font-mono text-slate-600 relative z-10">
+                <span className="font-semibold text-slate-900">Complex CNC Liquid Cold Plate Geometry</span>
+                <span className="text-[#00747a] font-bold">Interactive 3D Orbit &amp; Zoom</span>
               </div>
             </div>
           </div>

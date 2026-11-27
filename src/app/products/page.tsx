@@ -141,72 +141,58 @@ export default function ProductsPage() {
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
       {/* 1. HERO SECTION */}
-      <section className="relative w-full pt-32 sm:pt-40 lg:pt-44 pb-20 px-6 sm:px-8 lg:px-14 bg-gradient-to-br from-[#004d52] via-[#01747A] to-[#005a5f] text-white border-b border-[#015e63] overflow-hidden">
-        {/* Subtle grid background */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-15"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)",
-            backgroundSize: "60px 60px",
-          }}
-        />
-        <div className="absolute right-0 top-1/4 w-[600px] h-[600px] bg-white/10 rounded-full blur-[140px] pointer-events-none" />
-
-        <div className="w-full max-w-[1440px] mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <section className="relative w-full min-h-[640px] lg:min-h-[700px] border-b border-[#d8dedf] bg-[#f8faf9] overflow-hidden pt-28 lg:pt-32">
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-14 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Hero Left Content */}
           <div className="lg:col-span-7">
-            <div className="flex items-center gap-2 mb-6">
-              <span className="w-2 h-2 rounded-full bg-teal-200 shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-              <span className="text-[11px] font-mono tracking-[0.25em] text-teal-100 uppercase font-bold">
-                CUSTOM THERMAL HARDWARE · NO CATALOG STOCK
-              </span>
-            </div>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#00747a] font-bold mb-4">
+              CUSTOM THERMAL HARDWARE · NO CATALOG STOCK
+            </p>
 
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif font-medium tracking-tight text-white leading-[0.98] sm:leading-[0.95] mb-8">
-              Engineered around your heat source. <br />
-              <em className="not-italic text-teal-200">Built to your CAD envelope.</em>
+            <h1 className="text-4xl sm:text-6xl lg:text-[72px] font-serif font-medium tracking-tight text-[#141f22] leading-[0.98] sm:leading-[0.96] mb-6">
+              Engineered around your heat source.<br />
+              <span className="text-[#00747a]">Built to your CAD envelope.</span>
             </h1>
 
-            <p className="text-teal-50 text-base sm:text-lg max-w-2xl leading-relaxed mb-10 font-normal">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mb-8 font-normal">
               Every thermal challenge is unique. We do not sell off-the-shelf catalog products. Instead, our engineers design and manufacture custom liquid cold plates, air-cooled heat sinks, and laminated busbars built from the ground up for your power profile and mechanical constraints.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 px-7 py-4 bg-white hover:bg-slate-100 text-[#01747A] font-bold text-xs font-mono uppercase tracking-wider rounded transition-all transform hover:-translate-y-0.5 shadow-lg shadow-black/10 cursor-pointer"
+                className="inline-flex items-center gap-3 px-7 py-4 bg-[#00747a] hover:bg-[#005d62] text-white font-mono text-xs uppercase tracking-wider font-bold rounded shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer"
               >
                 <span>Request Custom Quote &amp; Review</span>
-                <ArrowRight className="w-4 h-4 text-[#01747A]" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </Link>
               <a
                 href="#categories"
-                className="inline-flex items-center gap-2 px-6 py-4 border border-white/30 hover:border-white/60 bg-white/10 text-white font-medium text-xs font-mono uppercase tracking-wider rounded transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-4 border border-slate-300 hover:border-slate-400 bg-white text-slate-800 font-mono text-xs uppercase tracking-wider font-bold rounded transition-colors shadow-2xs"
               >
                 <span>Browse Technologies ↓</span>
               </a>
             </div>
 
-            <div className="pt-8 mt-10 border-t border-white/20 grid grid-cols-3 gap-6 text-left">
+            <div className="pt-8 mt-10 border-t border-[#d8dedf] grid grid-cols-3 gap-6 text-left">
               <div>
-                <strong className="block text-2xl sm:text-3xl font-serif font-bold text-white">100%</strong>
-                <span className="text-[11px] font-mono tracking-wider text-teal-100 uppercase">Custom Geometries</span>
+                <strong className="block text-2xl sm:text-3xl font-serif font-bold text-[#141f22]">100%</strong>
+                <span className="text-[11px] font-mono tracking-wider text-slate-500 uppercase">Custom Geometries</span>
               </div>
               <div>
-                <strong className="block text-2xl sm:text-3xl font-serif font-bold text-white">&lt;0.05mm</strong>
-                <span className="text-[11px] font-mono tracking-wider text-teal-100 uppercase">Surface Flatness</span>
+                <strong className="block text-2xl sm:text-3xl font-serif font-bold text-[#141f22]">&lt;0.05mm</strong>
+                <span className="text-[11px] font-mono tracking-wider text-slate-500 uppercase">Surface Flatness</span>
               </div>
               <div>
-                <strong className="block text-2xl sm:text-3xl font-serif font-bold text-white">100+ PSI</strong>
-                <span className="text-[11px] font-mono tracking-wider text-teal-100 uppercase">Pressure Tested</span>
+                <strong className="block text-2xl sm:text-3xl font-serif font-bold text-[#141f22]">100+ PSI</strong>
+                <span className="text-[11px] font-mono tracking-wider text-slate-500 uppercase">Pressure Tested</span>
               </div>
             </div>
           </div>
 
           {/* Hero Right Visual Preview Card */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl bg-gradient-to-br from-[#e6eef0] to-[#d8e5e8] border border-white/30 p-8 sm:p-12 shadow-2xl flex flex-col items-center justify-center min-h-[420px] overflow-hidden group">
+            <div className="relative rounded-3xl bg-gradient-to-br from-[#e6eef0] to-[#d8e5e8] border border-[#d8dedf] p-8 sm:p-12 shadow-xl flex flex-col items-center justify-center min-h-[420px] overflow-hidden group">
               {/* Blueprint grid */}
               <div
                 className="absolute inset-0 pointer-events-none opacity-40"
@@ -226,7 +212,7 @@ export default function ProductsPage() {
                   width={520}
                   height={520}
                   priority
-                  className="w-full h-full object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.25)] transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-contain drop-shadow-[0_20px_25px_rgba(20,31,34,0.18)] transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
 
