@@ -142,11 +142,11 @@ export function Navigation() {
               <Link
                 href="/products"
                 className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors py-2 ${
-                  pathname.startsWith("/products") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+                  pathname.startsWith("/products") ? "text-white" : "text-white/90 hover:text-white"
                 }`}
               >
                 <span>Products</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#00747a]" />
+                <ChevronDown className="w-3.5 h-3.5 text-white/70 group-hover:text-white" />
               </Link>
 
               <AnimatePresence>
@@ -191,7 +191,7 @@ export function Navigation() {
             <Link
               href="/portfolio"
               className={`text-[15px] font-semibold transition-colors relative py-1 ${
-                pathname.startsWith("/portfolio") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+                pathname.startsWith("/portfolio") ? "text-white" : "text-white/90 hover:text-white"
               }`}
             >
               Portfolio
@@ -208,7 +208,7 @@ export function Navigation() {
             <Link
               href="/capabilities"
               className={`text-[15px] font-semibold transition-colors relative py-1 ${
-                pathname.startsWith("/capabilities") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+                pathname.startsWith("/capabilities") ? "text-white" : "text-white/90 hover:text-white"
               }`}
             >
               Capabilities
@@ -230,11 +230,11 @@ export function Navigation() {
               <Link
                 href="/technologies"
                 className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors py-2 ${
-                  pathname.startsWith("/technologies") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+                  pathname.startsWith("/technologies") ? "text-white" : "text-white/90 hover:text-white"
                 }`}
               >
                 <span>Technologies</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#00747a]" />
+                <ChevronDown className="w-3.5 h-3.5 text-white/70" />
               </Link>
 
               <AnimatePresence>
@@ -283,7 +283,7 @@ export function Navigation() {
                   key={link.name}
                   href={link.href}
                   className={`text-[15px] font-semibold transition-colors relative py-1 ${
-                    isActive ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+                    isActive ? "text-white" : "text-white/90 hover:text-white"
                   }`}
                 >
                   {link.name}
@@ -307,11 +307,11 @@ export function Navigation() {
               <Link
                 href="/about"
                 className={`flex items-center gap-1.5 text-[15px] font-semibold transition-colors py-2 ${
-                  pathname.startsWith("/about") ? "text-[#00747a]" : "text-[#00747a] hover:text-white"
+                  pathname.startsWith("/about") ? "text-white" : "text-white/90 hover:text-white"
                 }`}
               >
                 <span>About</span>
-                <ChevronDown className="w-3.5 h-3.5 text-[#00747a]" />
+                <ChevronDown className="w-3.5 h-3.5 text-white/70" />
               </Link>
 
               <AnimatePresence>
