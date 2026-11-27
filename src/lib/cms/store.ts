@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { revalidatePath } from "next/cache";
 import {
   CMSProduct,
   CMSCapability,
@@ -16,27 +17,141 @@ import {
 
 const DATA_DIR = path.join(process.cwd(), "data", "cms");
 
+// In-memory cache for ultra-fast reads & cross-request consistency in serverless instances
+const memCache = new Map<string, any>();
+
+// GitHub config for permanent serverless cloud persistence
+const GITHUB_REPO = process.env.GITHUB_REPO || "innovative-thermal-solutions/thermalsolutions";
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || "";
+
+/**
+ * Asynchronously syncs JSON changes to the GitHub repository so changes survive
+ * Vercel serverless cold starts, container recycles, and trigger automatic deployments.
+ */
+async function syncToGitHub(filename: string, content: string): Promise<void> {
+  if (!GITHUB_TOKEN || !GITHUB_REPO) return;
+  try {
+    const filePath = `data/cms/${filename}`;
+    const url = `https://api.github.com/repos/${GITHUB_REPO}/contents/${filePath}`;
+    
+    // Check if file exists to retrieve SHA
+    let sha: string | undefined;
+    try {
+      const getRes = await fetch(url, {
+        headers: {
+          Authorization: `token ${GITHUB_TOKEN}`,
+          "User-Agent": "ITS-Cooling-CMS-Sync",
+          Accept: "application/vnd.github.v3+json",
+        },
+        cache: "no-store",
+      });
+      if (getRes.ok) {
+        const getData = await getRes.json();
+        sha = getData.sha;
+      }
+    } catch {
+      // New file or fetch error
+    }
+
+    const payload: { message: string; content: string; sha?: string } = {
+      message: `CMS: update ${filename} [skip ci]`,
+      content: Buffer.from(content).toString("base64"),
+    };
+    if (sha) {
+      payload.sha = sha;
+    }
+
+    await fetch(url, {
+      method: "PUT",
+      headers: {
+        Authorization: `token ${GITHUB_TOKEN}`,
+        "User-Agent": "ITS-Cooling-CMS-Sync",
+        "Content-Type": "application/json",
+        Accept: "application/vnd.github.v3+json",
+      },
+      body: JSON.stringify(payload),
+    });
+  } catch (err) {
+    console.error(`Failed to sync ${filename} to GitHub:`, err);
+  }
+}
+
+/**
+ * Revalidates public pages associated with updated CMS data
+ */
+function triggerRevalidations(filename: string) {
+  try {
+    revalidatePath("/", "layout");
+    if (filename === "team.json") {
+      revalidatePath("/about", "page");
+      revalidatePath("/about/our-design-manufacturing-experts-engineers-team", "page");
+    } else if (filename === "products.json") {
+      revalidatePath("/products", "page");
+      revalidatePath("/portfolio", "page");
+      revalidatePath("/", "page");
+    } else if (filename === "capabilities.json") {
+      revalidatePath("/capabilities", "page");
+      revalidatePath("/", "page");
+    } else if (filename === "quality.json") {
+      revalidatePath("/quality", "page");
+    } else if (filename === "events.json") {
+      revalidatePath("/events", "page");
+    } else if (filename === "careers.json") {
+      revalidatePath("/careers", "page");
+    } else if (filename === "homepage.json") {
+      revalidatePath("/", "page");
+    } else if (filename === "case_studies.json") {
+      revalidatePath("/case-studies", "page");
+      revalidatePath("/", "page");
+    }
+  } catch {
+    // revalidatePath only works inside request contexts
+  }
+}
+
 export function readJsonFile<T>(filename: string, fallback: T): T {
   try {
     const filePath = path.join(DATA_DIR, filename);
     if (!fs.existsSync(filePath)) {
+      if (memCache.has(filename)) {
+        return memCache.get(filename) as T;
+      }
       return fallback;
     }
     const content = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(content) as T;
+    const parsed = JSON.parse(content) as T;
+    memCache.set(filename, parsed);
+    return parsed;
   } catch (err) {
     console.error(`Error reading ${filename}:`, err);
+    if (memCache.has(filename)) {
+      return memCache.get(filename) as T;
+    }
     return fallback;
   }
 }
 
 export function writeJsonFile<T>(filename: string, data: T): boolean {
   try {
+    memCache.set(filename, data);
+    const content = JSON.stringify(data, null, 2);
+
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
     }
     const filePath = path.join(DATA_DIR, filename);
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf-8");
+    try {
+      fs.writeFileSync(filePath, content, "utf-8");
+    } catch {
+      // In read-only serverless filesystems, disk write fails, but memCache + GitHub succeeds
+    }
+
+    // Persist to GitHub in background
+    syncToGitHub(filename, content).catch(() => {});
+
+    // Revalidate Next.js cache so updates are immediately visible
+    triggerRevalidations(filename);
+
     return true;
   } catch (err) {
     console.error(`Error writing ${filename}:`, err);

@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ArrowDown } from "lucide-react";
+import { getCMSCapabilities } from "@/lib/cms/store";
 
 export const metadata = {
   title: "Integrated Engineering & Manufacturing Capabilities | Innovative Thermal Solutions",
   description:
     "Engineering, design, advanced manufacturing and quality—connected to develop thermal solutions for demanding applications.",
 };
+
+export const dynamic = "force-dynamic";
 
 interface CapabilityChapter {
   id: string;
@@ -148,6 +151,8 @@ const PROCESS_STEPS = [
 ];
 
 export default function CapabilitiesPage() {
+  const cmsChapters = getCMSCapabilities();
+  const activeChapters = (cmsChapters && cmsChapters.length > 0 ? cmsChapters : CHAPTERS) as CapabilityChapter[];
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22] overflow-hidden">
       {/* 01 PAGE HERO */}
@@ -217,7 +222,7 @@ export default function CapabilitiesPage() {
       </section>
 
       {/* 03 EIGHT CAPABILITY CHAPTERS */}
-      {CHAPTERS.map((chapter) => {
+      {activeChapters.map((chapter) => {
         const isDark = chapter.theme === "dark";
 
         return (

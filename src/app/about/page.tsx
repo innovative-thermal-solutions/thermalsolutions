@@ -16,6 +16,8 @@ export const metadata: Metadata = {
     "Innovative Thermal Solutions (ITS) designs and manufactures custom, high-performance thermal management solutions in North America, specializing in Friction Stir Welding (FSW) and advanced cooling technologies.",
 };
 
+export const dynamic = "force-dynamic";
+
 const milestones = [
   {
     year: "2020",

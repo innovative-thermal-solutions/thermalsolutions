@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { CertificateCard } from "@/components/quality/CertificateModal";
+import { getCMSQuality } from "@/lib/cms/store";
 
 export const metadata: Metadata = {
   title: "ITS Quality Policy | ISO 9001:2015 Certified | Innovative Thermal Solutions",
@@ -24,7 +25,9 @@ export const metadata: Metadata = {
     "ITS is committed to dedication to quality, continual improvement, and customer satisfaction under our ISO 9001:2015 Certified Quality Management System in Guelph, Ontario.",
 };
 
-const qualityPrinciples = [
+export const dynamic = "force-dynamic";
+
+const DEFAULT_PRINCIPLES = [
   {
     number: "01",
     title: "Customer Focus",
@@ -55,7 +58,19 @@ const qualityPrinciples = [
   },
 ];
 
+const ICONS = [Target, TrendingUp, Cpu, Sparkles];
+
 export default function QualityPage() {
+  const cmsQuality = getCMSQuality();
+  const policyStatement = cmsQuality?.policyStatement || "ITS is committed to provide a high degree of value in products and services through dedication to quality, continual improvement and risk based thinking. To achieve these objectives, it is our policy to:";
+  const policyDirectives = cmsQuality?.policyDirectives?.length ? cmsQuality.policyDirectives : [
+    "Understand customer needs and accordingly design products to meet or exceed customer’s requirements for heat sinks and thermal management products for electronics;",
+    "Extend excellent customer support and service at all times; and",
+    "Seek opportunities for development and improvement of products, manufacturing methods and resources."
+  ];
+  const ceoName = cmsQuality?.ceoName || "Ahmed Zaghlol";
+  const ceoTitle = cmsQuality?.ceoTitle || "CEO · Innovative Thermal Solutions Inc";
+  const principles = cmsQuality?.principles?.length ? cmsQuality.principles : DEFAULT_PRINCIPLES;
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">
       {/* 1. Header Banner */}
@@ -110,37 +125,21 @@ export default function QualityPage() {
             </div>
 
             <p className="text-slate-800 text-lg sm:text-xl font-serif leading-relaxed mb-8">
-              &ldquo;ITS is committed to provide a high degree of value in products and services through dedication to quality, continual improvement and risk based thinking. To achieve these objectives, it is our policy to:&rdquo;
+              &ldquo;{policyStatement}&rdquo;
             </p>
 
             {/* Policy Bullet Directives */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-[#d8dedf]">
-                <div className="w-6 h-6 rounded-full bg-[#01747A]/10 text-[#01747A] flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 className="w-4 h-4" />
+              {policyDirectives.map((directive: string, idx: number) => (
+                <div key={idx} className="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-[#d8dedf]">
+                  <div className="w-6 h-6 rounded-full bg-[#01747A]/10 text-[#01747A] flex items-center justify-center shrink-0 mt-0.5">
+                    <CheckCircle2 className="w-4 h-4" />
+                  </div>
+                  <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+                    {directive}
+                  </p>
                 </div>
-                <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
-                  <strong>Understand customer needs</strong> and accordingly design products to meet or exceed customer’s requirements for heat sinks and thermal management products for electronics;
-                </p>
-              </div>
-
-              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-[#d8dedf]">
-                <div className="w-6 h-6 rounded-full bg-[#01747A]/10 text-[#01747A] flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 className="w-4 h-4" />
-                </div>
-                <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
-                  <strong>Extend excellent customer support</strong> and service at all times; and
-                </p>
-              </div>
-
-              <div className="flex items-start gap-3.5 p-4 rounded-xl bg-white border border-[#d8dedf]">
-                <div className="w-6 h-6 rounded-full bg-[#01747A]/10 text-[#01747A] flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 className="w-4 h-4" />
-                </div>
-                <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
-                  <strong>Seek opportunities for development and improvement</strong> of products, manufacturing methods and resources.
-                </p>
-              </div>
+              ))}
             </div>
 
             <p className="text-slate-600 text-sm sm:text-base italic mb-10 pb-8 border-b border-[#d8dedf]">
@@ -151,10 +150,10 @@ export default function QualityPage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <h3 className="font-serif text-2xl font-medium text-[#01747A]">
-                  Ahmed Zaghlol
+                  {ceoName}
                 </h3>
                 <p className="font-mono text-xs uppercase tracking-wider text-slate-500 font-semibold">
-                  CEO · Innovative Thermal Solutions Inc
+                  {ceoTitle}
                 </p>
               </div>
 
@@ -183,11 +182,11 @@ export default function QualityPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-            {qualityPrinciples.map((principle) => {
-              const Icon = principle.icon;
+            {principles.map((principle, idx) => {
+              const Icon = ICONS[idx % ICONS.length] || ShieldCheck;
               return (
                 <div
-                  key={principle.number}
+                  key={principle.number || idx}
                   className="bg-white rounded-2xl border border-[#d8dedf] p-8 shadow-sm hover:shadow-md hover:border-[#01747A]/40 transition-all flex flex-col justify-between"
                 >
                   <div>

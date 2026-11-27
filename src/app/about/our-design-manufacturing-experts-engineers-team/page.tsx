@@ -10,6 +10,8 @@ export const metadata: Metadata = {
     "Meet the leadership, thermal experts, mechanical engineers, and supply chain specialists at Innovative Thermal Solutions in Guelph, Ontario.",
 };
 
+export const dynamic = "force-dynamic";
+
 const DEFAULT_TEAM_MEMBERS = [
   {
     id: "cliff-weasner",

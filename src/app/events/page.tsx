@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     "Connect with the Innovative Thermal Solutions team at upcoming industry trade shows across North America and Europe.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function EventsPage() {
   const cmsEvents = getCMSEvents();
   const allEvents = cmsEvents.length > 0 ? cmsEvents : TRADE_SHOW_EVENTS;

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
@@ -22,9 +22,21 @@ const CadViewer = dynamic(
 );
 
 export default function PortfolioPage() {
+  const [products, setProducts] = useState<PortfolioItem[]>(PORTFOLIO_PRODUCTS);
   const [activeCategory, setActiveCategory] = useState<"all" | "air" | "liquid" | "electrical">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [openDetails, setOpenDetails] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    fetch("/api/admin/products")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.products && Array.isArray(data.products) && data.products.length > 0) {
+          setProducts(data.products);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const toggleDetails = (id: string) => {
     setOpenDetails((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -32,7 +44,7 @@ export default function PortfolioPage() {
 
   const filteredProducts = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
-    return PORTFOLIO_PRODUCTS.filter((item) => {
+    return products.filter((item) => {
       const matchCat = activeCategory === "all" || item.family === activeCategory;
       if (!matchCat) return false;
       if (!q) return true;
@@ -50,16 +62,16 @@ export default function PortfolioPage() {
         .toLowerCase();
       return haystack.includes(q);
     });
-  }, [activeCategory, searchQuery]);
+  }, [products, activeCategory, searchQuery]);
 
   const categoryCounts = useMemo(() => {
     return {
-      all: PORTFOLIO_PRODUCTS.length,
-      air: PORTFOLIO_PRODUCTS.filter((p) => p.family === "air").length,
-      liquid: PORTFOLIO_PRODUCTS.filter((p) => p.family === "liquid").length,
-      electrical: PORTFOLIO_PRODUCTS.filter((p) => p.family === "electrical").length,
+      all: products.length,
+      air: products.filter((p) => p.family === "air").length,
+      liquid: products.filter((p) => p.family === "liquid").length,
+      electrical: products.filter((p) => p.family === "electrical").length,
     };
-  }, []);
+  }, [products]);
 
   return (
     <main id="main-content" className="w-full min-h-screen bg-[#f8faf9] text-[#141f22]">

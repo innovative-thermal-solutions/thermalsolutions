@@ -18,6 +18,8 @@ export const metadata = {
     "Custom heat sinks, liquid cold plates and friction stir welding. Thermal engineering, testing and precision manufacturing from Guelph, Ontario.",
 };
 
+export const dynamic = "force-dynamic";
+
 export default function HomePage() {
   const homeData = getCMSHomepage();
 
